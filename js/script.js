@@ -1,15 +1,3 @@
-// $("button").click(function(){
-// 	document.getElementById('sheguey').play();
-// });
-
-// function sheguey() {
-// 		document.getElementById('sheguey').play();
-// }
-
-// function missile() {
-// 		document.getElementById('missile').play();
-// }
-
 function playSheguey() {
 	zone = document.getElementById("audioElements");
 	tag = document.createElement('audio');
