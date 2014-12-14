@@ -9042,3 +9042,8 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
+/* line 45, ../scss/style.scss */
+body {
+  margin: auto;
+  background-color: pink;
+}
