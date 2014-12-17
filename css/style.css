@@ -9042,8 +9042,38 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
-/* line 45, ../scss/style.scss */
-body {
-  margin: auto;
-  background-color: pink;
+/* line 50, ../scss/style.scss */
+#main-nav {
+  background-color: #a3a7a7;
+}
+/* line 56, ../scss/style.scss */
+#main-nav nav a {
+  text-transform: uppercase;
+  color: #0c0a0d;
+}
+
+/* line 63, ../scss/style.scss */
+.red {
+  color: #df0030;
+}
+
+/* line 67, ../scss/style.scss */
+footer {
+  background-color: #a3a7a7;
+  height: 50px;
+  bottom: 0;
+}
+/* line 73, ../scss/style.scss */
+footer .row {
+  display: table;
+}
+/* line 76, ../scss/style.scss */
+footer .row div {
+  display: table-cell;
+}
+/* line 79, ../scss/style.scss */
+footer .row div p {
+  text-transform: uppercase;
+  color: #0c0a0d;
+  text-align: center;
 }
