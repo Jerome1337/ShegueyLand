@@ -49,9 +49,10 @@ $grey: #a3a7a7;
 
 #main-nav {
 		
-	background-color: $grey;
+	background: $grey;
 
-	nav {
+	nav{
+		background: $grey;
 
 		a {
 			text-transform: uppercase;
@@ -67,20 +68,21 @@ $grey: #a3a7a7;
 footer {
 
 	background-color: $grey;
-	height: 50px;
+	height: 3.125em;
 	bottom: 0;
-
+	position: fixed;
+	width: 100%;
+	
 	.row {
 		display: table;
+		height: 3.125em;
 
-		div {
+		p {
+			text-transform: uppercase;
+			color: $black;
+			text-align: center;
 			display: table-cell;
-
-			p {
-				text-transform: uppercase;
-				color: $black;
-				text-align: center;
-			}
+			vertical-align: middle;
 		}
-	}
+	}	
 }
