@@ -9057,16 +9057,14 @@ th.hide-for-touch {
 footer {
   background-color: #a3a7a7;
   height: 3.125em;
-  bottom: 0;
-  position: fixed;
   width: 100%;
 }
-/* line 73, ../scss/style.scss */
+/* line 71, ../scss/style.scss */
 footer .row {
   display: table;
   height: 3.125em;
 }
-/* line 77, ../scss/style.scss */
+/* line 75, ../scss/style.scss */
 footer .row p {
   text-transform: uppercase;
   color: #0c0a0d;
