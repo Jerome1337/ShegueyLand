@@ -10,7 +10,7 @@
     <?php include('commons/nav.php'); ?>
     <div class="row">
       <div class="large-12 columns">
-        <h1>Sheguey Squaad</h1>
+        <h1>Sheguey Noise</h1>
       </div>
     </div>
     
@@ -21,6 +21,12 @@
         <button onclick="play59()" class="medium-4 large-4 columns">5.9 KILS DE PURE</button>
         <button onclick="play59()" class="medium-4 large-4 columns">5.9 KILS DE PURE</button>
         <button onclick="playPapa()" class="medium-4 large-4 columns">PAPA VEUT DU BIFF</button>
+        <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
+        <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
+        <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
+        <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
+        <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
+        <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
         <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
       </div>
     </div>

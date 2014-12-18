@@ -9042,26 +9042,18 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
-/* line 50, ../scss/style.scss */
-#main-nav {
-  background: #a3a7a7;
-}
 /* line 54, ../scss/style.scss */
-#main-nav nav {
-  background: #a3a7a7;
-}
-/* line 57, ../scss/style.scss */
 #main-nav nav a {
   text-transform: uppercase;
   color: #0c0a0d;
 }
 
-/* line 64, ../scss/style.scss */
+/* line 61, ../scss/style.scss */
 .red {
   color: #df0030;
 }
 
-/* line 68, ../scss/style.scss */
+/* line 65, ../scss/style.scss */
 footer {
   background-color: #a3a7a7;
   height: 3.125em;
@@ -9069,12 +9061,12 @@ footer {
   position: fixed;
   width: 100%;
 }
-/* line 76, ../scss/style.scss */
+/* line 73, ../scss/style.scss */
 footer .row {
   display: table;
   height: 3.125em;
 }
-/* line 80, ../scss/style.scss */
+/* line 77, ../scss/style.scss */
 footer .row p {
   text-transform: uppercase;
   color: #0c0a0d;

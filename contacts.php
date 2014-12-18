@@ -2,7 +2,7 @@
 <html class="no-js" lang="fr-FR">
     <head>
         <?php 
-        $onglet_actif = "index";
+        $onglet_actif = "contacts";
         include('commons/head.php'); ?>
         <title>SHEGUEYLAND</title>
     </head>
@@ -10,7 +10,7 @@
         <?php include('commons/nav.php'); ?>
         <div class="row">
             <div class="large-12 columns">
-                <h1>Sheguey Land</h1>
+                <h1>Contacts</h1>
             </div>
         </div>
         

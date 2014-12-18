@@ -16,7 +16,7 @@
                 <li <?php if($onglet_actif == "noise"){echo "class=\"active\"";}?>><a href="shegueynoise.php">Sheguey noise</a></li>
                 <li <?php if($onglet_actif == "quelsheguey"){echo "class=\"active\"";}?>><a href="#">Quel Sheguey es-tu ?</a></li>
                 <li <?php if($onglet_actif == "bio"){echo "class=\"active\"";}?>><a href="#">Biographie</a></li>
-                <li <?php if($onglet_actif == "contacts"){echo "class=\"active\"";}?>><a href="#">Contacts</a></li>
+                <li <?php if($onglet_actif == "contacts"){echo "class=\"active\"";}?>><a href="contacts.php">Contacts</a></li>
             </ul>
         </section>
     </nav>
