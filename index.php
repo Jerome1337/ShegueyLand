@@ -9,8 +9,8 @@
     <body>
         <?php include('commons/nav.php'); ?>
         <div class="row">
-            <div class="large-12 columns">
-                <h1>Sheguey Land</h1>
+            <div class="large-6 columns">
+                <h1>lol Squaad</h1>
             </div>
         </div>
         
