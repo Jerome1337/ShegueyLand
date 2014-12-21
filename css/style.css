@@ -9042,33 +9042,38 @@ th.hide-for-touch {
     display: table-cell !important;
   }
 }
-/* line 54, ../scss/style.scss */
+/* line 22, ../scss/style.scss */
 #main-nav nav a {
   text-transform: uppercase;
   color: #0c0a0d;
 }
 
-/* line 61, ../scss/style.scss */
+/* line 29, ../scss/style.scss */
 .red {
   color: #df0030;
 }
 
-/* line 65, ../scss/style.scss */
+/* line 33, ../scss/style.scss */
 footer {
   background-color: #a3a7a7;
   height: 3.125em;
   width: 100%;
 }
-/* line 71, ../scss/style.scss */
+/* line 39, ../scss/style.scss */
 footer .row {
   display: table;
   height: 3.125em;
 }
-/* line 75, ../scss/style.scss */
+/* line 43, ../scss/style.scss */
 footer .row p {
   text-transform: uppercase;
   color: #0c0a0d;
   text-align: center;
   display: table-cell;
   vertical-align: middle;
+}
+
+/* line 61, ../scss/style.scss */
+.conteneur div {
+  margin-bottom: 2em;
 }
