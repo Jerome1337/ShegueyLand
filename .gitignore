@@ -4,3 +4,4 @@
 /stylesheets/*
 .bundle/
 bin/
+cache/tweets.tmp
