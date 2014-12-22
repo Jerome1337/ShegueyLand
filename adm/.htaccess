@@ -1,7 +1,0 @@
-AuthUserFile /home/jeromepoc/sheguey/inprod/adm/.htpasswd
-AuthName "Acces reserve"
-AuthType Basic
-
-<limit GET POST>
-require valid-user
-</limit>
