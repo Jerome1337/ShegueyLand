@@ -1,8 +1,10 @@
 <?php
+	$host = 'mysql:dbname=Sheguey;host=localhost;charset:UFT-8';
+	$user = 'root';
+	$pass = 'root';
 	try{
-		$bdd = new PDO('mysql:host=localhost;dbname=Sheguey', 'root', 'root');
-	}
-	catch (Exception $e){
-	        die('Erreur : ' . $e->getMessage());
+		$bdd = new PDO($host, $user, $pass);
+	}catch (PDOException $e){
+	        echo 'Erreur : ' . $e->getMessage();
 	}
 ?>

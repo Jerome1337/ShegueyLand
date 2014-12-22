@@ -114,22 +114,17 @@ $(function() {
     $('#formContact').submit(function() {
         $("#ajax-loader").show();
 
-        formName = $(this).find("input[name=formName]").val();
-        formEmail = $(this).find("input[name=formEmail]").val();
-        formSubject = $(this).find("input[name=formSubject]").val();
-        formMessage = $(this).find("textarea[name=formMessage]").val();
+        formName = $(this).find("input[name=name]").val();
+        formEmail = $(this).find("input[name=email]").val();
+        formSubject = $(this).find("input[name=subject]").val();
+        formMessage = $(this).find("textarea[name=message]").val();
 
         console.log(formName);
         console.log(formEmail);
         console.log(formSubject);
         console.log(formMessage);
 
-        $.post("commons/postmessage.php", {
-            formName: formName,
-            formEmail: formEmail,
-            formSubject: formSubject,
-            formMessage: formMessage
-        }, function(data) {
+        $.post("commons/postmessage.php", {name: formName, email: formEmail, subject: formSubject, message: formMessage}, function(data) {
             $("#ajax-loader").hide();
             console.log(data);
             if (data != "ok") {

@@ -20,12 +20,12 @@
                     <div data-alert class="alert-box radius">
                         <a href="#" class="close">&times;</a>
                     </div>
-                    <form action="#" method="POST" id="formContact">
-                        <input type="text" placeholder="Prénom" name="formName" id="formName">
-                        <input type="email" placeholder="Email" name="formEmail" id="formEmail">
-                        <input type="text" placeholder="Sujet" name="formSubject" id="formSubject">
-                        <textarea cols="30" rows="10" placeholder="Ton message" name="formMessage" id="formMessage"></textarea>
-                        <button type="submit">Envoyer</button>
+                    <form action="commons/postmessage.php" method="post" id="formContact">
+                        <input type="text" placeholder="Prénom" name="name" id="formName">
+                        <input type="email" placeholder="Email" name="email" id="formEmail">
+                        <input type="text" placeholder="Sujet" name="subject" id="formSubject">
+                        <textarea cols="30" rows="10" placeholder="Ton message" name="message" id="formMessage"></textarea>
+                        <button type="submit" id="formSubmit">Envoyer</button>
                     </form>
                     <div class="rangSheguey"></div>
                 </div>

@@ -1,5 +1,7 @@
 Options +FollowSymLinks -MultiViews
 
+php_flag display_errors 1
+
 RewriteEngine on
 RewriteBase /
 RewriteCond %{HTTP_HOST} ^www\.oldeal\.com [NC]

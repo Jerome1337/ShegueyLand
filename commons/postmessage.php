@@ -4,7 +4,7 @@
 	//include ('config.php');
 	include('../adm/bddconnect.php');
 
-	if(isset($_POST) && isset($_POST['formName']) && isset($_POST['formEmail']) && isset($_POST['formSubject']) && isset($_POST['formMessage']))
+	if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message']))
 	{
 		extract($_POST);
 		$formName = htmlspecialchars($formName);
@@ -12,7 +12,8 @@
 		$formSubject = htmlspecialchars($formSubject);
 		$formMessage = htmlspecialchars($formMessage);
 
-		if (!empty($formName) && !empty($formEmail) && !empty($formSubject) && !empty($formMessage)){
+		if (!empty($formName) && !empty($formEmail) && !empty($formSubject) && !empty($formMessage))
+		{
 			// var_dump($formName);
 			// var_dump($formEmail);
 			// var_dump($formSubject);
@@ -27,12 +28,12 @@
 			$entete="From: $formName \n Reply-To: $formEmail";
 			mail($destinataire, $sujet, $mail, $entete);
 
-			$req = $bdd->prepare('INSERT INTO contactForm (name, email, subject, message) VALUES (:formName, :formEmail, :formSubject, :formMessage)');
+			$req = $bdd->prepare('INSERT INTO contactForm (name, email, subject, message) VALUES( :name,  :email,  :subject,  :message)');
 			$req->execute(array(
-					'formName' => $name,
-					'formEmail' => $email,
-					'formSubject' => $subject,
-					'formMessage' => $message
+					'name' => $formName,
+					'email' => $formEmail,
+					'subject' => $formSubject,
+					'message' => $formMessage
 				));
 			echo 'ok';
 		
