@@ -1,74 +1,19 @@
-function playSheguey() {
+// SOUNDS
+
+$('.conteneur').find('div').click(function() {
+    var soundId = this.id;
+    $('soundId').trigger('load');
     zone = document.getElementById("audioElements");
     tag = document.createElement('audio');
     tag.setAttribute("preload", "auto")
     tag.setAttribute("autoplay", "autoplay")
-    tag.setAttribute("src", "snd/sheguey.wav")
-    tag.setAttribute("id", "audio" + id)
-    zone.appendChild(tag)
-    tag.play()
-    setTimeout("x=document.getElementById('audio" + id + "');x.parentNode.removeChild(x);", 3500)
-    id++;
-    buttonClicked()
-}
+    tag.setAttribute("src", "snd/" + soundId + ".wav")
+    tag.play();
+    // console.log("playyyyy");
+    // console.log(soundId);
+});
 
-function playMissile() {
-    zone = document.getElementById("audioElements");
-    tag = document.createElement('audio');
-    tag.setAttribute("preload", "auto")
-    tag.setAttribute("autoplay", "autoplay")
-    tag.setAttribute("src", "snd/missile.wav")
-    tag.setAttribute("id", "audio" + id)
-    zone.appendChild(tag)
-    tag.play()
-    setTimeout("x=document.getElementById('audio" + id + "');x.parentNode.removeChild(x);", 3500)
-    id++;
-    buttonClicked()
-}
-
-function play59() {
-    zone = document.getElementById("audioElements");
-    tag = document.createElement('audio');
-    tag.setAttribute("preload", "auto")
-    tag.setAttribute("autoplay", "autoplay")
-    tag.setAttribute("src", "snd/59.wav")
-    tag.setAttribute("id", "audio" + id)
-    zone.appendChild(tag)
-    tag.play()
-    setTimeout("x=document.getElementById('audio" + id + "');x.parentNode.removeChild(x);", 3500)
-    id++;
-    buttonClicked()
-}
-
-function playPapa() {
-    zone = document.getElementById("audioElements");
-    tag = document.createElement('audio');
-    tag.setAttribute("preload", "auto")
-    tag.setAttribute("autoplay", "autoplay")
-    tag.setAttribute("src", "snd/papa.wav")
-    tag.setAttribute("id", "audio" + id)
-    zone.appendChild(tag)
-    tag.play()
-    setTimeout("x=document.getElementById('audio" + id + "');x.parentNode.removeChild(x);", 3500)
-    id++;
-    buttonClicked()
-}
-
-function playJmatte() {
-    zone = document.getElementById("audioElements");
-    tag = document.createElement('audio');
-    tag.setAttribute("preload", "auto")
-    tag.setAttribute("autoplay", "autoplay")
-    tag.setAttribute("src", "snd/jmatte.wav")
-    tag.setAttribute("id", "audio" + id)
-    zone.appendChild(tag)
-    tag.play()
-    setTimeout("x=document.getElementById('audio" + id + "');x.parentNode.removeChild(x);", 3500)
-    id++;
-    buttonClicked()
-}
-
-// END SONS
+// END SOUNDS
 
 
 
@@ -124,7 +69,12 @@ $(function() {
         console.log(formSubject);
         console.log(formMessage);
 
-        $.post("commons/postmessage.php", {name: formName, email: formEmail, subject: formSubject, message: formMessage}, function(data) {
+        $.post("commons/postmessage.php", {
+            name: formName,
+            email: formEmail,
+            subject: formSubject,
+            message: formMessage
+        }, function(data) {
             $("#ajax-loader").hide();
             console.log(data);
             if (data != "ok") {

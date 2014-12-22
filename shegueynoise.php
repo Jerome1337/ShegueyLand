@@ -17,24 +17,24 @@
         <div class="row">
             <div class="large-12 columns">
                 <div class="conteneur">
-                    <div onclick="playSheguey()" class="medium-4 large-4 columns"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
-                    <div onclick="playMissile()" class="medium-4 large-4 columns"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
-                    <div onclick="playMissile()" class="medium-4 large-4 columns"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns" id="sheguey"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns" id="missile"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns" id="missile"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
                 </div>
                 <div class="conteneur">
-                    <div onclick="play59()" class="medium-4 large-4 columns"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
-                    <div onclick="play59()" class="medium-4 large-4 columns"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
-                    <div onclick="play59()" class="medium-4 large-4 columns"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns"  id="59"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns"  id="59"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns"  id="59"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
                 </div>
                 <div class="conteneur">
-                    <div onclick="playPapa()" class="medium-4 large-4 columns"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
-                    <div onclick="playPapa()" class="medium-4 large-4 columns"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
-                    <div onclick="playPapa()" class="medium-4 large-4 columns"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns" id="papa"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns" id="papa"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns" id="papa"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
                 </div>
                 <div class="conteneur">
-                    <div onclick="playJmatte()" class="medium-4 large-4 columns"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
-                    <div onclick="playJmatte()" class="medium-4 large-4 columns"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
-                    <div onclick="playJmatte()" class="medium-4 large-4 columns"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns"  id="jmatte"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns"  id="jmatte"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
+                    <div class="medium-4 large-4 columns"  id="jmatte"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
                 </div>
                 <!--  <button onclick="playSheguey()" class="medium-4 large-4 columns">SHEGUEY</button>
                 <button onclick="playMissile()" class="medium-4 large-4 columns">MISSILE SOL-AIR</button>
