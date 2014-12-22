@@ -1,0 +1,19 @@
+CACHE MANIFEST
+# 22-12-2014 - v3
+
+# Explicitly cached entries
+CACHE:
+../snd/sheguey.wav
+../snd/59.wav
+../snd/missile.wav
+../snd/papa.wav
+../snd/jmatte.wav
+../js/script.js
+../img/generateur/sheguey.jpg
+../img/generateur/terrasser.png
+../img/generateur/dani.jpg
+
+
+# Resources required to be online
+NETWORK:
+*

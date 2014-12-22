@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="fr-FR" manifest="localSoundStorage.appcache">
+<html class="no-js" lang="fr-FR" manifest="cache/localSoundStorage.appcache">
     <head>
         <?php
         $onglet_actif = "noise";

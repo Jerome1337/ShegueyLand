@@ -1,17 +1,33 @@
 // SOUNDS
-
-$('.conteneur').find('div').click(function() {
-    var soundId = this.id;
-    $('soundId').trigger('load');
-    zone = document.getElementById("audioElements");
-    tag = document.createElement('audio');
-    tag.setAttribute("preload", "auto")
-    tag.setAttribute("autoplay", "autoplay")
-    tag.setAttribute("src", "snd/" + soundId + ".wav")
-    tag.play();
-    // console.log("playyyyy");
-    // console.log(soundId);
+$(document).ready(function(){
+    $('.conteneur').find('div').click(function() {
+        var soundId = this.id;
+        $('soundId').trigger('load');
+        zone = document.getElementById("audioElements");
+        tag = document.createElement('audio');
+        tag.setAttribute("preload", "auto")
+        tag.setAttribute("autoplay", "autoplay")
+        tag.setAttribute("src", "snd/" + soundId + ".wav")
+        tag.play();
+        // console.log("playyyyy");
+        // console.log(soundId);
+    });
 });
+
+// Check si une nouvelle version du cache est disponible.
+window.addEventListener('load', function(e) {
+
+  window.applicationCache.addEventListener('updateready', function(e) {
+    if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
+      // Le navigateur a télécharger la nouvelle version.
+      if (confirm('A new version of this site is available. Load it?')) {
+        window.location.reload();
+      }
+    } else {
+        // Rien ne se passe
+    }
+  }, false);
+}, false);
 
 // END SOUNDS
 
