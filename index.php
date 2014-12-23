@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="fr-FR">
     <head>
-        <?php 
+        <?php
         $onglet_actif = "index";
         include('commons/head.php'); ?>
         <title>SHEGUEYLAND</title>
@@ -11,6 +11,7 @@
         <div class="row">
             <div class="large-12 columns">
                 <h1>Sheguey Squaad</h1>
+                </div>
             </div>
         </div>
         
