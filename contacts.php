@@ -1,7 +1,7 @@
 <!doctype html>
 <html class="no-js" lang="fr-FR">
     <head>
-        <?php 
+        <?php
         $onglet_actif = "contacts";
         include('commons/head.php'); ?>
         <title>CONTACTS / SHEGUEYLAND</title>
@@ -17,10 +17,10 @@
         <div class="row">
             <div class="large-12 columns">
                 <div class="large-6 columns">
-                    <div data-alert class="alert-box radius">
+                    <div data-alert class="alert-box radius hide">
                         <a href="#" class="close">&times;</a>
                     </div>
-                    <form action="commons/postmessage.php" method="post" id="formContact">
+                    <form action="#" method="post" id="formContact">
                         <input type="text" placeholder="Prénom" name="name" id="formName">
                         <input type="email" placeholder="Email" name="email" id="formEmail">
                         <input type="text" placeholder="Sujet" name="subject" id="formSubject">
@@ -33,9 +33,11 @@
                     $cache = 'cache/tweets.tmp';
                     if(time() - filemtime($cache) > 60){
                         require 'class/twitteroauth.php';
-                        $connection = new TwitterOAuth('ABScq6XifMwUz1zhJVHxlyEeg', 'q3ulKblNbaUTs0jiLjV9uhcoN0uBe1rOdcxS9EwjuWzT7jZkae', '179239110-GarudRbmtNpNMS1ApCx5DmTAuV3NzCeUs4gdoZcq', 'rPdDESMAb74NkVnOfMOjowUXhr5iCMuCyyerfkKhJIfhe');
+                        $connection = new TwitterOAuth('ABScq6XifMwUz1zhJVHxlyEeg', 'q3ulKblNbaUTs0jiLjV9uhcoN0uBe1rOdcxS9EwjuWzT7jZkae', '179239110-JOhkMKzY8d09eIV6RqDlO5TV6p3gt6m9oPaE2ILF', 'RWBphBXKu4R4PtVMgrgQ5CnQvdFYXx25GtwRL6kAgRq9u');
                         $tweets = $connection->get('statuses/user_timeline', array('user_id' => '1585757612', 'count' => '6', 'exclude_replies' => 'true', 'include_rts' => 'true', 'trim_user' => 'true', 'contributor_details' => 'true'));
+                        $postTweet = $connection->post('statuses/update', array('status' => ''));
                         file_put_contents($cache, serialize($tweets));
+                        // var_dump($postTweet);
                         // var_dump($tweets);
                     }else{
                         // echo "Cache utilisé";
@@ -53,15 +55,13 @@
                 ?>
                 <div class="large-6 columns">
                     <ul class="pricing-table">
-                    <?php foreach ($tweets as $k => $tweet): ?>
-                        <li class="bullet-item"><?php echo parseTweet($tweet->text); ?></li>
-                    <?php endforeach ?>
-                        <!-- <li>
-                            <form action="#">
-                                <input type="text" value="@GRADIDUR">
-                                <button type="submit">Poster</button>
-                            </form>
-                        </li> -->
+                        <?php foreach ($tweets as $k => $tweet): ?>
+                        <li class="bullet-item"><?php echo parseTweet($tweet->text); ?>
+                            <div class="bloc_caption">
+                                <span class="timestamp tw_timestamp"><?php echo date("d M - H:i",strtotime($tweet->created_at)); ?></span>
+                            </div>
+                        </li>
+                        <?php endforeach ?>
                     </ul>
                 </div>
             </div>

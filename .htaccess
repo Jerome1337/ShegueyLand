@@ -4,8 +4,8 @@ php_flag display_errors 1
 
 RewriteEngine on
 RewriteBase /
-RewriteCond %{HTTP_HOST} ^www\.oldeal\.com [NC]
-RewriteRule ^(.*)$ http://oldeal.com/$1 [L,R=301]
+RewriteCond %{HTTP_HOST} ^www\.sheguey\.land [NC]
+RewriteRule ^(.*)$ http://sheguey.land/$1 [L,R=301]
 
 ## hide .php extension
 # To externally redirect /dir/foo.php to /dir/foo

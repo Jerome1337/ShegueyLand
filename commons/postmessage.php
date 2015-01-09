@@ -3,14 +3,14 @@
 	ini_set("display_errors", 1);
 	//include ('config.php');
 	include('../adm/bddconnect.php');
-
+	
 	if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message']))
 	{
 		extract($_POST);
-		$formName = htmlspecialchars($formName);
-		$formEmail = htmlspecialchars($formEmail);
-		$formSubject = htmlspecialchars($formSubject);
-		$formMessage = htmlspecialchars($formMessage);
+		$formName = htmlspecialchars($_POST['name']);
+		$formEmail = htmlspecialchars($_POST['email']);
+		$formSubject = htmlspecialchars($_POST['subject']);
+		$formMessage = htmlspecialchars($_POST['message']);
 
 		if (!empty($formName) && !empty($formEmail) && !empty($formSubject) && !empty($formMessage))
 		{
@@ -41,5 +41,4 @@
 			echo 'Une erreur est survenue lors de l\'envoi, remplissez tous les champs ! <a href="#" class="close">&times;</a>';
 			}
 	}
-
 ?>

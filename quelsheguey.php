@@ -116,7 +116,7 @@
                             <input type="hidden" id="out" name="out" class="hide">
                             <input type="submit" id="formSubmit" value="Decouvre quel Sheguey tu es !" class="hide">
                         </form>
-                        <section id="resultForm" class="hide">
+                        <section id="resultForm">
                             <h1 id="resultSheguey"></h1>
                             <h4></h4>
                             <span id="restartForm">Recommencer le test</span>

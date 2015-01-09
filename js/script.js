@@ -3,12 +3,21 @@ $(document).ready(function() {
     $('.conteneur').find('div').click(function() {
         var soundId = this.id;
         $('soundId').trigger('load');
+        function im(element, image) {
+            element.src=image
+        }
+        id=0;
         zone = document.getElementById("audioElements");
         tag = document.createElement('audio');
         tag.setAttribute("preload", "auto")
         tag.setAttribute("autoplay", "autoplay")
         tag.setAttribute("src", "snd/" + soundId + ".wav")
+        tag.setAttribute("id","audio"+id)
+        zone.appendChild(tag)
         tag.play();
+        setTimeout("x=document.getElementById('audio"+id+"');x.parentNode.removeChild(x);", 3500)
+        id++;
+        buttonClicked()
         // console.log("playyyyy");
         // console.log(soundId);
     });
@@ -152,52 +161,52 @@ $(function() {
 //     });
 // });
 
-$(function() {
+// $(function() {
 
-    $('#formlife').submit(function() {
+//     $('#formlife').submit(function() {
 
-        var sex, age, disease,
-            reste_vie, price_y_classic, price_y_od, sejour_classic, sejour_od, economie;
+//         var sex, age, disease,
+//             reste_vie, price_y_classic, price_y_od, sejour_classic, sejour_od, economie;
 
-        sex = $(this).find("input[name=sex]").val();
-        age = $(this).find(".agepatient").val();
-        disease = $(this).find("input[name=disease]").val();
+//         sex = $(this).find("input[name=sex]").val();
+//         age = $(this).find(".agepatient").val();
+//         disease = $(this).find("input[name=disease]").val();
 
-        console.log('data: ' + sex + age + disease);
-        price_y_classic = "21623";
-        price_y_od = "7345";
+//         console.log('data: ' + sex + age + disease);
+//         price_y_classic = "21623";
+//         price_y_od = "7345";
 
-        reste_vie = sex === "m" ? (88 - age) : (95 - age);
-        console.log(reste_vie);
-        reste_vie = reste_vie <= 4 ? 5 - disease : reste_vie - disease;
-        console.log("reste_vie: " + reste_vie);
+//         reste_vie = sex === "m" ? (88 - age) : (95 - age);
+//         console.log(reste_vie);
+//         reste_vie = reste_vie <= 4 ? 5 - disease : reste_vie - disease;
+//         console.log("reste_vie: " + reste_vie);
 
-        sejour_classic = reste_vie * price_y_classic;
-        sejour_od = reste_vie * price_y_od;
+//         sejour_classic = reste_vie * price_y_classic;
+//         sejour_od = reste_vie * price_y_od;
 
-        console.log('sejour classique: ' + sejour_classic);
-        console.log('sejour Oldeal: ' + sejour_od);
+//         console.log('sejour classique: ' + sejour_classic);
+//         console.log('sejour Oldeal: ' + sejour_od);
 
-        economie = sejour_classic - sejour_od;
-        console.log('Economie: ' + economie);
+//         economie = sejour_classic - sejour_od;
+//         console.log('Economie: ' + economie);
 
-        if (age > 120 || age < 75) {
-            $("#resultForm h6").empty().append("Nous ne pouvons pas nous occuper de personnes de cet âge...");
-            return false;
-        }
+//         if (age > 120 || age < 75) {
+//             $("#resultForm h6").empty().append("Nous ne pouvons pas nous occuper de personnes de cet âge...");
+//             return false;
+//         }
 
-        if (economie > "600000") {
-            $("#resultForm h6").empty().append("Dans votre situation, merci de nous contacter pour en savoir plus");
-            return false;
-        }
+//         if (economie > "600000") {
+//             $("#resultForm h6").empty().append("Dans votre situation, merci de nous contacter pour en savoir plus");
+//             return false;
+//         }
 
-        $("#resultEco").empty().append("<h5>Grâce à Oldeal, vous pourriez économiser jusqu'à</h5>" + economie + "€*");
-        $("#resultForm h4").empty().append("* en <span>" + reste_vie + "</span> ans");
+//         $("#resultEco").empty().append("<h5>Grâce à Oldeal, vous pourriez économiser jusqu'à</h5>" + economie + "€*");
+//         $("#resultForm h4").empty().append("* en <span>" + reste_vie + "</span> ans");
 
-        return false;
-    });
+//         return false;
+//     });
 
-});
+// });
 
 // FB SHARE
 
@@ -210,14 +219,20 @@ $(document).ready(function() {
             appId: '790279547711669',
         });
         $('#loginbutton,#feedbutton').removeAttr('disabled');
-        FB.getLoginStatus(updateStatusCallback);
+        FB.getLoginStatus(function(){
+            console.log('Status updated!');
+        });
     });
     $('#share_button').click(function(e) {
         e.preventDefault();
         FB.ui({
             method: 'share',
             display: 'popup',
-            href: 'http://www.sheguey.land/'
+            href: 'http://sheguey.land/'
+            // name: 'SHEGUEY',
+            // caption: 'An example caption',
+            // description: "aaaaaaa",
+            // picture: 'http://sheguey.land/fbshare.jpg'
         });
     });
 });
@@ -303,3 +318,15 @@ $(function() {
 // END CONTACT FORM ACTION
 
 // END CONTACTS
+
+// ANALYTICS
+
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-57812247-1', 'auto');
+  ga('send', 'pageview');
+
+// END ANALYTICS
