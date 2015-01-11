@@ -5,3 +5,7 @@
 .bundle/
 bin/
 cache/tweets.tmp
+/node-modules/*
+gulpfile.js
+npm-debug.log
+package.json
