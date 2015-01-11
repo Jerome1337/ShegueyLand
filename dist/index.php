@@ -10,7 +10,7 @@
         <?php include('commons/nav.php'); ?>
         <div class="row">
             <div class="large-12 columns">
-                <h1>Shegueyyy Squaad</h1>
+                <h1>Sheguey Squaad</h1>
                 </div>
             </div>
         </div>
