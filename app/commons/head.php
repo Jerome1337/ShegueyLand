@@ -10,6 +10,7 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="http://sheguey.land/fbshare.jpg">
 <link rel="icon" type="image/png" href="#">
+<link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/modernizr.js"></script>
 <script>
