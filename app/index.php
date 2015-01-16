@@ -1,5 +1,5 @@
 <!doctype html>
-<html class="no-js" lang="fr-FR">
+<html lang="fr-FR">
     <head>
         <?php
         $onglet_actif = "index";

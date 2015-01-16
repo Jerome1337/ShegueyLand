@@ -9,3 +9,4 @@ cache/tweets.tmp
 gulpfile.js
 npm-debug.log
 package.json
+adm/bddconnect.php
