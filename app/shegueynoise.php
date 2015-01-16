@@ -17,37 +17,25 @@
         <div class="row">
             <div class="large-12 columns">
                 <div class="conteneur">
-                    <div class="medium-4 large-4 columns" id="sheguey"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
-                    <div class="medium-4 large-4 columns" id="missile"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
-                    <div class="medium-4 large-4 columns" id="missile"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
+                    <div id="sheguey"></div>
+                    <div id="missile"></div>
+                    <div id="missile"></div>
                 </div>
                 <div class="conteneur">
-                    <div class="medium-4 large-4 columns"  id="59"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
-                    <div class="medium-4 large-4 columns"  id="59"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
-                    <div class="medium-4 large-4 columns"  id="59"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
+                    <div  id="59"></div>
+                    <div  id="59"></div>
+                    <div  id="59"></div>
                 </div>
                 <div class="conteneur">
-                    <div class="medium-4 large-4 columns" id="papa"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
-                    <div class="medium-4 large-4 columns" id="papa"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
-                    <div class="medium-4 large-4 columns" id="papa"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
+                    <div id="papa"></div>
+                    <div id="papa"></div>
+                    <div id="papa"></div>
                 </div>
                 <div class="conteneur">
-                    <div class="medium-4 large-4 columns"  id="jmatte"><img src="img/generateur/sheguey.jpg" alt="Sheguey Button"></div>
-                    <div class="medium-4 large-4 columns"  id="jmatte"><img src="img/generateur/terrasser.png" alt="Sheguey Button"></div>
-                    <div class="medium-4 large-4 columns"  id="jmatte"><img src="img/generateur/dani.jpg" alt="Sheguey Button"></div>
+                    <div  id="jmatte"></div>
+                    <div  id="jmatte"></div>
+                    <div  id="jmatte"></div>
                 </div>
-                <!--  <button onclick="playSheguey()" class="medium-4 large-4 columns">SHEGUEY</button>
-                <button onclick="playMissile()" class="medium-4 large-4 columns">MISSILE SOL-AIR</button>
-                <button onclick="play59()" class="medium-4 large-4 columns">5.9 KILS DE PURE</button>
-                <button onclick="play59()" class="medium-4 large-4 columns">5.9 KILS DE PURE</button>
-                <button onclick="playPapa()" class="medium-4 large-4 columns">PAPA VEUT DU BIFF</button>
-                <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
-                <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
-                <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
-                <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
-                <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
-                <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button>
-                <button onclick="playJmatte()" class="medium-4 large-4 columns">J'MATTE LE CUL D'TA RACLI</button> -->
             </div>
         </div>
         <?php include('commons/footer.php'); ?>

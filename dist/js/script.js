@@ -43,12 +43,17 @@ window.addEventListener('load', function(e) {
 
 // QUIZZ
 $(document).ready(function(){
+    var score = 0;
     $('.buttonPass').click(function(){
         $(this).parent().removeClass('active').next().addClass('active');
     });
     $('.restartQuizz').click(function(){
         $(this).parent().removeClass('active');
         $('.quizz li').first().addClass('active');
+    });
+    $('.good').click(function(){
+        score++;
+        console.log('score: ' + score);
     });
 });
 
