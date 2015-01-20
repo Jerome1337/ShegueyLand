@@ -18,15 +18,19 @@
 			// var_dump($formEmail);
 			// var_dump($formSubject);
 			// var_dump($formMessage);
-			$message=str_replace("\'","'", $message);
-			$destinataire="contact@sheguey.land";
-			$sujet="Nouveau message de $formName - Sheguey Land";
-			$mail="
-				Nom: $formName \n 
-				Email: $formEmail \n 
-				Message: $formMessage";
-			$entete="From: $formName \n Reply-To: $formEmail";
-			mail($destinataire, $sujet, $mail, $entete);
+			$destinataire = "p-jerome@hotmail.com";
+			$sujet = "Demande de contact";
+			$message = "Nom : ".$_POST['name']."\n";
+			$message = "Adresse email : ".$_POST['email']."\n";
+			$message = "Message : ".$_POST['message']."\n";
+			$entete = 'From: '.$_POST['email']."\n".
+        		'Reply-To: '.$_POST['email']."\n".
+			'X-Mailer: PHP/'.phpversion();
+			if (mail($destinataire,$sujet,$message,$entete)){
+					// echo 'Message envoyé';
+			} else {
+ 					// echo "Une erreur est survenue lors de l'envoi du formulaire par email";
+			}
 
 			$req = $bdd->prepare('INSERT INTO contactForm (name, email, subject, message) VALUES( :name,  :email,  :subject,  :message)');
 			$req->execute(array(
@@ -40,5 +44,7 @@
 		}else{
 			echo 'Une erreur est survenue lors de l\'envoi, remplissez tous les champs ! <a href="#" class="close">&times;</a>';
 			}
+	} else {
+		echo "Error";
 	}
 ?>

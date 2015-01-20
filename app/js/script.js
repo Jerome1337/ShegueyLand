@@ -29,7 +29,7 @@ window.addEventListener('load', function(e) {
     window.applicationCache.addEventListener('updateready', function(e) {
         if (window.applicationCache.status == window.applicationCache.UPDATEREADY) {
             // Le navigateur a télécharger la nouvelle version.
-            if (confirm('A new version of this site is available. Load it?')) {
+            if (confirm('A new version of this site is available. Load it?')){
                 window.location.reload();
             }
         } else {
@@ -42,205 +42,63 @@ window.addEventListener('load', function(e) {
 
 
 // QUIZZ
-
-$(function() {
-
-    // ANIMS
-    $("#launchQuizz").click(function() {
-        $("#startQuizz").slideUp("slow");
-        $("#q1").slideDown("slow");
+$(document).ready(function(){
+    var score = 0;
+    $('.buttonPass').click(function(){
+        $(this).parent().removeClass('active').next().addClass('active');
     });
-
-    $("#q1 p").click(function() {
-        $("#q1").slideUp("slow");
-        $("#q2").slideDown("slow");
+    $('.restartQuizz').click(function(){
+        $(this).parent().removeClass('active');
+        $('.quizz li').first().addClass('active');
+        score = 0;
+        $('.resultSheguey span').empty();
     });
-
-    $("#q2 p").click(function() {
-        $("#q2").slideUp("slow");
-        $("#q3").slideDown("slow");
+    $('.good').click(function(){
+        score++;
+        console.log('score: ' + score);
     });
-
-    $("#q3 p").click(function() {
-        $("#q3").slideUp("slow");
-        $("#q4").slideDown("slow");
+    $('.final').click(function(){
+        setScore();
     });
-
-    $("#q4 p").click(function() {
-        $("#q4").slideUp("slow");
-        $("#q5").slideDown("slow");
-    });
-
-    $("#q5 p").click(function() {
-        $("#q5").slideUp("slow");
-        $("#formSubmit").slideDown("slow");
-    });
-
-    $("#formSubmit").click(function() {
-        $("#formSubmit").slideUp("slow");
-        $("#resultForm").slideDown("slow");
-    });
-
-    $("#restartForm").click(function() {
-        $("#resultForm").slideUp("slow");
-        $("#startForm").slideDown("slow");
-    });
-    // END ANIMS
-
-    // ADD VAL
-    $("#setDate1").click(function() {
-        $("#date").val("1");
-    });
-    $("#setDate2").click(function() {
-        $("#date").val("2");
-    });
-
-    $("#setLike1").click(function() {
-        $("#like").val("1");
-    });
-    $("#setLike2").click(function() {
-        $("#like").val("2");
-    });
-    $("#setLike3").click(function() {
-        $("#like").val("3");
-    });
-    $("#setLike4").click(function() {
-        $("#like").val("4");
-    });
-
-    $("#setExtrait1").click(function() {
-        $("#extrait").val("1");
-    });
-    $("#setExtrait2").click(function() {
-        $("#extrait").val("2");
-    });
-    $("#setExtrait3").click(function() {
-        $("#extrait").val("3");
-    });
-    $("#setExtrait4").click(function() {
-        $("#extrait").val("4");
-    });
-
-    $("#setClip1").click(function() {
-        $("#clip").val("1");
-    });
-    $("#setClip2").click(function() {
-        $("#clip").val("2");
-    });
-    $("#setClip3").click(function() {
-        $("#clip").val("3");
-    });
-    $("#setClip4").click(function() {
-        $("#clip").val("4");
-    });
-
-    $("#setOut1").click(function() {
-        $("#out").val("1");
-    });
-    $("#setOut2").click(function() {
-        $("#out").val("2");
-    });
-    $("#setOut3").click(function() {
-        $("#out").val("3");
-    });
-    $("#setOut4").click(function() {
-        $("#out").val("4");
-    });
-    // END ADD VAL
+    function setScore(){
+        switch(score){
+            case 0:
+                changeMeta('J\'ai obtenu le grade de Sheguey en carton', 'shegueycarton');
+                resultSheguey('Sheguey en carton');
+                break;
+            case 1:
+                changeMeta('J\'ai obtenu le grade de Soldat Sheguey', 'shegueysoldat');
+                resultSheguey('Soldat Sheguey');
+                break;
+            case 2:
+            case 3:
+                changeMeta('J\'ai obtenu le grade de Caporal Sheguey', 'shegueycaporal');
+                resultSheguey('Caporal Sheguey');
+                break;
+            case 4:
+            case 5:
+                changeMeta('J\'ai obtenu le grade de Sheguey Major', 'shegueymajor');
+                resultSheguey('Sheguey Major');
+                break;
+        }
+        function changeMeta(title, image){
+            var metas = document.getElementsByTagName('meta');
+            for (i=0; i<metas.length; i++) { 
+                if (metas[i].getAttribute('property') == 'og:image') { 
+                    metas[i].setAttribute('content', 'http://sheguey.land/'+ image +'.jpg'); 
+                }
+                if (metas[i].getAttribute('property') == 'og:title') { 
+                    metas[i].setAttribute('content', title); 
+                }
+            }
+        };
+        function resultSheguey(result){
+            $('.resultSheguey span').append(result);            
+        };
+    };
 });
-
-// $(document).ready(function() {
-//     $('.agepatient').keypress(function(key) {
-//         if ((key.charCode < 48 || key.charCode > 57) && key.charCode != 0 && key.charCode != 8 && key.charCode != 9 && key.charCode != 46) return false;
-//     });
-//     var characters = 3;
-//     $('.agepatient').keyup(function() {
-//         if ($(this).val().length > characters) {
-//             $(this).val($(this).val().substr(0, characters));
-//         }
-//     });
-// });
-
-// $(function() {
-
-//     $('#formlife').submit(function() {
-
-//         var sex, age, disease,
-//             reste_vie, price_y_classic, price_y_od, sejour_classic, sejour_od, economie;
-
-//         sex = $(this).find("input[name=sex]").val();
-//         age = $(this).find(".agepatient").val();
-//         disease = $(this).find("input[name=disease]").val();
-
-//         console.log('data: ' + sex + age + disease);
-//         price_y_classic = "21623";
-//         price_y_od = "7345";
-
-//         reste_vie = sex === "m" ? (88 - age) : (95 - age);
-//         console.log(reste_vie);
-//         reste_vie = reste_vie <= 4 ? 5 - disease : reste_vie - disease;
-//         console.log("reste_vie: " + reste_vie);
-
-//         sejour_classic = reste_vie * price_y_classic;
-//         sejour_od = reste_vie * price_y_od;
-
-//         console.log('sejour classique: ' + sejour_classic);
-//         console.log('sejour Oldeal: ' + sejour_od);
-
-//         economie = sejour_classic - sejour_od;
-//         console.log('Economie: ' + economie);
-
-//         if (age > 120 || age < 75) {
-//             $("#resultForm h6").empty().append("Nous ne pouvons pas nous occuper de personnes de cet âge...");
-//             return false;
-//         }
-
-//         if (economie > "600000") {
-//             $("#resultForm h6").empty().append("Dans votre situation, merci de nous contacter pour en savoir plus");
-//             return false;
-//         }
-
-//         $("#resultEco").empty().append("<h5>Grâce à Oldeal, vous pourriez économiser jusqu'à</h5>" + economie + "€*");
-//         $("#resultForm h4").empty().append("* en <span>" + reste_vie + "</span> ans");
-
-//         return false;
-//     });
-
-// });
-
-// FB SHARE
-
-$(document).ready(function() {
-    $.ajaxSetup({
-        cache: true
-    });
-    $.getScript('//connect.facebook.net/fr_FR/all.js', function() {
-        FB.init({
-            appId: '790279547711669',
-        });
-        $('#loginbutton,#feedbutton').removeAttr('disabled');
-        FB.getLoginStatus(function(){
-            console.log('Status updated!');
-        });
-    });
-    $('#share_button').click(function(e) {
-        e.preventDefault();
-        FB.ui({
-            method: 'share',
-            display: 'popup',
-            href: 'http://sheguey.land/'
-            // name: 'SHEGUEY',
-            // caption: 'An example caption',
-            // description: "aaaaaaa",
-            // picture: 'http://sheguey.land/fbshare.jpg'
-        });
-    });
-});
-
-// END FB SHARE
 
 // END QUIZZ
-
 
 // CONTACTS
 
@@ -318,6 +176,45 @@ $(function() {
 // END CONTACT FORM ACTION
 
 // END CONTACTS
+
+// FB SHARE
+
+$(document).ready(function(){
+    $.ajaxSetup({
+        cache: true
+    });
+    $.getScript('//connect.facebook.net/fr_FR/all.js', function() {
+        FB.init({
+            appId: '790279547711669',
+        });
+        $('#loginbutton,#feedbutton').removeAttr('disabled');
+        FB.getLoginStatus(function(){
+            console.log('Status updated!');
+        });
+    });
+    $('#share_button').click(function(e) {
+        e.preventDefault();
+        FB.ui({
+            method: 'share',
+            display: 'popup',
+            href: 'http://sheguey.land/'
+            // name: 'SHEGUEY',
+            // caption: 'An example caption',
+            // description: "aaaaaaa",
+            // picture: 'http://sheguey.land/fbshare.jpg'
+        });
+    });
+});
+
+// END FB SHARE
+
+// TWITTER
+$("#twitter").click(function(){
+    var url = $(this).attr("data-url");
+    window.open( url, "tweet", "height=300,width=550,resizable=1" );
+});
+
+// END TWITTER
 
 // ANALYTICS
 

@@ -10,9 +10,12 @@
 <meta property="og:type" content="website">
 <meta property="og:image" content="http://sheguey.land/fbshare.jpg">
 <link rel="icon" type="image/png" href="#">
+<<<<<<< HEAD
 
 <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Radley:400italic' rel='stylesheet' type='text/css'>
+=======
+>>>>>>> 16971563b46fd1c789cf9309b5ab6b2fa1686995
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="js/owl/owl.carousel.css">
