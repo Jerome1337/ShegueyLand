@@ -1,8 +1,27 @@
 <script src="js/jquery.min.js"></script>
 <script src="js/fastclick/lib/fastclick.js"></script>
 <script src="js/script.js"></script>
+
+
+<!-- Include js plugin -->
+<script src="js/owl/owl.carousel.js"></script>
 <script>
-	$(document).foundation();
+	// $(".owl-carousel").owlCarousel();
+	$(".owl-carousel").owlCarousel({
+	 
+	navigation : false, // Show next and prev buttons
+	slideSpeed : 300,
+	paginationSpeed : 400,
+	singleItem:true
+	 
+	// "singleItem:true" is a shortcut for:
+	// items : 1,
+	// itemsDesktop : false,
+	// itemsDesktopSmall : false,
+	// itemsTablet: false,
+	// itemsMobile : false
+	 
+	});
 </script>
 <script>
 	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -12,7 +31,3 @@
 	ga('create', 'UA-57812247-1', 'auto');
 	ga('send', 'pageview');
 </script>
-
-<script type='text/javascript' id="__bs_script__">//<![CDATA[
-    document.write("<script async src='//HOST:3000/browser-sync/browser-sync-client.1.9.0.js'><\/script>".replace(/HOST/g, location.hostname).replace(/PORT/g, location.port));
-//]]></script>

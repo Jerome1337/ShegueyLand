@@ -7,7 +7,6 @@
         <title>SHEGUEYLAND</title>
     </head>
     <body>
-        <?php include('commons/nav.php'); ?>
         <div class="row">
             <div class="large-12 columns">
                 <h1>Sheguey Squaad</h1>
@@ -19,7 +18,7 @@
                 <?php
                 require('commons/function.php');
                 
-                getInsta('image', 'sheguey', '5');
+                getInsta('image', 'sheguey', '30');
                 
                 // var_dump($data);
                 

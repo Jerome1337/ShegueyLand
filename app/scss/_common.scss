@@ -1,0 +1,33 @@
+html { font-size: 62.5%; }
+body{
+	background: $white;
+	box-sizing: border-box;
+}
+a{
+	text-decoration: none;
+}
+*{box-sizing: border-box;}
+
+header {
+	margin: auto;
+
+	h1 { 
+		text-align: center;
+		img {
+		width: 434px;
+		height: 187px;
+		margin: auto;
+		}
+	}
+}
+
+.button{
+	padding: 10px 25px;
+	border: solid 2px $white;
+	color: $white;
+	transition: background-color 0.3s ease-in-out;
+}
+
+$mobile320: "only screen and (min-width : 320px)";
+$tab600: "only screen and (min-width : 600px)";
+$tab1200: "only screen and (min-width : 1200px)";

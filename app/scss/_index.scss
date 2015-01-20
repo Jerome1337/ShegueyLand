@@ -1,0 +1,169 @@
+$white:     #ffffff;
+.content{
+	
+}
+.row{margin: auto;}
+.rect{
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: column;
+	width: 100%;
+	font-family: 'Francois One', sans-serif;
+	font-size: 3.2em;
+	color: $white;
+	padding: 25px;
+	text-transform: uppercase;
+	p{
+		margin-top: 0;
+		flex: 1;
+	}
+	&.red {
+		background: $red;
+		.button:hover{background: darken($red, 10%);}
+	}
+	&.black {
+		background: $black;
+		.button:hover{background: darken($black, 10%);}
+	}
+	&.lightgrey {
+		background: $lightgrey;
+		.button:hover{background: darken($lightgrey, 10%);}
+	}
+	&.no-mobile{
+		display: none;
+	}
+	&:hover{
+		
+	}
+	.tweetCard{
+		color: $grey;
+		h2{
+			font-size: 1.2em;
+		}
+		p{
+			font-family: 'Radley', serif;
+			font-size: 1em;
+			text-transform: none;
+		}
+	}
+	&.owl-carousel{
+		padding: 0;
+		.owl-item img{
+		display: block;
+		width: 100%;
+		height: auto;
+		}
+		.owl-controls {
+		    margin-top: -50px;
+		    &.active span{
+		    	background: $red;
+		    }
+		}
+	}
+	&.ShegueyBuyAlbum {
+		background: url('../img/cover.jpg') center center;
+		background-size: cover;
+		min-height: 300px;
+		img{
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+		a{
+			
+		}
+		.button{
+			background: $black;
+		}
+	}
+
+}
+
+
+@media #{$tab600} {
+	
+	.row{
+		display: flex;
+		flex-wrap: wrap;
+		width: 600px;
+	}
+	.rect{
+		width: 300px;
+		min-height: 300px;
+		font-size: 2.5em;
+		&.no-mobile{
+			display: block;
+		}
+		&.no-tablet{
+		display: none!important;
+		}	
+		&.owl-carousel {
+			width: 300px!important;
+			img{
+			width: 300px!important;
+			height: 300px!important;
+			}
+		}
+		.tweetCard{
+			p{
+				font-size: 0.8em;
+			}
+		}
+
+		&.shegueyMur{ 			order: 1;}
+		&.shegueyVideos{ 		order: 2;}
+		&.shegueyClickSheg{ 	order: 3;}
+		&.shegueyTweet{ 		order: 4;}
+		&.shegueySlideGradur{ 	order: 5;}
+		&.shegueyTest{ 			order: 6;}
+		&.shegueyTweetTo{ 		order: 7;}
+		&.shegueySlide{ 		order: 8;}
+		&.ShegueyCalendar{ 		order: 9;}
+		&.ShegueyBuyAlbum{ 		order: 10;}
+	}
+}@media #{$tab1200} {
+	
+	.row{
+		display: flex;
+		flex-wrap: wrap;
+		width: 1200px;
+	}
+	.rect{
+		width: 300px;
+		height: 300px;
+	
+		&.no-mobile{
+			display: block;
+		}
+		&.no-tablet{
+		display: block!important;
+		}
+		&.empty{
+			// display: block!important;
+		}	
+		&.owl-carousel {
+			width: 300px!important;
+			img{
+			width: 300px!important;
+			height: 300px!important;
+			}
+		}
+
+		&.shegueyMur{ 					order: 1!important;}
+		&.empty:nth-child(1){ 			order: 5!important;}
+		&.shegueyVideos{ 				order: 10!important;}
+		&.shegueyTweet:nth-child(1){ 	order: 15!important;}
+		&.shegueyTweet:nth-child(2){ 	order: 20!important;}
+		&.shegueyClickSheg{ 			order: 25!important;}
+		&.empty:nth-child(2){ 			order: 30!important;}
+		&.shegueySlideGradur{ 			order: 35!important;}
+		&.shegueyTweetTo{ 				order: 40!important;}
+		&.empty:nth-child(3){ 			order: 45!important;}
+		&.shegueySlide{ 				order: 50!important;}
+		&.shegueyTest{ 					order: 55!important;}
+		&.empty:nth-child(4){ 			order: 60!important;}
+		&.ShegueyBuyAlbum{ 				order: 65!important;}
+		&.ShegueyCalendar{ 				order: 70!important;}
+
+	}
+}
