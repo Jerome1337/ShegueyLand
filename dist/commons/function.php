@@ -55,17 +55,17 @@
 		    		// $nb_enregistrements = $req->fetch();
 		    		// echo($nb_enregistrements + " + " + $id_exist );
 
-		    		$req = $bdd->prepare('	INSERT INTO instagram(id_insta, standard_resolution, low_resolution, caption_text, username, type, link) 
-		    								VALUES(:id_insta, :standard_resolution, :low_resolution, :caption_text, :username, :type, :link)');
-		    		$req->execute(array(
-		    			'id_insta' => $id_insta_actuel,
-		    			'standard_resolution' => $contenu->images->standard_resolution->url,
-		    			'low_resolution' => $contenu->images->low_resolution->url,
-		    			'caption_text' => $contenu->caption->text,
-		    			'username' => $contenu->user->username,
-		    			'type' => $contenu->type,
-		    			'link' => $contenu->link
-		    			));
+		    		// $req = $bdd->prepare('	INSERT INTO instagram(id_insta, standard_resolution, low_resolution, caption_text, username, type, link) 
+		    		// 						VALUES(:id_insta, :standard_resolution, :low_resolution, :caption_text, :username, :type, :link)');
+		    		// $req->execute(array(
+		    		// 	'id_insta' => $id_insta_actuel,
+		    		// 	'standard_resolution' => $contenu->images->standard_resolution->url,
+		    		// 	'low_resolution' => $contenu->images->low_resolution->url,
+		    		// 	'caption_text' => $contenu->caption->text,
+		    		// 	'username' => $contenu->user->username,
+		    		// 	'type' => $contenu->type,
+		    		// 	'link' => $contenu->link
+		    		// 	));
 
 
 
@@ -73,9 +73,9 @@
 			        if ($contenu->type == 'image') {
 			            echo"<img src='{$contenu->images->standard_resolution->url}' width='150'>";
 			            // echo"{$contenu}";
-			            var_dump($contenu->tags);
-			            var_dump($contenu->images);
-			            var_dump($contenu->id);
+			            // var_dump($contenu->tags);
+			            // var_dump($contenu->images);
+			            // var_dump($contenu->id);
 			        } else {
 			            echo"<video width='320' height='320' controls>
 			                  <source src='{$contenu->videos->standard_resolution->url}' type='video/mp4'>
