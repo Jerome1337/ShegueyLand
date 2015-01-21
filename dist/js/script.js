@@ -11,7 +11,7 @@ $(document).ready(function() {
         tag = document.createElement('audio');
         tag.setAttribute("preload", "auto")
         tag.setAttribute("autoplay", "autoplay")
-        tag.setAttribute("src", "snd/" + soundId + ".wav")
+        tag.setAttribute("src", "snd/" + soundId + ".mp3")
         tag.setAttribute("id","audio"+id)
         zone.appendChild(tag)
         tag.play();
@@ -50,45 +50,55 @@ $(document).ready(function(){
     $('.restartQuizz').click(function(){
         $(this).parent().removeClass('active');
         $('.quizz li').first().addClass('active');
+        score = 0;
+        $('.resultSheguey span').empty();
     });
     $('.good').click(function(){
         score++;
         console.log('score: ' + score);
     });
+    $('.final').click(function(){
+        setScore();
+    });
+    function setScore(){
+        switch(score){
+            case 0:
+                changeMeta('J\'ai obtenu le grade de Sheguey en carton', 'shegueycarton');
+                resultSheguey('Sheguey en carton');
+                break;
+            case 1:
+                changeMeta('J\'ai obtenu le grade de Soldat Sheguey', 'shegueysoldat');
+                resultSheguey('Soldat Sheguey');
+                break;
+            case 2:
+            case 3:
+                changeMeta('J\'ai obtenu le grade de Caporal Sheguey', 'shegueycaporal');
+                resultSheguey('Caporal Sheguey');
+                break;
+            case 4:
+            case 5:
+                changeMeta('J\'ai obtenu le grade de Sheguey Major', 'shegueymajor');
+                resultSheguey('Sheguey Major');
+                break;
+        }
+        function changeMeta(title, image){
+            var metas = document.getElementsByTagName('meta');
+            for (i=0; i<metas.length; i++) { 
+                if (metas[i].getAttribute('property') == 'og:image') { 
+                    metas[i].setAttribute('content', 'http://sheguey.land/'+ image +'.jpg'); 
+                }
+                if (metas[i].getAttribute('property') == 'og:title') { 
+                    metas[i].setAttribute('content', title); 
+                }
+            }
+        };
+        function resultSheguey(result){
+            $('.resultSheguey span').append(result);            
+        };
+    };
 });
 
 // END QUIZZ
-
-// FB SHARE
-
-$(document).ready(function() {
-    $.ajaxSetup({
-        cache: true
-    });
-    $.getScript('//connect.facebook.net/fr_FR/all.js', function() {
-        FB.init({
-            appId: '790279547711669',
-        });
-        $('#loginbutton,#feedbutton').removeAttr('disabled');
-        FB.getLoginStatus(function(){
-            console.log('Status updated!');
-        });
-    });
-    $('#share_button').click(function(e) {
-        e.preventDefault();
-        FB.ui({
-            method: 'share',
-            display: 'popup',
-            href: 'http://sheguey.land/'
-            // name: 'SHEGUEY',
-            // caption: 'An example caption',
-            // description: "aaaaaaa",
-            // picture: 'http://sheguey.land/fbshare.jpg'
-        });
-    });
-});
-
-// END FB SHARE
 
 // CONTACTS
 
@@ -166,6 +176,45 @@ $(function() {
 // END CONTACT FORM ACTION
 
 // END CONTACTS
+
+// FB SHARE
+
+$(document).ready(function(){
+    $.ajaxSetup({
+        cache: true
+    });
+    $.getScript('//connect.facebook.net/fr_FR/all.js', function() {
+        FB.init({
+            appId: '790279547711669',
+        });
+        $('#loginbutton,#feedbutton').removeAttr('disabled');
+        FB.getLoginStatus(function(){
+            console.log('Status updated!');
+        });
+    });
+    $('#share_button').click(function(e) {
+        e.preventDefault();
+        FB.ui({
+            method: 'share',
+            display: 'popup',
+            href: 'http://sheguey.land/'
+            // name: 'SHEGUEY',
+            // caption: 'An example caption',
+            // description: "aaaaaaa",
+            // picture: 'http://sheguey.land/fbshare.jpg'
+        });
+    });
+});
+
+// END FB SHARE
+
+// TWITTER
+$("#twitter").click(function(){
+    var url = $(this).attr("data-url");
+    window.open( url, "tweet", "height=300,width=550,resizable=1" );
+});
+
+// END TWITTER
 
 // ANALYTICS
 
