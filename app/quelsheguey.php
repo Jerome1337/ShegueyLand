@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="fr-FR">
-    <head>
+    <head prefix="og: http://ogp.me/ns#">
         <?php
         $onglet_actif = "quelsheguey";
         include('commons/head.php'); ?>

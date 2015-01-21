@@ -54,18 +54,22 @@
                 <!-- Question 5 -->
                 <li>
                     <h4>Quand est sortis la mixtape ShegueyVara sur Haute Culture ?</h4>
-                    <button class="buttonPass">Le 9 octobre 2014</button>
-                    <button class="buttonPass">Le 18 octobre 2014</button>
-                    <button class="buttonPass">Le 4 novembre 2014</button>
-                    <button class="buttonPass good">Le 22 octobre 2014</button>
+                    <button class="buttonPass final">Le 9 octobre 2014</button>
+                    <button class="buttonPass final">Le 18 octobre 2014</button>
+                    <button class="buttonPass final">Le 4 novembre 2014</button>
+                    <button class="buttonPass good final">Le 22 octobre 2014</button>
                 </li>
                 <!-- Resultat -->
                 <li>
-                    <h2 class="resultSheguey"></h2>
+                    <div class="resultSheguey">
+                        <h2>Félicitation</h2>
+                        <h3>Tu obtiens le grade de <span></span></h3>
+                    </div>
                     <button class="restartQuizz">Recommencer le test</button>
                     <div class="socialfacebook">
                         <a href="#" id="share_button">Partage sur Facebook</a>
                     </div>
+                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand%20@cahiips%20@MOneymaks%20@Luissfernando17%20@midosofficiel" id="twitter" data-related="theHauteCulture,gradidur">Tweet to @gradidur</a>
                 </li>
             </ul>
         </section>
