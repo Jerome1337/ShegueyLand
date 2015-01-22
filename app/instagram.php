@@ -5,7 +5,7 @@
         $onglet_actif = "index";
         include('commons/head.php'); ?>
         <title>SHEGUEYLAND</title>
-    </head>
+          </head>
     <body>
         <?php include('commons/nav.php'); ?>
         <div class="row">
@@ -17,19 +17,22 @@
         <div class="row">
             <div class="large-12 columns">
                 <?php
-                require('commons/function.php');
+                // require('commons/function.php');
                 
-                getInsta('image', 'sheguey', '');
+                // getInsta('image', 'sheguey', '');
                 
-                if (isset($_GET['getMoreInsta'])) {
-                    getInsta('image', 'sheguey', '$next');
-                    echo('getting more data...');
-                    echo($next);
-                }
+                // if (isset($_GET['getMoreInsta'])) {
+                //     getInsta('image', 'sheguey', '$next');
+                //     echo('getting more data...');
+                //     echo($next);
+                // }
 
                 ?>
                 
-                <a href="instagram.php?getMoreInsta=true" class="button loadmore">LOAD MORE</a>
+                <button class="giveMeMore">GIVE ME MORE</button>
+                
+
+                <!-- <a href="instagram.php?getMoreInsta=true" class="button loadmore">LOAD MORE</a> -->
 
             </div>
         </div>

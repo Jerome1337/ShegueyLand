@@ -5,13 +5,13 @@
 /*debut du cache*/
 
  
-	function getInsta($type, $tag, $limit){
+	function getInsta($type, $tag, $next){
 		$cache = 'cache/index.json';
-		$expire = time() -10 ; // 3600 valable une heure
+		$expire = time() -5 ; // 3600 valable une heure
 		$client_id = "132efb02e32f4d80bb641c00c8f9c118";
 		$user_id = "1341194982";
-		$endpoint = "https://api.instagram.com/v1/tags/$tag/media/recent/?client_id=$client_id&count=$limit";
-
+		$endpoint = "https://api.instagram.com/v1/tags/$tag/media/recent/?client_id=$client_id";
+		if(!empty($next)){$endpoint === $next; echo"<br/>ENDPOINT A ETE MIS A JOUR: $endpoint<br/>";}
 		if(file_exists($cache) && filemtime($cache) > $expire)
 		{
 
@@ -19,8 +19,8 @@
 
 		        // var_dump(json_decode($cache,true));
 		            $images = json_decode(file_get_contents($cache),true); //Decode as an json array
-		            echo ($images);
-		            var_dump($images);
+		            // echo ($images);
+		            // var_dump($images);
 		}
 		else
 		{
@@ -42,11 +42,19 @@
 
 			if($data->meta->code == 200){
 
-				// echo("enregistrement BDD<br/>");
+				// $pagination_max = $data->pagination->next_max_tag_id;
+				// $pagination_min = $data->pagination->min_tag_id;
+				global $next;
+				$next = $data->pagination->next_url;
+				
+				echo("Affichage: $endpoint 
+					<span class=\"primary radius label\"> $next </span>
+					");
+
+				$i = 0;
 			    foreach ($data->data as $contenu) {
-		    		
+		    		$i++;
 		    		// include('adm/bddconnect.php');
-		    		// var_dump($data);
 
 		    		$id_insta_actuel = $contenu->id;
 
@@ -72,13 +80,23 @@
 
 
 			        if ($contenu->type == 'image') {
-			            echo"<img src='{$contenu->images->standard_resolution->url}' width='40'>";
-			            // echo"{$contenu}";
-			            var_dump($contenu->tags);
+
+			        	$standard_resolution = $contenu->images->standard_resolution->url;
+			        	$tags = $contenu->tags;
+			            $username = $contenu->user->username;
+			            echo"<hr>
+			             <span class=\"label\">$i</span>
+			            <img src='{$standard_resolution}' width='50'> <i>$username</i><br/>";
+			            
+			            foreach ($tags as $tag) {
+			            	echo ("<kbd>$tag</kbd> ");
+			            }
+			            
+			            // var_dump($contenu->tags);
 			            // var_dump($contenu->images);
 			            // var_dump($contenu->id);
 			        } else {
-			            echo"<video width='40' height='40' controls>
+			            echo"<video width='50' height='50' controls>
 			                  <source src='{$contenu->videos->standard_resolution->url}' type='video/mp4'>
 			                  Your browser does not support the video tag.
 			                </video>";

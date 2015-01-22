@@ -19,12 +19,18 @@
                 <?php
                 require('commons/function.php');
                 
-                getInsta('image', 'sheguey', '5');
+                getInsta('image', 'sheguey', '');
                 
-                // var_dump($data);
-                
-                // var_dump($data);
+                if (isset($_GET['getMoreInsta'])) {
+                    getInsta('image', 'sheguey', '$next');
+                    echo('getting more data...');
+                    echo($next);
+                }
+
                 ?>
+                
+                <a href="instagram.php?getMoreInsta=true" class="button loadmore">LOAD MORE</a>
+
             </div>
         </div>
         <?php include('commons/footer.php'); ?>

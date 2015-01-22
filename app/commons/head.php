@@ -12,10 +12,3 @@
 <link rel="icon" type="image/png" href="#">
 <link rel="stylesheet" href="css/style.css">
 <script src="js/modernizr.js"></script>
-<script>
-	if ('addEventListener' in document) {
-		document.addEventListener('DOMContentLoaded', function() {
-			FastClick.attach(document.body);
-		}, false);
-	}
-</script>
