@@ -5,7 +5,14 @@ $(document).ready(function() {
         $('soundId').trigger('load');
         tag = document.createElement('audio');
         tag.setAttribute("preload", "auto")
+<<<<<<< HEAD
         tag.setAttribute("src", "snd/" + soundId + "mp3")
+=======
+        tag.setAttribute("autoplay", "autoplay")
+        tag.setAttribute("src", "snd/" + soundId + ".mp3")
+        tag.setAttribute("id","audio"+id)
+        zone.appendChild(tag)
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
         tag.play();
         // console.log("playyyyy");
         // console.log(soundId);
@@ -46,12 +53,20 @@ $(document).ready(function() {
         score++;
         console.log('score: ' + score);
     });
+<<<<<<< HEAD
     $('.final').click(function() {
         setScore();
     });
 
     function setScore() {
         switch (score) {
+=======
+    $('.final').click(function(){
+        setScore();
+    });
+    function setScore(){
+        switch(score){
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
             case 0:
                 changeMeta('J\'ai obtenu le grade de Sheguey en carton', 'shegueycarton');
                 resultSheguey('Sheguey en carton');
@@ -71,6 +86,7 @@ $(document).ready(function() {
                 resultSheguey('Sheguey Major');
                 break;
         }
+<<<<<<< HEAD
 
         function changeMeta(title, image) {
             var metas = document.getElementsByTagName('meta');
@@ -115,6 +131,26 @@ $(document).ready(function() {
 });
 
     // END QUIZZ
+=======
+        function changeMeta(title, image){
+            var metas = document.getElementsByTagName('meta');
+            for (i=0; i<metas.length; i++) { 
+                if (metas[i].getAttribute('property') == 'og:image') { 
+                    metas[i].setAttribute('content', 'http://sheguey.land/'+ image +'.jpg'); 
+                }
+                if (metas[i].getAttribute('property') == 'og:title') { 
+                    metas[i].setAttribute('content', title); 
+                }
+            }
+        };
+        function resultSheguey(result){
+            $('.resultSheguey span').append(result);            
+        };
+    };
+});
+
+// END QUIZZ
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
 
     // CONTACTS
 
@@ -220,7 +256,50 @@ $(document).ready(function() {
 
     // END TWITTER
 
+<<<<<<< HEAD
     // ANALYTICS
+=======
+// FB SHARE
+
+$(document).ready(function(){
+    $.ajaxSetup({
+        cache: true
+    });
+    $.getScript('//connect.facebook.net/fr_FR/all.js', function() {
+        FB.init({
+            appId: '790279547711669',
+        });
+        $('#loginbutton,#feedbutton').removeAttr('disabled');
+        FB.getLoginStatus(function(){
+            console.log('Status updated!');
+        });
+    });
+    $('#share_button').click(function(e) {
+        e.preventDefault();
+        FB.ui({
+            method: 'share',
+            display: 'popup',
+            href: 'http://sheguey.land/'
+            // name: 'SHEGUEY',
+            // caption: 'An example caption',
+            // description: "aaaaaaa",
+            // picture: 'http://sheguey.land/fbshare.jpg'
+        });
+    });
+});
+
+// END FB SHARE
+
+// TWITTER
+$("#twitter").click(function(){
+    var url = $(this).attr("data-url");
+    window.open( url, "tweet", "height=300,width=550,resizable=1" );
+});
+
+// END TWITTER
+
+// ANALYTICS
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
 
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;

@@ -1,11 +1,19 @@
 // SOUNDS
 $(document).ready(function() {
+<<<<<<< HEAD
     $('.conteneur').find('div').on('click touchstart', function() {
+=======
+    $('.conteneur').find('button').on('click touchstart', function() {
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
         var soundId = this.id;
         $('soundId').trigger('load');
         tag = document.createElement('audio');
         tag.setAttribute("preload", "auto")
+<<<<<<< HEAD
         tag.setAttribute("src", "snd/" + soundId + ".mp3")
+=======
+        tag.setAttribute("src", "snd/" + soundId + "mp3")
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
         tag.play();
         // console.log("playyyyy");
         // console.log(soundId);
@@ -116,9 +124,31 @@ $(document).ready(function() {
                 FB.ui({
                     method: 'share',
                     display: 'popup',
+<<<<<<< HEAD
                     href: 'http://sheguey.land/fbshare/'+image+''
                 });
             });
+=======
+                    href: 'http://sheguey.land/'+image+''
+                });
+            });
+            // $('#share_button').click(function(e) {
+            //     e.preventDefault();
+            //     FB.ui({
+            //         method: 'share_open_graph',
+            //         display: 'popup',
+            //         action_type: 'shegueyland:share',
+            //         action_properties: JSON.stringify({
+            //             scrape: 'true',
+            //             type: 'shegueyland:quiz',
+            //             quiz: "http://sheguey.land/shegueymajor.php",
+            //             title: title,
+            //             description: 'Toi aussi vient faire le test pour découvrir quel Sheguey tu es !',
+            //             image: 'http://sheguey.land/fbshare2.jpg'
+            //         })
+            //     })
+            // });
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
         };
     };
 
@@ -132,7 +162,11 @@ $(document).ready(function() {
     // CONTACTS
 
     // LOCAL STORAGE FORM
+<<<<<<< HEAD
     $(function($) {
+=======
+    jQuery(function($) {
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
         $.fn.formBackUp = function() {
             if (!localStorage) {
                 return false;
@@ -172,11 +206,25 @@ $(document).ready(function() {
     // CONTACT FORM ACTION
     $(function() {
         $('#formContact').submit(function() {
+<<<<<<< HEAD
 
             var formName    = $('#formName').val();
             var formEmail   = $("#formEmail").val();
             var formSubject = $("#formSubject").val();
             var formMessage = $("#formMessage").val();
+=======
+            $("#ajax-loader").show();
+
+            formName = $(this).find("input[name=name]").val();
+            formEmail = $(this).find("input[name=email]").val();
+            formSubject = $(this).find("input[name=subject]").val();
+            formMessage = $(this).find("textarea[name=message]").val();
+
+            // console.log(formName);
+            // console.log(formEmail);
+            // console.log(formSubject);
+            // console.log(formMessage);
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
 
             $.post("commons/postmessage.php", {
                 name: formName,
@@ -184,7 +232,12 @@ $(document).ready(function() {
                 subject: formSubject,
                 message: formMessage
             }, function(data) {
+<<<<<<< HEAD
                 alert(data);
+=======
+                $("#ajax-loader").hide();
+                console.log(data);
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
                 if (data != "ok") {
                     $(".alert-box").removeClass("success").addClass("alert").slideDown("slow").empty().append(data);
                 } else {

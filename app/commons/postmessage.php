@@ -15,22 +15,37 @@
 
 		if (!empty($formName) && !empty($formEmail) && !empty($formSubject) && !empty($formMessage))
 		{
+<<<<<<< HEAD
 			var_dump($formName);
 			var_dump($formEmail);
 			var_dump($formSubject);
 			var_dump($formMessage);
+=======
+			// var_dump($formName);
+			// var_dump($formEmail);
+			// var_dump($formSubject);
+			// var_dump($formMessage);
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
 			// $destinataire = "p-jerome@hotmail.com";
 			// $sujet = "Demande de contact";
 			// $message = "Nom : ".$_POST['name']."\n";
 			// $message = "Adresse email : ".$_POST['email']."\n";
 			// $message = "Message : ".$_POST['message']."\n";
 			// $entete = 'From: '.$_POST['email']."\n".
+<<<<<<< HEAD
    			// 'Reply-To: '.$_POST['email']."\n".
+=======
+   //      		'Reply-To: '.$_POST['email']."\n".
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
 			// 'X-Mailer: PHP/'.phpversion();
 			// if (mail($destinataire,$sujet,$message,$entete)){
 			// 		// echo 'Message envoyé';
 			// } else {
+<<<<<<< HEAD
  			// // echo "Une erreur est survenue lors de l'envoi du formulaire par email";
+=======
+ 		// 			// echo "Une erreur est survenue lors de l'envoi du formulaire par email";
+>>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
 			// }
 
 			$to = 'contact@sheguey.land';
