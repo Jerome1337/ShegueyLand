@@ -1,6 +1,6 @@
 /*
 Error: Invalid CSS after "@import '_colors'": expected "{", was ";"
-        on line 3 of C:/Users/Josselin/AppData/Local/Temp/gulp-ruby-sass/style.scss
+        on line 3 of /var/folders/bk/d7dwlg9x1lg3y6sts88mgjbm0000gn/T/gulp-ruby-sass/style.scss
 
 1: 
 2: <<<<<<< HEAD
@@ -12,33 +12,33 @@ Error: Invalid CSS after "@import '_colors'": expected "{", was ";"
 8: 
 
 Backtrace:
-C:/Users/Josselin/AppData/Local/Temp/gulp-ruby-sass/style.scss:3
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/scss/parser.rb:1167:in `expected'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/scss/parser.rb:641:in `block'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/scss/parser.rb:636:in `ruleset'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/scss/parser.rb:660:in `block_child'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/scss/parser.rb:650:in `block_contents'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/scss/parser.rb:117:in `stylesheet'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/scss/parser.rb:42:in `parse'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/engine.rb:393:in `_to_tree'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:209:in `each'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/plugin.rb:82:in `update_stylesheets'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:350:in `watch_or_update'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:50:in `process_result'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
-C:/Ruby193/lib/ruby/gems/1.9.1/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
-C:/Ruby193/bin/sass:23:in `load'
-C:/Ruby193/bin/sass:23:in `<main>'
+/var/folders/bk/d7dwlg9x1lg3y6sts88mgjbm0000gn/T/gulp-ruby-sass/style.scss:3
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1165:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1101:in `expected'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:1096:in `tok!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:641:in `block'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:635:in `ruleset'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:660:in `block_child'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:650:in `block_contents'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:117:in `stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/scss/parser.rb:42:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/engine.rb:393:in `_to_tree'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/engine.rb:368:in `_render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/engine.rb:285:in `render_with_sourcemap'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:490:in `update_stylesheet'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:215:in `block in update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:209:in `each'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/plugin/compiler.rb:209:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/plugin.rb:82:in `update_stylesheets'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:350:in `watch_or_update'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/sass_scss.rb:50:in `process_result'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/base.rb:52:in `parse'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/lib/sass/exec/base.rb:19:in `parse!'
+/Library/Ruby/Gems/2.0.0/gems/sass-3.4.9/bin/sass:13:in `<top (required)>'
+/usr/bin/sass:23:in `load'
+/usr/bin/sass:23:in `<main>'
 */
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"@import '_colors'\": expected \"{\", was \";\"\A         on line 3 of C:/Users/Josselin/AppData/Local/Temp/gulp-ruby-sass/style.scss\A \A 1: \A 2: <<<<<<< HEAD\A 3: @import '_colors';\A 4: @import '_common';\A 5: @import '_index';\A 6: =======\A 7: // END IMPORT\A 8: "; }
+  content: "Error: Invalid CSS after \"@import '_colors'\": expected \"{\", was \";\"\A         on line 3 of /var/folders/bk/d7dwlg9x1lg3y6sts88mgjbm0000gn/T/gulp-ruby-sass/style.scss\A \A 1: \A 2: <<<<<<< HEAD\A 3: @import '_colors';\A 4: @import '_common';\A 5: @import '_index';\A 6: =======\A 7: // END IMPORT\A 8: "; }
