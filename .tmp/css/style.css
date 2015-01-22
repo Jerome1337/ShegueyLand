@@ -1,3 +1,18 @@
+@font-face {
+  font-family: "menu";
+  src: url("../font/menu.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+*::-moz-selection {
+  background: #df0030;
+  color: #ffffff;
+}
+*::selection {
+  background: #df0030;
+  color: #ffffff;
+}
+
 html {
   font-size: 62.5%;
 }
@@ -26,6 +41,43 @@ header h1 img {
   width: 434px;
   height: 187px;
   margin: auto;
+  background-size: cover;
+}
+
+[data-icon]:before {
+  font-family: "menu" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "menu" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-align-justify:before {
+  content: "a";
+}
+
+.icon-align-justify {
+  font-family: "menu";
+  color: #ffffff;
+  font-size: 1.5em;
 }
 
 .button {
@@ -36,6 +88,109 @@ header h1 img {
           transition: background-color 0.3s ease-in-out;
 }
 
+.anim {
+  position: fixed;
+  left: 0;
+  z-index: 99;
+  height: 100%;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+}
+
+.nav-open .anim::after {
+  width: 100%;
+  height: 100%;
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+
+nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  z-index: 100;
+  visibility: hidden;
+  width: 300px;
+  height: 100%;
+  background: #df0030;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+}
+nav:after {
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.2);
+  content: '';
+  opacity: 1;
+  -webkit-transition: opacity 0.5s;
+  transition: opacity 0.5s;
+}
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+nav ul li a {
+  display: block;
+  padding: 0.5em 0.5em 0.5em 0.7em;
+  outline: none;
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2);
+  color: #ffffff;
+  text-transform: uppercase;
+  text-shadow: 0 0 1px rgba(255, 255, 255, 0.1);
+  letter-spacing: 1px;
+  font-size: 2.2em;
+  font-family: 'Francois One', sans-serif;
+  -webkit-transition: background 0.3s, box-shadow 0.3s;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+nav ul li a:hover {
+  background: #ac0025;
+  box-shadow: inset 0 -1px transparent;
+  color: #ffffff;
+}
+nav ul li:first-child a {
+  box-shadow: inset 0 -1px rgba(0, 0, 0, 0.2), inset 0 1px rgba(0, 0, 0, 0.2);
+}
+nav h2 {
+  margin: 0;
+  padding: 1em 1em 1em 0.7em;
+  color: rgba(0, 0, 0, 0.4);
+  text-shadow: 0 0 1px rgba(0, 0, 0, 0.1);
+  font-weight: 300;
+  font-size: 2em;
+  height: 68px;
+}
+
+footer {
+  width: 100%;
+  height: 50px;
+  background-color: #191e23;
+  display: table;
+}
+footer h2 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 1.5em;
+  display: table-cell;
+  vertical-align: middle;
+}
+
+@media only screen and (min-width: 600px) {
+  footer {
+    margin-top: 25px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  footer {
+    margin-top: 25px;
+  }
+}
 .row {
   margin: auto;
 }
@@ -77,6 +232,7 @@ header h1 img {
 }
 .rect.lightgrey {
   background: #e9e9e9;
+  color: #424242;
 }
 .rect.lightgrey .button:hover {
   background: #d0d0d0;
@@ -94,6 +250,9 @@ header h1 img {
   font-family: 'Radley', serif;
   font-size: 1em;
   text-transform: none;
+}
+.rect .tweetCard p a {
+  color: #df0030;
 }
 .rect.owl-carousel {
   padding: 0;
@@ -121,6 +280,15 @@ header h1 img {
 }
 .rect.ShegueyBuyAlbum .button {
   background: #191e23;
+}
+.rect.special {
+  width: 100%;
+  height: 120px;
+}
+
+.conteneur {
+  width: 50%;
+  float: left;
 }
 
 @media only screen and (min-width: 600px) {
@@ -152,8 +320,14 @@ header h1 img {
     width: 300px !important;
     height: 300px !important;
   }
+  .rect.light-grey {
+    color: #424242;
+  }
   .rect .tweetCard p {
     font-size: 0.8em;
+  }
+  .rect .tweetCard p a {
+    color: #df0030;
   }
   .rect.shegueyMur {
     -webkit-order: 1;
@@ -207,6 +381,11 @@ header h1 img {
   }
   .rect.special {
     min-height: 150px;
+    width: 300px;
+  }
+
+  .conteneur {
+    width: 300px;
   }
 }
 @media only screen and (min-width: 1200px) {
@@ -237,15 +416,24 @@ header h1 img {
     width: 300px !important;
     height: 300px !important;
   }
+  .rect.light-grey {
+    color: #424242;
+  }
+  .rect .tweetCard p {
+    font-size: 0.8em;
+  }
+  .rect .tweetCard p a {
+    color: #df0030;
+  }
   .rect.shegueyMur {
     -webkit-order: 1 !important;
         -ms-flex-order: 1 !important;
             order: 1 !important;
   }
-  .rect.empty:nth-child(1) {
-    -webkit-order: 5 !important;
-        -ms-flex-order: 5 !important;
-            order: 5 !important;
+  .rect.empty:nth-child(2) {
+    -webkit-order: 4 !important;
+        -ms-flex-order: 4 !important;
+            order: 4 !important;
   }
   .rect.shegueyVideos {
     -webkit-order: 10 !important;
@@ -267,7 +455,7 @@ header h1 img {
         -ms-flex-order: 25 !important;
             order: 25 !important;
   }
-  .rect.empty:nth-child(2) {
+  .rect.empty:nth-child(7) {
     -webkit-order: 30 !important;
         -ms-flex-order: 30 !important;
             order: 30 !important;
@@ -282,10 +470,10 @@ header h1 img {
         -ms-flex-order: 40 !important;
             order: 40 !important;
   }
-  .rect.empty:nth-child(3) {
-    -webkit-order: 45 !important;
-        -ms-flex-order: 45 !important;
-            order: 45 !important;
+  .rect.empty:nth-child(10) {
+    -webkit-order: 39 !important;
+        -ms-flex-order: 39 !important;
+            order: 39 !important;
   }
   .rect.shegueySlide {
     -webkit-order: 50 !important;
@@ -297,10 +485,10 @@ header h1 img {
         -ms-flex-order: 55 !important;
             order: 55 !important;
   }
-  .rect.empty:nth-child(4) {
-    -webkit-order: 60 !important;
-        -ms-flex-order: 60 !important;
-            order: 60 !important;
+  .rect.empty:nth-child(13) {
+    -webkit-order: 71 !important;
+        -ms-flex-order: 71 !important;
+            order: 71 !important;
   }
   .rect.ShegueyBuyAlbum {
     -webkit-order: 65 !important;
@@ -314,5 +502,10 @@ header h1 img {
   }
   .rect.special {
     height: 150px;
+    width: 300px;
+  }
+
+  .conteneur {
+    width: 300px;
   }
 }

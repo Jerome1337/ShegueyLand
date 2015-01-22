@@ -1,3 +1,1 @@
-<footer>
-	
-</footer>
+<footer><h2>AU CALME</h2></footer>

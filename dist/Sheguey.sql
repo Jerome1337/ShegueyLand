@@ -1,13 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 3.4.5
+-- version 4.1.12
 -- http://www.phpmyadmin.net
 --
--- Client: 127.0.0.1
--- Généré le : Dim 11 Janvier 2015 à 23:50
--- Version du serveur: 5.5.16
--- Version de PHP: 5.3.10
+-- Client :  localhost:8889
+-- Généré le :  Jeu 22 Janvier 2015 à 15:02
+-- Version du serveur :  5.5.34
+-- Version de PHP :  5.5.10
 
-SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
 
@@ -17,7 +17,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8 */;
 
 --
--- Base de données: `sheguey`
+-- Base de données :  `Sheguey`
 --
 
 -- --------------------------------------------------------
@@ -26,14 +26,14 @@ SET time_zone = "+00:00";
 -- Structure de la table `contactform`
 --
 
-CREATE TABLE IF NOT EXISTS `contactform` (
+CREATE TABLE `contactform` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `name` tinytext NOT NULL,
   `email` varchar(100) NOT NULL,
   `subject` text NOT NULL,
   `message` text NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=2 ;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -41,7 +41,7 @@ CREATE TABLE IF NOT EXISTS `contactform` (
 -- Structure de la table `instagram`
 --
 
-CREATE TABLE IF NOT EXISTS `instagram` (
+CREATE TABLE `instagram` (
   `id` int(11) NOT NULL AUTO_INCREMENT,
   `id_insta` char(35) NOT NULL,
   `standard_resolution` text NOT NULL,
@@ -99,6 +99,20 @@ INSERT INTO `instagram` (`id`, `id_insta`, `standard_resolution`, `low_resolutio
 (81, '895859020002192333_1509290985', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/10852583_885853438114613_396948741_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/10852583_885853438114613_396948741_a.jpg', '#pinky #mdr #nextfriday #desbarres ðŸ˜‚ #oklm #sheguey #ratpi #pink #lol', '1nev', 'image', 'http://instagram.com/p/xuuwhAD2vN/'),
 (82, '895858710609236246_271859963', 'http://scontent-a.cdninstagram.com/hphotos-xpa1/t51.2885-15/10424518_1400293893600203_1995417295_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xpa1/t51.2885-15/10424518_1400293893600203_1995417295_a.jpg', 'Je suis amoureuse de cette musique ðŸ’Žâœ¨ðŸ‘â¤ï¸ @gradurofficiel #sheguey #meilleur #rappeur #gradur', 'faitdespompesdestractions', 'image', 'http://instagram.com/p/xuusA2zZEW/'),
 (83, '895858442029136987_1463502974', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/10932351_822262111166838_823976741_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/10932351_822262111166838_823976741_a.jpg', 'DÃ©solÃ© ma lau ste photo te mets pas trop en valeur.... #mes #sheguey #cest #les #meilleurs â¤ï¸', 'itsdelb', 'image', 'http://instagram.com/p/xuuoGuLnxb/');
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `punchline`
+--
+
+CREATE TABLE `punchline` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` tinyint(15) NOT NULL,
+  `punch` mediumtext NOT NULL,
+  `time` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;

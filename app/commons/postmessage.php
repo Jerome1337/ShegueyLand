@@ -1,23 +1,14 @@
 <?php
-	// error_reporting(E_ALL);
-	// ini_set("display_errors", 1);
-	//include ('config.php');
+	error_reporting(E_ALL);
+	ini_set("display_errors", 1);
 	include('../adm/bddconnect.php');
-	
-	if(isset($_POST['name'])  && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message']))
-	{
-		extract($_POST);
-		$formName = htmlspecialchars($_POST['name']);
-		$formEmail = htmlspecialchars($_POST['email']);
-		$formSubject = htmlspecialchars($_POST['subject']);
-		$formMessage = htmlspecialchars($_POST['message']);
-
-		if (!empty($formName) && !empty($formEmail) && !empty($formSubject) && !empty($formMessage))
+		$data = array();
+		if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['message']))
 		{
-			// var_dump($formName);
-			// var_dump($formEmail);
-			// var_dump($formSubject);
-			// var_dump($formMessage);
+			// var_dump($_POST['name']);
+			// var_dump($_POST['email']);
+			// var_dump($_POST['subject']);
+			// var_dump($_POST['message']);
 
 			$to = 'contact@sheguey.land';
 			$content = ''.$_POST['message'].'';
@@ -60,19 +51,19 @@
 			curl_setopt($ch, CURLOPT_POSTFIELDS, $postString);
 			$result = curl_exec($ch);
 
-			$req = $bdd->prepare('INSERT INTO contactForm (name, email, subject, message) VALUES( :name,  :email,  :subject,  :message)');
+			
+
+			$req = $bdd->prepare('INSERT INTO contactform (name, email, subject, message) VALUES( :name,  :email,  :subject,  :message)');
 			$req->execute(array(
-					'name' => $formName,
-					'email' => $formEmail,
-					'subject' => $formSubject,
-					'message' => $formMessage
+					'name' => $_POST['name'],
+					'email' => $_POST['email'],
+					'subject' => $_POST['subject'],
+					'message' => $_POST['message']
 				));
-			echo 'ok';
-		
+			$data['success'] = true;
+			
 		}else{
-			echo 'Une erreur est survenue lors de l\'envoi, remplissez tous les champs ! <a href="#" class="close">&times;</a>';
-			}
-	} else {
-		echo "Error";
-	}
+			$data['success'] = false;
+		}
+		echo json_encode($data);
 ?>

@@ -1,18 +1,11 @@
 // SOUNDS
 $(document).ready(function() {
-    $('.conteneur').find('button').on('click touchstart', function() {
+    $('.conteneur').find('div').on('click touchstart', function() {
         var soundId = this.id;
         $('soundId').trigger('load');
         tag = document.createElement('audio');
         tag.setAttribute("preload", "auto")
-<<<<<<< HEAD
-        tag.setAttribute("src", "snd/" + soundId + "mp3")
-=======
-        tag.setAttribute("autoplay", "autoplay")
         tag.setAttribute("src", "snd/" + soundId + ".mp3")
-        tag.setAttribute("id","audio"+id)
-        zone.appendChild(tag)
->>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
         tag.play();
         // console.log("playyyyy");
         // console.log(soundId);
@@ -36,6 +29,35 @@ window.addEventListener('load', function(e) {
 
 // END SOUNDS
 
+// ADD PUNCH
+    $(function() {
+        $('#formPunch').submit(function() {
+
+            formName = $(this).find("input[name=pseudo]").val();
+            fornPunch = $(this).find("input[name=punch]").val();     
+
+            console.log(formName);
+            console.log(formPunch);
+
+            $.post("commons/postmessage.php", {
+                name: formName,
+                punch: formPunch,
+            }, function(data) {
+                console.log(name);
+                console.log(punch);
+                if (data != "ok") {
+                    $(".alert-box").removeClass("success").addClass("alert").slideDown("slow").empty().append(data);
+                } else {
+                    $(".alert-box").slideUp("slow");
+                    $(".rangSheguey").delay(800).slideDown("slow").empty().append("<h1>Merci,</h1><p>votre message a bien été envoyé.</p>");
+                }
+            });
+            return false;
+        });
+    });
+
+// END ADD PUNCH
+
 
 // QUIZZ
 $(document).ready(function() {
@@ -53,20 +75,12 @@ $(document).ready(function() {
         score++;
         console.log('score: ' + score);
     });
-<<<<<<< HEAD
     $('.final').click(function() {
         setScore();
     });
 
     function setScore() {
         switch (score) {
-=======
-    $('.final').click(function(){
-        setScore();
-    });
-    function setScore(){
-        switch(score){
->>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
             case 0:
                 changeMeta('J\'ai obtenu le grade de Sheguey en carton', 'shegueycarton');
                 resultSheguey('Sheguey en carton');
@@ -77,16 +91,15 @@ $(document).ready(function() {
                 break;
             case 2:
             case 3:
-                changeMeta('J\'ai obtenu le grade de Caporal Sheguey', 'shegueycaporal');
-                resultSheguey('Caporal Sheguey');
+                changeMeta('J\'ai obtenu le grade de Sergent Sheguey', 'shegueysergent');
+                resultSheguey('Sergent Sheguey');
                 break;
             case 4:
             case 5:
-                changeMeta('J\'ai obtenu le grade de Sheguey Major', 'shegueymajor');
-                resultSheguey('Sheguey Major');
+                changeMeta('J\'ai obtenu le grade de Général Sheguey', 'shegueygeneral');
+                resultSheguey('Général Sheguey');
                 break;
         }
-<<<<<<< HEAD
 
         function changeMeta(title, image) {
             var metas = document.getElementsByTagName('meta');
@@ -103,7 +116,7 @@ $(document).ready(function() {
                 FB.ui({
                     method: 'share',
                     display: 'popup',
-                    href: 'http://sheguey.land/'+image+''
+                    href: 'http://sheguey.land/fbshare/'+image+''
                 });
             });
             // $('#share_button').click(function(e) {
@@ -131,26 +144,6 @@ $(document).ready(function() {
 });
 
     // END QUIZZ
-=======
-        function changeMeta(title, image){
-            var metas = document.getElementsByTagName('meta');
-            for (i=0; i<metas.length; i++) { 
-                if (metas[i].getAttribute('property') == 'og:image') { 
-                    metas[i].setAttribute('content', 'http://sheguey.land/'+ image +'.jpg'); 
-                }
-                if (metas[i].getAttribute('property') == 'og:title') { 
-                    metas[i].setAttribute('content', title); 
-                }
-            }
-        };
-        function resultSheguey(result){
-            $('.resultSheguey span').append(result);            
-        };
-    };
-});
-
-// END QUIZZ
->>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
 
     // CONTACTS
 
@@ -195,13 +188,10 @@ $(document).ready(function() {
     // CONTACT FORM ACTION
     $(function() {
         $('#formContact').submit(function() {
-            $("#ajax-loader").show();
-
-            formName = $(this).find("input[name=name]").val();
-            formEmail = $(this).find("input[name=email]").val();
-            formSubject = $(this).find("input[name=subject]").val();
-            formMessage = $(this).find("textarea[name=message]").val();
-
+            var formName    = $('#formName').val();
+            var formEmail   = $("#formEmail").val();
+            var formSubject = $("#formSubject").val();
+            var formMessage = $("#formMessage").val();
             // console.log(formName);
             // console.log(formEmail);
             // console.log(formSubject);
@@ -213,7 +203,6 @@ $(document).ready(function() {
                 subject: formSubject,
                 message: formMessage
             }, function(data) {
-                $("#ajax-loader").hide();
                 console.log(data);
                 if (data != "ok") {
                     $(".alert-box").removeClass("success").addClass("alert").slideDown("slow").empty().append(data);
@@ -256,50 +245,7 @@ $(document).ready(function() {
 
     // END TWITTER
 
-<<<<<<< HEAD
     // ANALYTICS
-=======
-// FB SHARE
-
-$(document).ready(function(){
-    $.ajaxSetup({
-        cache: true
-    });
-    $.getScript('//connect.facebook.net/fr_FR/all.js', function() {
-        FB.init({
-            appId: '790279547711669',
-        });
-        $('#loginbutton,#feedbutton').removeAttr('disabled');
-        FB.getLoginStatus(function(){
-            console.log('Status updated!');
-        });
-    });
-    $('#share_button').click(function(e) {
-        e.preventDefault();
-        FB.ui({
-            method: 'share',
-            display: 'popup',
-            href: 'http://sheguey.land/'
-            // name: 'SHEGUEY',
-            // caption: 'An example caption',
-            // description: "aaaaaaa",
-            // picture: 'http://sheguey.land/fbshare.jpg'
-        });
-    });
-});
-
-// END FB SHARE
-
-// TWITTER
-$("#twitter").click(function(){
-    var url = $(this).attr("data-url");
-    window.open( url, "tweet", "height=300,width=550,resizable=1" );
-});
-
-// END TWITTER
-
-// ANALYTICS
->>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
 
     (function(i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
