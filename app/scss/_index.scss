@@ -120,7 +120,12 @@ $white:     #ffffff;
 		&.shegueySlide{ 		order: 8;}
 		&.ShegueyCalendar{ 		order: 9;}
 		&.ShegueyBuyAlbum{ 		order: 10;}
+
+		&.special{
+			min-height: 150px;
+		}
 	}
+	
 }@media #{$tab1200} {
 	
 	.row{
@@ -164,6 +169,10 @@ $white:     #ffffff;
 		&.empty:nth-child(4){ 			order: 60!important;}
 		&.ShegueyBuyAlbum{ 				order: 65!important;}
 		&.ShegueyCalendar{ 				order: 70!important;}
-
+		
+		&.special{
+			height: 150px;
+		}
 	}
+	
 }

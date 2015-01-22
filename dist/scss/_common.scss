@@ -25,10 +25,7 @@ header {
 	padding: 10px 25px;
 	border: solid 2px $white;
 	color: $white;
-	transition: background-color 0.5s ease-in-out;
-	&:hover{
-		transform: scale(0.6);
-	}
+	transition: background-color 0.3s ease-in-out;
 }
 
 $mobile320: "only screen and (min-width : 320px)";

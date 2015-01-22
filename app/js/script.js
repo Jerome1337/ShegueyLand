@@ -1,11 +1,11 @@
 // SOUNDS
 $(document).ready(function() {
-    $('.conteneur').find('button').on('click touchstart', function() {
+    $('.conteneur').find('div').on('click touchstart', function() {
         var soundId = this.id;
         $('soundId').trigger('load');
         tag = document.createElement('audio');
         tag.setAttribute("preload", "auto")
-        tag.setAttribute("src", "snd/" + soundId + "mp3")
+        tag.setAttribute("src", "snd/" + soundId + ".mp3")
         tag.play();
         // console.log("playyyyy");
         // console.log(soundId);
@@ -28,6 +28,35 @@ window.addEventListener('load', function(e) {
 }, false);
 
 // END SOUNDS
+
+// ADD PUNCH
+    $(function() {
+        $('#formPunch').submit(function() {
+
+            formName = $(this).find("input[name=pseudo]").val();
+            fornPunch = $(this).find("input[name=punch]").val();     
+
+            console.log(formName);
+            console.log(formPunch);
+
+            $.post("commons/postmessage.php", {
+                name: formName,
+                punch: formPunch,
+            }, function(data) {
+                console.log(name);
+                console.log(punch);
+                if (data != "ok") {
+                    $(".alert-box").removeClass("success").addClass("alert").slideDown("slow").empty().append(data);
+                } else {
+                    $(".alert-box").slideUp("slow");
+                    $(".rangSheguey").delay(800).slideDown("slow").empty().append("<h1>Merci,</h1><p>votre message a bien été envoyé.</p>");
+                }
+            });
+            return false;
+        });
+    });
+
+// END ADD PUNCH
 
 
 // QUIZZ
@@ -62,12 +91,12 @@ $(document).ready(function() {
                 break;
             case 2:
             case 3:
-                changeMeta('J\'ai obtenu le grade de Caporal Sheguey', 'shegueycaporal');
+                changeMeta('J\'ai obtenu le grade de Caporal Sheguey', 'shegueysergent');
                 resultSheguey('Caporal Sheguey');
                 break;
             case 4:
             case 5:
-                changeMeta('J\'ai obtenu le grade de Sheguey Major', 'shegueymajor');
+                changeMeta('J\'ai obtenu le grade de Sheguey Major', 'shegueygeneral');
                 resultSheguey('Sheguey Major');
                 break;
         }
@@ -87,25 +116,9 @@ $(document).ready(function() {
                 FB.ui({
                     method: 'share',
                     display: 'popup',
-                    href: 'http://sheguey.land/'+image+''
+                    href: 'http://sheguey.land/fbshare/'+image+''
                 });
             });
-            // $('#share_button').click(function(e) {
-            //     e.preventDefault();
-            //     FB.ui({
-            //         method: 'share_open_graph',
-            //         display: 'popup',
-            //         action_type: 'shegueyland:share',
-            //         action_properties: JSON.stringify({
-            //             scrape: 'true',
-            //             type: 'shegueyland:quiz',
-            //             quiz: "http://sheguey.land/shegueymajor.php",
-            //             title: title,
-            //             description: 'Toi aussi vient faire le test pour découvrir quel Sheguey tu es !',
-            //             image: 'http://sheguey.land/fbshare2.jpg'
-            //         })
-            //     })
-            // });
         };
     };
 
@@ -119,7 +132,7 @@ $(document).ready(function() {
     // CONTACTS
 
     // LOCAL STORAGE FORM
-    jQuery(function($) {
+    $(function($) {
         $.fn.formBackUp = function() {
             if (!localStorage) {
                 return false;
@@ -159,17 +172,11 @@ $(document).ready(function() {
     // CONTACT FORM ACTION
     $(function() {
         $('#formContact').submit(function() {
-            $("#ajax-loader").show();
 
-            formName = $(this).find("input[name=name]").val();
-            formEmail = $(this).find("input[name=email]").val();
-            formSubject = $(this).find("input[name=subject]").val();
-            formMessage = $(this).find("textarea[name=message]").val();
-
-            // console.log(formName);
-            // console.log(formEmail);
-            // console.log(formSubject);
-            // console.log(formMessage);
+            var formName    = $('#formName').val();
+            var formEmail   = $("#formEmail").val();
+            var formSubject = $("#formSubject").val();
+            var formMessage = $("#formMessage").val();
 
             $.post("commons/postmessage.php", {
                 name: formName,
@@ -177,8 +184,7 @@ $(document).ready(function() {
                 subject: formSubject,
                 message: formMessage
             }, function(data) {
-                $("#ajax-loader").hide();
-                console.log(data);
+                alert(data);
                 if (data != "ok") {
                     $(".alert-box").removeClass("success").addClass("alert").slideDown("slow").empty().append(data);
                 } else {

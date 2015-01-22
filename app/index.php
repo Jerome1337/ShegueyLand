@@ -35,7 +35,7 @@
                 </div>
                 <div class="rect black shegueyClickSheg">
                     <p>Click & Sheg'<br/>Le générateur de sons</p>
-                    <a href="#"><div class="button">Lancer le générateur</div></a>
+                    <a href="clicknsheg.php"><div class="button">Lancer le générateur</div></a>
                 </div>
                 <div class="rect empty no-mobile no-tablet"></div>
                 <div class="rect lightgrey owl-carousel owl-theme shegueySlideGradur">
@@ -47,7 +47,7 @@
             
                 <div class="rect black shegueyTweetTo">
                     <p>Envois un Tweet<br/> @Gradur</p>
-                    <a href="#"><div class="button">Tweet maintenant !</div></a>
+                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand%20@cahiips%20@MOneymaks%20@Luissfernando17%20@midosofficiel" id="twitter" data-related="theHauteCulture,gradidur"><div class="button">Tweet maintenant !</div></a>
                 </div>
                 <div class="rect empty no-mobile no-tablet"></div>
                 <div class="rect lightgrey owl-carousel owl-theme no-mobile shegueySlide">
@@ -56,7 +56,7 @@
                 </div>
                 <div class="rect red shegueyTest">
                     <p>Quel sheguey<br/>es-tu ?</p>
-                    <a href="#"><div class="button">Fais le test</div></a>
+                    <a href="quelsheguey.php"><div class="button">Fais le test</div></a>
                 </div>
             
                 <div class="rect empty no-mobile no-tablet"></div>

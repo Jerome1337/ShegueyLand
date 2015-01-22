@@ -12,10 +12,17 @@
 <meta property="og:image:width" content="3000">
 <meta property="og:image:height" content="2000">
 <link rel="icon" type="image/png" href="#">
+<<<<<<< HEAD
+<<<<<<< HEAD
+
 <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Radley:400italic' rel='stylesheet' type='text/css'>
+=======
 <link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>.php/" />
+>>>>>>> 16971563b46fd1c789cf9309b5ab6b2fa1686995
+=======
 <link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>">
+>>>>>>> Fb done
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="js/owl/owl.carousel.css">

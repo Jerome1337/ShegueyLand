@@ -4,10 +4,10 @@
         <?php
         $onglet_actif = "contacts";
         include('commons/head.php'); ?>
-        <title>CONTACTS / SHEGUEYLAND</title>
+        <title>SHEGUEYLAND - Contact</title>
     </head>
     <body>
-        <?php include('commons/nav.php'); ?>
+        <?php include('commons/header.php'); ?>
         <div class="row">
             <div class="large-12 columns">
                 <h1>Contacts</h1>
@@ -20,7 +20,7 @@
                     <div data-alert class="alert-box radius hide">
                         <a href="#" class="close">&times;</a>
                     </div>
-                    <form action="#" method="post" id="formContact">
+                    <form method="post" id="formContact">
                         <input type="text" placeholder="Prénom" name="name" id="formName">
                         <input type="email" placeholder="Email" name="email" id="formEmail">
                         <input type="text" placeholder="Sujet" name="subject" id="formSubject">

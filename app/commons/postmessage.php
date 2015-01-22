@@ -1,10 +1,11 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set("display_errors", 1);
+	// error_reporting(E_ALL);
+	// ini_set("display_errors", 1);
 	//include ('config.php');
 	include('../adm/bddconnect.php');
+	echo $_POST['name'];
 	
-	if(isset($_POST['name']) && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message']))
+	if(isset($_POST['name'])  && isset($_POST['email']) && isset($_POST['subject']) && isset($_POST['message']))
 	{
 		extract($_POST);
 		$formName = htmlspecialchars($_POST['name']);
@@ -14,22 +15,22 @@
 
 		if (!empty($formName) && !empty($formEmail) && !empty($formSubject) && !empty($formMessage))
 		{
-			// var_dump($formName);
-			// var_dump($formEmail);
-			// var_dump($formSubject);
-			// var_dump($formMessage);
+			var_dump($formName);
+			var_dump($formEmail);
+			var_dump($formSubject);
+			var_dump($formMessage);
 			// $destinataire = "p-jerome@hotmail.com";
 			// $sujet = "Demande de contact";
 			// $message = "Nom : ".$_POST['name']."\n";
 			// $message = "Adresse email : ".$_POST['email']."\n";
 			// $message = "Message : ".$_POST['message']."\n";
 			// $entete = 'From: '.$_POST['email']."\n".
-   //      		'Reply-To: '.$_POST['email']."\n".
+   			// 'Reply-To: '.$_POST['email']."\n".
 			// 'X-Mailer: PHP/'.phpversion();
 			// if (mail($destinataire,$sujet,$message,$entete)){
 			// 		// echo 'Message envoyé';
 			// } else {
- 		// 			// echo "Une erreur est survenue lors de l'envoi du formulaire par email";
+ 			// // echo "Une erreur est survenue lors de l'envoi du formulaire par email";
 			// }
 
 			$to = 'contact@sheguey.land';
