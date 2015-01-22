@@ -17,6 +17,8 @@
 <link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="js/owl/owl.carousel.css">
+<link rel="stylesheet" href="js/owl/owl.theme.css">
 <script src="js/modernizr.js"></script>
 <script>
 	if ('addEventListener' in document) {
