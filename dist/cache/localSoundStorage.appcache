@@ -1,20 +1,17 @@
 CACHE MANIFEST
-# 18-01-2015 - v6
+# 22-12-2014 - v3
 
 # Explicitly cached entries
 CACHE:
-../snd/59.mp3
-../snd/missile.mp3
-../snd/papa.mp3
-../snd/sucer.mp3
-../snd/jamais.mp3
-../snd/bitch.mp3
-../snd/patrimoine.mp3
-../snd/pepoms.mp3
-../snd/rafale.mp3
-../snd/terrain.mp3
-../snd/jmatte.mp3
-../snd/traction.mp3
+../snd/sheguey.wav
+../snd/59.wav
+../snd/missile.wav
+../snd/papa.wav
+../snd/jmatte.wav
+../img/generateur/sheguey.jpg
+../img/generateur/terrasser.png
+../img/generateur/dani.jpg
+
 
 # Resources required to be online
 NETWORK:

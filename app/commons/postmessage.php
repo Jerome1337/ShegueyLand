@@ -18,6 +18,19 @@
 			// var_dump($formEmail);
 			// var_dump($formSubject);
 			// var_dump($formMessage);
+			// $destinataire = "p-jerome@hotmail.com";
+			// $sujet = "Demande de contact";
+			// $message = "Nom : ".$_POST['name']."\n";
+			// $message = "Adresse email : ".$_POST['email']."\n";
+			// $message = "Message : ".$_POST['message']."\n";
+			// $entete = 'From: '.$_POST['email']."\n".
+   //      		'Reply-To: '.$_POST['email']."\n".
+			// 'X-Mailer: PHP/'.phpversion();
+			// if (mail($destinataire,$sujet,$message,$entete)){
+			// 		// echo 'Message envoyé';
+			// } else {
+ 		// 			// echo "Une erreur est survenue lors de l'envoi du formulaire par email";
+			// }
 
 			$to = 'contact@sheguey.land';
 			$content = ''.$_POST['message'].'';

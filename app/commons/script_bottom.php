@@ -1,5 +1,5 @@
 <script src="js/jquery.min.js"></script>
-<script src="js/fastclick.js"></script>
+<script src="js/fastclick/lib/fastclick.js"></script>
 <script src="js/script.js"></script>
 
 

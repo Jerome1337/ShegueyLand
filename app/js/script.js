@@ -5,7 +5,7 @@ $(document).ready(function() {
         $('soundId').trigger('load');
         tag = document.createElement('audio');
         tag.setAttribute("preload", "auto")
-        tag.setAttribute("src", "snd/" + soundId + ".mp3")
+        tag.setAttribute("src", "snd/" + soundId + "mp3")
         tag.play();
         // console.log("playyyyy");
         // console.log(soundId);
@@ -28,33 +28,6 @@ window.addEventListener('load', function(e) {
 }, false);
 
 // END SOUNDS
-
-// ADD PUNCH
-    $(function() {
-        $('#formPunch').submit(function() {
-            $("#ajax-loader").show();
-            formMc = $(this).find("input[name=mc]").val();
-            formPunch = $(this).find("textarea[name=punch]").val();
-            console.log(formMc);
-            console.log(formPunch);
-            $.post("commons/postpunch.php", {
-                mc: formMc,
-                punch: formPunch
-            }, function(data) {
-                $("#ajax-loader").hide();
-                console.log(data);
-                if (data != "ok") {
-                    $(".alert-box").removeClass("success").addClass("alert").slideDown("slow").empty().append(data);
-                } else {
-                    $(".alert-box").slideUp("slow");
-                    $(".punchAdded").delay(800).slideDown("slow").empty().append("<h1>Ta punchline à bien été postée</h1>");
-                }
-            });
-            return false;
-        });
-    });
-
-// END ADD PUNCH
 
 
 // QUIZZ
@@ -114,7 +87,7 @@ $(document).ready(function() {
                 FB.ui({
                     method: 'share',
                     display: 'popup',
-                    href: 'http://sheguey.land/fbshare/'+image+''
+                    href: 'http://sheguey.land/'+image+''
                 });
             });
             // $('#share_button').click(function(e) {
@@ -141,9 +114,11 @@ $(document).ready(function() {
         };
 });
 
-// END QUIZZ
+    // END QUIZZ
 
-// LOCAL STORAGE FORM
+    // CONTACTS
+
+    // LOCAL STORAGE FORM
     jQuery(function($) {
         $.fn.formBackUp = function() {
             if (!localStorage) {
@@ -179,7 +154,7 @@ $(document).ready(function() {
         $('form').formBackUp();
 
     });
-// END LOCAL STORAGE
+    // END LOCAL STORAGE
 
     // CONTACT FORM ACTION
     $(function() {
@@ -215,6 +190,8 @@ $(document).ready(function() {
         });
     });
     // END CONTACT FORM ACTION
+
+    // END CONTACTS
 
     // FB SHARE
 

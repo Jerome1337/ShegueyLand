@@ -40,10 +40,6 @@
 			    die($e->getMessage());
 			}
 
-			if(empty($data)){
-				$buug = "buuuug";
-				return $buug;
-			}
 			if($data->meta->code == 200){
 
 				echo("enregistrement BDD\n");

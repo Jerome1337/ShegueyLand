@@ -4,10 +4,10 @@
         <?php
         $onglet_actif = "contacts";
         include('commons/head.php'); ?>
-        <title>SHEGUEYLAND - Contacts</title>
+        <title>CONTACTS / SHEGUEYLAND</title>
     </head>
     <body>
-        <?php include('commons/header.php'); ?>
+        <?php include('commons/nav.php'); ?>
         <div class="row">
             <div class="large-12 columns">
                 <h1>Contacts</h1>

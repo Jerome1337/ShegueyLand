@@ -1,13 +1,13 @@
 <!doctype html>
-<html lang="fr-FR" prefix="og: http://ogp.me/ns# fb: http://ogp.me/ns/fb#">
+<html lang="fr-FR">
     <head>
         <?php
         $onglet_actif = "quelsheguey";
         include('commons/head.php'); ?>
-        <title>SHEGUEYLAND - Quel Sheguey es-tu ?</title>
+        <title>SHEGUEYLAND</title>
     </head>
     <body>
-        <?php include('commons/header.php'); ?>
+        <?php include('commons/nav.php'); ?>
         <div class="row">
             <div class="large-12 columns">
                 <h2>Quel Sheguey es-tu ?</h2>
@@ -69,6 +69,7 @@
                     <div class="socialfacebook">
                         <a href="#" id="share_button">Partage sur Facebook</a>
                     </div>
+                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand%20@cahiips%20@MOneymaks%20@Luissfernando17%20@midosofficiel" id="twitter" data-related="theHauteCulture,gradidur">Tweet to @gradidur</a>
                 </li>
             </ul>
         </section>
