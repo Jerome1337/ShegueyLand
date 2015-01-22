@@ -9,15 +9,11 @@
 <meta property="fb:app_id" content="790279547711669">
 <meta property="og:type" content="shegueyland:quiz">
 <meta property="og:image" content="http://sheguey.land/fbshare.jpg">
-<meta property="og:image:width" content="3000">
-<meta property="og:image:height" content="2000">
+<meta property="og:image:width" content="1280">
+<meta property="og:image:height" content="720">
 <link rel="icon" type="image/png" href="#">
-<<<<<<< HEAD
 <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Radley:400italic' rel='stylesheet' type='text/css'>
-<link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>.php/" />
-=======
->>>>>>> 50df145ed3351d768935e57ee6426f66f8ac179a
 <link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
