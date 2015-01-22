@@ -18,7 +18,7 @@
                 <?php
                 require('commons/function.php');
                 
-                getInsta('image', 'sheguey', '30');
+                getInsta('image', 'sheguey', '50');
                 
                 // var_dump($data);
                 

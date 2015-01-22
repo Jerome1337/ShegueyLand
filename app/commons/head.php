@@ -27,3 +27,4 @@
 		}, false);
 	}
 </script>
+<?php include('adm/bddconnect.php'); ?>
