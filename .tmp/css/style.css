@@ -246,7 +246,6 @@ footer h2 {
 }
 .rect.lightgrey {
   background: #e9e9e9;
-  color: #424242;
 }
 .rect.lightgrey .button:hover {
   background: #d0d0d0;
@@ -298,6 +297,8 @@ footer h2 {
 .rect.special {
   width: 100%;
   height: 120px;
+  background-position: center center;
+  background-size: cover;
 }
 
 .conteneur {
@@ -333,9 +334,6 @@ footer h2 {
   .rect.owl-carousel img {
     width: 300px !important;
     height: 300px !important;
-  }
-  .rect.light-grey {
-    color: #424242;
   }
   .rect .tweetCard p {
     font-size: 0.8em;
@@ -396,6 +394,8 @@ footer h2 {
   .rect.special {
     min-height: 150px;
     width: 300px;
+    background-size: cover;
+    background-position: center center;
   }
 
   .conteneur {
@@ -430,9 +430,6 @@ footer h2 {
     width: 300px !important;
     height: 300px !important;
   }
-  .rect.light-grey {
-    color: #424242;
-  }
   .rect .tweetCard p {
     font-size: 0.8em;
   }
@@ -450,9 +447,9 @@ footer h2 {
             order: 4 !important;
   }
   .rect.shegueyVideos {
-    -webkit-order: 10 !important;
-        -ms-flex-order: 10 !important;
-            order: 10 !important;
+    -webkit-order: 4 !important;
+        -ms-flex-order: 4 !important;
+            order: 4 !important;
   }
   .rect.shegueyTweet:nth-child(1) {
     -webkit-order: 15 !important;
@@ -485,14 +482,14 @@ footer h2 {
             order: 40 !important;
   }
   .rect.empty:nth-child(10) {
-    -webkit-order: 39 !important;
-        -ms-flex-order: 39 !important;
-            order: 39 !important;
+    -webkit-order: 40 !important;
+        -ms-flex-order: 40 !important;
+            order: 40 !important;
   }
   .rect.shegueySlide {
-    -webkit-order: 50 !important;
-        -ms-flex-order: 50 !important;
-            order: 50 !important;
+    -webkit-order: 55 !important;
+        -ms-flex-order: 55 !important;
+            order: 55 !important;
   }
   .rect.shegueyTest {
     -webkit-order: 55 !important;
@@ -500,23 +497,25 @@ footer h2 {
             order: 55 !important;
   }
   .rect.empty:nth-child(13) {
-    -webkit-order: 71 !important;
-        -ms-flex-order: 71 !important;
-            order: 71 !important;
+    -webkit-order: 55 !important;
+        -ms-flex-order: 55 !important;
+            order: 55 !important;
   }
   .rect.ShegueyBuyAlbum {
-    -webkit-order: 65 !important;
-        -ms-flex-order: 65 !important;
-            order: 65 !important;
-  }
-  .rect.ShegueyCalendar {
     -webkit-order: 70 !important;
         -ms-flex-order: 70 !important;
             order: 70 !important;
   }
+  .rect.ShegueyCalendar {
+    -webkit-order: 65 !important;
+        -ms-flex-order: 65 !important;
+            order: 65 !important;
+  }
   .rect.special {
     height: 150px;
     width: 300px;
+    background-position: center center;
+    background-size: cover;
   }
 
   .conteneur {

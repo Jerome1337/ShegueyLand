@@ -25,7 +25,7 @@
             <div>
                 <ul>
                     <?php foreach ($tweets as $k => $tweet): ?>
-                    <li><?php echo parseTweet($tweet->text); ?>
+                    <li><?php echo parseTweet($tweets->text); ?>
                         <div class="bloc_caption">
                             <span class="timestamp tw_timestamp"><?php echo date("d M - H:i",strtotime($tweet->created_at)); ?></span>
                         </div>

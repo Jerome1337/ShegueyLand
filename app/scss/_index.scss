@@ -27,7 +27,6 @@ $white:     #ffffff;
 	}
 	&.lightgrey {
 		background: $lightgrey;
-		color: $grey;
 		.button:hover{background: darken($lightgrey, 10%);}
 	}
 	&.no-mobile{
@@ -84,7 +83,8 @@ $white:     #ffffff;
 	&.special {
 		width: 100%;
 		height: 120px;
-		// flex-direction: row !important;
+		background-position:center center;
+		background-size: cover;
 	}
 
 }
@@ -121,9 +121,6 @@ $white:     #ffffff;
 			height: 300px!important;
 			}
 		}
-		&.light-grey {
-			color: $grey;
-		}
 		.tweetCard{
 			p{
 				font-size: 0.8em;
@@ -147,6 +144,8 @@ $white:     #ffffff;
 		&.special{
 			min-height: 150px;
 			width: 300px;
+			background-size: cover;
+			background-position:center center;
 		}
 	}
 	.conteneur {
@@ -180,9 +179,6 @@ $white:     #ffffff;
 			height: 300px!important;
 			}
 		}
-		&.light-grey {
-			color: $grey;
-		}
 		.tweetCard{
 			p{
 				font-size: 0.8em;
@@ -194,23 +190,27 @@ $white:     #ffffff;
 
 		&.shegueyMur{ 					order: 1!important;}
 		&.empty:nth-child(2){ 			order: 4!important;}
-		&.shegueyVideos{ 				order: 10!important;}
+		&.shegueyVideos{ 				order: 4!important;}
 		&.shegueyTweet:nth-child(1){ 	order: 15!important;}
 		&.shegueyTweet:nth-child(2){ 	order: 20!important;}
 		&.shegueyClickSheg{ 			order: 25!important;}
 		&.empty:nth-child(7){ 			order: 30!important;}
 		&.shegueySlideGradur{ 			order: 35!important;}
 		&.shegueyTweetTo{ 				order: 40!important;}
-		&.empty:nth-child(10){ 			order: 39!important;}
-		&.shegueySlide{ 				order: 50!important;}
+		&.empty:nth-child(10){ 			order: 40!important;}
+		&.shegueySlide{ 				order: 55!important;}
 		&.shegueyTest{ 					order: 55!important;}
-		&.empty:nth-child(13){ 			order: 71!important;}
-		&.ShegueyBuyAlbum{ 				order: 65!important;}
-		&.ShegueyCalendar{ 				order: 70!important;}
+		&.empty:nth-child(13){ 			order: 55!important;}
+		&.ShegueyBuyAlbum{ 				order: 70!important;}
+		&.ShegueyCalendar{ 				order: 65!important;}
 		
 		&.special{
 			height: 150px;
 			width: 300px;
+			background-position:center center;
+			background-size: cover;
+			// filter: blur(2px);
+
 		}
 	}
 	.conteneur {

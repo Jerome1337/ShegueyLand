@@ -32,6 +32,14 @@
                     <p>Click & Sheg'<br/>Le générateur de sons</p>
                     <a href="clicknsheg.php"><div class="button">Lancer le générateur</div></a>
                 </div>
+                <?php foreach ($tweetsl as $k => $tweet): ?>
+                <div class="rect lightgrey shegueyTweet">
+                    <div class="tweetCard">
+                        <h2>@ShegueyLand</h2>
+                        <p><?php echo parseTweet($tweet->text); ?></p>
+                    </div>
+                </div>
+                <?php endforeach ?>
                 <div class="rect empty no-mobile no-tablet"></div>
                 <div class="rect lightgrey owl-carousel owl-theme shegueySlideGradur">
                     <?php 
