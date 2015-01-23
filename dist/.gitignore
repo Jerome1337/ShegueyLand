@@ -6,3 +6,4 @@
 bin/
 cache/tweets.tmp
 adm/*
+bddconnect.php
