@@ -1,6 +1,6 @@
 // SOUNDS
 $(document).ready(function() {
-    $('.conteneur').find('div').on('click touchstart', function() {
+    $('.row').find('div').on('click touchstart', function() {
         var soundId = this.id;
         $('soundId').trigger('load');
         tag = document.createElement('audio');
