@@ -22,7 +22,7 @@
                 </form>
                 <div class="rangSheguey"></div>
             </div>
-            <!-- <div>
+            <div>
                 <ul>
                     <?php foreach ($tweets as $k => $tweet): ?>
                     <li><?php echo parseTweet($tweet->text); ?>
@@ -32,7 +32,7 @@
                     </li>
                     <?php endforeach ?>
                 </ul>
-            </div> -->
+            </div>
         </div>
         <?php include('commons/footer.php'); ?>
         <?php include('commons/script_bottom.php'); ?>
