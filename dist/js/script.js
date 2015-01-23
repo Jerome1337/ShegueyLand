@@ -119,22 +119,6 @@ $(document).ready(function() {
                     href: 'http://sheguey.land/fbshare/'+image+''
                 });
             });
-            // $('#share_button').click(function(e) {
-            //     e.preventDefault();
-            //     FB.ui({
-            //         method: 'share_open_graph',
-            //         display: 'popup',
-            //         action_type: 'shegueyland:share',
-            //         action_properties: JSON.stringify({
-            //             scrape: 'true',
-            //             type: 'shegueyland:quiz',
-            //             quiz: "http://sheguey.land/shegueymajor.php",
-            //             title: title,
-            //             description: 'Toi aussi vient faire le test pour découvrir quel Sheguey tu es !',
-            //             image: 'http://sheguey.land/fbshare2.jpg'
-            //         })
-            //     })
-            // });
         };
     };
 
@@ -186,32 +170,55 @@ $(document).ready(function() {
     // END LOCAL STORAGE
 
     // CONTACT FORM ACTION
-    $(function() {
-        $('#formContact').submit(function() {
-            var formName    = $('#formName').val();
-            var formEmail   = $("#formEmail").val();
-            var formSubject = $("#formSubject").val();
-            var formMessage = $("#formMessage").val();
-            // console.log(formName);
-            // console.log(formEmail);
-            // console.log(formSubject);
-            // console.log(formMessage);
+    $(document).ready(function() {
+        $('#formContact').submit(function(event) {
+            // var formName    = $('#formName').val();
+            // var formEmail   = $("#formEmail").val();
+            // var formSubject = $("#formSubject").val();
+            // var formMessage = $("#formMessage").val();
 
-            $.post("commons/postmessage.php", {
-                name: formName,
-                email: formEmail,
-                subject: formSubject,
-                message: formMessage
-            }, function(data) {
+            var formData = {
+                'name' : $('#formName').val(),
+                'email' : $("#formEmail").val(),
+                'subject' : $("#formSubject").val(),
+                'message' : $("#formMessage").val()
+            };
+            // console.log(formData);
+            $.ajax({
+                url: "commons/postmessage.php",
+                type: "POST",
+                data: formData,
+                dataType: 'json',
+                encode: true
+            })
+            .done(function(data){
+                console.log(formData);
                 console.log(data);
-                if (data != "ok") {
-                    $(".alert-box").removeClass("success").addClass("alert").slideDown("slow").empty().append(data);
-                } else {
-                    $(".alert-box").slideUp("slow");
-                    $(".rangSheguey").delay(800).slideDown("slow").empty().append("<h1>Merci,</h1><p>votre message a bien été envoyé.</p>");
+
+                if( ! data.success){
+                    alert('Error');
+                }else{
+                    alert('Success');
                 }
             });
-            return false;
+            // $.post("commons/postmessage.php", {
+            //     name: formName,
+            //     email: formEmail,
+            //     subject: formSubject,
+            //     message: formMessage
+            // }, function(data) {
+            //     console.log(email);
+            //     console.log(data);
+            //     if (data != "ok") {
+            //         $(".alert-box").removeClass("success").addClass("alert").slideDown("slow").empty().append(data);
+            //     } else {
+            //         $(".alert-box").slideUp("slow");
+            //         $(".rangSheguey").delay(800).slideDown("slow").empty().append("<h1>Merci,</h1><p>votre message a bien été envoyé.</p>");
+            //     }
+            // });
+            event.preventDefault();
+            // return false;
+
         });
     });
     // END CONTACT FORM ACTION
