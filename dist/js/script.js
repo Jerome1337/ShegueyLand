@@ -1,6 +1,6 @@
 // SOUNDS
 $(document).ready(function() {
-    $('.conteneur').find('div').on('click touchstart', function() {
+    $('.row').find('div').on('click touchstart', function() {
         var soundId = this.id;
         $('soundId').trigger('load');
         tag = document.createElement('audio');
@@ -28,36 +28,6 @@ window.addEventListener('load', function(e) {
 }, false);
 
 // END SOUNDS
-
-// ADD PUNCH
-    $(function() {
-        $('#formPunch').submit(function() {
-
-            formName = $(this).find("input[name=pseudo]").val();
-            fornPunch = $(this).find("input[name=punch]").val();     
-
-            console.log(formName);
-            console.log(formPunch);
-
-            $.post("commons/postmessage.php", {
-                name: formName,
-                punch: formPunch,
-            }, function(data) {
-                console.log(name);
-                console.log(punch);
-                if (data != "ok") {
-                    $(".alert-box").removeClass("success").addClass("alert").slideDown("slow").empty().append(data);
-                } else {
-                    $(".alert-box").slideUp("slow");
-                    $(".rangSheguey").delay(800).slideDown("slow").empty().append("<h1>Merci,</h1><p>votre message a bien été envoyé.</p>");
-                }
-            });
-            return false;
-        });
-    });
-
-// END ADD PUNCH
-
 
 // QUIZZ
 $(document).ready(function() {
@@ -185,7 +155,7 @@ $(document).ready(function() {
             };
             // console.log(formData);
             $.ajax({
-                url: "commons/postmessage.php",
+                url: "commons/test.php",
                 type: "POST",
                 data: formData,
                 dataType: 'json',
