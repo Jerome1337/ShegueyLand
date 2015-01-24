@@ -9,7 +9,7 @@
     <body>
         <?php include('commons/header.php'); ?>
         <div class="content">
-            <div class="row">
+            <div class="row sound">
             <?php 
                 $reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' order by RAND()');
                 while ($donnees = $reponse->fetch())

@@ -14,7 +14,7 @@ $(document).ready(function() {
 
 // SOUNDS
 $(document).ready(function() {
-    $('.row').find('div').on('click touchstart', function() {
+    $('.sound').find('div').on('click touchstart', function() {
         var soundId = this.id;
         $('soundId').trigger('load');
         tag = document.createElement('audio');
@@ -169,7 +169,7 @@ $(document).ready(function() {
             };
             // console.log(formData);
             $.ajax({
-                url: "commons/test.php",
+                url: "commons/postmessage.php",
                 type: "POST",
                 data: formData,
                 dataType: 'json',
