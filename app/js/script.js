@@ -1,3 +1,17 @@
+$(document).ready(function() {
+    $('.open').click(function(){
+        $('.menu_left nav').toggleClass( 'show' );
+        $('.shadowClose').toggleClass( 'showHide' );
+        console.log("showmaguele");
+    });
+    $('.shadowClose').click(function(){
+        $('.menu_left nav').removeClass( 'show' );
+        $('.shadowClose').removeClass( 'showHide' );
+    });
+});
+
+
+
 // SOUNDS
 $(document).ready(function() {
     $('.row').find('div').on('click touchstart', function() {

@@ -20,22 +20,22 @@
                 }
                     // var_dump($photoInsta[]);
             ?>
-                    <div class="rect red special" id="sheguey" style= "background-image: url('<?php echo $photoInsta[1] ?>')">SHEGUEY</div>
-                    <div class="rect black special" id="missile" style= "background-image: url('<?php echo $photoInsta[2] ?>')">MISSILE</div>
-                    <div class="rect lightgrey special" id="59" style= "background-image: url('<?php echo $photoInsta[3] ?>')">59</div>
-                    <div class="rect red special" id="bitch" style= "background-image: url('<?php echo $photoInsta[4] ?>')">Bitch</div>
-                    <div class="rect black special" id="jamais" style= "background-image: url('<?php echo $photoInsta[5] ?>')">jamais</div>
-                    <div class="rect red special" id="jmatte" style= "background-image: url('<?php echo $photoInsta[6] ?>')">jmatte</div>
-                    <div class="rect black special" id="papa" style= "background-image: url('<?php echo $photoInsta[7] ?>')">papa</div>
-                    <div class="rect lightgrey special" id="patrimoine" style= "background-image: url('<?php echo $photoInsta[8] ?>')">patrimoine</div>
-                    <div class="rect red special" id="pepoms" style= "background-image: url('<?php echo $photoInsta[9] ?>')">pepoms</div>
-                    <div class="rect lightgrey special"id="rafale" style= "background-image: url('<?php echo $photoInsta[10] ?>')">rafale</div>
-                    <div class="rect red special" id="sucer" style= "background-image: url('<?php echo $photoInsta[11] ?>')">sucer</div>
-                    <div class="rect black special" id="terrain" style= "background-image: url('<?php echo $photoInsta[12] ?>')">terrain</div>
-                    <div class="rect lightgrey special" id="tractions" style= "background-image: url('<?php echo $photoInsta[13] ?>')">Traction</div>
-                    <div class="rect red special" id="tractions" style= "background-image: url('<?php echo $photoInsta[14] ?>')">Traction</div>
-                    <div class="rect black special" id="tractions" style= "background-image: url('<?php echo $photoInsta[15] ?>')">Traction</div>
-                    <div class="rect lightgrey special"id="tractions" style= "background-image: url('<?php echo $photoInsta[16] ?>')">Traction</div>
+                    <div class="rect red clickSheg" id="sheguey" style= "background-image: url('<?php echo $photoInsta[1] ?>')"><p>SHEGUEY</p></div>
+                    <div class="rect black clickSheg" id="missile" style= "background-image: url('<?php echo $photoInsta[2] ?>')"><p>MISSILE</p></div>
+                    <div class="rect red clickSheg" id="59" style= "background-image: url('<?php echo $photoInsta[3] ?>')"><p>59</p></div>
+                    <div class="rect red clickSheg" id="bitch" style= "background-image: url('<?php echo $photoInsta[4] ?>')"><p>Bitch</p></div>
+                    <div class="rect black clickSheg" id="jamais" style= "background-image: url('<?php echo $photoInsta[5] ?>')"><p>jamais</p></div>
+                    <div class="rect red clickSheg" id="jmatte" style= "background-image: url('<?php echo $photoInsta[6] ?>')"><p>jmatte</p></div>
+                    <div class="rect red clickSheg" id="papa" style= "background-image: url('<?php echo $photoInsta[7] ?>')"><p>papa</p></div>
+                    <div class="rect red clickSheg" id="patrimoine" style= "background-image: url('<?php echo $photoInsta[8] ?>')"><p>patrimoine</p></div>
+                    <div class="rect black clickSheg" id="pepoms" style= "background-image: url('<?php echo $photoInsta[9] ?>')"><p>pepoms</p></div>
+                    <div class="rect red clickSheg"id="rafale" style= "background-image: url('<?php echo $photoInsta[10] ?>')"><p>rafale</p></div>
+                    <div class="rect black clickSheg" id="sucer" style= "background-image: url('<?php echo $photoInsta[11] ?>')"><p>sucer</p></div>
+                    <div class="rect black clickSheg" id="terrain" style= "background-image: url('<?php echo $photoInsta[12] ?>')"><p>terrain</p></div>
+                    <div class="rect red clickSheg" id="tractions" style= "background-image: url('<?php echo $photoInsta[13] ?>')"><p>Traction</p></div>
+                    <div class="rect black clickSheg" id="tractions" style= "background-image: url('<?php echo $photoInsta[14] ?>')"><p>Traction</p></div>
+                    <div class="rect red clickSheg" id="tractions" style= "background-image: url('<?php echo $photoInsta[15] ?>')"><p>Traction</p></div>
+                    <div class="rect black clickSheg"id="tractions" style= "background-image: url('<?php echo $photoInsta[16] ?>')"><p>Traction</p></div>
                 
             </div>
         </div>

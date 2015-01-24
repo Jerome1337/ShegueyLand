@@ -1,19 +1,28 @@
-<header>
-	<h1>
-	<a href="index.php">
-		<img src="img/logo.gif" alt="ShegueyLand">
-	</a>
+<header class="menu_left">
+    
+        <h2 class="burger-icon black open">
+            <a class="icon-align-justify" href="#"></a>
+        </h2>
+	
+    <h1 class="logo">
+    	<a href="index.php"><img src="img/logo.gif" alt="ShegueyLand"></a>
 	</h1>
-	<nav class="anim">
-		<h2><a class="icon-align-justify" href="#"></a></h2>
+
+	<nav>
+		<h2 class="burger-icon white open">
+            <a href="#"></a>
+        </h2>
 		<ul>
-			<li><a href="index.php">Home</a></li>
-			<li><a href="clicknsheg.php">Click & Sheg</a></li>
-			<li><a href="#">Le mur des Shegueys</a></li>
-			<li><a href="punch.php">Punchlines</a></li>
-			<li><a href="contact.php">Contact</a></li>
+			<li><a href="index.php">Accueil</a></li>
+            <li><a href="gallerie.php">Le mur des #Sheguey</a></li>
+			<li><a href="gallerie.php">Les #Sheguey Vidéos</a></li>
+            <li><a href="clicknsheg.php">Click & Sheg</a></li>
+            <li><a href="punch.php">Punchlines</a></li>
+			<li><a href="#">Envois 1 Tweet @Gradur</a></li>
+			<li><a href="contact.php"><small>Contacter ShegeyLand</small></a></li>
 		</ul>
 	</nav>
+    <div class="shadowClose"></div>
 </header>
 <div id="fb-root"></div>
 <?php

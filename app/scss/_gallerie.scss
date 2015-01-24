@@ -80,26 +80,11 @@ $white:     #ffffff;
 		}
 	}
 
-	&.clickSheg {
+	&.special {
 		width: 100%;
 		height: 120px;
-		background-position:50% 20%;
-		background-size: 100%;
-		transition: background-size 0.3s ease-in-out;
-		cursor:pointer;
-		p {
-			background-color: inherit;
-			padding: 5px 15px;
-			flex:0;
-			align-self: flex-start;
-			transition: all 0.3s ease-in-out;
-		}
-		&:hover{
-			background-size: 120%;
-			& p{
-				transform: translateX(20px) scale(1.2);
-			}
-		}
+		background-position:center center;
+		background-size: cover;
 	}
 
 }
@@ -156,9 +141,11 @@ $white:     #ffffff;
 		&.ShegueyCalendar{ 		order: 9;}
 		&.ShegueyBuyAlbum{ 		order: 10;}
 
-		&.clickSheg{
+		&.special{
 			min-height: 150px;
 			width: 300px;
+			background-size: cover;
+			background-position:center center;
 		}
 	}
 	.conteneur {
@@ -217,10 +204,12 @@ $white:     #ffffff;
 		&.ShegueyBuyAlbum{ 				order: 70!important;}
 		&.ShegueyCalendar{ 				order: 65!important;}
 		
-		&.clickSheg{
+		&.special{
 			height: 150px;
 			width: 300px;
-			
+			background-position:center center;
+			background-size: cover;
+			// filter: blur(2px);
 
 		}
 	}
