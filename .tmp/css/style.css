@@ -314,8 +314,12 @@ footer h2 {
   background-size: 120%;
 }
 .rect.clickSheg:hover p {
-  -webkit-transform: translateX(20px) scale(1.3);
-          transform: translateX(20px) scale(1.3);
+  -webkit-transform: translateX(20px) scale(1.2);
+          transform: translateX(20px) scale(1.2);
+}
+.rect.gallery {
+  padding: 0;
+  margin: 0;
 }
 
 .conteneur {

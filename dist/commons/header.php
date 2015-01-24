@@ -28,7 +28,7 @@
 <?php
     $cache = 'cache/tweetsgradur.tmp';
     $cachesl = 'cache/tweetsl.tmp';
-    if(time() - filemtime($cache, $cachesl) > 60) {
+    if((time() - filemtime($cache) > 60) && (time() - filemtime($cachesl) > 60) ){
         require 'adm/twitteroauth.php';
         $connection = new TwitterOAuth('ABScq6XifMwUz1zhJVHxlyEeg', 'q3ulKblNbaUTs0jiLjV9uhcoN0uBe1rOdcxS9EwjuWzT7jZkae', '179239110-JOhkMKzY8d09eIV6RqDlO5TV6p3gt6m9oPaE2ILF', 'RWBphBXKu4R4PtVMgrgQ5CnQvdFYXx25GtwRL6kAgRq9u');
         $tweets = $connection->get('statuses/user_timeline', array('user_id' => '1585757612', 'count' => '1', 'exclude_replies' => 'true', 'include_rts' => 'true', 'trim_user' => 'true', 'contributor_details' => 'true'));
