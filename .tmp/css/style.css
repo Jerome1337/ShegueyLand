@@ -353,54 +353,6 @@ footer h2 {
   -webkit-transform: translateX(20px) scale(1.2);
           transform: translateX(20px) scale(1.2);
 }
-.rect.gallery {
-  padding: 0 !important;
-  margin: 0;
-}
-.rect.gallery div {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-flex-direction: column;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 300px;
-  height: 300px;
-  background-position: cover;
-}
-.rect.gallery div p {
-  color: #f7f7f7;
-  padding: 5px 10px;
-  margin: 0;
-  background: rgba(25, 30, 35, 0.3);
-}
-.rect.gallery div p span {
-  color: #df0030;
-}
-.rect.gallery div .likePic {
-  font-family: "shegueyfont" !important;
-  font-size: 5em;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
-  color: #ffffff;
-  opacity: 0;
-  cursor: pointer;
-  -webkit-transition: opacity 0.3s ease-in-out;
-          transition: opacity 0.3s ease-in-out;
-}
-.rect.gallery div .likePic:before {
-  content: "c";
-}
-.rect.gallery div .likePic:hover {
-  opacity: 1;
-}
-.rect.gallery div .likePic:hover {
-  background: rgba(25, 30, 35, 0.3);
-}
 
 .conteneur {
   width: 50%;
@@ -707,4 +659,63 @@ footer h2 {
   .form #formContact button:hover {
     background: #040405;
   }
+}
+.shegueyGallery .rect.gallery {
+  padding: 0 !important;
+  margin: 0;
+}
+.shegueyGallery .rect.gallery div {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 300px;
+  height: 300px;
+  background-position: cover;
+}
+.shegueyGallery .rect.gallery div p {
+  color: #f7f7f7;
+  padding: 5px 10px;
+  margin: 0;
+  background: rgba(25, 30, 35, 0.3);
+}
+.shegueyGallery .rect.gallery div p span {
+  color: #df0030;
+}
+.shegueyGallery .rect.gallery div .likePic {
+  font-family: "shegueyfont" !important;
+  font-size: 5em;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  color: #ffffff;
+  opacity: 0;
+  cursor: pointer;
+  -webkit-transition: opacity 0.3s ease-in-out;
+          transition: opacity 0.3s ease-in-out;
+}
+.shegueyGallery .rect.gallery div .likePic:before {
+  content: "c";
+}
+.shegueyGallery .rect.gallery div .likePic:hover {
+  opacity: 1;
+}
+.shegueyGallery .rect.gallery div .likePic:hover {
+  background: rgba(25, 30, 35, 0.3);
+}
+.shegueyGallery .button {
+  font-size: 2.2em;
+  font-family: 'Francois One', sans-serif;
+  text-transform: uppercase;
+  background: #df0030;
+  width: 320px;
+  text-align: center;
+  margin: auto;
+  cursor: pointer;
+  margin-top: 20px;
 }

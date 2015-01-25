@@ -1,10 +1,17 @@
+@charset "UTF-8";
+
 @font-face {
   font-family: "shegueyfont";
-  src: url("fonts/shegueyfont.eot");
-  src: url("fonts/shegueyfont.eot?#iefix") format("embedded-opentype"), url("fonts/shegueyfont.woff") format("woff"), url("fonts/shegueyfont.ttf") format("truetype"), url("fonts/shegueyfont.svg#shegueyfont") format("svg");
+  src:url("../fonts/shegueyfont.eot");
+  src:url("../fonts/shegueyfont.eot?#iefix") format("embedded-opentype"),
+    url("../fonts/shegueyfont.woff") format("woff"),
+    url("../fonts/shegueyfont.ttf") format("truetype"),
+    url("../fonts/shegueyfont.svg#shegueyfont") format("svg");
   font-weight: normal;
   font-style: normal;
+
 }
+
 [data-icon]:before {
   font-family: "shegueyfont" !important;
   content: attr(data-icon);
@@ -34,15 +41,12 @@
 .icon-align-justify:before {
   content: "a";
 }
-
 .icon-like:before {
   content: "b";
 }
-
 .icon-like-filled:before {
   content: "c";
 }
-
 .icon-remove:before {
   content: "d";
 }

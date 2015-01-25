@@ -2,13 +2,6 @@ $mobile320: "only screen and (min-width : 320px)";
 $tab600: "only screen and (min-width : 600px)";
 $tab1200: "only screen and (min-width : 1200px)";
 
-@font-face {
-  font-family: "menu";
-  src :url("../font/menu.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 *::selection {
   background: $red;
   color: $white;
@@ -36,11 +29,12 @@ header.menu_left{
 	// 	margin: auto;
 	// }
 	.burger-icon{
-		font-family: "menu";
+		font-family: "shegueyfont";
 		font-size: 4em;
 		padding: 20px;
 		margin: 0;
 		cursor: pointer;
+		z-index: 999;
 		&.black{
 			color: $black;
 			position: fixed;
@@ -52,7 +46,6 @@ header.menu_left{
 		&:before{
 			content: "a";
 		}
-		
 	}
 
 	h1.logo { 
@@ -60,9 +53,9 @@ header.menu_left{
 		margin: 0;
 		img {
 		height: auto;
-		max-width: 100%;
+		max-width: 90%;
+		padding: 15px 0;
 		margin: auto;
-		background-size: cover;
 		}
 	}
 
@@ -71,7 +64,7 @@ header.menu_left{
 		right: 0;
 		bottom: 0;
 		
-		background: rgba(24,29,34,0.2);
+		background: rgba(24,29,34,0.4);
 		content: '';
 		opacity: 0;
 		transition: opacity 0.5s;
@@ -88,13 +81,17 @@ header.menu_left{
 		top: 0;
 		left: 0;
 		bottom: 0;
-		z-index: 99;
+		z-index: 9999;
 		visibility: hidden;
 		height: 100%;
 		background: $red;
 		transition: all 0.5s;
 		transform: translateX(-300px);
-
+		.burger-icon{
+			&:before{
+				content: "d";
+			}
+		}
 		ul {
 			margin: 0;
 			padding: 0;
@@ -151,36 +148,6 @@ button {
         text-indent: 0;
 }
 
-
-[data-icon]:before {
-  font-family: "menu" !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  font-family: "menu" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-
-
 footer {
 	width: 100%;
 	height: 50px;
@@ -200,9 +167,25 @@ footer {
 	footer {
 		margin-top: 25px;
 	}
+		h1.logo { 
+			img {
+				width: 434px;
+				height: 187px;
+				margin: auto;
+				background-size: cover;
+			}
+	}
 
 }@media #{$tab1200} {
 	footer {
 		margin-top: 25px;
+	}
+		h1.logo { 
+			img {
+				width: 434px;
+				height: 187px;
+				margin: auto;
+				background-size: cover;
+			}
 	}
 }

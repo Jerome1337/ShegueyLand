@@ -1,220 +1,51 @@
-$white:     #ffffff;
-.content{
+.shegueyGallery{
 	
-}
-.row{margin: auto;}
-.rect{
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: column;
-	width: 100%;
-	font-family: 'Francois One', sans-serif;
-	font-size: 3.2em;
-	color: $white;
-	padding: 25px;
-	text-transform: uppercase;
-	p{
-		margin-top: 0;
-		flex: 1;
+	.rect.gallery{
+		padding: 0!important;
+		margin:0;
+		div{
+			display: flex; 
+			flex-direction: column;
+			width:300px;
+			height: 300px;
+			background-position: cover;
+			p{
+				color: darken($white,3%);
+				padding: 5px 10px;
+				margin: 0;
+				background: rgba($black, 0.3);
+				span{color:$red;}
+			}
+			.likePic{
+				font-family: "shegueyfont"!important;
+				font-size: 5em;
+				justify-content: center;
+				align-items: center;
+				color: $white;
+				opacity: 0;
+				cursor: pointer;
+				transition: opacity 0.3s ease-in-out;
+				&:before{
+					content: "c";
+				}
+				&:hover{
+					opacity: 1;
+				}
+				&:hover{
+					background: rgba($black, 0.3);
+				}
+			}
+		}
 	}
-	&.red {
+	.button{
+		font-size: 2.2em;
+		font-family: 'Francois One', sans-serif;
+		text-transform: uppercase;
 		background: $red;
-		.button:hover{background: darken($red, 10%);}
+		width: 320px;
+		text-align: center;
+		margin: auto;
+		cursor: pointer;
+		margin-top: 20px;
 	}
-	&.black {
-		background: $black;
-		.button:hover{background: darken($black, 10%);}
-	}
-	&.lightgrey {
-		background: $lightgrey;
-		.button:hover{background: darken($lightgrey, 10%);}
-	}
-	&.no-mobile{
-		display: none;
-	}
-	&:hover{
-		
-	}
-	.tweetCard{
-		color: $grey;
-		h2{
-			font-size: 1.2em;
-		}
-		p{
-			font-family: 'Radley', serif;
-			font-size: 1em;
-			text-transform: none;
-			a{
-					color: $red;
-			}
-		}
-	}
-	&.owl-carousel{
-		padding: 0;
-		.owl-item img{
-		display: block;
-		width: 100%;
-		height: auto;
-		}
-		.owl-controls {
-		    margin-top: -50px;
-		    &.active span{
-		    	background: $red;
-		    }
-		}
-	}
-	&.ShegueyBuyAlbum {
-		background: url('../img/cover.jpg') center center;
-		background-size: cover;
-		min-height: 300px;
-		img{
-			display: block;
-			width: 100%;
-			height: auto;
-		}
-		a{
-			
-		}
-		.button{
-			background: $black;
-		}
-	}
-
-	&.special {
-		width: 100%;
-		height: 120px;
-		background-position:center center;
-		background-size: cover;
-	}
-
-}
-
-.conteneur {
-	width: 50%;
-	// flex-wrap: nowrap;
-	float: left;
-	// flex-direction: row;
-	}
-
-
-@media #{$tab600} {
-	
-	.row{
-		display: flex;
-		flex-wrap: wrap;
-		width: 600px;
-	}
-	.rect{
-		width: 300px;
-		min-height: 300px;
-		font-size: 2.5em;
-		&.no-mobile{
-			display: block;
-		}
-		&.no-tablet{
-		display: none!important;
-		}	
-		&.owl-carousel {
-			width: 300px!important;
-			img{
-			width: 300px!important;
-			height: 300px!important;
-			}
-		}
-		.tweetCard{
-			p{
-				font-size: 0.8em;
-				a{
-					color: $red;
-				}
-			}
-		}
-
-		&.shegueyMur{ 			order: 1;}
-		&.shegueyVideos{ 		order: 2;}
-		&.shegueyClickSheg{ 	order: 3;}
-		&.shegueyTweet{ 		order: 4;}
-		&.shegueySlideGradur{ 	order: 5;}
-		&.shegueyTest{ 			order: 6;}
-		&.shegueyTweetTo{ 		order: 7;}
-		&.shegueySlide{ 		order: 8;}
-		&.ShegueyCalendar{ 		order: 9;}
-		&.ShegueyBuyAlbum{ 		order: 10;}
-
-		&.special{
-			min-height: 150px;
-			width: 300px;
-			background-size: cover;
-			background-position:center center;
-		}
-	}
-	.conteneur {
-		width: 300px;
-	}
-	
-}@media #{$tab1200} {
-	
-	.row{
-		display: flex;
-		flex-wrap: wrap;
-		width: 1200px;
-	}
-	.rect{
-		width: 300px;
-		height: 300px;
-	
-		&.no-mobile{
-			display: block;
-		}
-		&.no-tablet{
-		display: block!important;
-		}
-		&.empty{
-			// display: block!important;
-		}	
-		&.owl-carousel {
-			width: 300px!important;
-			img{
-			width: 300px!important;
-			height: 300px!important;
-			}
-		}
-		.tweetCard{
-			p{
-				font-size: 0.8em;
-				a{
-					color: $red;
-				}
-			}
-		}
-
-		&.shegueyMur{ 					order: 1!important;}
-		&.empty:nth-child(2){ 			order: 4!important;}
-		&.shegueyVideos{ 				order: 4!important;}
-		&.shegueyTweet:nth-child(1){ 	order: 15!important;}
-		&.shegueyTweet:nth-child(2){ 	order: 20!important;}
-		&.shegueyClickSheg{ 			order: 25!important;}
-		&.empty:nth-child(7){ 			order: 30!important;}
-		&.shegueySlideGradur{ 			order: 35!important;}
-		&.shegueyTweetTo{ 				order: 40!important;}
-		&.empty:nth-child(10){ 			order: 40!important;}
-		&.shegueySlide{ 				order: 55!important;}
-		&.shegueyTest{ 					order: 55!important;}
-		&.empty:nth-child(13){ 			order: 55!important;}
-		&.ShegueyBuyAlbum{ 				order: 70!important;}
-		&.ShegueyCalendar{ 				order: 65!important;}
-		
-		&.special{
-			height: 150px;
-			width: 300px;
-			background-position:center center;
-			background-size: cover;
-			// filter: blur(2px);
-
-		}
-	}
-	.conteneur {
-		width: 300px;
-	}
-	
 }

@@ -14,7 +14,7 @@
 			
 			
 			foreach ($contenu->tags as $tag) {
-				if($tag === "sheguey" || $tag ==="shegueyLand" || $tag ==="shegueysse" || $tag ==="missshegueyland")
+				if($tag === "sheguey" || $tag ==="shegueyland" || $tag ==="shegueysse" || $tag ==="missshegueyland")
 				{
 					$tags[] = $tag;
 				}

@@ -1,11 +1,11 @@
 <header class="menu_left">
     
         <h2 class="burger-icon black open">
-            <a class="icon-align-justify" href="#"></a>
+            <a href="#"></a>
         </h2>
 	
     <h1 class="logo">
-    	<a href="index.php"><img src="img/logo.gif" alt="ShegueyLand"></a>
+    	<a href="index.php"><img src="img/logo.png" alt="ShegueyLand"></a>
 	</h1>
 
 	<nav>
