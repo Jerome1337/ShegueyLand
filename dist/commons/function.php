@@ -1,7 +1,7 @@
 <?php
 
 	function saveImageOrVid($contenu){
-		include('adm/bddconnect.php');
+		include('../adm/bddconnect.php');
 
 			
 			$typeFormat = $contenu->type;
@@ -58,7 +58,7 @@
 
  
 	function getInsta($type, $tag, $limit){
-		include('adm/bddconnect.php');
+		include('../adm/bddconnect.php');
 
 		// $cache = 'cache/index.json';
 		// $expire = time() -10 ; // 3600 valable une heure
@@ -141,4 +141,45 @@
 	        // echo $page ; // on affiche notre page :D 
 		}
 	// }
+
+
+			if(isset($_POST['getMoreSheguey'])){
+				$getMoreSheguey = $_POST['getMoreSheguey'];
+				getMoreSheguey("$getMoreSheguey");
+			}
+			
+				
+
+
+			function getMoreSheguey($last_img){
+			include('../adm/bddconnect.php');
+
+				$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' AND id < '.$last_img.' order by id DESC LIMIT 8');
+				while ($donnees = $reponse->fetch())
+				{
+                    $id = $donnees['id'];
+                    $standard_resolution = $donnees['standard_resolution'];
+                    $low_resolution = $donnees['low_resolution'];
+                    $media_caption = $donnees['caption_text'];
+                    $tags = $donnees['tags'];
+                    $tag = explode(",", $tags);
+                    // echo json_encode(array('content' => 'error','message'=> 'The group has not been removed'));
+                    ?>
+                    <div class="rect lightgrey gallery">
+                        <div style="background: url('<?php echo $low_resolution; ?>') ">
+                            <div data-id="<?php echo $id; ?>" class="likePic icon-like"></div>
+                            <?php 
+                                foreach ($tag as $actual_tag) {
+                                   if($actual_tag==="shegueyland"){
+                                        echo'<p>#sheguey<span>land</span></p>';
+                                   }
+                                }
+                            ?>
+                            
+                        </div>
+                    </div>
+                <?php 
+                }
+			}
+
 ?>

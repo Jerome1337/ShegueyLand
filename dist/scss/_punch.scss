@@ -1,0 +1,150 @@
+.addPunch {
+		width: 100%;
+		height: 300px;
+		margin: auto;
+		background-color: $red;
+		display: table;
+		.contentform {
+			display: table-cell;
+			vertical-align: middle;
+			form {
+				width: 85%;
+				margin: auto;
+				textarea {
+					margin: 0;
+					resize: none;
+					display: flex;
+					display-direction: column;
+					flex-wrap: wrap;
+					font-size: 1.5em;
+					height: 150px;
+					margin-bottom: 15px;
+					width: 100%;
+					&::placeholder {
+						color: $red;
+						text-transform: uppercase;
+						font-style: italic;
+					}
+				}
+				input {
+					font-size: 1.5em;
+					height: 50px;
+					display: flex;
+					display-direction: column;
+					flex-wrap: wrap;
+					margin: 15px 0;
+					width: 100%;
+					&::placeholder {
+						color: $red;
+						text-transform: uppercase;
+						font-style: italic;
+					}
+				}
+				#submitPunch {
+					text-align: center;
+					display: flex;
+					display-direction: column;
+					flex-wrap: wrap;
+					width: 100%;
+				}
+			}
+			#punchAdded {
+				display: flex;
+				width: 85%;
+				margin: auto;
+				h2 {
+					text-align: left;
+					color: $white;
+					text-transform: uppercase;
+					font-size: 1.5em;
+				}
+				p {
+					text-align: right;
+					color: $white;
+					text-transform: uppercase;
+					font-size: 1em;
+					padding-top: 5px;
+				}
+			}
+		}
+	}
+.row {
+	.punchline {
+			font-size: 0.9em;
+			text-transform: capitalize;
+		}
+	.mc{
+		font-size: 1em;
+	}
+	.punchDate {
+		font-size: 0.85em;
+		font-family: 'Radley', serif;
+		font-style: italic;
+		text-align: right;
+	}
+}
+@media #{$tab600} {
+		.addPunch {
+			width: 600px;
+			height: 60px;
+			margin-bottom: 20px;
+			form {
+				input {
+					margin-top: 15px;
+				}
+				#submitPunch {
+					margin-bottom: 15px;
+				}
+			}
+		}
+}@media #{$tab1200} {
+	.addPunch {
+		width: 1200px;
+		height: 60px;
+		// margin-bottom: 20px;
+		.contentform {
+			form {
+				width: 90%;
+				height: 100%;
+				display: flex;
+				flex-direction: row;
+				input {
+					width: 20%;
+					height: 40px;
+					margin-right: 10px;
+					&::placeholder{
+						height: 50px;
+						line-height: 35px;
+					}
+				}
+				textarea {
+					width: 70%;
+					height: 40px;
+					margin-top: 15px;
+					&::placeholder{
+						height: 50px;
+						line-height: 40px;
+					}
+				}
+				#submitPunch {
+					width: 10%;
+					height: 40px;
+					margin: 15px 0 0 10px;
+				}
+			}
+			#punchAdded {
+				width: 90%;
+			}
+		}
+
+	}
+	.row {
+			.punch {
+			width: 400px;
+			min-height: 300px;
+			&.greytext {
+				color: $grey;
+			}
+		}
+	}
+}

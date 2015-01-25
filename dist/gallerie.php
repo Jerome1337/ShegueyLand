@@ -11,14 +11,14 @@
         
         
 
-        <div class="content">
-            <div class="row">
-                
+        <div class="content shegueyGallery">
+            <div class="row js-shegueyWall">
                 
                     <?php 
-                        $reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' order by id DESC LIMIT 10');
+                        $reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' order by id DESC LIMIT 16');
                         while ($donnees = $reponse->fetch())
                         {
+                            $id = $donnees['id'];
                             $standard_resolution = $donnees['standard_resolution'];
                             $low_resolution = $donnees['low_resolution'];
                             $media_caption = $donnees['caption_text'];
@@ -27,7 +27,7 @@
                             ?>
                             <div class="rect lightgrey gallery">
                                 <div style="background: url('<?php echo $low_resolution; ?>') ">
-                                    <div class="likePic icon-like"></div>
+                                    <div data-id="<?php echo $id; ?>" class="likePic icon-like"></div>
                                     <?php 
                                         foreach ($tag as $actual_tag) {
                                            if($actual_tag==="shegueyland"){
@@ -41,8 +41,10 @@
                         <?php 
                         }
                     ?>
-
                 
+            </div>
+            <div class="button getMoreSheg">
+                    Afficher plus de SHEGUEY
             </div>
         </div>
         <?php include('commons/footer.php'); ?>

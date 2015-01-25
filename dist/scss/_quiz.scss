@@ -1,14 +1,13 @@
 .quizz {
-	ul {
-		li {
+	div {
+		div {
 			display: none;
 			&.active {
-				display: block;
+			display: block;
 			}
 		}
 	}
 }
-
 @media #{$tab600} {
 
 }@media #{$tab1200} {

@@ -720,3 +720,309 @@ footer h2 {
   cursor: pointer;
   margin-top: 20px;
 }
+
+.form {
+  width: 100%;
+}
+.form.red {
+  background-color: #df0030;
+}
+.form.red .button:hover {
+  background: #ac0025;
+}
+.form #formContact {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 95%;
+  margin: auto;
+}
+.form #formContact input {
+  margin-top: 1.5em;
+  height: 40px;
+}
+.form #formContact textarea {
+  margin-top: 1.5em;
+  height: 200px;
+}
+.form #formContact button {
+  width: 100%;
+  height: 40px;
+  background-color: #191e23;
+  margin: 0.9em 0;
+  color: #ffffff;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media only screen and (min-width: 600px) {
+  .form {
+    width: 600px;
+    margin: auto;
+  }
+  .form.red {
+    background-color: #df0030;
+  }
+  .form #formContact button {
+    -webkit-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+  }
+  .form #formContact button:hover {
+    background: #040405;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .form {
+    width: 1200px;
+    margin: auto;
+  }
+  .form.red {
+    background-color: #df0030;
+  }
+  .form #formContact {
+    width: 85%;
+  }
+  .form #formContact input {
+    margin-top: 1.5em;
+    height: 40px;
+    width: 50%;
+  }
+  .form #formContact textarea {
+    margin-top: 1.5em;
+    height: 200px;
+    width: 50%;
+  }
+  .form #formContact button {
+    width: 50%;
+    height: 40px;
+    background-color: #191e23;
+    margin: 0.9em 0;
+    color: #ffffff;
+    text-align: center;
+    text-transform: uppercase;
+    -webkit-transition: all .5s ease-in-out;
+            transition: all .5s ease-in-out;
+  }
+  .form #formContact button:hover {
+    background: #040405;
+  }
+}
+.addPunch {
+  width: 100%;
+  height: 300px;
+  margin: auto;
+  background-color: #df0030;
+  display: table;
+}
+.addPunch .contentform {
+  display: table-cell;
+  vertical-align: middle;
+}
+.addPunch .contentform form {
+  width: 85%;
+  margin: auto;
+}
+.addPunch .contentform form textarea {
+  margin: 0;
+  resize: none;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  font-size: 1.5em;
+  height: 150px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+.addPunch .contentform form textarea::-webkit-input-placeholder {
+  color: #df0030;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.addPunch .contentform form textarea::-moz-placeholder {
+  color: #df0030;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.addPunch .contentform form textarea:-ms-input-placeholder {
+  color: #df0030;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.addPunch .contentform form textarea::placeholder {
+  color: #df0030;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.addPunch .contentform form input {
+  font-size: 1.5em;
+  height: 50px;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  margin: 15px 0;
+  width: 100%;
+}
+.addPunch .contentform form input::-webkit-input-placeholder {
+  color: #df0030;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.addPunch .contentform form input::-moz-placeholder {
+  color: #df0030;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.addPunch .contentform form input:-ms-input-placeholder {
+  color: #df0030;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.addPunch .contentform form input::placeholder {
+  color: #df0030;
+  text-transform: uppercase;
+  font-style: italic;
+}
+.addPunch .contentform form #submitPunch {
+  text-align: center;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  display-direction: column;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  width: 100%;
+}
+.addPunch .contentform #punchAdded {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 85%;
+  margin: auto;
+}
+.addPunch .contentform #punchAdded h2 {
+  text-align: left;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1.5em;
+}
+.addPunch .contentform #punchAdded p {
+  text-align: right;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 1em;
+  padding-top: 5px;
+}
+
+.row .punchline {
+  font-size: 0.9em;
+  text-transform: capitalize;
+}
+.row .mc {
+  font-size: 1em;
+}
+.row .punchDate {
+  font-size: 0.85em;
+  font-family: 'Radley', serif;
+  font-style: italic;
+  text-align: right;
+}
+
+@media only screen and (min-width: 600px) {
+  .addPunch {
+    width: 600px;
+    height: 60px;
+    margin-bottom: 20px;
+  }
+  .addPunch form input {
+    margin-top: 15px;
+  }
+  .addPunch form #submitPunch {
+    margin-bottom: 15px;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .addPunch {
+    width: 1200px;
+    height: 60px;
+  }
+  .addPunch .contentform form {
+    width: 90%;
+    height: 100%;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-direction: row;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  .addPunch .contentform form input {
+    width: 20%;
+    height: 40px;
+    margin-right: 10px;
+  }
+  .addPunch .contentform form input::-webkit-input-placeholder {
+    height: 50px;
+    line-height: 35px;
+  }
+  .addPunch .contentform form input::-moz-placeholder {
+    height: 50px;
+    line-height: 35px;
+  }
+  .addPunch .contentform form input:-ms-input-placeholder {
+    height: 50px;
+    line-height: 35px;
+  }
+  .addPunch .contentform form input::placeholder {
+    height: 50px;
+    line-height: 35px;
+  }
+  .addPunch .contentform form textarea {
+    width: 70%;
+    height: 40px;
+    margin-top: 15px;
+  }
+  .addPunch .contentform form textarea::-webkit-input-placeholder {
+    height: 50px;
+    line-height: 40px;
+  }
+  .addPunch .contentform form textarea::-moz-placeholder {
+    height: 50px;
+    line-height: 40px;
+  }
+  .addPunch .contentform form textarea:-ms-input-placeholder {
+    height: 50px;
+    line-height: 40px;
+  }
+  .addPunch .contentform form textarea::placeholder {
+    height: 50px;
+    line-height: 40px;
+  }
+  .addPunch .contentform form #submitPunch {
+    width: 10%;
+    height: 40px;
+    margin: 15px 0 0 10px;
+  }
+  .addPunch .contentform #punchAdded {
+    width: 90%;
+  }
+
+  .row .punch {
+    width: 400px;
+    min-height: 300px;
+  }
+  .row .punch.greytext {
+    color: #424242;
+  }
+}
