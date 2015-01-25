@@ -19,12 +19,13 @@
                         $reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' order by id DESC LIMIT 10');
                         while ($donnees = $reponse->fetch())
                         {
-                            $media = $donnees['standard_resolution'];
+                            $standard_resolution = $donnees['standard_resolution'];
+                            $low_resolution = $donnees['low_resolution'];
                             $media_caption = $donnees['caption_text'];
                             ?>
                             <div class="rect lightgrey gallery">
                                 <div>
-                                    <img src="<?php echo $media; ?>" alt="<?php echo $media_caption; ?>">
+                                    <img src="<?php echo $low_resolution; ?>" alt="<?php echo $media_caption; ?>">
                                 </div>
                             </div>
                         <?php 

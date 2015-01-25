@@ -13,12 +13,12 @@
             <div class="row">
                 <div class="rect red shegueyMur">
                     <p>Le mur des #Sheguey<br/>Via instagram</p>
-                    <a href="#"><div class="button">Découvre le mur</div></a>
+                    <a href="gallerie.php"><div class="button">Découvre le mur</div></a>
                 </div>
                 <div class="rect empty no-mobile no-tablet"></div>
                 <div class="rect black shegueyVideos">
                     <p>Lache ton «sheguey!!!!!»<br/>Sur instagram video</p>
-                    <a href="#"><div class="button">Voir les vidéos</div></a>
+                    <a href="gallerie.php"><div class="button">Voir les vidéos</div></a>
                 </div>
                 <?php foreach ($tweets as $k => $tweet): ?>
                 <div class="rect lightgrey shegueyTweet">

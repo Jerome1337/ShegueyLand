@@ -5,7 +5,7 @@
         </h2>
 	
     <h1 class="logo">
-    	<a href="index.php"><img src="img/logo.gif" alt="ShegueyLand"></a>
+    	<a href="index.php"><img src="img/logo.png" alt="ShegueyLand"></a>
 	</h1>
 
 	<nav>
@@ -16,9 +16,10 @@
 			<li><a href="index.php">Accueil</a></li>
             <li><a href="gallerie.php">Le mur des #Sheguey</a></li>
 			<li><a href="gallerie.php">Les #Sheguey Vidéos</a></li>
+			<li><a href="quelsheguey.php">Quel Sheguey es-tu ?</a></li>
             <li><a href="clicknsheg.php">Click & Sheg</a></li>
             <li><a href="punch.php">Punchlines</a></li>
-			<li><a href="#">Envois 1 Tweet @Gradur</a></li>
+			<li><a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand%20@cahiips%20@MOneymaks%20@Luissfernando17%20@midosofficiel" class="twitter" data-related="theHauteCulture,gradidur">Envois 1 Tweet @Gradur</a></li>
 			<li><a href="contact.php"><small>Contacter ShegeyLand</small></a></li>
 		</ul>
 	</nav>
@@ -44,7 +45,7 @@
     function parseTweet($text) {
         $text = preg_replace('#http://[a-z0-9._/-]+#i', '<a target="_blank" href="$0">$0</a>', $text); //Liens HTTP
         $text = preg_replace('#@([a-z0-9_]+)#i', '<a target="_blank" href="http://twitter.com/$1">@$1</a>', $text); //Pseudos
-        $text = preg_replace('# \#([a-z0-9_-]+)#i', ' <a target="_blank" href="http://search.twitter.com/search?q=%23$1">#$1</a>', $text); //Hashtags
+        $text = preg_replace('# \#([a-z0-9_-]+)#i', ' <a target="_blank" href="http://twitter.com/hashtag/$1">#$1</a>', $text); //Hashtags
         $text = preg_replace('#https://[a-z0-9._/-]+#i', '<a target="_blank" href="$0">$0</a>', $text); //Liens HTTPS
         return $text;
     }

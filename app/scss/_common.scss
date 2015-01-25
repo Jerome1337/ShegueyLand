@@ -34,6 +34,7 @@ header.menu_left{
 		padding: 20px;
 		margin: 0;
 		cursor: pointer;
+		z-index: 999;
 		&.black{
 			color: $black;
 			position: fixed;
@@ -45,17 +46,16 @@ header.menu_left{
 		&:before{
 			content: "a";
 		}
-		
 	}
 
 	h1.logo { 
 		text-align: center;
 		margin: 0;
 		img {
-		width: 434px;
-		height: 187px;
+		height: auto;
+		max-width: 90%;
+		padding: 15px 0;
 		margin: auto;
-		background-size: cover;
 		}
 	}
 
@@ -81,7 +81,7 @@ header.menu_left{
 		top: 0;
 		left: 0;
 		bottom: 0;
-		z-index: 99;
+		z-index: 9999;
 		visibility: hidden;
 		height: 100%;
 		background: $red;
@@ -167,9 +167,25 @@ footer {
 	footer {
 		margin-top: 25px;
 	}
+		h1.logo { 
+			img {
+				width: 434px;
+				height: 187px;
+				margin: auto;
+				background-size: cover;
+			}
+	}
 
 }@media #{$tab1200} {
 	footer {
 		margin-top: 25px;
+	}
+		h1.logo { 
+			img {
+				width: 434px;
+				height: 187px;
+				margin: auto;
+				background-size: cover;
+			}
 	}
 }

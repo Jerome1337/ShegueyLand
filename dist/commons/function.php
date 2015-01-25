@@ -3,38 +3,49 @@
 	function saveImageOrVid($contenu){
 		include('adm/bddconnect.php');
 
-		if ($contenu->type == 'image') {
+			
+			$typeFormat = $contenu->type;
+			if ($typeFormat == 'image'){
+				$realTypeFormat = "images";
+			} 
+			elseif ($typeFormat == 'video'){
+				$realTypeFormat = "videos";
+			} 
+			
+			
+			foreach ($contenu->tags as $tag) {
+				if($tag === "sheguey" || $tag ==="shegueyLand" || $tag ==="shegueysse" || $tag ==="missshegueyland")
+				{
+					$tags[] = $tag;
+				}
+			}
+
+			if(isset($tags)){
+				$savableTags = implode(",",$tags);
+			} else {
+				$savableTags= "";
+			}
 			
 			// Saving image format
 
-			$req = $bdd->prepare('	INSERT INTO instagram(id_insta, standard_resolution, low_resolution, caption_text, username, type, link) 
-									VALUES(:id_insta, :standard_resolution, :low_resolution, :caption_text, :username, :type, :link)');
+			$req = $bdd->prepare('	INSERT INTO instagram(id_insta, standard_resolution, low_resolution, tags, caption_text, username, type, link) 
+									VALUES(:id_insta, :standard_resolution, :low_resolution, :tags, :caption_text, :username, :type, :link)');
 			$req->execute(array(
 				'id_insta' => $contenu->id,
-				'standard_resolution' => $contenu->images->standard_resolution->url,
-				'low_resolution' => $contenu->images->low_resolution->url,
+				'standard_resolution' => $contenu->$realTypeFormat->standard_resolution->url,
+				'low_resolution' => $contenu->$realTypeFormat->low_resolution->url,
 				'caption_text' => $contenu->caption->text,
+				'tags' => $savableTags,
 				'username' => $contenu->user->username,
 				'type' => $contenu->type,
 				'link' => $contenu->link
 				));
+
+		if ($typeFormat == 'image') {
 
 		    echo"<img src='{$contenu->images->standard_resolution->url}' width='80'>";
-		} elseif($contenu->type == 'video') {
-
-			// Saving image format
-
-			$req = $bdd->prepare('	INSERT INTO instagram(id_insta, standard_resolution, low_resolution,  caption_text, username, type, link) 
-									VALUES(:id_insta, :standard_resolution, :low_resolution, :caption_text, :username, :type, :link)');
-			$req->execute(array(
-				'id_insta' => $contenu->id,
-				'standard_resolution' => $contenu->videos->standard_resolution->url,
-				'low_resolution' => $contenu->videos->low_resolution->url,
-				'caption_text' => $contenu->caption->text,
-				'username' => $contenu->user->username,
-				'type' => $contenu->type,
-				'link' => $contenu->link
-				));
+		
+		} elseif($typeFormat == 'video') {
 
 		    echo"<video width='80' height='80' controls>
 		          <source src='{$contenu->videos->standard_resolution->url}' type='video/mp4'>

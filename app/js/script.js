@@ -14,12 +14,12 @@ $(document).ready(function() {
 
 // SOUNDS
 $(document).ready(function() {
-    $('.row').find('div').on('click touchstart', function() {
+    $('.sound').find('div').on('click touchstart', function() {
         var soundId = this.id;
         $('soundId').trigger('load');
         tag = document.createElement('audio');
         tag.setAttribute("preload", "auto")
-        tag.setAttribute("src", "snd/" + soundId + ".mp3")
+        tag.setAttribute("src", "sound/" + soundId + ".wav")
         tag.play();
         // console.log("playyyyy");
         // console.log(soundId);
@@ -169,7 +169,7 @@ $(document).ready(function() {
             };
             // console.log(formData);
             $.ajax({
-                url: "commons/test.php",
+                url: "commons/postmessage.php",
                 type: "POST",
                 data: formData,
                 dataType: 'json',
@@ -229,7 +229,7 @@ $(document).ready(function() {
     // END FB SHARE
 
     // TWITTER
-    $("#twitter").click(function() {
+    $(".twitter").click(function() {
         var url = $(this).attr("data-url");
         window.open(url, "tweet", "height=300,width=550,resizable=1");
     });

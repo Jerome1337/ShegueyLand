@@ -89,6 +89,7 @@ header.menu_left .burger-icon {
   padding: 20px;
   margin: 0;
   cursor: pointer;
+  z-index: 999;
 }
 header.menu_left .burger-icon.black {
   color: #191e23;
@@ -106,10 +107,10 @@ header.menu_left h1.logo {
   margin: 0;
 }
 header.menu_left h1.logo img {
-  width: 434px;
-  height: 187px;
+  height: auto;
+  max-width: 90%;
+  padding: 15px 0;
   margin: auto;
-  background-size: cover;
 }
 header.menu_left .shadowClose {
   top: 0;
@@ -133,7 +134,7 @@ header.menu_left nav {
   top: 0;
   left: 0;
   bottom: 0;
-  z-index: 99;
+  z-index: 9999;
   visibility: hidden;
   height: 100%;
   background: #df0030;
@@ -215,10 +216,24 @@ footer h2 {
   footer {
     margin-top: 25px;
   }
+
+  h1.logo img {
+    width: 434px;
+    height: 187px;
+    margin: auto;
+    background-size: cover;
+  }
 }
 @media only screen and (min-width: 1200px) {
   footer {
     margin-top: 25px;
+  }
+
+  h1.logo img {
+    width: 434px;
+    height: 187px;
+    margin: auto;
+    background-size: cover;
   }
 }
 .row {
