@@ -10,3 +10,5 @@ gulpfile.js
 npm-debug.log
 package.json
 adm/bddconnect.php
+app/cache/tweets.tmp
+.gitignore
