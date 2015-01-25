@@ -2,13 +2,6 @@ $mobile320: "only screen and (min-width : 320px)";
 $tab600: "only screen and (min-width : 600px)";
 $tab1200: "only screen and (min-width : 1200px)";
 
-@font-face {
-  font-family: "menu";
-  src :url("../font/menu.ttf") format("truetype");
-  font-weight: normal;
-  font-style: normal;
-}
-
 *::selection {
   background: $red;
   color: $white;
@@ -37,7 +30,7 @@ header.menu_left{
 	// 	margin: auto;
 	// }
 	.burger-icon{
-		font-family: "menu";
+		font-family: "shegueyfont";
 		font-size: 4em;
 		padding: 20px;
 		margin: 0;
@@ -95,7 +88,11 @@ header.menu_left{
 		background: $red;
 		transition: all 0.5s;
 		transform: translateX(-300px);
-
+		.burger-icon{
+			&:before{
+				content: "d";
+			}
+		}
 		ul {
 			margin: 0;
 			padding: 0;
@@ -151,36 +148,6 @@ button {
         text-decoration: none;
         text-indent: 0;
 }
-
-
-[data-icon]:before {
-  font-family: "menu" !important;
-  content: attr(data-icon);
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-[class^="icon-"]:before,
-[class*=" icon-"]:before {
-  font-family: "menu" !important;
-  font-style: normal !important;
-  font-weight: normal !important;
-  font-variant: normal !important;
-  text-transform: none !important;
-  speak: none;
-  line-height: 1;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-
-
 
 footer {
 	width: 100%;

@@ -10,6 +10,29 @@ $(document).ready(function() {
     });
 });
 
+$(document).ready(function() {
+    $('.getMoreSheg').click(function(){
+        var lastImageLoaded = $(".likePic").last().attr("data-id");
+        console.log("LOADING MORE SHEG " + lastImageLoaded);
+        $.ajax({
+        type: "POST",
+        url: "commons/function.php",
+        data: { getMoreSheguey: lastImageLoaded }
+        })
+        .done(function( imagesLoaded ) {
+        alert( "Data Saved: " + imagesLoaded );
+        $( imagesLoaded ).appendTo( ".js-shegueyWall" );
+        lastImageLoaded = $(imagesLoaded).find(".likePic").last().attr("data-id");
+        
+        console.log("NEW : LOADING MORE SHEG " + lastImageLoaded);
+
+        });
+
+
+        
+    });
+});
+
 
 
 // SOUNDS

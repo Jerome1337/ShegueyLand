@@ -1,7 +1,7 @@
 <header class="menu_left">
     
         <h2 class="burger-icon black open">
-            <a class="icon-align-justify" href="#"></a>
+            <a href="#"></a>
         </h2>
 	
     <h1 class="logo">
