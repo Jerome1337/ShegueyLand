@@ -1,9 +1,9 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set("display_errors", 1);
+	// error_reporting(E_ALL);
+	// ini_set("display_errors", 1);
 	include('../adm/bddconnect.php');
 		$data = array();
-		if (!empty($_POST['name']) || !empty($_POST['email']) || !empty($_POST['subject']) || !empty($_POST['message']))
+		if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['message']))
 		{
 			// var_dump($_POST['name']);
 			// var_dump($_POST['email']);

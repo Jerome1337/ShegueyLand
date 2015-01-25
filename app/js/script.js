@@ -26,6 +26,43 @@ $(document).ready(function() {
     });
 });
 
+// ADD PUNCH ACTION
+$(document).ready(function() {
+    var textMax = 150;
+    $('#punchAdded p').html(textMax + ' caractères restant.');
+    $('#formPunchline').keyup(function(){
+        var textChar = $('#formPunchline').val().length;
+        var textRemaining = textMax - textChar;
+        $('#punchAdded p').html(textRemaining + ' caractères restant.');
+    });
+    $('#formPunch').submit(function(event) {
+        var dataPunch = {
+            'mc' : $('#formMc').val(),
+            'punch' : $("#formPunchline").val()
+        };
+        // console.log(formData);
+        $.ajax({
+            url: "commons/postpunch.php",
+            type: "POST",
+            data: dataPunch,
+            dataType: 'json',
+            encode: true
+        })
+        .done(function(data){
+            console.log(dataPunch);
+            console.log(data);
+
+            if( ! data.success){
+                $('#punchAdded h2').append('Remplis tous les champs !').hide().slideDown();
+            }else{
+                $('#punchAdded h2').append('Ta punchline vient d\'être envoyée !').hide().slideDown();
+            }
+        });
+        event.preventDefault();
+    });
+});
+// END ADD PUNCH ACTION
+
 // Check si une nouvelle version du cache est disponible.
 window.addEventListener('load', function(e) {
 
@@ -47,11 +84,11 @@ window.addEventListener('load', function(e) {
 $(document).ready(function() {
     var score = 0;
     $('.buttonPass').click(function() {
-        $(this).parent().removeClass('active').next().addClass('active');
+        $(this).parent().removeClass('active').parent().next().children().addClass('active');
     });
     $('.restartQuizz').click(function() {
         $(this).parent().removeClass('active');
-        $('.quizz li').first().addClass('active');
+        $('.quizz div div').addClass('active');
         score = 0;
         $('.resultSheguey span').empty();
     });
@@ -185,24 +222,7 @@ $(document).ready(function() {
                     alert('Success');
                 }
             });
-            // $.post("commons/postmessage.php", {
-            //     name: formName,
-            //     email: formEmail,
-            //     subject: formSubject,
-            //     message: formMessage
-            // }, function(data) {
-            //     console.log(email);
-            //     console.log(data);
-            //     if (data != "ok") {
-            //         $(".alert-box").removeClass("success").addClass("alert").slideDown("slow").empty().append(data);
-            //     } else {
-            //         $(".alert-box").slideUp("slow");
-            //         $(".rangSheguey").delay(800).slideDown("slow").empty().append("<h1>Merci,</h1><p>votre message a bien été envoyé.</p>");
-            //     }
-            // });
             event.preventDefault();
-            // return false;
-
         });
     });
     // END CONTACT FORM ACTION

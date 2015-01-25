@@ -52,10 +52,21 @@
                         }
                     ?>
                 </div>
-            
                 <div class="rect black shegueyTweetTo">
+                    <?php
+                        $randomTweet = array();
+                        $randomTweet[] = "%20www.sheguey.land";
+                        $randomTweet[] = "%20www.sheguey.land";
+                        $randomTweet[] = "%20www.sheguey.land";
+                        $randomTweet[] = "%20@cahiips";
+                        $randomTweet[] = "%20@MOneymaks";
+                        $randomTweet[] = "%20www.sheguey.land";
+                        $randomTweet[] = "%20@midosofficiel";
+                        $randomTweet[] = "%20www.sheguey.land";
+                        $randomTweet[] = "%20@Luissfernando17";
+                    ?>
                     <p>Envois un Tweet<br/> @Gradur</p>
-                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand%20@cahiips%20@MOneymaks%20@Luissfernando17%20@midosofficiel" class="twitter" data-related="theHauteCulture,gradidur"><div class="button">Tweet maintenant !</div></a>
+                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand<?php echo $randomTweet[rand(0,count($randomTweet)-1)]?>" class="twitter" data-related="theHauteCulture,gradidur"><div class="button">Tweet maintenant !</div></a>
                 </div>
                 <div class="rect empty no-mobile no-tablet"></div>
                 <div class="rect lightgrey owl-carousel owl-theme no-mobile shegueySlide">
