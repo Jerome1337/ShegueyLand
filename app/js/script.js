@@ -19,7 +19,7 @@ $(document).ready(function() {
         $('soundId').trigger('load');
         tag = document.createElement('audio');
         tag.setAttribute("preload", "auto")
-        tag.setAttribute("src", "snd/" + soundId + ".mp3")
+        tag.setAttribute("src", "sound/" + soundId + ".wav")
         tag.play();
         // console.log("playyyyy");
         // console.log(soundId);
@@ -229,7 +229,7 @@ $(document).ready(function() {
     // END FB SHARE
 
     // TWITTER
-    $("#twitter").click(function() {
+    $(".twitter").click(function() {
         var url = $(this).attr("data-url");
         window.open(url, "tweet", "height=300,width=550,resizable=1");
     });

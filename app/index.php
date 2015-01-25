@@ -13,12 +13,12 @@
             <div class="row">
                 <div class="rect red shegueyMur">
                     <p>Le mur des #Sheguey<br/>Via instagram</p>
-                    <a href="#"><div class="button">Découvre le mur</div></a>
+                    <a href="gallerie.php"><div class="button">Découvre le mur</div></a>
                 </div>
                 <div class="rect empty no-mobile no-tablet"></div>
                 <div class="rect black shegueyVideos">
                     <p>Lache ton «sheguey!!!!!»<br/>Sur instagram video</p>
-                    <a href="#"><div class="button">Voir les vidéos</div></a>
+                    <a href="gallerie.php"><div class="button">Voir les vidéos</div></a>
                 </div>
                 <?php foreach ($tweets as $k => $tweet): ?>
                 <div class="rect lightgrey shegueyTweet">
@@ -55,7 +55,7 @@
             
                 <div class="rect black shegueyTweetTo">
                     <p>Envois un Tweet<br/> @Gradur</p>
-                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand%20@cahiips%20@MOneymaks%20@Luissfernando17%20@midosofficiel" id="twitter" data-related="theHauteCulture,gradidur"><div class="button">Tweet maintenant !</div></a>
+                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand%20@cahiips%20@MOneymaks%20@Luissfernando17%20@midosofficiel" class="twitter" data-related="theHauteCulture,gradidur"><div class="button">Tweet maintenant !</div></a>
                 </div>
                 <div class="rect empty no-mobile no-tablet"></div>
                 <div class="rect lightgrey owl-carousel owl-theme no-mobile shegueySlide">

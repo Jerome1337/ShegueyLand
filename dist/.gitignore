@@ -4,6 +4,6 @@
 /stylesheets/*
 .bundle/
 bin/
-cache/tweets.tmp
+cache/tweetsgradur.tmp
+cache/tweetsl.tmp
 adm/*
-bddconnect.php
