@@ -10,26 +10,35 @@ $(document).ready(function() {
     });
 });
 
-$(document).ready(function() {
-    $('.getMoreSheg').click(function(){
-        var lastImageLoaded = $(".likePic").last().attr("data-id");
-        console.log("LOADING MORE SHEG " + lastImageLoaded);
-        $.ajax({
+function loadGallery(type_data, order) {
+    var lastImageLoaded = $(".likePic").last().attr("data-id");
+    if(typeof lastImageLoaded === 'undefined') {
+        lastImageLoaded = '9999';
+    }
+    console.log("LOADING MORE SHEG " + lastImageLoaded);
+    $.ajax({
         type: "POST",
         url: "commons/function.php",
-        data: { getMoreSheguey: lastImageLoaded }
-        })
-        .done(function( imagesLoaded ) {
-        alert( "Data Saved: " + imagesLoaded );
+        data: { getMoreSheguey: lastImageLoaded, typeData: type_data }
+    })
+    .done(function( imagesLoaded ) {
         $( imagesLoaded ).appendTo( ".js-shegueyWall" );
         lastImageLoaded = $(imagesLoaded).find(".likePic").last().attr("data-id");
-        
         console.log("NEW : LOADING MORE SHEG " + lastImageLoaded);
+    });
+}
 
-        });
-
-
-        
+$(document).ready(function() {
+    $('.getMoreSheg').click(function(){
+            var orderBy = $('.orderBy:checked', '.formOptions').val();
+            var mediaContent = [];
+            $('.mediaContent:checked', '.formOptions').each(function(i){
+              mediaContent[i] = $(this).val();
+            });
+            var mediaRequest = mediaContent.toString();
+            console.log('mediaRequest = ' + mediaRequest);
+            console.log("orderBy : " + orderBy);
+            // loadGallery();
     });
 });
 

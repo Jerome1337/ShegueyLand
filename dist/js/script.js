@@ -17,7 +17,7 @@ $(document).ready(function() {
         $.ajax({
         type: "POST",
         url: "commons/function.php",
-        data: { getMoreSheguey: lastImageLoaded }
+        data: { getMoreSheguey: lastImageLoaded, type: "video" }
         })
         .done(function( imagesLoaded ) {
         alert( "Data Saved: " + imagesLoaded );
