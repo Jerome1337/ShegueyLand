@@ -53,10 +53,17 @@ $(document).ready(function() {
 $(document).ready(function() {
     var textMax = 150;
     $('#punchAdded p').html(textMax + ' caractères restant.');
-    $('#formPunchline').keyup(function(){
+    $('#formPunchline[maxlenght]').keyup(function(){
+        var limit = parseInt($(this).attr('maxlenght'));
+        var text = $(this).val();
+        var chars = text.length;
+        if(chars > limit){
+            var new_text = text.substr(0, limit);
+            $(this).val(new_text);
+        }
         var textChar = $('#formPunchline').val().length;
         var textRemaining = textMax - textChar;
-        $('#punchAdded p').html(textRemaining + ' caractères restant.');
+        $('#punchAdded p').html(textRemaining + ' caractères restant');
     });
     $('#formPunch').submit(function(event) {
         var dataPunch = {
@@ -107,11 +114,11 @@ window.addEventListener('load', function(e) {
 $(document).ready(function() {
     var score = 0;
     $('.buttonPass').click(function() {
-        $(this).parent().removeClass('active').parent().next().children().addClass('active');
+        $(this).parent().removeClass('active').next().addClass('active');
     });
     $('.restartQuizz').click(function() {
         $(this).parent().removeClass('active');
-        $('.quizz div div').addClass('active');
+        $('.quizz li').addClass('active');
         score = 0;
         $('.resultSheguey span').empty();
     });

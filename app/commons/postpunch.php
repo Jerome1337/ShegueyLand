@@ -10,8 +10,7 @@
 						'mc' => $_POST['mc'],
 						'punch' => $_POST['punch']
 					));
-				$data['success'] = true;
-				
+				$data['success'] = true;	
 			}else{
 				$data['success'] = false;
 			}

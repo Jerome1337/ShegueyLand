@@ -1026,3 +1026,9 @@ footer h2 {
     color: #424242;
   }
 }
+.quizz li {
+  display: none;
+}
+.quizz li.active {
+  display: block;
+}
