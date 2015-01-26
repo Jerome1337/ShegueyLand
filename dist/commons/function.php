@@ -145,41 +145,76 @@
 
 			if(isset($_POST['getMoreSheguey'])){
 				$getMoreSheguey = $_POST['getMoreSheguey'];
-				getMoreSheguey("$getMoreSheguey");
+				$type = $_POST['type'];
+				getMoreSheguey($getMoreSheguey, $type, "1" );
 			}
 			
 				
 
 
-			function getMoreSheguey($last_img){
+			function getMoreSheguey($last_id, $type, $order){
 			include('../adm/bddconnect.php');
 
-				$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' AND id < '.$last_img.' order by id DESC LIMIT 8');
+				if($type==="image"){
+					$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' AND id < '.$last_id.' order by id DESC LIMIT 8');
+				} elseif ($type="video"){
+					$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'video\' AND id < '.$last_id.' order by id DESC LIMIT 8');
+				} elseif($type==="both"){
+					$reponse = $bdd->query('SELECT * FROM instagram WHERE id < '.$last_id.' order by id DESC LIMIT 8');
+				}
+
 				while ($donnees = $reponse->fetch())
 				{
                     $id = $donnees['id'];
                     $standard_resolution = $donnees['standard_resolution'];
                     $low_resolution = $donnees['low_resolution'];
                     $media_caption = $donnees['caption_text'];
+                    $actual_type = $donnees['type'];
                     $tags = $donnees['tags'];
                     $tag = explode(",", $tags);
-                    // echo json_encode(array('content' => 'error','message'=> 'The group has not been removed'));
-                    ?>
-                    <div class="rect lightgrey gallery">
-                        <div style="background: url('<?php echo $low_resolution; ?>') ">
-                            <div data-id="<?php echo $id; ?>" class="likePic icon-like"></div>
-                            <?php 
-                                foreach ($tag as $actual_tag) {
-                                   if($actual_tag==="shegueyland"){
-                                        echo'<p>#sheguey<span>land</span></p>';
-                                   }
-                                }
-                            ?>
-                            
-                        </div>
-                    </div>
-                <?php 
+
+	                    if($actual_type==="image"){
+	                    ?>
+
+	                    <div class="rect lightgrey gallery">
+	                        <div style="background: url('<?php echo $low_resolution; ?>') ">
+	                            <div data-id="<?php echo $id; ?>" class="likePic icon-like"></div>
+	                            <?php 
+	                                foreach ($tag as $actual_tag) {
+	                                   if($actual_tag==="shegueyland"){
+	                                        echo'<p>#sheguey<span>land</span></p>';
+	                                   }
+	                                }
+	                            ?>
+	                            
+	                        </div>
+	                    </div>
+	                	<?php 
+            			} 
+            				elseif ($actual_type==="video"){
+	                    ?>
+
+	                    <div class="rect lightgrey gallery">
+	                        <video src="<?php echo $low_resolution; ?>" controls>
+	                            <div data-id="<?php echo $id; ?>" class="likePic"></div>
+	                            <?php 
+	                                foreach ($tag as $actual_tag) {
+	                                   if($actual_tag==="shegueyland"){
+	                                        echo'<p>#sheguey<span>land</span></p>';
+	                                   }
+	                                }
+	                            ?>
+	                            
+	                        </video>
+	                    </div>
+	                	<?php 
+            			} 
                 }
+			}
+
+
+			function select_images(){
+
 			}
 
 ?>
