@@ -22,7 +22,7 @@
 					</div>
 				</div>
 			</section>
-			<div class="row">
+			<div class="row" id="contentPunchline">
 				<?php
 					$reponse = $bdd->query('SELECT * FROM punchline WHERE id order by time DESC LIMIT 30');
 					while ($punchline = $reponse->fetch())
