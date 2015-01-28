@@ -98,6 +98,26 @@ $(document).ready(function() {
     });
 });
 
+/*$(document).ready(function() {
+    $('.sound').find('div').click(function(){
+            $(this).addClass('playing');
+            if ($('.sound').find('div').hasClass('playing')){
+            this.pause();
+            this.currentTime = 0;
+            this.removeClass('playing');
+            $(function() {
+                var soundId = this.id;
+                $('soundId').trigger('load');
+                tag = document.createElement('audio');
+                tag.setAttribute("preload", "auto")
+                tag.setAttribute("src", "sound/" + soundId + ".wav")
+                tag.play();
+            });
+        }else{
+        }
+    });
+});*/
+
 // ADD PUNCH ACTION
 $(document).ready(function() {
     var textMax = 150;
