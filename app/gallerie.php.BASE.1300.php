@@ -33,13 +33,7 @@
         <?php include('commons/script_bottom.php'); ?>
         <script>
             $(document).ready(function() {
-<<<<<<< HEAD
-                loadGallery("both", "recent"); // Chargement de la gallerie au 1er chargement
-                $('.mediaContent').prop('checked', true); // Coche les 2 case si non defini
-=======
-                loadGallery("both", "recent");
-                $('.mediaContent').prop('checked', true); // Chargement de la gallerie au 1er chargement
->>>>>>> db4ea9d1a9ab5fdcecee0ffeace21faeea887b8f
+                loadGallery("both", "DESC"); // Chargement de la gallerie au 1er chargement
             });
         </script>
     </body>
