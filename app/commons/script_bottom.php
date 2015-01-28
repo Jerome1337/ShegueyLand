@@ -1,3 +1,6 @@
+<!-- <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Radley:400italic' rel='stylesheet' type='text/css'>
+ -->
 <script src="js/jquery.min.js"></script>
 <script src="js/fastclick.js"></script>
 <script src="js/script.js"></script>
