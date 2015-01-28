@@ -12,8 +12,7 @@
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
 <link rel="icon" type="image/png" href="#">
-<link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Radley:400italic' rel='stylesheet' type='text/css'>
+
 <link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">
