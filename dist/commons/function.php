@@ -145,7 +145,7 @@
 
 			if(isset($_POST['getMoreSheguey'])){
 				$getMoreSheguey = $_POST['getMoreSheguey'];
-				$type = $_POST['type'];
+				$type = $_POST['typeData'];
 				getMoreSheguey($getMoreSheguey, $type, "1" );
 			}
 			

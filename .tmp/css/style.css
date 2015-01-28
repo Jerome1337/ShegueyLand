@@ -109,7 +109,7 @@ header.menu_left h1.logo {
 }
 header.menu_left h1.logo img {
   height: auto;
-  max-width: 90%;
+  max-width: 45%;
   padding: 15px 0;
   margin: auto;
 }
@@ -341,6 +341,9 @@ footer h2 {
   -webkit-flex: 0;
       -ms-flex: 0;
           flex: 0;
+  -webkit-flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+          flex-basis: auto;
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start;
