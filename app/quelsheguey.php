@@ -57,12 +57,17 @@
                 <!-- Resultat -->
                 <li>
                     <div class="resultSheguey">
-                        <h2>Félicitation</h2>
+                        <h2>Félicitation,</h2>
                         <h3>Tu obtiens le grade de <span></span></h3>
+                        <p></p>
                     </div>
-                    <button class="bestartQuizz">Recommencer le test</button>
                     <div class="socialfacebook">
                         <a href="#" id="share_button">Partage sur Facebook</a>
+                        <div class="previewFb">
+                            <div></div>
+                            <h3>Tu obtiens le grade de <span></span></h3>
+                            <p></p>
+                        </div>
                     </div>
                 </li>
             </section>

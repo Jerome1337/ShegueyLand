@@ -2,7 +2,6 @@ $(document).ready(function() {
     $('.open').click(function(){
         $('.menu_left nav').toggleClass( 'show' );
         $('.shadowClose').toggleClass( 'showHide' );
-        console.log("showmaguele");
     });
     $('.shadowClose').click(function(){
         $('.menu_left nav').removeClass( 'show' );
@@ -10,43 +9,84 @@ $(document).ready(function() {
     });
 });
 
-function loadGallery(type_data, order) {
+function loadGallery(type_data, orderBy) {
     var lastImageLoaded = $(".likePic").last().attr("data-id");
     if(typeof lastImageLoaded === 'undefined') {
         lastImageLoaded = '9999';
     }
-    console.log("LOADING MORE SHEG " + lastImageLoaded);
+    // console.log("LOADING MORE SHEG " + lastImageLoaded);
     $.ajax({
         type: "POST",
         url: "commons/function.php",
-        data: { getMoreSheguey: lastImageLoaded, typeData: type_data }
+        data: { getMoreSheguey: lastImageLoaded, typeData: type_data, orderBy: orderBy }
     })
     .done(function( imagesLoaded ) {
-        $( imagesLoaded ).appendTo( ".js-shegueyWall" );
+        $( imagesLoaded ).appendTo(".js-shegueyWall");
         lastImageLoaded = $(imagesLoaded).find(".likePic").last().attr("data-id");
         console.log("NEW : LOADING MORE SHEG " + lastImageLoaded);
     });
 }
 
+function deleteGallery(){
+    $(".js-shegueyWall").empty();
+}
+
+function setParamsGallery(){
+    var orderBy = $('.orderBy:checked', '.formOptions').val();
+    orderBy = (typeof orderBy === 'undefined') ? 'recent' : orderBy;
+    console.log('orderBy : ' + orderBy);
+    
+    var mediaContent = [];
+    $('.mediaContent:checked', '.formOptions').each(function(i){
+      mediaContent[i] = $(this).val();
+    });
+    
+    var mediaRequest = mediaContent.toString();
+    if(mediaRequest != "images" && mediaRequest !="videos") {
+        mediaRequest = "both";
+        $('.mediaContent').prop('checked', true); // Coche les 2 case si non defini
+    }
+
+    console.log('mediaRequest = ' + mediaRequest);
+    // console.log("orderBy : " + orderBy);
+    loadGallery(mediaRequest, orderBy);
+}
+
+function likeMedia(id_media){
+    $.ajax({
+        type: "POST",
+        url: "commons/function.php",
+        data: { vote_media_ID: id_media }
+    })
+    .done(function( vote_saved ) {
+        $( vote_saved ).appendTo(".likePic");
+        console.log("SAVE " + vote_saved);
+    });
+}
+
+// Appel des fonctions
 $(document).ready(function() {
     $('.getMoreSheg').click(function(){
-            var orderBy = $('.orderBy:checked', '.formOptions').val();
-            var mediaContent = [];
-            $('.mediaContent:checked', '.formOptions').each(function(i){
-              mediaContent[i] = $(this).val();
-            });
-            var mediaRequest = mediaContent.toString();
-            console.log('mediaRequest = ' + mediaRequest);
-            console.log("orderBy : " + orderBy);
-            // loadGallery();
+        setParamsGallery();     
     });
+
+    $('.formOptions input').click(function(){
+        deleteGallery();
+        setParamsGallery();
+    });
+
 });
 
+$(document).on('click', '.likePic', function() {
+        var vote_id = $(this).attr("data-id");
+        likeMedia(vote_id);
+        console.log('vote_id: ' + vote_id);
+});
 
 
 // SOUNDS
 $(document).ready(function() {
-    $('.sound').find('div').on('click touchstart', function() {
+    $('.sound').find('div').on('click', function() {
         var soundId = this.id;
         $('soundId').trigger('load');
         tag = document.createElement('audio');
@@ -125,12 +165,6 @@ $(document).ready(function() {
     $('.buttonPass').click(function() {
         $(this).parent().removeClass('active').next().addClass('active');
     });
-    $('.restartQuizz').click(function() {
-        $(this).parent().removeClass('active');
-        $('.quizz li').addClass('active');
-        score = 0;
-        $('.resultSheguey span').empty();
-    });
     $('.good').click(function() {
         score++;
         console.log('score: ' + score);
@@ -142,35 +176,26 @@ $(document).ready(function() {
     function setScore() {
         switch (score) {
             case 0:
-                changeMeta('J\'ai obtenu le grade de Sheguey en carton', 'shegueycarton');
-                resultSheguey('Sheguey en carton');
+                changeMeta('shegueycarton');
+                resultSheguey('Sheguey en carton', 'Tu ne t’y connais vraiment pas, mais on t’aime quand même. Tu va devoir travailler dûr pour devenir un vrai Sheguey, tu peux commencer dès mainteanant par <a href="http://www.amazon.fr/gp/product/B00RDC5Y5O/ref=as_li_tl?ie=UTF8&camp=1642&creative=19458&creativeASIN=B00RDC5Y5O&linkCode=as2&tag=francemixtape-21&linkId=BLAT3PC4OXRC5SZP" target="_blank">acheter l’album</a> ou télécharger la mixtape sur <a href="www.hauteculture.com" target="_blank">HauteCulture.com</a>.', '<img src="img/fbshare/shegueycarton.jpg" alt="Facebook share en carton">');
                 break;
             case 1:
-                changeMeta('J\'ai obtenu le grade de Soldat Sheguey', 'shegueysoldat');
-                resultSheguey('Soldat Sheguey');
-                break;
             case 2:
             case 3:
-                changeMeta('J\'ai obtenu le grade de Sergent Sheguey', 'shegueysergent');
-                resultSheguey('Sergent Sheguey');
+                changeMeta('shegueysoldat');
+                resultSheguey('Soldat Sheguey', 'Tu es tous les jour sur le terrain, le soldat est indispensable au Sheguey Mouvement. Il va falloir pousser la fonte pour atteindre le grade suppérieur.', '<img src="img/fbshare/shegueysoldat.jpg" alt="Facebook share soldat">');
                 break;
             case 4:
+                changeMeta('shegueysergent');
+                resultSheguey('Sergent Sheguey', 'Tes connaissance de la Sheguatitude sont impressionnante, encore quelques tractions necessaires pour atteindre le grade supérieur', '<img src="img/fbshare/shegueysergent.jpg" alt="Facebook share sergent">');
+                break;
             case 5:
-                changeMeta('J\'ai obtenu le grade de Général Sheguey', 'shegueygeneral');
-                resultSheguey('Général Sheguey');
+                changeMeta('shegueygeneral');
+                resultSheguey('Général Sheguey', 'Tu es un vrai sheguey, et tu t’es probablement fait tatoué SHEGUEY SQUAD sur la fesse droite. <strong>#VraiShegueyAVie</strong>', '<img src="img/fbshare/shegueygeneral.jpg" alt="Facebook share général">');
                 break;
         }
 
-        function changeMeta(title, image) {
-            var metas = document.getElementsByTagName('meta');
-            for (i = 0; i < metas.length; i++) {
-                if (metas[i].getAttribute('property') == 'og:image') {
-                    metas[i].setAttribute('content', 'http://sheguey.land/' + image + '.jpg');
-                }
-                if (metas[i].getAttribute('property') == 'og:title') {
-                    metas[i].setAttribute('content', title);
-                }
-            }
+        function changeMeta(image) {
             $('#share_button').click(function(e) {
                 e.preventDefault();
                 FB.ui({
@@ -182,8 +207,12 @@ $(document).ready(function() {
         };
     };
 
-        function resultSheguey(result) {
-            $('.resultSheguey span').append(result);
+        function resultSheguey(grade, desc, imgfb) {
+            $('.resultSheguey span').append(grade);
+            $('.resultSheguey p').append(desc);
+            $('.previewFb div').append(imgfb);
+            $('.previewFb h3 span').append(grade);
+            $('.previewFb p').append(desc);
         };
 });
 

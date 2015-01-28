@@ -1,6 +1,6 @@
 <?php
-	error_reporting(E_ALL);
-	ini_set("display_errors", 1);
+	// error_reporting(E_ALL);
+	// ini_set("display_errors", 1);
 	include('../adm/bddconnect.php');
 	$search = $bdd->query('SELECT id, link FROM instagram');
 	while ($value = $search->fetch())
@@ -12,8 +12,7 @@
 		if($file_header[0] == 'HTTP/1.1 404 NOT FOUND'){
 			$exists = false;
 			echo "JE SUIS PAS LA ";
-			$sql = 'DELETE FROM instagram WHERE id='.$id.'';
-			exec($sql);
+			$bdd->exec('DELETE FROM instagram WHERE id='.$id.'');
 			// var_dump($delete);
 		}else{
 			$exists = true;
