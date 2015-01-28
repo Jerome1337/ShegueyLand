@@ -11,10 +11,7 @@
 <meta property="og:image" content="http://sheguey.land/fbshare.jpg">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
-<<<<<<< HEAD
 <link rel="icon" type="image/png" href="#">
-
-=======
 <meta name="twitter:card" content="summary">
 <meta name="twitter:site" content="@ShegueyLand">
 <meta name="twitter:title" content="ShegueyLand Community">
@@ -25,7 +22,6 @@
 <link rel="icon" type="image/png" href="img/favicon.png">
 <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Radley:400italic' rel='stylesheet' type='text/css'>
->>>>>>> a08de65f2bc18679a4bd2c4b95cacd22535213e2
 <link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>">
 <link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="css/style.css">

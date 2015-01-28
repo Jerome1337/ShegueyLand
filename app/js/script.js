@@ -86,7 +86,7 @@ $(document).on('click', '.likePic', function() {
 
 // SOUNDS
 $(document).ready(function() {
-    $('.sound').find('div').on('click touchstart', function() {
+    $('.sound').find('div').on('click', function() {
         var soundId = this.id;
         $('soundId').trigger('load');
         tag = document.createElement('audio');
@@ -186,15 +186,15 @@ $(document).ready(function() {
                 resultSheguey('Sheguey en carton');
                 break;
             case 1:
+            case 2:
+            case 3:
                 changeMeta('J\'ai obtenu le grade de Soldat Sheguey', 'shegueysoldat');
                 resultSheguey('Soldat Sheguey');
                 break;
-            case 2:
-            case 3:
+            case 4:
                 changeMeta('J\'ai obtenu le grade de Sergent Sheguey', 'shegueysergent');
                 resultSheguey('Sergent Sheguey');
                 break;
-            case 4:
             case 5:
                 changeMeta('J\'ai obtenu le grade de Général Sheguey', 'shegueygeneral');
                 resultSheguey('Général Sheguey');
