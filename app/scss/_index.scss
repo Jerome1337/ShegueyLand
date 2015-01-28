@@ -9,7 +9,7 @@ $white:     #ffffff;
 	flex-direction: column;
 	width: 100%;
 	font-family: 'Francois One', sans-serif;
-	font-size: 3.2em;
+	font-size: 2.2em;
 	color: $white;
 	padding: 25px;
 	text-transform: uppercase;
@@ -91,6 +91,7 @@ $white:     #ffffff;
 			background-color: inherit;
 			padding: 5px 15px;
 			flex:0;
+			flex-basis: auto;
 			align-self: flex-start;
 			transition: all 0.3s ease-in-out;
 		}

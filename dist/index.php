@@ -89,11 +89,11 @@
                 <div class="rect black ShegueyBuyAlbum">
                     <p></p>
                     <!-- <img src="img/cover.jpg" alt="Gradur, l'album"> -->
-                    <a href=""><div class="button">Achete l'album</div></a>
+                    <a target="_blank" href="http://www.amazon.fr/gp/product/B00RDC5Y5O/ref=as_li_tl?ie=UTF8&camp=1642&creative=19458&creativeASIN=B00RDC5Y5O&linkCode=as2&tag=francemixtape-21&linkId=BLAT3PC4OXRC5SZP"><div class="button">Achete l'album</div></a>
                 </div>
                 <div class="rect red ShegueyCalendar">
-                    <p>Les évènements<br/>du mois</p>
-                    <a href="#"><div class="button">Calendrier</div></a>
+                    <p>Viens ajouter ta<br/>punchline</p>
+                    <a href="punch.php"><div class="button">Punchline</div></a>
                 </div>
                 <div class="rect lightgrey owl-carousel owl-theme no-mobile no-tablet shegueySlide">
                     <?php 

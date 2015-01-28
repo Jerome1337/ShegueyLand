@@ -1,9 +1,0 @@
-/bower_components/*
-/.sass-cache/*
-*.DS_Store
-/stylesheets/*
-.bundle/
-bin/
-cache/tweetsgradur.tmp
-cache/tweetsl.tmp
-adm/*

@@ -86,8 +86,8 @@ header.menu_left .show {
 }
 header.menu_left .burger-icon {
   font-family: "shegueyfont";
-  font-size: 4em;
-  padding: 20px;
+  font-size: 3em;
+  padding: 15px;
   margin: 0;
   cursor: pointer;
   z-index: 999;
@@ -109,7 +109,7 @@ header.menu_left h1.logo {
 }
 header.menu_left h1.logo img {
   height: auto;
-  max-width: 90%;
+  max-width: 55%;
   padding: 15px 0;
   margin: auto;
 }
@@ -167,7 +167,7 @@ header.menu_left nav ul li a {
   width: 100%;
   color: #ffffff;
   text-transform: uppercase;
-  font-size: 2.2em;
+  font-size: 1.8em;
   font-family: 'Francois One', sans-serif;
 }
 header.menu_left nav ul li:hover {
@@ -205,12 +205,30 @@ footer {
   background-color: #191e23;
   display: table;
 }
-footer h2 {
-  color: #ffffff;
-  text-align: center;
-  font-size: 1.5em;
+footer nav {
+  width: 70%;
   display: table-cell;
   vertical-align: middle;
+  margin: auto;
+}
+footer nav ul li {
+  display: inline-block;
+}
+footer nav ul li h2 {
+  text-align: center;
+  font-size: 1em;
+}
+footer nav ul li h2 a {
+  color: #9d9d9d;
+  -webkit-transition: all .5s ease-in-out;
+          transition: all .5s ease-in-out;
+}
+footer nav ul li h2 a:hover {
+  color: #ffffff;
+}
+footer nav ul li span {
+  color: #ffffff;
+  margin: 0 20px;
 }
 
 @media only screen and (min-width: 600px) {
@@ -253,7 +271,7 @@ footer h2 {
           flex-direction: column;
   width: 100%;
   font-family: 'Francois One', sans-serif;
-  font-size: 3.2em;
+  font-size: 2.2em;
   color: #ffffff;
   padding: 25px;
   text-transform: uppercase;
@@ -341,6 +359,9 @@ footer h2 {
   -webkit-flex: 0;
       -ms-flex: 0;
           flex: 0;
+  -webkit-flex-basis: auto;
+      -ms-flex-preferred-size: auto;
+          flex-basis: auto;
   -webkit-align-self: flex-start;
       -ms-flex-item-align: start;
           align-self: flex-start;

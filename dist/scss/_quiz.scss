@@ -1,10 +1,8 @@
 .quizz {
-	div {
-		div {
-			display: none;
-			&.active {
-			display: block;
-			}
+	li {
+		display: none;
+		&.active {
+		display: block;
 		}
 	}
 }

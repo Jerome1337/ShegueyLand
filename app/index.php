@@ -69,7 +69,7 @@
                     <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand<?php echo $randomTweet[rand(0,count($randomTweet)-1)]?>" class="twitter" data-related="theHauteCulture,gradidur"><div class="button">Tweet maintenant !</div></a>
                 </div>
                 <div class="rect empty no-mobile no-tablet"></div>
-                <div class="rect lightgrey owl-carousel owl-theme no-mobile shegueySlide">
+                <div class="rect lightgrey owl-carousel owl-theme no-mobile no-tablet shegueySlide">
                     <?php 
                         $reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' order by RAND() LIMIT 5');
                         while ($donnees = $reponse->fetch())
@@ -89,11 +89,11 @@
                 <div class="rect black ShegueyBuyAlbum">
                     <p></p>
                     <!-- <img src="img/cover.jpg" alt="Gradur, l'album"> -->
-                    <a href=""><div class="button">Achete l'album</div></a>
+                    <a target="_blank" href="http://www.amazon.fr/gp/product/B00RDC5Y5O/ref=as_li_tl?ie=UTF8&camp=1642&creative=19458&creativeASIN=B00RDC5Y5O&linkCode=as2&tag=francemixtape-21&linkId=BLAT3PC4OXRC5SZP"><div class="button">Achete l'album</div></a>
                 </div>
                 <div class="rect red ShegueyCalendar">
-                    <p>Les évènements<br/>du mois</p>
-                    <a href="#"><div class="button">Calendrier</div></a>
+                    <p>Viens ajouter ta<br/>punchline</p>
+                    <a href="punch.php"><div class="button">Punchline</div></a>
                 </div>
                 <div class="rect lightgrey owl-carousel owl-theme no-mobile no-tablet shegueySlide">
                     <?php 

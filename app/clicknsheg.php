@@ -23,7 +23,7 @@
                     <div class="rect red clickSheg" id="sheguey" style= "background-image: url('<?php echo $photoInsta[1] ?>')"><p>SHEGUEY</p></div>
                     <div class="rect black clickSheg" id="missile" style= "background-image: url('<?php echo $photoInsta[2] ?>')"><p>MISSILE</p></div>
                     <div class="rect red clickSheg" id="59" style= "background-image: url('<?php echo $photoInsta[3] ?>')"><p>59</p></div>
-                    <div class="rect red clickSheg" id="doigts" style= "background-image: url('<?php echo $photoInsta[4] ?>')"><p>Doigts</p></div>
+                    <div class="rect red clickSheg" id="bitch" style= "background-image: url('<?php echo $photoInsta[4] ?>')"><p>Bitch</p></div>
                     <div class="rect black clickSheg" id="jamais" style= "background-image: url('<?php echo $photoInsta[5] ?>')"><p>Jamais</p></div>
                     <div class="rect red clickSheg" id="jmatte" style= "background-image: url('<?php echo $photoInsta[6] ?>')"><p>J'matte</p></div>
                     <div class="rect red clickSheg" id="papa" style= "background-image: url('<?php echo $photoInsta[7] ?>')"><p>Papa</p></div>

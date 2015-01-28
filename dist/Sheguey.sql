@@ -1,72 +1,262 @@
 -- phpMyAdmin SQL Dump
--- version 4.1.12
+-- version 4.2.11
 -- http://www.phpmyadmin.net
 --
--- Client :  localhost:8889
--- Généré le :  Dim 25 Janvier 2015 à 23:30
--- Version du serveur :  5.5.34
--- Version de PHP :  5.5.10
+-- Host: 127.0.0.1
+-- Generation Time: Jan 27, 2015 at 12:04 AM
+-- Server version: 5.6.21
+-- PHP Version: 5.6.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
 
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
 --
--- Base de données :  `Sheguey`
+-- Database: `sheguey`
 --
 
+-- --------------------------------------------------------
 
-CREATE TABLE `punchline` (
-  `id` int(11) NOT NULL AUTO_INCREMENT,
+--
+-- Table structure for table `contactform`
+--
+
+CREATE TABLE IF NOT EXISTS `contactform` (
+`id` int(11) NOT NULL,
+  `name` tinytext NOT NULL,
+  `email` varchar(100) NOT NULL,
+  `subject` text NOT NULL,
+  `message` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `instagram`
+--
+
+CREATE TABLE IF NOT EXISTS `instagram` (
+`id` int(11) NOT NULL,
+  `id_insta` char(35) NOT NULL,
+  `standard_resolution` text NOT NULL,
+  `low_resolution` text NOT NULL,
+  `tags` text NOT NULL,
+  `caption_text` text NOT NULL,
+  `username` text NOT NULL,
+  `type` tinytext NOT NULL,
+  `link` tinytext NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=115 DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `instagram`
+--
+
+INSERT INTO `instagram` (`id`, `id_insta`, `standard_resolution`, `low_resolution`, `tags`, `caption_text`, `username`, `type`, `link`) VALUES
+(1, '905109029705673748_308056722', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10895253_1550089931898290_356305438_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10895253_1550089931898290_356305438_n.jpg', 'sheguey', '@ginocsnt #citadium#dlafrappe#sheguey#lhommeaubobfin#gradurzer', 'lucasfshr', 'image', 'http://instagram.com/p/yPl932muwU/'),
+(2, '905093143596478478_29598435', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948537_1530257363905175_1029385144_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948537_1530257363905175_1029385144_n.jpg', 'sheguey', 'Shisha oklm a montreux #neige #montreux #switzerland #shisha #sheguey #cafÃ© #chocolat #bob #bobet #boke #leman #lac @favreromur @leabagnoud #bb', 'seb396', 'image', 'http://instagram.com/p/yPiWswtbAO/'),
+(3, '905089798060042538_1205018257', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10914459_509809149158187_572390973_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10914459_509809149158187_572390973_n.jpg', 'sheguey', 'Les gens oublient vite qui Ã©tait lÃ  pour eux quand il le fallait.ðŸ’® #KJ#CrÃ©meDeLaCrÃ©me#Sheguey#Gradidur#Youri#JokeMtp#TeamAntille#TeamItalie#Gwada#Turin#971.', '_lxsx', 'image', 'http://instagram.com/p/yPhmA_Mukq/'),
+(4, '905086332707875829_289061865', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10950439_401345366696535_829088700_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10950439_401345366696535_829088700_n.jpg', 'sheguey', '#instalike #instag_app #instasize #instadaily #instamoment #instagood #tagsforlikes #followme #followback #follow4follow #f4f #like4like #l4l #asap #dope #high #oklm #picoftheday #pic #selfie #french #girl #hairstyle #amoureuse #grady #gradur #sheguey #enleger #cbondeja >> Chaque jour qui passe, tu me donne une raison de plus de sourire et d''exister ðŸ’žâœ¨. ~ III.IX.MMXIV ~ #V ðŸ’‘ðŸ’', 'anissaa54', 'image', 'http://instagram.com/p/yPgzloHSv1/'),
+(5, '905070754735075751_278651291', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10952558_655923027868935_226708853_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10952558_655923027868935_226708853_n.jpg', 'sheguey', 'ðŸ‘ŠðŸ‘ŠðŸ‘ŠðŸ‘Š#paris#instagood#instamoment#followme#followback#follow4follow#likeme#izi#92#brune#lhommeaubob##sheguey#gradur#blonde#marseille#sud#nord#miami#boston#snapback#Ã¼#unkut#booba#izi#french#arabe#swagg#fashion#instagramers#snap', 'keyser013', 'image', 'http://instagram.com/p/yPdQ5glDGn/'),
+(6, '905067713009766755_1550287003', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10914437_526483174161640_1373696182_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10914437_526483174161640_1373696182_n.jpg', 'sheguey', '#Sheguey\n#sur du gradur fait des pompe et traction', 'couple_alyson.benji_', 'image', 'http://instagram.com/p/yPckorn1Fj/'),
+(7, '905067604586262681_310846275', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948372_870059426370567_1887030383_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948372_870059426370567_1887030383_n.jpg', 'sheguey', 'H24 avec mes gars jamais d''galere. "Mes vrais potes dans ce monde d''hypocrite" mddddddr bande de con ceux qui disent h24 monde d''hypocrite c''est vous les plus cons et les plus hypocrites sans vrais potes ! #Soiree #Fifa #Pizza #Sheguey #Sosa #Real #Barca #Hamza #SansMaillot #VoleEnUn ! #Robin #Freros #RichardMeDoitDesThunesIlEstPasLa #IlAJamaisRepondu !', 'anthony_marquesf', 'image', 'http://instagram.com/p/yPcjDtE_CZ/'),
+(8, '905065405109981735_367781235', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10895470_849475521757914_425147660_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10895470_849475521757914_425147660_n.jpg', 'sheguey', 'âœ–ï¸Fuck lifeâœ–ï¸ #mon #amÂ´s #lathug #margauw #fifolle#friendship #friend #friendschool #fucklife #fuckrageux #motherfucker #yenaassezfratÃ© #sheguey #school #lourd #souslespalmiersolÃ©olÃ© ðŸ’ž @margaux0699', 'nawelle.lhrche', 'image', 'http://instagram.com/p/yPcDDSE1In/'),
+(9, '905057411364465844_1350723498', 'http://scontent-a.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/924625_920064014680207_815705101_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xpa1/t51.2885-15/s306x306/e15/924625_920064014680207_815705101_n.jpg', 'sheguey', 'Repas de roi #sheguey â¤ï¸', 'alexandre_duclaux', 'image', 'http://instagram.com/p/yPaOuhtqy0/'),
+(10, '905054194887309875_1234868853', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/1168576_488343017971453_241704647_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/1168576_488343017971453_241704647_n.jpg', 'sheguey', '#Friend #JeanPerrin #Thomas #Othmane #Moamed #Ayoub #Sheguey #Saturday #School #Frere #FrenchBoy #Rebeu', 'navetalex98', 'image', 'http://instagram.com/p/yPZf68vDoz/'),
+(11, '905051977089239231_1421482769', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10946499_605348089566512_2107147503_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10946499_605348089566512_2107147503_n.jpg', 'sheguey', 'On change pas une Ã©quipe qui gagne #sheguey #swagg', 'badroubdr', 'image', 'http://instagram.com/p/yPY_pdq0i_/'),
+(12, '905048813645340565_502498590', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10919479_409612789209690_1449360826_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10919479_409612789209690_1449360826_n.jpg', 'sheguey', 'Direction panam ! Reprise boulot ! ðŸ’ª #TGV #Marseille #Paris #Taff #Sncf #Sheguey #Eclater #Reprise', 'gonzo_muppet', 'image', 'http://instagram.com/p/yPYRnRuB-V/'),
+(13, '905047597889643435_269020535', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10903284_377382355776283_1720835105_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10903284_377382355776283_1720835105_n.jpg', 'sheguey', 'Muscu.ðŸ‘ŒðŸ’ª\n#Gradur #sheguey #tractions.', 'kimiiberley', 'image', 'http://instagram.com/p/yPX_7BCGOr/'),
+(14, '905044645640907446_241994841', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10949034_1595095650720670_1538919692_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10949034_1595095650720670_1538919692_n.jpg', 'sheguey', '#FrenchBoy #CÃ©libataire #Sheguey #19years #Gendarme', 'alexlny', 'image', 'http://instagram.com/p/yPXU9hS6q2/'),
+(15, '905033425297213284_594418200', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10948700_776932072374599_1440689964_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10948700_776932072374599_1440689964_n.jpg', 'sheguey', 'Jamais... ðŸ‘Œ\n#jamais #SHEGUEY #gradur  #messhegueys #negros #mancity #renois #lhommeaubob #lhommeauBobzer #shneck #pussyeater #Nike #gants #Unkut', 'souhail_eddahani', 'image', 'http://instagram.com/p/yPUxrwsgdk/'),
+(16, '905032965793617824_1655737404', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10946576_782003568546269_172970515_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10946576_782003568546269_172970515_n.jpg', 'sheguey', '#Les#etalons#st#des#sheguey', 'jossbmbr', 'image', 'http://instagram.com/p/yPUq_0JZeg/'),
+(17, '905031671078330476_312706671', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t50.2886-16/10944091_645022358958132_1051260945_n.mp4', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t50.2886-16/10949429_1540609262883106_1309025722_s.mp4', 'sheguey', '"Une carriÃ¨re de footeux ouais ouais je rÃªvais de percer, depuis la bedave m''a eu, m''a abimÃ© les lÃ¨vres gercÃ©es\nGet money fuck bitch tu connais le dicton !"\n#gradur #sheguey #negro #rap #black #guy #boy #instamoment #enattendantlematch', 'alex_shgy', 'video', 'http://instagram.com/p/yPUYKBGiBs/'),
+(18, '905028321279385480_1419785422', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10919640_576494572486803_1595897121_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10919640_576494572486803_1595897121_n.jpg', 'sheguey', 'Retour dans le nord âœŒï¸ðŸ‘Œ#frenchboy #french #boy #iphone6 #gucci #diesel #snapchat #angouleme #arras #portugais #sheguey #shegueysquad #bientot #brother ðŸ‘', 'teddyfranciscob', 'image', 'http://instagram.com/p/yPTnaRhp-I/'),
+(19, '905026249486201689_303135475', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10919693_330363533821601_395456652_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10919693_330363533821601_395456652_n.jpg', 'sheguey', '#bob #militaire #sheguey', 'djohncafee', 'image', 'http://instagram.com/p/yPTJQxB3NZ/'),
+(20, '905025398142694325_996715027', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t50.2886-16/10946902_899336440086214_832240532_n.mp4', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t50.2886-16/10949660_1582183505328297_816918380_s.mp4', 'sheguey', '#papÃ©#sheguey#brinks#2015#tusaispourquoiontveuxdessous#extrait#59#13#lhommeaubob#RDC\n@alonzopsy4 feat @gradurofficiel', 'dln_official', 'video', 'http://instagram.com/p/yPS835AHO1/'),
+(21, '905018333594346435_308021751', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10932299_1025320527483328_998380156_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10932299_1025320527483328_998380156_n.jpg', 'sheguey', 'L''homme au Bob le 23 fÃ©vrier @gradurofficiel ðŸ’ªðŸ’ªðŸ”žðŸ”žðŸ”ž #gradur #lhommeaubob #sheguey #enleger #onestensemblesheguey #postiche #jamais #23fevrier', 'oualide_boukhs', 'image', 'http://instagram.com/p/yPRWEhG2PD/'),
+(22, '905009800755246990_247274316', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10665534_1386367745003398_1687584535_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10665534_1386367745003398_1687584535_n.jpg', 'sheguey', 'ðŸ’µ Sous ma semelle ðŸ’µ #EnlÃ©ger #Sheguey #TeamG #YouryLeGamin #skuurt #PostBadBebar #SourirEclatant Anniversaire de ma cousine @_mariongarcia_ ðŸŽ‰', 'yannis_30', 'image', 'http://instagram.com/p/yPPZ5sQ3eO/'),
+(23, '905008790932527827_1570632277', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10948754_808435709203528_85997353_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10948754_808435709203528_85997353_n.jpg', 'sheguey', 'Je ferai des effort qu''a ceux qui le mÃ©ritent SWEG  #instamoment #sheguey  #ThugLife #bonnejournÃ©e #b2oba  #92i #primetimefut', 'rubzer7o', 'image', 'http://instagram.com/p/yPPLNOI5rT/'),
+(24, '902107343561372936_45954044', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10919718_778857208851589_1954427766_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10919718_778857208851589_1954427766_n.jpg', 'sheguey', '#snapchat #bob #selfie', 'matthfly', 'image', 'http://instagram.com/p/yE7dlyPzUI/'),
+(25, '905004727171271308_1013681521', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10949063_705559139563526_1975294129_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10949063_705559139563526_1975294129_n.jpg', 'sheguey', '90 valider ! #sheguey#squaad#sa#soulÃ¨ve#90#litron ðŸ’ªðŸ’‰ðŸ’¯', 'rockett_biird', 'image', 'http://instagram.com/p/yPOQEjF8qM/'),
+(26, '905000654134302153_1006797804', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10895308_1603851699846440_2046611471_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10895308_1603851699846440_2046611471_n.jpg', 'sheguey', '#negro#black#niggas#renoi#camerounais#senegalais#French#italien#marseillais#happy#LV#LouisVuitton#bonnet#sheguey#Enleger#izi#redskins#marseille#NoPainNoGain#NegroFacher#blackpower#weekend#winter#hiver#froids', 'landryblackos', 'image', 'http://instagram.com/p/yPNUzPK9XJ/'),
+(27, '905000269358607370_224799138', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10919534_775926179165212_882047087_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10919534_775926179165212_882047087_n.jpg', 'sheguey', '#alonzo #RDC #gradur #sheguey', 'redha92360', 'image', 'http://instagram.com/p/yPNPM4wKwK/'),
+(28, '904999852813293323_315688556', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t50.2886-16/10947140_346478442211211_1725026722_n.mp4', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t50.2886-16/10911102_1542219349396285_900411067_s.mp4', 'sheguey', '#sheguey !!!', 'phebo_thalahassa', 'video', 'http://instagram.com/p/yPNJI8t5cL/'),
+(29, '904998529741996087_450710367', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10932125_329276907281880_519797297_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10932125_329276907281880_519797297_n.jpg', 'sheguey', 'Le travail paye mes shegueyyys ðŸ˜˜ #ASA #asaulnoye #ASAvsStAmand #workhard #playhard #FootBall #soccer #Sheguey #Enforce', 'emilegnt_', 'image', 'http://instagram.com/p/yPM14vhcA3/'),
+(30, '904996950796641556_212670744', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10949000_506035322870912_645044581_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10949000_506035322870912_645044581_n.jpg', 'sheguey', 'Je suis le seul Ã  faire des millions de vue et Ã  Ãªtre encore au taf Ba ouai qu''est ce ta crus petit fils de pure moi j''ai jamais rien attendus du rap ðŸ‘ŠðŸ’ª\n#Sheguey #Gradur #etaler \nAlgÃ©rie ma patrie ðŸ’šðŸ”´âšªï¸\n#AlgÃ©rie #sur #ma #main ðŸ’ª', 'beliebers69360', 'image', 'http://instagram.com/p/yPMe6PC6UU/'),
+(31, '904987899500117871_1346913790', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10948865_1406451689651926_198013553_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10948865_1406451689651926_198013553_n.jpg', 'sheguey', 'Avec #sheguey ðŸ•ðŸ˜ŽâœŒï¸ðŸ’¯ðŸ’™â¤ï¸', 'elmamso', 'image', 'http://instagram.com/p/yPKbMjuz9v/'),
+(32, '905115809915963073_1662817144', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10953743_375025942676657_249927030_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10953743_375025942676657_249927030_n.jpg', 'sheguey', '#sheguey', 'aaxell_mf91', 'image', 'http://instagram.com/p/yPngiaoYbB/'),
+(33, '786835729849761623_574884590', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10616286_1467380306844664_1443106053_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10616286_1467380306844664_1443106053_n.jpg', '', 'ðŸ‘ŒâœŒï¸', 'nassim.itto', 'image', 'http://instagram.com/p/rrZu1uR79X/'),
+(34, '905617926558022243_1670813549', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10838846_1054858174531549_434060084_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10838846_1054858174531549_434060084_n.jpg', 'sheguey', 'Do u like to Fuck or do you just like makin love ðŸŽ¶ #Comeback #stephan #Blackboyfly', 'leniggasteph', 'image', 'http://instagram.com/p/yRZrS-t3pj/'),
+(35, '905618642758787685_1234841783', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10950531_1376538435989043_178926327_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10950531_1376538435989043_178926327_n.jpg', 'sheguey', 'Pas mal la nouvelle couverture du cd de @gradurofficiel \n#turfu #sheguey #lhommeaubob', 'mathisourch', 'image', 'http://instagram.com/p/yRZ1t_m-Jl/'),
+(36, '905588791970966125_254935073', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t50.2886-16/10953844_862471917148717_1423847428_n.mp4', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t50.2886-16/10946727_1541829786073500_2099888424_s.mp4', 'sheguey', 'Gradur - Jamais ðŸŽ¼ðŸ‘ŠðŸ’¯ðŸ’¯ #EnBoucle #Gradur ðŸ’¯ #sheguey', 'lufti_llah', 'video', 'http://instagram.com/p/yRTDVSASpt/'),
+(37, '905607171245558784_1588557258', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t50.2886-16/10944173_660036890773417_471422229_n.mp4', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t50.2886-16/10951688_916280891738997_1138398395_s.mp4', 'sheguey', '#sheguey #biatch #pÃ©tasse \n#alleznouya', 'jeremymdr79', 'video', 'http://instagram.com/p/yRXOyUI0wA/'),
+(38, '728038978911306432_294557399', 'http://scontent-b.cdninstagram.com/hphotos-xfp1/t50.2886-16/10417933_597931960320717_1197108136_n.mp4', 'http://scontent-a.cdninstagram.com/hphotos-xfp1/t50.2886-16/10413632_1497517987126918_1443172475_a.mp4', 'sheguey', '#behindthescene dans la maison  #rhootscouture. #gradur #sheguey #shegueysquad', 'baylleth', 'video', 'http://instagram.com/p/oag5gQpYLA/'),
+(39, '901637415383837300_751687537', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10932079_315783608617519_877063546_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10932079_315783608617519_877063546_n.jpg', 'sheguey', '"DÃ©foncÃ© avec mes negros dans l''bloc, dÃ©foncÃ© avec mes rebeux dans l''bloc. Ã‡a fume des blunts, ca vend d''la drogue. ArmÃ©, calibrÃ© comme les Bloods " ðŸ’ª\n@gradurofficiel\n#f4f #l4l #sheguey #enlegÃ©', 'noxsh', 'image', 'http://instagram.com/p/yDQnPEJ6p0/'),
+(40, '905601316793011365_1505401202', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10948502_416876075126885_636673505_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10948502_416876075126885_636673505_n.jpg', 'sheguey', '#boy#girl#tbt#french#frenchboy#frenchgirl#hipster#sheguey#celibataire#follow#followme#', 'rockafella_92', 'image', 'http://instagram.com/p/yRV5l7ksyl/'),
+(41, '905593549373555981_278264848', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10899227_447272798754434_1486996484_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10899227_447272798754434_1486996484_n.jpg', 'sheguey', 'Sheguuueyyyyy\n#sheguey #durgra #Getshredzordietrain #aesthetics #physique #fitness #strong #bodyfit #work #hard #dedication #gymlife #itsmylifestyle #focus #instafit #bodybuilding #junior #pacific #yomaxenie #TeamTribal #WorkoutGang #lifestyle #grind #pushup #strong #shredded #shredz #beast #beastmode', 'yomaxenie', 'image', 'http://instagram.com/p/yRUIj9S8UN/'),
+(42, '905592244389079443_340442617', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10950323_1602435606647200_722387564_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10950323_1602435606647200_722387564_n.jpg', 'sheguey', 'I N S E R T I O N #PierreMauroy #greg #lille-monaco #0-1 #soces #sweat #sport #football #sweet #drinking #Deboiteurs #sources #sheguey #chill ðŸ‘Œâ¤ï¸', 'nathanbailly', 'image', 'http://instagram.com/p/yRT1kmKOmT/'),
+(43, '905584163198217067_540812441', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10946424_342503562601751_172894902_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10946424_342503562601751_172894902_n.jpg', 'sheguey', 'Got abs? Orrr? \n#teamtribal#abs#pose#workout#indoor#outdoor#fitness#life#lifestyle#getcake#workout#bodyfit#hardbody#noplay#hardwork#lovepain#dedication#champions#beastmode#newcaledonia#marquisien#polynesien#melanesien#tribal#workoutgang#abdominals#sheguey#', 'jeremylion_king', 'image', 'http://instagram.com/p/yRR_-Zpitr/'),
+(44, '905229377300382512_23488887', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t50.2886-16/10954156_952394218113635_1424846866_n.mp4', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t50.2886-16/10949154_1532875266966158_1230745173_s.mp4', 'sheguey', '#today#toulon#foret#auberge#bausset#sud#cotedazur#braaap#tranquille#yamaha#yz#125#motocross#dupoto#nike#sneakeraddict#montpellier#nimes#nantes#bordeaux#marseille#paris#frenchboy#sheguey#oklm#sneakerporn#airjordan#airsoft#goodday#', 'mike_sedition', 'video', 'http://instagram.com/p/yQBVKSPMMw/'),
+(45, '905570798190618091_408961944', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10903358_1035055289844317_1122521107_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10903358_1035055289844317_1122521107_n.jpg', 'sheguey', '#heyyy #go #lyon #jadÃ©re #jadore #hommeQuiAPasInsta#thug#sheguey#moitier-moitier#tropPourit#jeSaitFaireDes#', 'bat_witty', 'image', 'http://instagram.com/p/yRO9fRHmXr/'),
+(46, '905570755491480787_228945848', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10950596_792472834135217_1492997215_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10950596_792472834135217_1492997215_n.jpg', 'sheguey', 'This girl says he''s not beautiful, it is true or nah? ðŸ˜ŒðŸ’• @schnorfii #sheguey#243#Treezybitch#TeamBreezy#OnlyPussy#Richnigga', 'toussy_treezy', 'image', 'http://instagram.com/p/yRO83gDUTT/'),
+(47, '905478777148910073_226381897', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10932226_789524417795382_1915893316_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10932226_789524417795382_1915893316_n.jpg', 'sheguey', '#Friends #Boys #Stoned #420weed #Night #Love #Girls  #After #Cold #drunk #Funny #Chill #Sheguey', 'benjirazack', 'image', 'http://instagram.com/p/yQ6CZ_nan5/'),
+(48, '905460657116593196_1652945430', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t50.2886-16/10949525_1537016143228820_845257479_n.mp4', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t50.2886-16/10943010_850018448388439_1293933257_s.mp4', 'sheguey', 'Ma sÅ“ur â¤ï¸#Bob''zer #OKLM #Sheguey #Gradur @gradurofficiel', 'sex_book_unkut', 'video', 'http://instagram.com/p/yQ16uZhrws/'),
+(49, '905441369303033893_1385829105', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t50.2886-16/10944645_1537792209839692_521304574_n.mp4', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t50.2886-16/10944063_1573598809525491_1885105824_s.mp4', 'sheguey', 'je m''en bats les couilles ..#Sheguey #lhommeaubobilarrivebientot #Marrakech #maroc #night #aucalme @gradurofficiel  #Jamais #ShegueySquaaaaaad', 'omarbeaugssissa', 'video', 'http://instagram.com/p/yQxiDOQCgl/'),
+(50, '905433360167883943_439316556', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948632_420656698093229_1248412833_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948632_420656698093229_1248412833_n.jpg', 'sheguey', 'Avec les potos!!! @lewillaxxx #sheguey !!!', 'miiickey_', 'image', 'http://instagram.com/p/yQvtgImFSn/'),
+(51, '899429195654214550_804791387', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t50.2886-16/10894683_400047600166552_584588027_n.mp4', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t50.2886-16/10938396_1400624030237153_2074775778_s.mp4', 'sheguey', 'Next part of my track ðŸŽ¶ ! #crisostum #music #melody #mastering #musicproducer #trap #rap #reason8 #hiphop #dirty #beat #beatmaker #beatmaking #sheguey #clubbanger #instrumental #protools #production #bass #brass #flstudio #songwriter #soundcloud #asuivre #likeforlike #compositor #ableton #propellerhead #logic #808', 'crisostum', 'video', 'http://instagram.com/p/x7ahaLlbOW/'),
+(52, '905373696460499379_1590795169', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10946276_1597603877142134_1177099032_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10946276_1597603877142134_1177099032_n.jpg', 'sheguey', 'When someone tells you it can''t be done it''s more a reflection of their limitations, not yours \n#18years #alpha #zyzz #eatclean #trainhard #pullups #sport #sheguey #diet #deadlift #fitfam #fitness #gradur #gymlifestyle #music #motivation #workout #bodybuilding #fitnessaddict', 'nik_9612', 'image', 'http://instagram.com/p/yQiJR-gqmz/'),
+(53, '905365391095810042_245868248', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10952598_746335452130041_1096359970_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10952598_746335452130041_1096359970_n.jpg', 'sheguey', 'estÃ¡ por la del mono #shegueysquaad #sheguey @gradurofficiel', 'clarktelamanou', 'image', 'http://instagram.com/p/yQgQbAMsf6/'),
+(54, '905365157595703043_1462450120', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10914152_1440099712946972_371358872_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10914152_1440099712946972_371358872_n.jpg', 'sheguey', '#L''homme o bob#sheguey â˜…â˜†â˜…', 'young_junior96', 'image', 'http://instagram.com/p/yQgNBigecD/'),
+(55, '905363470834163619_1494228030', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10946687_782728215155450_770487482_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10946687_782728215155450_770487482_n.jpg', 'sheguey', '#abs #aesthetic #athlÃ¨te #bodybuilding #instagood #sport #shredded #sheguey #determination #fitness #followme #gradur #lifestyle #motivation #muscu #workhard #npng #neige #paysage', 'chadidridi', 'image', 'http://instagram.com/p/yQf0enr1-j/'),
+(56, '905362998444878467_460986465', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10946468_1374321642878269_337047449_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10946468_1374321642878269_337047449_n.jpg', 'sheguey', '#snap#snapchat#hess#ajoutez#je#mennuie#paris#marseille#lyon#lille#Montpellier#bordeaux#nice#cannes#algerien#rebeux#nigth#beurette#team#rohff#et#ouais#sheguey#lourd#', 'pack_amg', 'image', 'http://instagram.com/p/yQftmrFuqD/'),
+(57, '905262993915847155_229917631', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948959_812988698773703_1469318073_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948959_812988698773703_1469318073_n.jpg', 'sheguey', 'GOOD NIGHT ðŸ™ˆðŸ˜˜', 'saadiagazelle', 'image', 'http://instagram.com/p/yQI-WMqSHz/'),
+(58, '905355210556580890_1648519488', 'http://scontent-b.cdninstagram.com/hphotos-xpa1/t51.2885-15/e15/10175187_401592070015300_1597920504_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xpa1/t51.2885-15/s306x306/e15/10175187_401592070015300_1597920504_n.jpg', 'sheguey', '#toitoi#tesunemerd#cusec#guigui#oklm#shankara#popolen#papoutes#jacda#lerapcestnous#lisaann#publicagent##sevran#kush#whiskas#thierrylepave#csaquetuveux#easybeaf#sheguey', 'cyrilmonod', 'image', 'http://instagram.com/p/yQd8RoxiQa/'),
+(59, '905348264670167213_314797975', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10952562_1613101185568729_1252166505_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10952562_1613101185568729_1252166505_n.jpg', 'sheguey', 'Jamais sans nos bob #Sheguey #OnEstEnsemble #LHommeAuBob #Superman #Retour #PosÃ©s #Oklm', 'rachiik92i_14', 'image', 'http://instagram.com/p/yQcXMxroCt/'),
+(60, '905298649072462932_1211301722', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948959_1584401925140456_400321057_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948959_1584401925140456_400321057_n.jpg', 'sheguey', 'Trop d''''pÃ©dÃ©s qui parlent sur moi nÃ©gro rien que j''men bats les couillesÂ \nSi tu veux tirer tire mon gilet sent pas trop les coups!!! #enlÃ©ger #Sheguey #zepo', 'ibmcr', 'image', 'http://instagram.com/p/yQRFMpmuxU/'),
+(61, '905340590957355835_346759183', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10932500_1533812773536014_207366282_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10932500_1533812773536014_207366282_n.jpg', 'sheguey', 'La rue connait les vrais arette ta flute. On sait qui tes toi salle fils de pute.!! #Enleger #Sheguey #Lapuissancerespectequelapuissance ðŸƒðŸðŸ‘Œ #TKTMMPAS', 'malakoff_cartel', 'image', 'http://instagram.com/p/yQaniEwWM7/'),
+(62, '905338005124295204_1464276545', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10932370_1589589401255240_438967289_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10932370_1589589401255240_438967289_n.jpg', '', 'Ils sont jamais content', 'kazadizer', 'image', 'http://instagram.com/p/yQaB51GCok/'),
+(63, '904425115741151889_1076558159', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948744_903148036403321_1813047905_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948744_903148036403321_1813047905_n.jpg', 'sheguey', 'MÃªme quand tu seras six pieds sous terre, tu n''auras pas encore assez souffert #kaaris #magnum #body #bodytime #abdos #muscles #sport #cardio #entretien #physique #son #i #sheguey', 'wil.1.am', 'image', 'http://instagram.com/p/yNKdnVsWKR/'),
+(64, '905335960106582720_495880655', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10954257_996076657072357_1631522278_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10954257_996076657072357_1631522278_n.jpg', 'sheguey', '#team #b2o #booba #izi #turfu #pirates #gradur #sheguey #instalove #instamoment #love #frio #froid #cold #snapchat #kelyssou84', 'kelyssou84', 'image', 'http://instagram.com/p/yQZkJQikLA/'),
+(65, '905326201438170960_889481242', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10949096_877190612331891_1682735626_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10949096_877190612331891_1682735626_n.jpg', 'sheguey', 'âš«âš«âš«\n#jesus #cross #tatoo #picoftoday #tbt  #photooftheday #nolimit #bestoftheday #grunge #rock #young #french #sheguey #thuglife #hipe #dope #filter #BW #sweet #fashion #ootd #instachile #instamood #followme #f4f #l4l #tagsforlikes #beautiful #mylife', 'ahanxgestanie', 'image', 'http://instagram.com/p/yQXWIyk29Q/'),
+(66, '905327820373528497_1501187338', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10919200_798452006857168_1621594052_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10919200_798452006857168_1621594052_n.jpg', 'sheguey', 'J''ai dÃ©passer tout mes Ennemis\nil m''reverront plus Jamais\nJamais,Jamais #GradurðŸŽµ\n#jamais#sheguey#EnlÃ©ger#Aiie\nBig up Ã  tous mes ennemis ! #heureux#essentiel#labase#oklm \n#superbien#man#asian#laotien\n#fiertÃ©#new#coupe#cheveuxðŸ˜œðŸ˜œðŸ˜‰ ðŸ˜ðŸ˜ðŸ˜„ðŸ‘Œ', 'aleek61', 'image', 'http://instagram.com/p/yQXtsipI-x/'),
+(68, '905655714634296060_522346305', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t50.2886-16/10944598_1585223631713818_171399650_n.mp4', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t50.2886-16/10944911_822011844507752_181321717_s.mp4', 'sheguey', '47kg en sÃ©rie sa augmente bien la ! #muscu #musculation #training #mensphysique #me #sheguey #insta #instagood #love', 'peterlcls76', 'video', 'http://instagram.com/p/yRiRL3lGr8/'),
+(69, '905650413747670515_393386890', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948912_395542340646885_1907236171_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948912_395542340646885_1907236171_n.jpg', '', 'Prier Dieu qu''il m''Ã©pargne des faux amis qui veulent me trahir', 'gnvkouri', 'image', 'http://instagram.com/p/yRhEDCHY3z/'),
+(70, '893705162832418410_1352855964', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10890541_1530387683883942_1404024016_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10890541_1530387683883942_1404024016_n.jpg', 'sheguey', '#oklm #masta Snap: joker-masta #Sheguey', 'joker_masta', 'image', 'http://instagram.com/p/xnFBxMjxZq/'),
+(71, '905648445572045749_1607498381', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10932414_782116768529301_546863022_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10932414_782116768529301_546863022_n.jpg', 'sheguey', '#sheguey#traction#rap#ma#vie#retrouvaille ðŸ’ª', 'ally_brbs', 'image', 'http://instagram.com/p/yRgnaBtNu1/'),
+(72, '901157799943582465_38578435', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10919502_412157968952512_469632244_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10919502_412157968952512_469632244_n.jpg', 'sheguey', '#rip#ASAPyams#throwback#2012#fucktheworld#newyork#harlem#southbronx#peso#purpleswag#goldie#asapworldwide#cozyboyz#yamborgini#asapMob@chace_infinite@asvpxrocky@asapferg@asapmob@wavybone@asap12vy#asapbari#asapillz#longliveasap#liveloveasap#puertorico#asapforever#212#LongLiveYams#sheguey#mobblife#BLKOUTBOY', 'lucasthebarber', 'image', 'http://instagram.com/p/yBjj6YNbMB/'),
+(73, '905645593660885606_1598690897', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10948904_391367131036952_1045212754_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10948904_391367131036952_1045212754_n.jpg', 'sheguey', 'Il faut garder quelques sourires pour se moquer des jours sans joieâ€¦â€¦ #Toretto  #Sheguey', 'assane.sylla.921', 'image', 'http://instagram.com/p/yRf95-jgpm/'),
+(74, '905642359730588015_1304204721', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10948646_782615131831468_478591545_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10948646_782615131831468_478591545_n.jpg', 'sheguey', '#baby#babies#adorable#cute#TagsForLiKes#cuddly#small#lovely#love#instangood#kid#kids#beautiful#life#sleep#sleeping#children#happy#igbabies#childrenphoto#toddler#instababy#infant#young#photooftheday#sweet#tiny#little#familly#\n\n#SHEGUEY', 'blackos_la_releve', 'image', 'http://instagram.com/p/yRfO2JSclv/'),
+(75, '905637681553183307_1645353043', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948758_278852742238787_1902574049_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948758_278852742238787_1902574049_n.jpg', 'sheguey', 'Bientot ton nouvel album mon sheguey sa arrive en force \n#lÃ©ger #sheguey #shegueysquaad #grady #gradur #lhommeaubob \nSHHHHEEEEEGGUUEEYY !!\nOn te soutient poto Ã©crase le rap game ouai ouai !!\n@gradurofficiel\n@gradurofficiel\n@gradurofficiel\n@gradurofficiel\n@gradurofficiel\nC''EST LÃ‰GER ! C''EST LÃ‰GER !!', 'smokemenn', 'image', 'http://instagram.com/p/yReKxQL5JL/'),
+(76, '905635660813508204_1552148526', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10946254_1377804909195218_1091479525_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10946254_1377804909195218_1091479525_n.jpg', 'sheguey', 'Oh damn. #sheguey #joke #2.0.93 #zara #instasize #whitagram #selfie', 'fabienbrasseleoff', 'image', 'http://instagram.com/p/yRdtXStx5s/'),
+(77, '905635033409323139_403000191', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10838655_852678598131766_649852443_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10838655_852678598131766_649852443_n.jpg', 'sheguey', 'Allons cuber ! #poser#vendredi#cube#avec#mes#sheguey#folie', 'dylantbl', 'image', 'http://instagram.com/p/yRdkO-gwCD/'),
+(78, '905627644988237455_321319872', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10895474_436966806456417_2029823983_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10895474_436966806456417_2029823983_n.jpg', 'sheguey', 'Goodmornning##bonjourno##ðŸ˜€âœŒðŸ˜€Azul##verde##blue##vert##ðŸ˜ŠðŸ˜€ðŸ˜‰L''homme##au##bob##â˜ºðŸ‘ŒðŸ‘ŒðŸ‘ŒðŸ˜en##lÃ©ger##sheguey#LIFESTYLES ðŸ˜ƒ<>black##Cvboy##instaboy#PCSF ðŸ˜€oklmðŸ‘ŒðŸ‘Œ', 'dannybooyinsta', 'image', 'http://instagram.com/p/yRb4t-TCaP/'),
+(79, '905622396450140321_243470795', 'http://scontent-b.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/929229_336239706571009_1213607050_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xap1/t51.2885-15/s306x306/e15/929229_336239706571009_1213607050_n.jpg', 'sheguey', 'Yannos le bg. ðŸ’˜\n#petit#amour#boyfriend#l4l#love#dream#french#94#sheguey#Yannos', 'elise_rhd', 'image', 'http://instagram.com/p/yRasV5DHCh/'),
+(80, '905656234955865367_1670922654', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10952602_801647599872172_1241638263_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10952602_801647599872172_1241638263_n.jpg', 'shegueyland,sheguey', '#sheguey #shegueyland', 'shegueyland', 'image', 'http://instagram.com/p/yRiYwdKX0X/'),
+(81, '905659105386528075_1670922654', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948629_1553554371568328_528666626_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948629_1553554371568328_528666626_n.jpg', 'shegueyland', '#shegueyland', 'shegueyland', 'image', 'http://instagram.com/p/yRjChwKX1L/'),
+(82, '874115256384607790_1127890884', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10864860_1525569657715148_1181852972_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10864860_1525569657715148_1181852972_n.jpg', 'shegueyland', 'Mon ptit pote ðŸ’š\n#shegueyland', 'alleyesoneme2', 'image', 'http://instagram.com/p/whezHFjdYu/'),
+(83, '863801395177313445_1448270500', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10831888_381991778634084_1354581617_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10831888_381991778634084_1354581617_n.jpg', 'shegueyland', '#shegueyland', 'bballlife16', 'image', 'http://instagram.com/p/v81srUB9Sl/'),
+(84, '905739891425233301_449374945', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10932077_1397532147216035_1793089367_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10932077_1397532147216035_1793089367_n.jpg', 'sheguey', 'Oklm #sheguey #paris', 'kevin.y.lebamileke', 'image', 'http://instagram.com/p/yR1aHnTUmV/'),
+(85, '905739276686393664_1560305191', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10919627_344315462429184_583573383_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10919627_344315462429184_583573383_n.jpg', 'sheguey', 'Briganter#ils#nous#faut#des#sous#SHEGUEY#SQUUAAAD !', 'mathis_pelok', 'image', 'http://instagram.com/p/yR1RLGAwFA/'),
+(86, '905737938418362178_1652305344', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10914493_357153151136605_1187513164_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10914493_357153151136605_1187513164_n.jpg', 'sheguey', '#RAP#Gradur #sheguey vara #album #revelation de l''annÃ©e 2014#59', 'aylil_ya', 'image', 'http://instagram.com/p/yR09svBWdC/'),
+(87, '823754104494022587_291957230', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/1390128_1485025711767722_21864902_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/1390128_1485025711767722_21864902_n.jpg', 'sheguey', '#LaHaine #Streetart #Paris #Friends #Sheguey #GoodTime', 'bizol17', 'image', 'http://instagram.com/p/tuj_5cot-7/'),
+(88, '905733186976863372_560620628', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10914579_429148930581461_2071189552_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10914579_429148930581461_2071189552_n.jpg', 'sheguey', '#2015 #Aleu #Lucas #Labert #Allard #Issam #ZoÃ© #Julie #Hashtag #Boss #SoirÃ©e #french #Gradur #Squaad #Sheguey #Jamais #17', 'nathan_chnl', 'image', 'http://instagram.com/p/yRz4jnCdSM/'),
+(89, '905732766407518864_254562489', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10948985_385108785003689_2018727447_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10948985_385108785003689_2018727447_n.jpg', 'sheguey', 'Mon frÃ¨re â¤ï¸ #sheguey #ensemble #oklm #lefrere #negros #men #frenchmen', 'wissamsaid', 'image', 'http://instagram.com/p/yRzyb7JuqQ/'),
+(90, '905731062889803102_1424081370', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10946347_1534109140182467_245434309_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10946347_1534109140182467_245434309_n.jpg', 'sheguey', '#Sheguey', 'samirmdn87', 'image', 'http://instagram.com/p/yRzZpZlW1e/'),
+(91, '905730305365636623_1627062044', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10950417_347276678796667_524746931_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10950417_347276678796667_524746931_n.jpg', 'sheguey', 'J''ai un gode #Sheguey#illimitÃ©!!', 'wizkid_boy', 'image', 'http://instagram.com/p/yRzOn5n_YP/'),
+(92, '888568538624147063_574884590', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10864949_1378655929103261_198476589_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10864949_1378655929103261_198476589_n.jpg', 'sheguey', 'Bonne annÃ©e âœŒï¸\n#01/01/15\n#NoÃ«l #newyork #Ufc#OKLM #Ps4 #psg #paris #showcase #sheguey #Fifa15 #FranceTv #fifa #gta5 #JeSuisCharlie #kushparty #losangeles #McCoy #maroco #Moncler #Marrakech #MignonMignon #xboxone #chicago #CocaCola #caley #charliehebdo #Vacances', 'nassim.itto', 'image', 'http://instagram.com/p/xU1GDHR753/'),
+(93, '905719942817838535_310882364', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10919109_1554374134809915_1145242451_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10919109_1554374134809915_1145242451_n.jpg', 'sheguey', 'On change pas une Ã©quipe qui gagne ðŸ‘Š #mes #gars #band #sheguey #squad #59zoo #850 #InstaSize #l4l #followme', 'hugopellegrinii', 'image', 'http://instagram.com/p/yRw31BpPXH/'),
+(94, '905716784766982461_1559742373', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10950431_227543044082673_1426564374_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10950431_227543044082673_1426564374_n.jpg', 'sheguey', '#comoriennouveau#974#frenchriviera#avecmon#sheguey#instagood#instamoment#Nice#dansleblock#team#Barca#larÃ©union#EnLÃ©ver#lecouz#Mecdusud#CoteDazur#babyðŸ‘Œ', 'alors_baba', 'image', 'http://instagram.com/p/yRwJ33JRk9/'),
+(95, '905716297572244726_358391238', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10949036_1551664438408937_2120499886_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10949036_1551664438408937_2120499886_n.jpg', 'sheguey', 'Sheguey ðŸŽ‰\n#night#party#fun#friends#boys#girl#happy#goodtime#saturdaynight#saturday#sheguey#chicha#400#top#onestbon#love#macon#australie', 'manoncannesson', 'image', 'http://instagram.com/p/yRwCyIE1z2/'),
+(96, '905709556611581011_641370160', 'http://scontent-a.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10533039_1529729293960665_1871857696_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xap1/t51.2885-15/s306x306/e15/10533039_1529729293960665_1871857696_n.jpg', 'sheguey', 'Stay Here, I Can''t Wait ðŸ’¯ðŸ’¯ #sheguey #Black #African #Congo', 'brabra_lapioche', 'image', 'http://instagram.com/p/yRugsHgoRT/'),
+(97, '905705565786001768_1288829403', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10932622_934644643215385_602560989_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10932622_934644643215385_602560989_n.jpg', 'sheguey', 'En attendant  D.U.C et L''homme au bob.  RDC le Zin !\n\n#Rdc#alonzo#merci#lhommeaubob#duc#2015#gradur#booba#Unkut#oklm#Lezin#sheguey#marseille#parid#psg#boy#gurl#greygoose#ciroc#jackDaniels', 'mous_unkut', 'image', 'http://instagram.com/p/yRtmnXxNFo/'),
+(98, '905704302392263658_1638712191', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t50.2886-16/10951660_1677435975816618_1797852514_n.mp4', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t50.2886-16/10938447_380623462116624_1560268566_s.mp4', 'sheguey', 'L''homme au bob il arrive. :) @gradurofficiel #Sheguey', 'tclem440', 'video', 'http://instagram.com/p/yRtUOvokPq/'),
+(99, '905698451305256900_1006797804', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10919634_1529893493946985_1137240643_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10919634_1529893493946985_1137240643_n.jpg', 'sheguey', '#negro#Black#renoi#niggas#camerounais#senegalais#Marseillais#OM#NegroFacher#net#Blackos#Celibataire#weekend#MarcJacobs#Sheguey#izi#FuckLove#fuckpsg#playhard#redskins#Enleger#winter#OKLM#Posey#hiver', 'landryblackos', 'image', 'http://instagram.com/p/yRr_Ffq9fE/'),
+(100, '905698112028152009_498972947', 'http://scontent-a.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/928917_1537347543195347_2014083305_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xap1/t51.2885-15/s306x306/e15/928917_1537347543195347_2014083305_n.jpg', 'sheguey', 'C''est Ã§a qu''j''aaaaaaime enculÃ©! ðŸ˜ #mon #sheguey #ahahah #on #est #la #gradur #bobzer #aieeee #au #top #mon #clem â˜ºï¸ðŸŽ‰â¤ï¸', 'laurawalgraeve', 'image', 'http://instagram.com/p/yRr6JhLhDJ/'),
+(101, '905696911255330404_655960694', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10919498_835115576548625_71306525_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10919498_835115576548625_71306525_n.jpg', 'sheguey', 'J''suuis dans l''turfuu #sheguey', 'gauuuuuthe', 'image', 'http://instagram.com/p/yRrorNit5k/'),
+(102, '905690563110811564_1422557348', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10949003_1374226416222541_422106940_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10949003_1374226416222541_422106940_n.jpg', 'sheguey', 'Touche un membre de ma click tu verra qu on et pas tous seul #gradur#sheguey#rap#de#fou#', 'jordanbordg', 'image', 'http://instagram.com/p/yRqMTCpLes/'),
+(103, '905689034683707163_36124730', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10932326_416510048506260_1001678849_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10932326_416510048506260_1001678849_n.jpg', 'sheguey', '#sheguey mdr', 'kaisman', 'image', 'http://instagram.com/p/yRp2DlSe8b/'),
+(104, '905688456966661406_419977776', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10919172_582590451885197_1769501416_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10919172_582590451885197_1769501416_n.jpg', 'sheguey', 'Nouveau joujou \n#aiguillealatremblote#oklm#sheguey#mazda3#compteurafond#gamos#pilote#yepyep#delafrappe#permissasaute#restecalmegarcon', 'zadotatoo', 'image', 'http://instagram.com/p/yRptpiq2Ue/'),
+(105, '905687345029986763_1532321293', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10949077_1553185954961538_1969552342_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10949077_1553185954961538_1969552342_n.jpg', 'sheguey', '"Grosses fesses grosse biatch ðŸ‘ŠðŸ’‹â¤ï¸" @lisecchvl @gradurofficiel #sheguey #tarpÃ© #piapiapia #jalousie', 'cabbekejefferson', 'image', 'http://instagram.com/p/yRpdd-FDnL/'),
+(106, '905684620048410397_1077710328', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948956_746336312140444_901064780_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948956_746336312140444_901064780_n.jpg', 'sheguey', 'Parfait je ne suis pas,  Si t pas Gang Ne me suis Pas @boobaofficial\n#oklm #posey #izi #92i #f4f #l4l #likeforlike #follow4follow #instafollow #instalike #kopp #tunisie #comoriennouveau #turfu #alonzo #sheguey', 'iliiesizi', 'image', 'http://instagram.com/p/yRo10IhScd/'),
+(107, '905682579740118004_1421482769', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948848_435523879932221_1836539195_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948848_435523879932221_1836539195_n.jpg', 'sheguey', 'Bonne journÃ©e #mes_pote #follow #sheguey #swagg ##', 'badroubdr', 'image', 'http://instagram.com/p/yRoYH8q0v0/'),
+(108, '905680668221790233_1313204885', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10948848_837353832991137_2066353894_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10948848_837353832991137_2066353894_n.jpg', 'sheguey,shegueyland', 'Il Ta Dii Kil Madii Kon Parle de Moii......\nEll ta Dii Kel Madi Kon ParlÃ© De Toii... #TeAmAlonZO\n#BOBOKAGANGS \n#REHYOU \n#FORCE\n# #SHEGUEY #NgouVou\nðŸ˜ŽðŸ˜ŽðŸ‘ŠðŸ‘ŒðŸ‘ðŸ’ª', 'santcho96', 'image', 'http://instagram.com/p/yRn8TtTFgZ/');
+INSERT INTO `instagram` (`id`, `id_insta`, `standard_resolution`, `low_resolution`, `tags`, `caption_text`, `username`, `type`, `link`) VALUES
+(109, '905669850503891340_1641646073', 'http://scontent-a.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/10755981_384842931696011_317217263_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xap1/t51.2885-15/s306x306/e15/10755981_384842931696011_317217263_n.jpg', 'sheguey', 'Tu court apres moi prend de la ventoline #fitlane #musculation #training #sheguey #grosBrasLaChatteAPopeye', 'yous2.0', 'image', 'http://instagram.com/p/yRle47EMmM/'),
+(110, '905665791591265045_986200331', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10954751_404516066383412_1757502328_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10954751_404516066383412_1757502328_n.jpg', 'sheguey', 'ðŸŽ¶ ''J''vais prendre mes sous dans l''rap et ils m''reverront jamaisðŸ’°ðŸ’¸, J''Ã©cris dÃ©foncÃ© sous Jack avec une grosse feuille d''amnÃ©ðŸ»ðŸ¸ðŸðŸš¬,J''ai dÃ©passÃ© tous mes ennemis ils m''reverront jamais, Jamais, jamaisðŸ”«âœˆâž¡ ''ðŸŽµðŸ‘Š ShegueySquaadðŸ‘Š #gradur #jamais #onlythebest #clipepic #sheguey #shegueysquaad #negrofou #terrasser #lastreetatoutgachÃ© #quedubon #french #me #yolo #newclothes #winter #picoftheday #instadaily', 'lucas_breant', 'image', 'http://instagram.com/p/yRkj0xBTMV/'),
+(111, '905663718078829905_49725788', 'http://scontent-a.cdninstagram.com/hphotos-xap1/t51.2885-15/e15/924672_1374292219547952_1320217682_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xap1/t51.2885-15/s306x306/e15/924672_1374292219547952_1320217682_n.jpg', 'sheguey', '#bro#ritrit#libourne#sheguey#snap#fashionl#lafamille#sisi#aucalme', 'maxtouton', 'image', 'http://instagram.com/p/yRkFpqDFVR/'),
+(112, '905661959583323430_49725788', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/e15/10914267_1581298365440383_1592677978_n.jpg', 'http://scontent-b.cdninstagram.com/hphotos-xaf1/t51.2885-15/s306x306/e15/10914267_1581298365440383_1592677978_n.jpg', 'sheguey', '#libourne#pirequemarseillefrere#tags#hash#tags#lol#tropdustreetart#street#art#nique#lapolice#sheguey#tapasun20ballesfrere', 'maxtouton', 'image', 'http://instagram.com/p/yRjsD7jFUm/'),
+(113, '905661799142006319_1647235006', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10903268_1519027978322191_1336719975_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10903268_1519027978322191_1336719975_n.jpg', 'sheguey', '#sheguey', 'flolacriim', 'image', 'http://instagram.com/p/yRjpuggB4v/'),
+(114, '905658520004128185_550637490', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/e15/10890557_1393080207663656_179520206_n.jpg', 'http://scontent-a.cdninstagram.com/hphotos-xfa1/t51.2885-15/s306x306/e15/10890557_1393080207663656_179520206_n.jpg', 'sheguey,shegueyland', '"J''suis sur la couche d''ozone, pendant que tu passes ta vie Ã  zoner" - STMG3 y''a quoi ? #sheguey #potos #friendship #stmg #sortie #perroquet #smile #sabbamusainbolt', 'madougrt', 'image', 'http://instagram.com/p/yRi6Akpu25/');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `punchline`
+--
+
+CREATE TABLE IF NOT EXISTS `punchline` (
+`id` int(11) NOT NULL,
   `name` text NOT NULL,
-  `punch` text NOT NULL,
-  `time` datetime NOT NULL,
-  PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=45 ;
+  `punch` mediumtext NOT NULL,
+  `time` datetime NOT NULL
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 
 --
--- Contenu de la table `punchline`
+-- Dumping data for table `punchline`
 --
 
 INSERT INTO `punchline` (`id`, `name`, `punch`, `time`) VALUES
-(3, 'test', 'aaaaaaaaa', '2015-01-25 16:54:02'),
-(4, 'test', 'aaaaaaaaa', '2015-01-25 16:54:31'),
-(5, 'test', 'aaaaaaaaa', '2015-01-25 16:54:47'),
-(6, 'test', 'aaaaaaaaa', '2015-01-25 16:55:41'),
-(7, 'test', 'aaaaaaaaa', '2015-01-25 16:55:45'),
-(8, 'bbbaaaa', 'bbbbbbbbbaaaaaaaaa', '2015-01-25 17:41:26'),
-(9, 'aaa', 'rrrrraaaaa', '2015-01-25 17:44:38'),
-(10, 'test', 'rrrrraaaaatest', '2015-01-25 17:46:44'),
-(11, 'aaa', 'aaaaa', '2015-01-25 19:36:14'),
-(12, 'aaa', 'aaaaa', '2015-01-25 19:38:34'),
-(13, 'aaa', 'aaaaa', '2015-01-25 19:39:19'),
-(14, 'aaaaa', 'aaaaa', '2015-01-25 20:00:01'),
-(15, 'aaaaa', 'aaaaa', '2015-01-25 20:00:04'),
-(16, 'aaaaa', 'aaaaa', '2015-01-25 20:02:17'),
-(17, 'aaaaa', 'aaaaa', '2015-01-25 20:02:21'),
-(18, 'aaaaa', 'aaaaa', '2015-01-25 20:02:39'),
-(19, 'aaaaa', 'aaaaa', '2015-01-25 20:03:38'),
-(20, 'Gradur', 'Vas y pÃ©tasse viens mâ€™la sucer jâ€™en ai marre de mâ€™branler. Jâ€™suis avec Felom au quartier rien qu''Ã§a graille du poulet ', '2015-01-25 21:05:35'),
-(21, 'Gradur', 'Vas y pÃ©tasse viens mâ€™la sucer jâ€™en ai marre de mâ€™branler. Jâ€™suis avec Felom au quartier rien qu''Ã§a graille du poulet ', '2015-01-25 21:08:51'),
-(22, 'Gradur', 'Vas y pÃ©tasse viens mâ€™la sucer jâ€™en ai marre de mâ€™branler. Jâ€™suis avec Felom au quartier rien qu''Ã§a graille du poulet ', '2015-01-25 21:09:39'),
-(23, 'Gradur', 'Vas y pÃ©tasse viens mâ€™la sucer jâ€™en ai marre de mâ€™branler. Jâ€™suis avec Felom au quartier rien qu''Ã§a graille du poulet ', '2015-01-25 21:09:44'),
-(24, 'Gradur', 'Vas y pÃ©tasse viens mâ€™la sucer jâ€™en ai marre de mâ€™branler. Jâ€™suis avec Felom au quartier rien qu''Ã§a graille du poulet ', '2015-01-25 21:10:03'),
-(25, 'ROBERT', 'aaaaezefrgqg fg qg qdfg qdf gqfd gq fg qf gqe fgq efh eqfghq fg qfg erFG r efg erG <re g rG r', '2015-01-25 22:30:58'),
-(26, 'ROBERT', 'aaaaezefrgqg fg qg qdfg qdf gqfd gq fg qf gqe fgq efh eqfghq fg qfg erFG r efg erG <re g rG r', '2015-01-25 22:31:29'),
-(27, 'ROBERT', 'aaaaezefrgqg fg qg qdfg qdf gqfd gq fg qf gqe fgq efh eqfghq fg qfg erFG r efg erG <re g rG r', '2015-01-25 22:32:18'),
-(28, 'ROBERT', 'aaaaezefrgqg fg qg qdfg qdf gqfd gq fg qf gqe fgq efh eqfghq fg qfg erFG r efg erG <re g rG r', '2015-01-25 22:32:24'),
-(29, 'ROBERT', 'aaaaezefrgqg fg qg qdfg qdf gqfd gq fg qf gqe fgq efh eqfghq fg qfg erFG r efg erG <re g rG r', '2015-01-25 22:32:32'),
-(30, 'ROBERT', 'aaaaezefrgqg fg qg qdfg qdf gqfd gq fg qf gqe fgq efh eqfghq fg qfg erFG r efg erG <re g rG r', '2015-01-25 22:32:37'),
-(31, 'ROBERT', 'aaaaezefrgqg fg qg qdfg qdf gqfd gq fg qf gqe fgq efh eqfghq fg qfg erFG r efg erG <re g rG r', '2015-01-25 22:34:54'),
-(32, 'ROBERT', 'aaaaezefrgqg fg qg qdfg qdf gqfd gq fg qf gqe fgq efh eqfghq fg qfg erFG r efg erG <re g rG r', '2015-01-25 22:50:48'),
-(33, 'ROBERT', 'aaaaezefrgqg fg qg qdfg qdf gqfd gq fg qf gqe fgq efh eqfghq fg qfg erFG r efg erG <re g rG r', '2015-01-25 22:54:09'),
-(34, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:03:01'),
-(35, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:04:55'),
-(36, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:06:42'),
-(37, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:06:44'),
-(38, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:06:45'),
-(39, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:06:45'),
-(40, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:06:47'),
-(41, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:07:13'),
-(42, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:09:11'),
-(43, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:09:18'),
-(44, 'ROBERT', 'zaaaaaaaa a a a a a a  a a a a e   f d d  d d df qrg f g h d<h dgh w gh wgh <dg h< dgh <t hd <gh wh w h w hw th wth  wth wt hw th wt hw thw h wt hw th wt hw th wt hw th wt hwt wt w th wt  wth w th wt h', '2015-01-25 23:14:28');
+(1, '0', 'Et tu crois que je plaisante ?', '2015-01-26 20:13:53'),
+(2, '0', 'trop des barres ! ', '2015-01-26 20:17:46');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `vote`
+--
+
+CREATE TABLE IF NOT EXISTS `vote` (
+`id` int(11) NOT NULL,
+  `id_insta` tinytext NOT NULL,
+  `ip` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `contactform`
+--
+ALTER TABLE `contactform`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `instagram`
+--
+ALTER TABLE `instagram`
+ ADD PRIMARY KEY (`id`), ADD KEY `id_insta` (`id_insta`);
+
+--
+-- Indexes for table `punchline`
+--
+ALTER TABLE `punchline`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `vote`
+--
+ALTER TABLE `vote`
+ ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `contactform`
+--
+ALTER TABLE `contactform`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+--
+-- AUTO_INCREMENT for table `instagram`
+--
+ALTER TABLE `instagram`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=115;
+--
+-- AUTO_INCREMENT for table `punchline`
+--
+ALTER TABLE `punchline`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT,AUTO_INCREMENT=3;
+--
+-- AUTO_INCREMENT for table `vote`
+--
+ALTER TABLE `vote`
+MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
+/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
+/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

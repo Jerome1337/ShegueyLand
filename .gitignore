@@ -1,0 +1,12 @@
+/bower_components/*
+/.sass-cache/*
+*.DS_Store
+/stylesheets/*
+.bundle/
+npm-debug.log/
+/node_modules/*
+gulpfile.js/
+bin/
+cache/tweetsgradur.tmp
+cache/tweetsl.tmp
+adm/*

@@ -12,7 +12,7 @@
 
 			$to = 'contact@sheguey.land';
 			$content = ''.$_POST['message'].'';
-			$subject = 'Nouveau message de '.$_POST['email'].' - Sheguey Land';
+			$subject = 'Nouveau message de '.$_POST['name'].' - Sheguey Land';
 			$from = ''.$_POST['email'].'';
 
 			$uri = 'https://mandrillapp.com/api/1.0/messages/send.json';
