@@ -14,7 +14,7 @@ var AUTOPREFIXER_BROWSERS = [
   'ie_mob >= 10',
   'ff >= 30',
   'chrome >= 34',
-  'safari >= 7',	
+  'safari >= 7',  
   'opera >= 23',
   'ios >= 7',
   'android >= 4.4',
@@ -22,7 +22,7 @@ var AUTOPREFIXER_BROWSERS = [
 ];
 
 // var config = {
-//   proxy: "localhost/projets/Sheguey/dist/"
+//   proxy: "ShegueyGulp:8888"
 // };
 
 // browserSync(config);
@@ -73,7 +73,7 @@ gulp.task('styles', function () {
   // For best performance, don't add Sass partials to `gulp.src`
   return gulp.src([
       'app/scss/*.scss',
-      // 'app/css/**/*.css'
+      'app/css/**/*.css'
       // 'app/styles/components/components.scss'
     ])
     .pipe($.changed('styles', {extension: '.scss'}))
@@ -142,11 +142,11 @@ gulp.task('serve', ['styles'], function () {
   //   // server: ['.tmp', 'app']
   // });
 
-  // gulp.watch(['app/*.php']);
+  gulp.watch(['app/*.php']);
   gulp.watch(['app/css/**/*.{scss,css}'], ['styles']);
-  gulp.watch(['app/scss/*.{scss,css}'], ['styles']);
+  gulp.watch(['app/scss/**/*.{scss,css}'], ['styles']);
   // gulp.watch(['app/js/**/*.js'], ['jshint']);
-  // gulp.watch(['app/img/**/*']);
+  // gulp.watch(['app/img/**/*'], reload);
 });
 
 // Build and serve the output from the dist build
@@ -163,9 +163,8 @@ gulp.task('serve', ['styles'], function () {
 
 // Build Production Files, the Default Task
 gulp.task('default', ['clean'], function (cb) {
-  runSequence('styles', ['html', 'images', 'fonts', 'copy','serve'], cb);
+  runSequence('styles', ['html', 'copy', 'serve'], cb);
 });
-
 
 // Run PageSpeed Insights
 // Update `url` below to the public URL for your site
@@ -174,7 +173,7 @@ gulp.task('pagespeed', pagespeed.bind(null, {
   // free (no API key) tier. You can use a Google
   // Developer API key if you have one. See
   // http://goo.gl/RkN0vE for info key: 'YOUR_API_KEY'
-  url: 'https://hauteculture.com',
+  url: 'https://example.com',
   strategy: 'mobile'
 }));
 
