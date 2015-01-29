@@ -18,6 +18,9 @@ $tab1200: "only screen and (min-width : 1200px)";
 
 html { font-size: 62.5%; }
 body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
 	background: $white;
 	box-sizing: border-box;
 }
@@ -127,12 +130,36 @@ header.menu_left{
 					width: 100%;
 					// letter-spacing: 1px;
 					font-size: 1.8em;
-
 				}
 				&:hover {
 					background: darken($red, 10%);
 				}
 			}
+		}
+		.socialIcons{
+			text-align: center;
+			margin-top: 30px;
+		}
+	}
+}
+
+.socialIcon{
+	font-family: "shegueyfont";
+	font-size: 3.5em; 
+	&.red{
+		color: darken($red, 10%);
+		&:hover{
+			color: darken($red, 20%);
+		}
+	}
+	&.twitterIcon{
+		&:after{
+			content: "m";
+		}
+	}
+	&.facebookIcon{
+		&:after{
+			content: "l";
 		}
 	}
 }
@@ -166,59 +193,61 @@ header.header{
 	width: 100%;
 	max-width: 1200px;
 	margin: 20px auto;
-	padding: 0px 25px;
+	padding: 15px 25px;
 	background: $red;
 	display: table;
 	h2{
 		@include title;
+		margin: 0;
 		font-size: 2.6em;
-		display: table-cell;
 		vertical-align: middle;
 	}
 }
 
 .content{
+	max-width: 1200px;
+	margin: auto;
 	h3.title3{
-		font-family: 'Radley', serif;
-		font-size: 1em;
+		margin: 10px 15px;
+		padding: 0 15px;
+		// font-family: 'Radley', serif;
+		font-size: 2em;
+		font-weight: normal;
 		text-transform: none;
 		color: $black;
-		border-left: solid 5px $red;
+		border-left: solid 8px $red;
 		& strong{
 			color: $red;
+			font-weight: normal;
+		}
+		+ h3.title3 {
+			margin-top: 0px;
+			margin-bottom: 25px;
 		}
 	}
 }
 
 
 footer {
-	width: 100%;
-	height: 50px;
+	// width: 100%;
+	padding: 10px;
 	background-color: $black;
-	display: table;
 	nav{
-		width: 70%;
-		display: table-cell;
-		vertical-align: middle;
-		margin: auto;
 		ul{
 			li{
-				display: inline-block;
-				h2 {
-					text-align: center;
-					font-size: 1em;
-					// color: $white;
+				list-style: none;
+				padding: 10px 0;
 					a{
+						font-size: 1.8em;
 						color: darken($lightgrey,30%);
-						transition: all .5s ease-in-out;
+						transition: color .5s ease-in-out;
 						&:hover {
 							color: $white;
 						}
 					}
-				}
-				span {
-					color: $white;
-					margin: 0 20px;
+				& + li { 
+					// border-right: solid 1px $white;
+					border-top: solid 1px darken($white, 80%);
 				}
 			}
 		}
@@ -226,8 +255,20 @@ footer {
 }
 
 @media #{$tab600} {
+	header.menu_left nav ul li a{
+		font-size: 2.2em;
+	}
 	footer {
 		margin-top: 25px;
+		nav ul li {
+			display: inline-block;
+			padding: 0 10px;
+			font-size: 0.8em;
+			& + li {
+				border : none;
+				border-left: solid 1px darken($white, 80%);
+			}
+		}
 	}
 		h1.logo { 
 			img {

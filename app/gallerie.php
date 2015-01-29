@@ -24,8 +24,8 @@
                     <div class="orderPicsBy">
                         <h4>Trier par</h4>
                         <div class="field select">
-                            <input type="radio" value="recent" class="orderBy" id="recent" name="orderList"/><label for="recent">Nouveautés</label>
-                            <input type="radio" value="liked" class="orderBy" id="liked" name="orderList"/><label for="liked">Votes</label>
+                            <input type="radio" value="recent" class="orderBy" id="recent" name="orderList"/><label class="orderBy" for="recent">Nouveautés</label>
+                            <input type="radio" value="liked" class="orderBy" id="liked" name="orderList"/><label class="orderBy" for="liked">Votes</label>
                         </div>
                     </div>
                 </fieldset>
@@ -33,8 +33,9 @@
         </header>
         
         <div class="content shegueyGallery">
-        <h3>Pour apparaitre sur le mur des sheguey, <br/>partage ta photo sur instagram avec le tag <strong>#SHEGUEYLAND</strong></h3>
-        <h3> partage ton cri "SHEGUEYYY" sur instagram VIDEO avec le tag <strong>#SHEGUEYLAND</strong></h3>
+
+        <h3 class="title3">Pour apparaitre sur le mur des sheguey, partage ta photo sur instagram avec le tag <strong>#SHEGUEY<b>LAND</b></strong></h3>
+        <h3 class="title3">Partage ton cri "SHEGUEYYY" sur instagram VIDEO avec le tag <strong>#SHEGUEY<b>LAND</b></strong></h3>
 
             <div class="row js-shegueyWall">
 
@@ -47,10 +48,8 @@
         <?php include('commons/script_bottom.php'); ?>
         <script>
             $(document).ready(function() {
-                loadGallery("both", "recent"); // Chargement de la gallerie au 1er chargement
+                loadGallery("both", "recent", "8"); // Chargement de la gallerie au 1er chargement
                 $('.mediaContent').prop('checked', true); // Coche les 2 case si non defini
-                loadGallery("both", "recent");
-                $('.mediaContent').prop('checked', true); // Chargement de la gallerie au 1er chargement
             });
         </script>
     </body>
