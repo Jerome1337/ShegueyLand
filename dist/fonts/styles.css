@@ -50,3 +50,21 @@
 .icon-remove:before {
   content: "d";
 }
+.icon-circle:before {
+  content: "e";
+}
+.icon-circle-line:before {
+  content: "f";
+}
+.icon-angle-down:before {
+  content: "g";
+}
+.icon-caret-down-two:before {
+  content: "h";
+}
+.icon-check-mark-2:before {
+  content: "i";
+}
+.icon-check-mark:before {
+  content: "j";
+}

@@ -10,3 +10,4 @@ gulpfile.js
 bin/
 cache/*
 adm/*
+dist/*

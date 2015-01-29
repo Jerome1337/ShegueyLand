@@ -250,7 +250,6 @@ function saveVoteMedia($ip_client, $vote_media_ID){
                    	return false;  // return fal s'il a deja voté
                    }
                	}
-
             	$new_id_medias = "$vote_media_ID,$id_medias";
            		$save_new_vote = $bdd->prepare('UPDATE vote SET id_media = :new_id_medias WHERE id = :id');
             	$save_new_vote->execute(array('new_id_medias' => $new_id_medias, 'id' => $id));

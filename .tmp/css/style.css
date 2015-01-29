@@ -161,14 +161,14 @@ header.menu_left nav ul li + li {
   border-top: solid 1px #ac0025;
 }
 header.menu_left nav ul li a {
+  font-family: 'Francois One', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
   display: block;
   padding: 0.5em 0.5em 0.5em 0.7em;
   outline: none;
   width: 100%;
-  color: #ffffff;
-  text-transform: uppercase;
   font-size: 1.8em;
-  font-family: 'Francois One', sans-serif;
 }
 header.menu_left nav ul li:hover {
   background: #ac0025;
@@ -197,6 +197,116 @@ button {
   text-align: left;
   text-decoration: none;
   text-indent: 0;
+}
+
+header.header {
+  width: 100%;
+  max-width: 1200px;
+  margin: 20px auto;
+  padding: 0px 25px;
+  background: #df0030;
+  display: table;
+}
+header.header h2 {
+  font-family: 'Francois One', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-size: 2.6em;
+  display: table-cell;
+  vertical-align: middle;
+}
+header.header form.formOptions {
+  display: table-cell;
+  vertical-align: middle;
+}
+header.header form.formOptions fieldset.galleryOption {
+  border: none;
+  padding: 0;
+  margin: 0;
+  text-align: right;
+}
+header.header form.formOptions fieldset.galleryOption legend {
+  display: none;
+}
+header.header form.formOptions fieldset.galleryOption .field.mediaType {
+  display: inline-block;
+}
+header.header form.formOptions fieldset.galleryOption .field input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+header.header form.formOptions fieldset.galleryOption .field input[type=checkbox] + label:before {
+  content: "i";
+  color: #c6002b;
+  vertical-align: middle;
+}
+header.header form.formOptions fieldset.galleryOption .field input[type=checkbox]:checked + label:before {
+  content: "i";
+  color: #ffffff;
+  vertical-align: middle;
+}
+header.header form.formOptions fieldset.galleryOption .field.select {
+  display: none;
+  position: absolute;
+  z-index: 100;
+}
+header.header form.formOptions fieldset.galleryOption .field.select label {
+  display: block;
+  background: #df0030;
+  cursor: pointer;
+  padding: 10px 15px;
+}
+header.header form.formOptions fieldset.galleryOption .field.select label:hover {
+  background: #ac0025;
+}
+header.header form.formOptions fieldset.galleryOption .field.select label + label {
+  border-top: solid 1px #ac0025;
+}
+header.header form.formOptions fieldset.galleryOption .field.select.active {
+  display: block;
+}
+header.header form.formOptions fieldset.galleryOption .field label {
+  color: #ffffff;
+  font-size: 2.2em;
+  margin-right: 15px;
+}
+header.header form.formOptions fieldset.galleryOption .field label:before {
+  font-family: "shegueyfont" !important;
+  font-size: 1.4em;
+  padding: 0 5px 0px 0px;
+  margin: 0;
+  vertical-align: middle;
+}
+header.header form.formOptions fieldset.galleryOption .orderPicsBy {
+  display: inline-block;
+  cursor: pointer;
+}
+header.header form.formOptions fieldset.galleryOption .orderPicsBy h4 {
+  font-size: 2.2em;
+  font-family: 'Francois One', sans-serif;
+  color: #ffffff;
+  text-transform: uppercase;
+  display: inline-block;
+}
+header.header form.formOptions fieldset.galleryOption .orderPicsBy h4:after {
+  font-family: "shegueyfont";
+  content: "h";
+  vertical-align: middle;
+  padding-left: 10px;
+  display: inline-block;
+}
+
+.content h3.title3 {
+  font-family: 'Radley', serif;
+  font-size: 1em;
+  text-transform: none;
+  color: #191e23;
+  border-left: solid 5px #df0030;
+}
+.content h3.title3 strong {
+  color: #df0030;
 }
 
 footer {
@@ -700,6 +810,7 @@ footer nav ul li span {
   width: 300px;
   height: 300px;
   background-position: cover;
+  margin: auto;
 }
 .shegueyGallery .rect.gallery div p {
   color: #f7f7f7;
@@ -727,12 +838,66 @@ footer nav ul li span {
 }
 .shegueyGallery .rect.gallery div .likePic:before {
   content: "c";
+  -webkit-transition: all 0.5s ease-in-out;
+          transition: all 0.5s ease-in-out;
 }
 .shegueyGallery .rect.gallery div .likePic:hover {
   opacity: 1;
 }
 .shegueyGallery .rect.gallery div .likePic:hover {
   background: rgba(25, 30, 35, 0.3);
+}
+.shegueyGallery .rect.gallery div .likePic.liked:before {
+  color: #df0030;
+  opacity: 0.3;
+  -webkit-animation: animLiked 0.8s ease-in-out;
+          animation: animLiked 0.8s ease-in-out;
+}
+@-webkit-keyframes animLiked {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    color: #df0030;
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+    opacity: 1;
+  }
+  65% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0.5;
+    color: #ffffff;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.3;
+    color: #df0030;
+  }
+}
+@keyframes animLiked {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    color: #df0030;
+    -webkit-transform: scale(1.8);
+            transform: scale(1.8);
+    opacity: 1;
+  }
+  65% {
+    -webkit-transform: scale(0.8);
+            transform: scale(0.8);
+    opacity: 0.5;
+    color: #ffffff;
+  }
+  100% {
+    -webkit-transform: scale(1);
+            transform: scale(1);
+    opacity: 0.3;
+    color: #df0030;
+  }
 }
 .shegueyGallery .button {
   font-size: 2.2em;
