@@ -68,3 +68,12 @@
 .icon-check-mark:before {
   content: "j";
 }
+.icon-facebook:before {
+  content: "l";
+}
+.icon-twitter:before {
+  content: "m";
+}
+.icon-social-amazon:before {
+  content: "k";
+}

@@ -18,22 +18,26 @@
                 $randomTweet[] = "%20www.sheguey.land";
                 $randomTweet[] = "%20www.sheguey.land";
                 $randomTweet[] = "%20www.sheguey.land";
+                $randomTweet[] = "%20www.sheguey.land";
+                $randomTweet[] = "%20www.sheguey.land";
                 $randomTweet[] = "%20@cahiips";
                 $randomTweet[] = "%20@MOneymaks";
-                $randomTweet[] = "%20www.sheguey.land";
                 $randomTweet[] = "%20@midosofficiel";
-                $randomTweet[] = "%20www.sheguey.land";
                 $randomTweet[] = "%20@Luissfernando17";
             ?>
 			<li><a href="index.php">Accueil</a></li>
             <li><a href="gallerie.php">Le mur des #Sheguey</a></li>
-			<li><a href="gallerie.php">Les #Sheguey Vidéos</a></li>
+			<!-- <li><a href="gallerie.php">Les #Sheguey Vidéos</a></li> -->
 			<li><a href="quelsheguey.php">Quel Sheguey es-tu ?</a></li>
             <li><a href="clicknsheg.php">Click & Sheg</a></li>
             <li><a href="punch.php">Punchlines</a></li>
 			<li><a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand<?php echo $randomTweet[rand(0,count($randomTweet)-1)]?>&related=Shegueyland,gradidur,theHauteCulture,Luissfernando17,MOneymaks,cahiips,midosofficiel" class="twitter">Envois 1 Tweet @Gradur</a></li>
-			<li><a href="contact.php"><small>Contacter ShegeyLand</small></a></li>
+            <li><a href="contact.php"><small>Contacter ShegeyLand</small></a></li>
 		</ul>
+        <div class="socialIcons">
+            <a href="https://twitter.com/ShegueyLand" target="_blank"><small class="twitterIcon socialIcon red"></small></a>
+            <a href="https://www.facebook.com/ShegueyLand" target="_blank"><small class="facebookIcon socialIcon red"></small></a>
+        </div>
 	</nav>
     <div class="shadowClose"></div>
 </header>

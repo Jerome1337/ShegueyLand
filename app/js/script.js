@@ -9,7 +9,7 @@ $(document).ready(function() {
     });
 });
 
-function loadGallery(type_data, orderBy) {
+function loadGallery(type_data, orderBy, contentLengthToLoad) {
     var lastImageLoaded = $(".likePic").last().attr("data-id");
     if(typeof lastImageLoaded === 'undefined') {
         lastImageLoaded = '9999';
@@ -18,7 +18,7 @@ function loadGallery(type_data, orderBy) {
     $.ajax({
         type: "POST",
         url: "commons/function.php",
-        data: { getMoreSheguey: lastImageLoaded, typeData: type_data, orderBy: orderBy }
+        data: { getMoreSheguey: lastImageLoaded, typeData: type_data, orderBy: orderBy, contentLength: contentLengthToLoad }
     })
     .done(function( imagesLoaded ) {
         $( imagesLoaded ).appendTo(".js-shegueyWall");
@@ -32,24 +32,35 @@ function deleteGallery(){
 }
 
 function setParamsGallery(){
+
+    //Order asked
     var orderBy = $('.orderBy:checked', '.formOptions').val();
     orderBy = (typeof orderBy === 'undefined') ? 'recent' : orderBy;
-    console.log('orderBy : ' + orderBy);
+    if(orderBy === 'recent'){
+        var contentLengthToLoad = '8';
+         $('.getMoreSheg').show();
+    } else {
+        var contentLengthToLoad = '32';
+        $('.getMoreSheg').hide();
+    }
+
+    var contentLengthToLoad = (orderBy === 'recent') ? '8' : '32'; // Si l'affichage par vote, affiche 32pics.
+    // console.log('orderBy : ' + orderBy);
     
+    // Type of content
     var mediaContent = [];
     $('.mediaContent:checked', '.formOptions').each(function(i){
       mediaContent[i] = $(this).val();
     });
-    
     var mediaRequest = mediaContent.toString();
     if(mediaRequest != "images" && mediaRequest !="videos") {
         mediaRequest = "both";
         $('.mediaContent').prop('checked', true); // Coche les 2 case si non defini
     }
 
-    console.log('mediaRequest = ' + mediaRequest);
+    // console.log('mediaRequest = ' + mediaRequest);
     // console.log("orderBy : " + orderBy);
-    loadGallery(mediaRequest, orderBy);
+    loadGallery(mediaRequest, orderBy, contentLengthToLoad);
 }
 
 function likeMedia(id_media){

@@ -18,6 +18,9 @@ $tab1200: "only screen and (min-width : 1200px)";
 
 html { font-size: 62.5%; }
 body{
+	margin: 0;
+	padding: 0;
+	font-family: Arial, sans-serif;
 	background: $white;
 	box-sizing: border-box;
 }
@@ -121,12 +124,36 @@ header.menu_left{
 					width: 100%;
 					// letter-spacing: 1px;
 					font-size: 1.8em;
-
 				}
 				&:hover {
 					background: darken($red, 10%);
 				}
 			}
+		}
+		.socialIcons{
+			text-align: center;
+			margin-top: 30px;
+		}
+	}
+}
+
+.socialIcon{
+	font-family: "shegueyfont";
+	font-size: 3.5em; 
+	&.red{
+		color: darken($red, 10%);
+		&:hover{
+			color: darken($red, 20%);
+		}
+	}
+	&.twitterIcon{
+		&:after{
+			content: "m";
+		}
+	}
+	&.facebookIcon{
+		&:after{
+			content: "l";
 		}
 	}
 }
@@ -160,144 +187,61 @@ header.header{
 	width: 100%;
 	max-width: 1200px;
 	margin: 20px auto;
-	padding: 0px 25px;
+	padding: 15px 25px;
 	background: $red;
 	display: table;
 	h2{
 		@include title;
+		margin: 0;
 		font-size: 2.6em;
-		display: table-cell;
 		vertical-align: middle;
-	}
-	form.formOptions{
-		display: table-cell;
-		vertical-align: middle;
-		fieldset.galleryOption{
-			border: none;
-			padding: 0; margin: 0;
-			text-align: right;
-			legend{
-				display: none;
-			}
-			.field {
-				&.mediaType{
-					display: inline-block;
-				}
-				input{
-					position: absolute; opacity: 0; width: 0; height: 0; 
-					&[type=checkbox] + label:before{
-					  content: "i";
-					  color: darken($red,5%);
-					  vertical-align: middle;
-					} 
-					&[type=checkbox]:checked + label:before {
-					  content: "i";
-					  color: $white;
-					  vertical-align: middle;
-					} 
-				}
-
-				&.select{
-					display: none;
-					position: absolute;
-					z-index: 100;
-					label{
-						display: block;
-						background: $red;
-						cursor: pointer;
-						padding: 10px 15px;
-						&:hover{
-							background: darken($red, 10%);
-						}
-						& + label{
-							border-top: solid 1px darken($red, 10%);
-						}
-					}
-					&.active{
-						display: block;
-					}
-				}
-				label{
-					color: $white;
-					font-size: 2.2em;
-					margin-right: 15px;
-					&:before{
-						font-family: "shegueyfont"!important;
-						font-size: 1.4em;
-						padding: 0 5px 0px 0px;
-						margin: 0;
-				  		vertical-align: middle;
-					}
-				}
-			}
-
-			.orderPicsBy{
-				display: inline-block;
-				cursor: pointer;
-				h4{
-					font-size: 2.2em;
-					font-family: 'Francois One', sans-serif;
-					color:$white;
-					text-transform: uppercase;
-					display: inline-block;
-					&:after{
-						font-family: "shegueyfont";
-						content: "h";
-						vertical-align: middle;
-						padding-left: 10px;
-						display: inline-block;
-					}
-				}
-				
-			}
-			
-		}
-
 	}
 }
 
 .content{
+	max-width: 1200px;
+	margin: auto;
 	h3.title3{
-		font-family: 'Radley', serif;
-		font-size: 1em;
+		margin: 10px 15px;
+		padding: 0 15px;
+		// font-family: 'Radley', serif;
+		font-size: 2em;
+		font-weight: normal;
 		text-transform: none;
 		color: $black;
-		border-left: solid 5px $red;
+		border-left: solid 8px $red;
 		& strong{
 			color: $red;
+			font-weight: normal;
+		}
+		+ h3.title3 {
+			margin-top: 0px;
+			margin-bottom: 25px;
 		}
 	}
 }
 
 
 footer {
-	width: 100%;
-	height: 50px;
+	// width: 100%;
+	padding: 10px;
 	background-color: $black;
-	display: table;
 	nav{
-		width: 70%;
-		display: table-cell;
-		vertical-align: middle;
-		margin: auto;
 		ul{
 			li{
-				display: inline-block;
-				h2 {
-					text-align: center;
-					font-size: 1em;
-					// color: $white;
+				list-style: none;
+				padding: 10px 0;
 					a{
+						font-size: 1.8em;
 						color: darken($lightgrey,30%);
-						transition: all .5s ease-in-out;
+						transition: color .5s ease-in-out;
 						&:hover {
 							color: $white;
 						}
 					}
-				}
-				span {
-					color: $white;
-					margin: 0 20px;
+				& + li { 
+					// border-right: solid 1px $white;
+					border-top: solid 1px darken($white, 80%);
 				}
 			}
 		}
@@ -305,8 +249,20 @@ footer {
 }
 
 @media #{$tab600} {
+	header.menu_left nav ul li a{
+		font-size: 2.2em;
+	}
 	footer {
 		margin-top: 25px;
+		nav ul li {
+			display: inline-block;
+			padding: 0 10px;
+			font-size: 0.8em;
+			& + li {
+				border : none;
+				border-left: solid 1px darken($white, 80%);
+			}
+		}
 	}
 		h1.logo { 
 			img {

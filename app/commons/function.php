@@ -1,7 +1,7 @@
 <?php
 
 	function saveImageOrVid($contenu){
-		include('../adm/bddconnect.php');
+		include('adm/bddconnect.php');
 
 			
 			$typeFormat = $contenu->type;
@@ -58,7 +58,7 @@
 
  
 	function getInsta($type, $tag, $limit){
-		include('../adm/bddconnect.php');
+		include('adm/bddconnect.php');
 
 		// $cache = 'cache/index.json';
 		// $expire = time() -10 ; // 3600 valable une heure
@@ -143,18 +143,19 @@
 				$type = $_POST['typeData'];
 				$orderBy = $_POST['orderBy'];
 				$orderBy = $orderBy == 'recent' ? 'id DESC' : 'vote DESC';
-				getMoreSheguey($getMoreSheguey, $type, $orderBy );
+				$contentLength = $_POST['contentLength'];
+				getMoreSheguey($getMoreSheguey, $type, $orderBy, $contentLength );
 			}
 
-			function getMoreSheguey($last_id, $type, $orderBy){
+			function getMoreSheguey($last_id, $type, $orderBy, $contentLength){
 			include('../adm/bddconnect.php');
 				
 				if($type==="images"){
-					$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' AND id < '.$last_id.' order by '.$orderBy.' LIMIT 8');
+					$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' AND id < '.$last_id.' order by '.$orderBy.' LIMIT '.$contentLength.'');
 				} elseif ($type==="videos"){
-					$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'video\' AND id < '.$last_id.' order by '.$orderBy.' LIMIT 8');
+					$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'video\' AND id < '.$last_id.' order by '.$orderBy.' LIMIT '.$contentLength.'');
 				} elseif($type==="both"){
-					$reponse = $bdd->query('SELECT * FROM instagram WHERE id < '.$last_id.' order by '.$orderBy.' LIMIT 8');
+					$reponse = $bdd->query('SELECT * FROM instagram WHERE id < '.$last_id.' order by '.$orderBy.' LIMIT '.$contentLength.'');
 				}
 
 				while ($donnees = $reponse->fetch())
@@ -188,17 +189,16 @@
             				elseif ($actual_type==="video"){
 	                    ?>
 
-	                    <div class="rect lightgrey gallery">
+	                    <div class="rect lightgrey gallery video">
+                            <div data-id="<?php echo $id; ?>" class="likePic"></div>
+                            <?php 
+                                foreach ($tag as $actual_tag) {
+                                   if($actual_tag==="shegueyland"){
+                                        echo'<p>#sheguey<span>land</span></p>';
+                                   }
+                                }
+                            ?>
 	                        <video src="<?php echo $low_resolution; ?>" controls>
-	                            <div data-id="<?php echo $id; ?>" class="likePic"></div>
-	                            <?php 
-	                                foreach ($tag as $actual_tag) {
-	                                   if($actual_tag==="shegueyland"){
-	                                        echo'<p>#sheguey<span>land</span></p>';
-	                                   }
-	                                }
-	                            ?>
-	                            
 	                        </video>
 	                    </div>
 	                	<?php 

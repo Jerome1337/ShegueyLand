@@ -103,7 +103,7 @@ gulp.task('html', function () {
     // Remove Any Unused CSS
     // Note: If not using the Style Guide, you can delete it from
     // the next line to only include styles your project uses.
-    .pipe($.if('*.css', $.uncss({
+    /*.pipe($.if('*.css', $.uncss({
       html: [
         'app/index.html',
         'app/styleguide.html'
@@ -113,7 +113,7 @@ gulp.task('html', function () {
         /.navdrawer-container.open/,
         /.app-bar.open/
       ]
-    })))
+    })))*/
     // Concatenate And Minify Styles
     // In case you are still using useref build blocks
     .pipe($.if('*.css', $.csso()))

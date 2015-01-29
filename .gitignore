@@ -5,7 +5,9 @@
 .bundle/
 npm-debug.log/
 /node_modules/*
+/_new_node_modules/*
 gulpfile.js/
 bin/
 cache/*
 adm/*
+dist/*

@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="ShegueyLand Community">
 <meta name="twitter:description" content="Venez découvrir ShegueyLand">
 <meta name="twitter:creator" content="ShegueyLand">
-<meta name="twitter:image:src" content="https://sheguey.land/img/twittercard.png">
+<meta name="twitter:image:src" content="https://sheguey.land/img/favicons/android-chrome-192x192.png">
 <meta name="twitter:domain" content="sheguey.land">
 <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
@@ -40,6 +40,7 @@
 <link href='http://fonts.googleapis.com/css?family=Radley:400italic' rel='stylesheet' type='text/css'>
 <link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>">
 <link rel="stylesheet" href="css/normalize.css">
+<link rel="stylesheet" href="fonts/styles.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="js/owl/owl.carousel.css">
 <link rel="stylesheet" href="js/owl/owl.theme.css">
