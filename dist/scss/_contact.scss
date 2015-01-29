@@ -1,7 +1,6 @@
 .form {
 	width: 100%;
 	&.red {
-		background-color: $red;
 		.button:hover{background: darken($red, 10%);}
 	}
 	#formContact {
@@ -12,19 +11,31 @@
 		input{
 			margin-top: 1.5em;
 			height: 40px;
+			background-color: $lightgrey;
+			border: none;
+			font-family: 'Radley', serif;
+			font-size: 1.6em;
+			padding: 10px;
+			width: 100%;
 		}
 		textarea {
 			margin-top: 1.5em;
 			height: 200px;
+			background-color: $lightgrey;
+			border: none;
+			resize: none;
+			font-family: 'Radley', serif;
+			font-size: 1.6em;
+			padding: 10px;
 		}
 		button {
-			width: 100%;
+			font-family: 'Radley', serif;
+			width: 25%;
 			height: 40px;
-			background-color: $black;
+			background-color: $red;
 			margin: 0.9em 0;
 			color: $white;
 			text-align: center;
-			text-transform: uppercase;
 		}
 	}
 }
@@ -34,13 +45,20 @@
 	.form {
 		width: 600px;
 		margin: auto;
-		&.red {
-			background-color: $red;
-		}
 		#formContact {
+			div{
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				input{
+					width: 48%;
+					flex-direction: row;
+				}
+			}
+			
 			button {
 				transition: all .5s ease-in-out;
-				&:hover{background: darken($black, 10%);}
+				&:hover{background: darken($red, 10%);}
 			}
 		}
 	}

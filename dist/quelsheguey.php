@@ -42,13 +42,13 @@
                 <li>
                     <h4>Dans le clip de quels rappeur US Gradur apparait ?</h4>
                     <button class="buttonPass good">"Never Gonna Change" (Young Chop)</button>
-                    <button class="buttonPass">"Coco" (O.T Genasis)</button>
+                    <button class="buttonPass">"Where it at" (Waka Flocka)</button>
                     <button class="buttonPass">"Gucci Gang" (Chief Keef)</button>
                     <button class="buttonPass">"Trenchez" (Migos)</button>
                 </li>
                 <!-- Question 5 -->
                 <li>
-                    <h4>Quand est sortis la mixtape ShegueyVara sur Haute Culture ?</h4>
+                    <h4>Quand est sortis la mixtape ShegueyVara sur <a target="_blank" href="www.hauteculture.com">Haute Culture</a> ?</h4>
                     <button class="buttonPass final">Le 9 octobre 2014</button>
                     <button class="buttonPass final">Le 18 octobre 2014</button>
                     <button class="buttonPass final">Le 4 novembre 2014</button>

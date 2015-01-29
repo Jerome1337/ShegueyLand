@@ -130,7 +130,7 @@ $(document).ready(function() {
 // ADD PUNCH ACTION
 $(document).ready(function() {
     var textMax = 150;
-    $('#punchAdded p').html(textMax + ' caractères restant.');
+    $('#formPunch p').html(textMax + ' caractères restant.');
     $('#formPunchline[maxlenght]').keyup(function(){
         var limit = parseInt($(this).attr('maxlenght'));
         var text = $(this).val();
@@ -141,7 +141,7 @@ $(document).ready(function() {
         }
         var textChar = $('#formPunchline').val().length;
         var textRemaining = textMax - textChar;
-        $('#punchAdded p').html(textRemaining + ' caractères restant');
+        $('#formPunch p').html(textRemaining + ' caractères restant');
     });
     $('#formPunch').submit(function(event) {
         var dataPunch = {
@@ -164,6 +164,8 @@ $(document).ready(function() {
                 $('#punchAdded h2').append('Remplis tous les champs !').hide().slideDown();
             }else{
                 $('#punchAdded h2').append('Ta punchline vient d\'être envoyée !').hide().slideDown();
+                $('.addPunch').slideUp();
+                $('')
             }
         });
         event.preventDefault();
@@ -192,7 +194,7 @@ window.addEventListener('load', function(e) {
 $(document).ready(function() {
     var score = 0;
     $('.buttonPass').click(function() {
-        $(this).parent().removeClass('active').next().addClass('active');
+        $(this).parent().parent().removeClass('active').next().addClass('active');
     });
     $('.good').click(function() {
         score++;
@@ -289,6 +291,7 @@ $(document).ready(function() {
 
     // CONTACT FORM ACTION
     $(document).ready(function() {
+        $('.rangSheguey').hide();
         $('#formContact').submit(function(event) {
             // var formName    = $('#formName').val();
             // var formEmail   = $("#formEmail").val();
@@ -313,11 +316,12 @@ $(document).ready(function() {
                 console.log(formData);
                 console.log(data);
 
-                if( ! data.success){
-                    alert('Error');
-                }else{
-                    alert('Success');
-                }
+
+            if( !data.success){
+                $('.rangSheguey').slideDown().children().append('Remplis tous les champs !');
+            }else{
+                $('.rangSheguey').slideDown().children().append('Ton message vient d\'être envoyé !');
+            }
             });
             event.preventDefault();
         });

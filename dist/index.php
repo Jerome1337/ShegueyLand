@@ -66,7 +66,7 @@
                         $randomTweet[] = "%20@Luissfernando17";
                     ?>
                     <p>Envois un Tweet<br/> @Gradur</p>
-                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand<?php echo $randomTweet[rand(0,count($randomTweet)-1)]?>&related=Shegueyland,gradidur,theHauteCulture,Luissfernando17,MOneymaks,cahiips,midosofficiel" class="twitter"><div class="button">Tweet maintenant !</div></a>
+                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand<?php echo $randomTweet[rand(0,count($randomTweet)-1)]?>&related=Shegueyland,gradidur,theHauteCulture" class="twitter"><div class="button">Tweet maintenant !</div></a>
                 </div>
                 <div class="rect empty no-mobile no-tablet"></div>
                 <div class="rect lightgrey owl-carousel owl-theme no-mobile no-tablet shegueySlide">

@@ -75,10 +75,19 @@ $(document).ready(function() {
         setParamsGallery();
     });
 
+    $('.orderPicsBy').click(function(){
+        $('.field.select').toggleClass('active');
+    });
+    $('.select label').click(function(){
+        console.log('labelClick');
+        $('.field.select').removeClass('active');
+    });
+
 });
 
 $(document).on('click', '.likePic', function() {
         var vote_id = $(this).attr("data-id");
+        $(this).addClass('liked');
         likeMedia(vote_id);
         console.log('vote_id: ' + vote_id);
 });

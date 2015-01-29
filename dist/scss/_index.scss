@@ -57,7 +57,7 @@ $white:     #ffffff;
 		height: auto;
 		}
 		.owl-controls {
-		    margin-top: -50px;
+		    margin-top: -32px;
 		    &.active span{
 		    	background: $red;
 		    }
@@ -136,6 +136,9 @@ $white:     #ffffff;
 			width: 300px!important;
 			height: 300px!important;
 			}
+			.owl-controls {
+		    	margin-top: -50px;
+			}
 		}
 		.tweetCard{
 			p{
@@ -191,6 +194,9 @@ $white:     #ffffff;
 			img{
 			width: 300px!important;
 			height: 300px!important;
+			}
+			.owl-controls {
+		    	margin-top: -50px;
 			}
 		}
 		.tweetCard{

@@ -8,30 +8,27 @@
     </head>
     <body>
         <?php include('commons/header.php'); ?>
+        <header class="header">
+            <h2>Contactez-nous</h2>
+        </header>
         <div class="content">
             <div class="form red">
-                <!-- <div data-alert class="alert-box radius hide">
-                    <a href="#" class="close">&times;</a>
-                </div> -->
+                <h3 clsas="title3">Le site Sheguey.Land n'est en aucun cas associé à Gradur, son équipe ou Universal Music France. Pour en savoir plus sur l'équipe ShegueyLand et ses motivations, n'hésitez pas à nous contacter.</h3>
+                <div class="rangSheguey">
+                    <h2></h2>
+                </div>
                 <form method="post" id="formContact">
-                    <input type="text" placeholder="Prénom" name="name" id="formName">
-                    <input type="email" placeholder="Email" name="email" id="formEmail">
-                    <textarea cols="30" rows="10" placeholder="Ton message" name="message" id="formMessage"></textarea>
+                <fieldset>
+                    <legend>Formulaire contact de ShegueyLand</legend>
+                    <div>
+                        <input type="text" placeholder="Ton ShegueyPrénom" name="name" id="formName">
+                        <input type="email" placeholder="Ton ShegueyMail" name="email" id="formEmail">
+                    </div>
+                    <textarea cols="30" rows="10" placeholder="Ton ShegueyMessage" name="message" id="formMessage"></textarea>
                     <button type="submit" id="formSubmit">Envoyer</button>
+                </fieldset>
                 </form>
-                <div class="rangSheguey"></div>
             </div>
-            <!-- <div>
-                <ul>
-                    <?php foreach ($tweets as $k => $tweet): ?>
-                    <li><?php echo parseTweet($tweets->text); ?>
-                        <div class="bloc_caption">
-                            <span class="timestamp tw_timestamp"><?php echo date("d M - H:i",strtotime($tweet->created_at)); ?></span>
-                        </div>
-                    </li>
-                    <?php endforeach ?>
-                </ul>
-            </div> -->
         </div>
         <?php include('commons/footer.php'); ?>
         <?php include('commons/script_bottom.php'); ?>

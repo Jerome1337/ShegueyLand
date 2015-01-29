@@ -14,9 +14,10 @@
                     <a href="#" class="close">&times;</a>
                 </div> -->
                 <form method="post" id="formContact">
-                    <input type="text" placeholder="Prénom" name="name" id="formName">
-                    <input type="email" placeholder="Email" name="email" id="formEmail">
-                    <input type="text" placeholder="Sujet" name="subject" id="formSubject">
+                    <div>
+                        <input type="text" placeholder="Prénom" name="name" id="formName">
+                        <input type="email" placeholder="Email" name="email" id="formEmail">
+                    </div>
                     <textarea cols="30" rows="10" placeholder="Ton message" name="message" id="formMessage"></textarea>
                     <button type="submit" id="formSubmit">Envoyer</button>
                 </form>

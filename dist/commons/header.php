@@ -31,7 +31,7 @@
 			<li><a href="quelsheguey.php">Quel Sheguey es-tu ?</a></li>
             <li><a href="clicknsheg.php">Click & Sheg</a></li>
             <li><a href="punch.php">Punchlines</a></li>
-			<li><a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand<?php echo $randomTweet[rand(0,count($randomTweet)-1)]?>&related=Shegueyland,gradidur,theHauteCulture,Luissfernando17,MOneymaks,cahiips,midosofficiel" class="twitter">Envois 1 Tweet @Gradur</a></li>
+			<li><a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand<?php echo $randomTweet[rand(0,count($randomTweet)-1)]?>&related=Shegueyland,gradidur,theHauteCulture" class="twitter">Envois 1 Tweet @Gradur</a></li>
 			<li><a href="contact.php"><small>Contacter ShegeyLand</small></a></li>
 		</ul>
 	</nav>

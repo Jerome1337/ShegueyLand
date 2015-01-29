@@ -27,6 +27,12 @@ a{
 	color: $white;
 }
 *{box-sizing: border-box;}
+fieldset{
+	border: none;
+	legend{
+		display: none;
+	}
+}
 
 header.menu_left{
 	margin: auto;
@@ -168,91 +174,6 @@ header.header{
 		font-size: 2.6em;
 		display: table-cell;
 		vertical-align: middle;
-	}
-	form.formOptions{
-		display: table-cell;
-		vertical-align: middle;
-		fieldset.galleryOption{
-			border: none;
-			padding: 0; margin: 0;
-			text-align: right;
-			legend{
-				display: none;
-			}
-			.field {
-				&.mediaType{
-					display: inline-block;
-				}
-				input{
-					position: absolute; opacity: 0; width: 0; height: 0; 
-					&[type=checkbox] + label:before{
-					  content: "i";
-					  color: darken($red,5%);
-					  vertical-align: middle;
-					} 
-					&[type=checkbox]:checked + label:before {
-					  content: "i";
-					  color: $white;
-					  vertical-align: middle;
-					} 
-				}
-
-				&.select{
-					display: none;
-					position: absolute;
-					z-index: 100;
-					label{
-						display: block;
-						background: $red;
-						cursor: pointer;
-						padding: 10px 15px;
-						&:hover{
-							background: darken($red, 10%);
-						}
-						& + label{
-							border-top: solid 1px darken($red, 10%);
-						}
-					}
-					&.active{
-						display: block;
-					}
-				}
-				label{
-					color: $white;
-					font-size: 2.2em;
-					margin-right: 15px;
-					&:before{
-						font-family: "shegueyfont"!important;
-						font-size: 1.4em;
-						padding: 0 5px 0px 0px;
-						margin: 0;
-				  		vertical-align: middle;
-					}
-				}
-			}
-
-			.orderPicsBy{
-				display: inline-block;
-				cursor: pointer;
-				h4{
-					font-size: 2.2em;
-					font-family: 'Francois One', sans-serif;
-					color:$white;
-					text-transform: uppercase;
-					display: inline-block;
-					&:after{
-						font-family: "shegueyfont";
-						content: "h";
-						vertical-align: middle;
-						padding-left: 10px;
-						display: inline-block;
-					}
-				}
-				
-			}
-			
-		}
-
 	}
 }
 

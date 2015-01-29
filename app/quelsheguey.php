@@ -8,69 +8,100 @@
     </head>
     <body>
         <?php include('commons/header.php'); ?>
+        <header class="header">
+            <h2>Quel Sheguey es-tu ?</h2>
+        </header>
         <!-- QUIZZ -->
         <div class="content">
-            <section class="row quizz">
-                <!-- Launch Form -->
-                <li class="active">
-                    <h3>Decouvre quel Sheguey tu es !</h3>
-                    <button class="buttonPass">Commencer le test</button>
-                </li>
-                <!-- Question 1 -->
-                <li>
-                    <h4>Depuis quand écoutes-tu Gradur ?</h4>
-                    <button class="buttonPass good">Le début</button>
-                    <button class="buttonPass">La sortie de ShegueyVara</button>
-                </li>
-                <!-- Question 2 -->
-                <li>
-                    <h4>Quel son aimes-tu le plus ?</h4>
-                    <button class="buttonPass">Sortez les pepoms</button>
-                    <button class="buttonPass">On est pas pas tout seul !</button>
-                    <button class="buttonPass good">Terraser</button>
-                    <button class="buttonPass">Doggyner</button>
-                </li>
-                <!-- Question 3 -->
-                <li>
-                    <h4>Quel extrait est dans "Doggyner" ?</h4>
-                    <button class="buttonPass">"J'matte le cul d'ta racli"</button>
-                    <button class="buttonPass">"Missile sol-air dans tes ovaires"</button>
-                    <button class="buttonPass good">"5.9 kils de pure à la pesée"</button>
-                    <button class="buttonPass">"Mais si t'insultes maman das un son, j'prends dix ans"</button>
-                </li>
-                <!-- Question 4 -->
-                <li>
-                    <h4>Dans le clip de quels rappeur US Gradur apparait ?</h4>
-                    <button class="buttonPass good">"Never Gonna Change" (Young Chop)</button>
-                    <button class="buttonPass">"Where it at" (Waka Flocka)</button>
-                    <button class="buttonPass">"Gucci Gang" (Chief Keef)</button>
-                    <button class="buttonPass">"Trenchez" (Migos)</button>
-                </li>
-                <!-- Question 5 -->
-                <li>
-                    <h4>Quand est sortis la mixtape ShegueyVara sur <a target="_blank" href="www.hauteculture.com">Haute Culture</a> ?</h4>
-                    <button class="buttonPass final">Le 9 octobre 2014</button>
-                    <button class="buttonPass final">Le 18 octobre 2014</button>
-                    <button class="buttonPass final">Le 4 novembre 2014</button>
-                    <button class="buttonPass good final">Le 22 octobre 2014</button>
-                </li>
-                <!-- Resultat -->
-                <li>
-                    <div class="resultSheguey">
-                        <h2>Félicitation,</h2>
-                        <h3>Tu obtiens le grade de <span></span></h3>
-                        <p></p>
-                    </div>
-                    <div class="socialfacebook">
-                        <a href="#" id="share_button">Partage sur Facebook</a>
-                        <div class="previewFb">
-                            <div></div>
+            <section class="row">
+                <div class="quizz">
+                    <!-- Launch Form -->
+                    <li class="active">
+                        <h3 class="title3">Decouvre quel Sheguey tu es !</h3>
+                        <div>
+                            <h5 class="buttonPass start">Commencer le test</h5>
+                        </div>
+                    </li>
+                    <!-- Question 1 -->
+                    <li>
+                        <h4 class="title3">Quel est le nom de la mixtape de Gradur ?</h4>
+                        <div>
+                            <h5 class="buttonPass">ShegueySquaad</h5>
+                            <h5 class="buttonPass good">ShegueyVara</h5>
+                            <h5 class="buttonPass">DoggynerTape</h5>
+                            <h5 class="buttonPass">L'homme au bob</h5>
+                        </div>
+                    </li>
+                    <!-- Question 2 -->
+                    <li>
+                        <h4 class="title3">D'ou vient Gradur ?</h4>
+                        <div>
+                            <h5 class="buttonPass">Roubaix</h5>
+                            <h5 class="buttonPass">Wasquehal</h5>
+                            <h5 class="buttonPass good">Hem</h5>
+                            <h5 class="buttonPass">Sevran</h5>
+                        </div>
+                    </li>
+                    <!-- Question 3 -->
+                    <li>
+                        <h4 class="title3">Qu'est ce qu'un ou une Sheguey ?</h4>
+                        <div>
+                            <h5 class="buttonPass">Un bicraveur de Sevran</h5>
+                            <h5 class="buttonPass">Une racli</h5>
+                            <h5 class="buttonPass">Une michto</h5>
+                            <h5 class="buttonPass good">Un galérien Z</h5>
+                        </div>
+                    </li>
+                    <!-- Question 4 -->
+                    <li>
+                        <h4 class="title3">Dans le clip de quels rappeur US Gradur apparait ?</h4>
+                        <div>
+                            <h5 class="buttonPass good">"Never Gonna Change" (Young Chop)</h5>
+                            <h5 class="buttonPass">"Where it at" (Waka Flocka)</h5>
+                            <h5 class="buttonPass">"Gucci Gang" (Chief Keef)</h5>
+                            <h5 class="buttonPass">"Trenchez" (Migos)</h5>
+                        </div>
+                    </li>
+                    <!-- Question 5 -->
+                    <li>
+                        <h4 class="title3">Quand est sortis la mixtape ShegueyVara sur <a target="_blank" href="www.hauteculture.com">Haute Culture</a> ?</h4>
+                        <div>
+                            <h5 class="buttonPass final">Le 9 octobre 2014</h5>
+                            <h5 class="buttonPass final">Le 18 octobre 2014</h5>
+                            <h5 class="buttonPass final">Le 4 novembre 2014</h5>
+                            <h5 class="buttonPass good final">Le 22 octobre 2014</h5>
+                        </div>
+                    </li>
+                    <!-- Resultat -->
+                    <li>
+                        <div class="resultSheguey">
+                            <h2>Félicitation,</h2>
                             <h3>Tu obtiens le grade de <span></span></h3>
                             <p></p>
                         </div>
-                    </div>
-                </li>
+                        <div class="socialfacebook">
+                            <p id="share_button">Partage sur Facebook</p>
+                            <div class="previewFb">
+                                <div></div>
+                                <h3>Tu obtiens le grade de <span></span></h3>
+                                <p></p>
+                            </div>
+                        </div>
+                    </li>
+                </div>
+                <div class="rect quizPic">
+                    <?php 
+                        $reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' order by RAND() LIMIT 1');
+                        while ($donnees = $reponse->fetch())
+                        {
+                            $media = $donnees['standard_resolution'];
+                            $media_caption = $donnees['caption_text'];
+                            echo'<div><img src="' . $media . '" alt="' . $media_caption . '"></div>';
+                        }
+                    ?>
+                </div>
             </section>
+            
         </div>
         <!-- END QUIZZ -->
         <?php include('commons/footer.php'); ?>
