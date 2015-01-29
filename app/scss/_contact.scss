@@ -1,7 +1,6 @@
 .form {
 	width: 100%;
 	&.red {
-		background-color: $red;
 		.button:hover{background: darken($red, 10%);}
 	}
 	#formContact {

@@ -3,9 +3,10 @@
 *.DS_Store
 /stylesheets/*
 .bundle/
-npm-debug.log/
+package.json
+npm-debug.log
 /node_modules/*
-gulpfile.js/
+gulpfile.js
 bin/
 cache/*
 adm/*

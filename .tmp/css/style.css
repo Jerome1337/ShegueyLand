@@ -326,7 +326,7 @@ footer nav ul li span {
   height: auto;
 }
 .rect.owl-carousel .owl-controls {
-  margin-top: -50px;
+  margin-top: -32px;
 }
 .rect.owl-carousel .owl-controls.active span {
   background: #df0030;
@@ -409,6 +409,9 @@ footer nav ul li span {
   .rect.owl-carousel img {
     width: 300px !important;
     height: 300px !important;
+  }
+  .rect.owl-carousel .owl-controls {
+    margin-top: -50px;
   }
   .rect .tweetCard p {
     font-size: 0.8em;
@@ -503,6 +506,9 @@ footer nav ul li span {
     width: 300px !important;
     height: 300px !important;
   }
+  .rect.owl-carousel .owl-controls {
+    margin-top: -50px;
+  }
   .rect .tweetCard p {
     font-size: 0.8em;
   }
@@ -595,9 +601,6 @@ footer nav ul li span {
 }
 .form {
   width: 100%;
-}
-.form.red {
-  background-color: #df0030;
 }
 .form.red .button:hover {
   background: #ac0025;
@@ -745,9 +748,6 @@ footer nav ul li span {
 
 .form {
   width: 100%;
-}
-.form.red {
-  background-color: #df0030;
 }
 .form.red .button:hover {
   background: #ac0025;

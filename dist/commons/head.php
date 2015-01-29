@@ -17,7 +17,7 @@
 <meta name="twitter:title" content="ShegueyLand Community">
 <meta name="twitter:description" content="Venez découvrir ShegueyLand">
 <meta name="twitter:creator" content="ShegueyLand">
-<meta name="twitter:image:src" content="https://sheguey.land/img/twittercard.png">
+<meta name="twitter:image:src" content="https://sheguey.land/img/favicons/android-chrome-192x192.png">
 <meta name="twitter:domain" content="sheguey.land">
 <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
