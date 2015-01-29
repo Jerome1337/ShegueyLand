@@ -95,8 +95,8 @@
 			}
 
 			if(empty($data)){
-				$buug = "buuuug";
-				echo"buug";
+				$buug = "Aucune DATA retournee";
+				echo"Aucune DATA retournee";
 				return $buug;
 			}
 			if($data->meta->code == 200){
@@ -114,11 +114,7 @@
 		    		     
 		    		if ($nbre_occurences == 0)
 		    		{
-
-		    		     // pseudo libre
 		    			echo"S";
-    					
-
     						saveImageOrVid($contenu);
 		    		}
 		    		else
@@ -131,7 +127,6 @@
 
 			} else {
 			    echo "impossible de recupérer les images...";
-			    
 			}
 	        
 	        // $page = ob_get_contents(); // copie du contenu du tampon dans une chaîne
@@ -146,21 +141,20 @@
 			if(isset($_POST['getMoreSheguey'])){
 				$getMoreSheguey = $_POST['getMoreSheguey'];
 				$type = $_POST['typeData'];
-				getMoreSheguey($getMoreSheguey, $type, "1" );
+				$orderBy = $_POST['orderBy'];
+				$orderBy = $orderBy == 'recent' ? 'id DESC' : 'vote DESC';
+				getMoreSheguey($getMoreSheguey, $type, $orderBy );
 			}
-			
-				
 
-
-			function getMoreSheguey($last_id, $type, $order){
+			function getMoreSheguey($last_id, $type, $orderBy){
 			include('../adm/bddconnect.php');
-
-				if($type==="image"){
-					$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' AND id < '.$last_id.' order by id DESC LIMIT 8');
-				} elseif ($type="video"){
-					$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'video\' AND id < '.$last_id.' order by id DESC LIMIT 8');
+				
+				if($type==="images"){
+					$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' AND id < '.$last_id.' order by '.$orderBy.' LIMIT 8');
+				} elseif ($type==="videos"){
+					$reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'video\' AND id < '.$last_id.' order by '.$orderBy.' LIMIT 8');
 				} elseif($type==="both"){
-					$reponse = $bdd->query('SELECT * FROM instagram WHERE id < '.$last_id.' order by id DESC LIMIT 8');
+					$reponse = $bdd->query('SELECT * FROM instagram WHERE id < '.$last_id.' order by '.$orderBy.' LIMIT 8');
 				}
 
 				while ($donnees = $reponse->fetch())
@@ -213,8 +207,82 @@
 			}
 
 
-			function select_images(){
+if(isset($_POST['vote_media_ID'])){
+	$vote_media_ID = 	securite_bdd($_POST['vote_media_ID']);
+	$ip_client = 		securite_bdd($_SERVER["REMOTE_ADDR"]);
 
-			}
+	saveVoteMedia($ip_client, $vote_media_ID);
+	// $nb_modifs = $bdd->exec('UPDATE instagram SET vote = vote+1 WHERE id = '.$vote_media_ID.'');
+	// echo $nb_modifs . ' entrées ont été modifiées !';
+
+}
+
+
+function saveVoteMedia($ip_client, $vote_media_ID){
+	include('../adm/bddconnect.php');
+	//SI l ip nexiste pas encore
+	$req = $bdd->prepare('SELECT count(id) AS ip_exist FROM vote WHERE ip = :ip_client');
+	$req->execute(array('ip_client' => $ip_client));
+	 
+	$donnees = $req->fetch();
+	$ip_exist = $donnees['ip_exist'];
+	if ($ip_exist == "0"){ // Si l ip nexiste pas
+		echo"IP EXISTE PAS";
+		$req = $bdd->prepare('INSERT INTO vote(id_media, ip) VALUES(:id_media, :ip)');
+		$req->execute(array(
+			'id_media' => $vote_media_ID,
+			'ip' => $ip_client
+			));
+		$plusUn = $bdd->exec('UPDATE instagram SET vote=vote+1 WHERE id = '.$vote_media_ID.'');
+
+
+	} else { // Si l'ip existe deja on verifie sil na pas vote
+		$req = $bdd->prepare('SELECT * FROM vote WHERE ip = :ip_client');
+		$req->execute(array('ip_client' => $ip_client));
+			while ($donnees = $req->fetch())
+			{
+				$id = $donnees['id'];
+				$id_medias = $donnees['id_media'];
+				$id_media = explode(",", $id_medias);
+
+                foreach ($id_media as $votedFor) {  //on boucle sur tous ses votes
+                   if($votedFor == $vote_media_ID){
+                   	return false;  // return fal s'il a deja voté
+                   }
+               	}
+            	$new_id_medias = "$vote_media_ID,$id_medias";
+           		$save_new_vote = $bdd->prepare('UPDATE vote SET id_media = :new_id_medias WHERE id = :id');
+            	$save_new_vote->execute(array('new_id_medias' => $new_id_medias, 'id' => $id));
+        		$plusUn = $bdd->exec('UPDATE instagram SET vote=vote+1 WHERE id = '.$vote_media_ID.'');
+        	}
+	}
+	$req->closeCursor();
+
+	// $reponse = $bdd->query('SELECT * FROM vote WHERE ip = '.$ip_client.'');
+	// while ($donnees = $reponse->fetch())
+	// {
+
+	// }
+
+	// $save_ip = $bdd->exec('UPDATE vote SET vote = vote+1 WHERE id = '.$vote_media_ID.'');
+}
+
+// BDD PROTECT
+function securite_bdd($string)
+{
+	// On regarde si le type de string est un nombre entier (int)
+	if(ctype_digit($string))
+	{
+		$string = intval($string);
+	}
+	// Pour tous les autres types
+	else
+	{
+		$string = mysql_real_escape_string($string);
+		$string = addcslashes($string, '%_');
+	}
+	
+	return $string;
+}
 
 ?>

@@ -2,7 +2,6 @@ $(document).ready(function() {
     $('.open').click(function(){
         $('.menu_left nav').toggleClass( 'show' );
         $('.shadowClose').toggleClass( 'showHide' );
-        console.log("showmaguele");
     });
     $('.shadowClose').click(function(){
         $('.menu_left nav').removeClass( 'show' );
@@ -10,43 +9,93 @@ $(document).ready(function() {
     });
 });
 
-function loadGallery(type_data, order) {
+function loadGallery(type_data, orderBy) {
     var lastImageLoaded = $(".likePic").last().attr("data-id");
     if(typeof lastImageLoaded === 'undefined') {
         lastImageLoaded = '9999';
     }
-    console.log("LOADING MORE SHEG " + lastImageLoaded);
+    // console.log("LOADING MORE SHEG " + lastImageLoaded);
     $.ajax({
         type: "POST",
         url: "commons/function.php",
-        data: { getMoreSheguey: lastImageLoaded, typeData: type_data }
+        data: { getMoreSheguey: lastImageLoaded, typeData: type_data, orderBy: orderBy }
     })
     .done(function( imagesLoaded ) {
-        $( imagesLoaded ).appendTo( ".js-shegueyWall" );
+        $( imagesLoaded ).appendTo(".js-shegueyWall");
         lastImageLoaded = $(imagesLoaded).find(".likePic").last().attr("data-id");
         console.log("NEW : LOADING MORE SHEG " + lastImageLoaded);
     });
 }
 
+function deleteGallery(){
+    $(".js-shegueyWall").empty();
+}
+
+function setParamsGallery(){
+    var orderBy = $('.orderBy:checked', '.formOptions').val();
+    orderBy = (typeof orderBy === 'undefined') ? 'recent' : orderBy;
+    console.log('orderBy : ' + orderBy);
+    
+    var mediaContent = [];
+    $('.mediaContent:checked', '.formOptions').each(function(i){
+      mediaContent[i] = $(this).val();
+    });
+    
+    var mediaRequest = mediaContent.toString();
+    if(mediaRequest != "images" && mediaRequest !="videos") {
+        mediaRequest = "both";
+        $('.mediaContent').prop('checked', true); // Coche les 2 case si non defini
+    }
+
+    console.log('mediaRequest = ' + mediaRequest);
+    // console.log("orderBy : " + orderBy);
+    loadGallery(mediaRequest, orderBy);
+}
+
+function likeMedia(id_media){
+    $.ajax({
+        type: "POST",
+        url: "commons/function.php",
+        data: { vote_media_ID: id_media }
+    })
+    .done(function( vote_saved ) {
+        $( vote_saved ).appendTo(".likePic");
+        console.log("SAVE " + vote_saved);
+    });
+}
+
+// Appel des fonctions
 $(document).ready(function() {
     $('.getMoreSheg').click(function(){
-            var orderBy = $('.orderBy:checked', '.formOptions').val();
-            var mediaContent = [];
-            $('.mediaContent:checked', '.formOptions').each(function(i){
-              mediaContent[i] = $(this).val();
-            });
-            var mediaRequest = mediaContent.toString();
-            console.log('mediaRequest = ' + mediaRequest);
-            console.log("orderBy : " + orderBy);
-            // loadGallery();
+        setParamsGallery();     
     });
+
+    $('.formOptions input').click(function(){
+        deleteGallery();
+        setParamsGallery();
+    });
+
+    $('.orderPicsBy').click(function(){
+        $('.field.select').toggleClass('active');
+    });
+    $('.select label').click(function(){
+        console.log('labelClick');
+        $('.field.select').removeClass('active');
+    });
+
 });
 
+$(document).on('click', '.likePic', function() {
+        var vote_id = $(this).attr("data-id");
+        $(this).addClass('liked');
+        likeMedia(vote_id);
+        console.log('vote_id: ' + vote_id);
+});
 
 
 // SOUNDS
 $(document).ready(function() {
-    $('.sound').find('div').on('click touchstart', function() {
+    $('.sound').find('div').on('click', function() {
         var soundId = this.id;
         $('soundId').trigger('load');
         tag = document.createElement('audio');
@@ -146,15 +195,15 @@ $(document).ready(function() {
                 resultSheguey('Sheguey en carton');
                 break;
             case 1:
+            case 2:
+            case 3:
                 changeMeta('J\'ai obtenu le grade de Soldat Sheguey', 'shegueysoldat');
                 resultSheguey('Soldat Sheguey');
                 break;
-            case 2:
-            case 3:
+            case 4:
                 changeMeta('J\'ai obtenu le grade de Sergent Sheguey', 'shegueysergent');
                 resultSheguey('Sergent Sheguey');
                 break;
-            case 4:
             case 5:
                 changeMeta('J\'ai obtenu le grade de Général Sheguey', 'shegueygeneral');
                 resultSheguey('Général Sheguey');

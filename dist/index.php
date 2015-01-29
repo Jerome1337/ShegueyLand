@@ -69,7 +69,7 @@
                     <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand<?php echo $randomTweet[rand(0,count($randomTweet)-1)]?>" class="twitter" data-related="theHauteCulture,gradidur"><div class="button">Tweet maintenant !</div></a>
                 </div>
                 <div class="rect empty no-mobile no-tablet"></div>
-                <div class="rect lightgrey owl-carousel owl-theme no-mobile shegueySlide">
+                <div class="rect lightgrey owl-carousel owl-theme no-mobile no-tablet shegueySlide">
                     <?php 
                         $reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' order by RAND() LIMIT 5');
                         while ($donnees = $reponse->fetch())

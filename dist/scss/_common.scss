@@ -2,6 +2,15 @@ $mobile320: "only screen and (min-width : 320px)";
 $tab600: "only screen and (min-width : 600px)";
 $tab1200: "only screen and (min-width : 1200px)";
 
+// @Mixin & Extends
+@mixin title() {
+	font-family: 'Francois One', sans-serif;
+	color:$white;
+	text-transform: uppercase;
+}
+
+
+// Global Styles
 *::selection {
   background: $red;
   color: $white;
@@ -31,8 +40,8 @@ header.menu_left{
 	// }
 	.burger-icon{
 		font-family: "shegueyfont";
-		font-size: 4em;
-		padding: 20px;
+		font-size: 3em;
+		padding: 15px;
 		margin: 0;
 		cursor: pointer;
 		z-index: 999;
@@ -54,7 +63,7 @@ header.menu_left{
 		margin: 0;
 		img {
 		height: auto;
-		max-width: 90%;
+		max-width: 55%;
 		padding: 15px 0;
 		margin: auto;
 		}
@@ -105,15 +114,13 @@ header.menu_left{
 					border-top: solid 1px darken($red,10%);
 				}
 				a {
+					@include title;
 					display: block;
 					padding: 0.5em 0.5em 0.5em 0.7em;
 					outline: none;
 					width: 100%;
-					color: $white;
-					text-transform: uppercase;
 					// letter-spacing: 1px;
-					font-size: 2.2em;
-					font-family: 'Francois One', sans-serif;
+					font-size: 1.8em;
 
 				}
 				&:hover {
@@ -149,18 +156,137 @@ button {
         text-indent: 0;
 }
 
+header.header{
+	width: 100%;
+	max-width: 1200px;
+	margin: 20px auto;
+	padding: 15px 25px;
+	background: $red;
+	display: table;
+	h2{
+		@include title;
+		font-size: 2.6em;
+		display: table-cell;
+		vertical-align: middle;
+	}
+	form.formOptions{
+		display: table-cell;
+		vertical-align: middle;
+		fieldset.galleryOption{
+			border: none;
+			padding: 0; margin: 0;
+			text-align: right;
+			legend{
+				display: none;
+			}
+			.field {
+				&.mediaType{
+					display: inline-block;
+				}
+				input{
+					position: absolute; opacity: 0; width: 0; height: 0; 
+					&[type=checkbox] + label:before{
+					  content: "i";
+					  color: darken($red,5%);
+					  vertical-align: middle;
+					} 
+					&[type=checkbox]:checked + label:before {
+					  content: "i";
+					  color: $white;
+					  vertical-align: middle;
+					} 
+				}
+
+				&.select{
+					display: none;
+					position: absolute;
+					z-index: 100;
+					label{
+						display: block;
+						background: $red;
+						cursor: pointer;
+						padding: 10px 15px;
+						&:hover{
+							background: darken($red, 10%);
+						}
+						& + label{
+							border-top: solid 1px darken($red, 10%);
+						}
+					}
+					&.active{
+						display: block;
+					}
+				}
+				label{
+					color: $white;
+					font-size: 2.2em;
+					margin-right: 15px;
+					&:before{
+						font-family: "shegueyfont"!important;
+						font-size: 1.4em;
+						padding: 0 5px 0px 0px;
+						margin: 0;
+				  		vertical-align: middle;
+					}
+				}
+			}
+
+			.orderPicsBy{
+				display: inline-block;
+				cursor: pointer;
+				h4{
+					font-size: 2.2em;
+					font-family: 'Francois One', sans-serif;
+					color:$white;
+					text-transform: uppercase;
+					display: inline-block;
+					&:after{
+						font-family: "shegueyfont";
+						content: "h";
+						vertical-align: middle;
+						padding-left: 10px;
+						display: inline-block;
+					}
+				}
+				
+			}
+			
+		}
+
+	}
+}
+
 footer {
 	width: 100%;
 	height: 50px;
 	background-color: $black;
 	display: table;
-
-	h2 {
-		color: $white;
-		text-align: center;
-		font-size: 1.5em;
+	nav{
+		width: 70%;
 		display: table-cell;
 		vertical-align: middle;
+		margin: auto;
+		ul{
+			li{
+				display: inline-block;
+				h2 {
+					text-align: center;
+					font-size: 1em;
+					// color: $white;
+					a{
+						color: darken($lightgrey,30%);
+						transition: all .5s ease-in-out;
+						&:hover {
+							color: $white;
+						}
+					}
+				}
+				span {
+					color: $white;
+					margin: 0 20px;
+				}
+			}
+		}
 	}
 }
 

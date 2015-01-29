@@ -11,13 +11,24 @@
         <?php include('commons/header.php'); ?>
         
         
-        <header class="galleryOptions">
-            <h2>ShegueyWall</h2>
+        <header class="header galleryOptions">
+            <h2>Le Mur des Sheguey</h2>
             <form action="#" class="formOptions">
-                <input type="checkbox" value="images" class="mediaContent" id="images"/><label for="images">Images</label>
-                <input type="checkbox" value="videos" class="mediaContent" id="videos"/><label for="videos">Vidéos</label>
-                <input type="radio" value="recent" class="orderBy" id="recent" name="orderList"><label for="recent">recent</label>
-                <input type="radio" value="liked" class="orderBy" id="liked" name="orderList"><label for="liked">liked</label>
+                <fieldset class="galleryOption">
+                <legend>Paramétrer les images</legend>
+                    <div class="field mediaType">
+                        <input type="checkbox" value="images" class="mediaContent" id="images"/><label for="images">Images</label>
+                        <input type="checkbox" value="videos" class="mediaContent" id="videos"/><label for="videos">Vidéos</label>
+                    </div>
+
+                    <div class="orderPicsBy">
+                        <h4>Trier par</h4>
+                        <div class="field select">
+                            <input type="radio" value="recent" class="orderBy" id="recent" name="orderList"/><label for="recent">Nouveautés</label>
+                            <input type="radio" value="liked" class="orderBy" id="liked" name="orderList"/><label for="liked">Votes</label>
+                        </div>
+                    </div>
+                </fieldset>
             </form>
         </header>
         
@@ -33,7 +44,10 @@
         <?php include('commons/script_bottom.php'); ?>
         <script>
             $(document).ready(function() {
-                loadGallery("both", "DESC"); // Chargement de la gallerie au 1er chargement
+                loadGallery("both", "recent"); // Chargement de la gallerie au 1er chargement
+                $('.mediaContent').prop('checked', true); // Coche les 2 case si non defini
+                loadGallery("both", "recent");
+                $('.mediaContent').prop('checked', true); // Chargement de la gallerie au 1er chargement
             });
         </script>
     </body>
