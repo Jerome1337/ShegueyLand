@@ -1189,7 +1189,8 @@ header form.formOptions fieldset.galleryOption .orderPicsBy h4:after {
   font-size: 2em;
 }
 .addPunch .contentform form p {
-  margin: 0 0 15px 0;
+  margin: 0 0 5px 0;
+  padding-right: 25px;
   color: #a8a8a8;
   text-align: right;
   width: 100%;
@@ -1206,6 +1207,22 @@ header form.formOptions fieldset.galleryOption .orderPicsBy h4:after {
   width: 25%;
   background-color: #df0030;
   font-family: 'Radley', serif;
+}
+
+#punchAdded {
+  background-color: #df0030;
+  width: 83.6%;
+  margin: auto;
+  display: table;
+}
+#punchAdded h2 {
+  display: table-cell;
+  padding: 10px 0;
+  text-align: center;
+  width: 100%;
+  color: #ffffff;
+  font-family: 'Radley', serif;
+  font-weight: lighter;
 }
 
 #contentPunchline .punch {
@@ -1263,9 +1280,6 @@ header form.formOptions fieldset.galleryOption .orderPicsBy h4:after {
     width: 600px;
     margin-bottom: 20px;
   }
-  .addPunch form input[name="mc"] {
-    margin-top: 15px;
-  }
   .addPunch form #submitPunch {
     margin-bottom: 15px;
   }
@@ -1273,24 +1287,35 @@ header form.formOptions fieldset.galleryOption .orderPicsBy h4:after {
 @media only screen and (min-width: 1200px) {
   .addPunch {
     width: 1200px;
+    height: 100px;
   }
-  .addPunch .contentform form textarea {
-    width: 50%;
+  .addPunch .contentform form div {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-flex-flow: wrap row;
+        -ms-flex-flow: wrap row;
+            flex-flow: wrap row;
+  }
+  .addPunch .contentform form div textarea {
+    width: 70%;
     height: 60px;
   }
-  .addPunch .contentform form input[name="mc"] {
+  .addPunch .contentform form div input[name="mc"] {
     margin-top: 0;
     border-left: 1px solid #c2c2c2;
     border-top: none;
-    width: 30%;
-    display: inline;
-  }
-  .addPunch .contentform form #submitPunch {
     width: 20%;
     height: 60px;
+    display: inline;
   }
-  .addPunch .contentform #punchAdded {
-    width: 90%;
+  .addPunch .contentform form div #submitPunch {
+    width: 10%;
+    height: 60px;
+    border: none;
+  }
+  .addPunch .contentform form p {
+    padding-right: 305px;
   }
 }
 .content .row {
@@ -1304,13 +1329,30 @@ header form.formOptions fieldset.galleryOption .orderPicsBy h4:after {
 .content .row .quizz li.active {
   display: block;
 }
+.content .row .quizz li h4.title3 {
+  margin: 10px 15px;
+  padding: 0 15px;
+  font-size: 2em;
+  font-weight: normal;
+  text-transform: none;
+  color: #191e23;
+  border-left: solid 8px #df0030;
+}
+.content .row .quizz li h4.title3 strong {
+  color: #df0030;
+  font-weight: normal;
+}
+.content .row .quizz li h4.title3 + h4.title3 {
+  margin-top: 0px;
+  margin-bottom: 25px;
+}
 .content .row .quizz li h5 {
   background-color: #e9e9e9;
   border-bottom: 10px solid #df0030;
   width: 100%;
   padding: 10px;
   font-size: 2.2em;
-  height: 80px;
+  cursor: pointer;
   -webkit-transition: all .3s ease-in-out;
           transition: all .3s ease-in-out;
   display: -webkit-flex;
@@ -1365,14 +1407,14 @@ header form.formOptions fieldset.galleryOption .orderPicsBy h4:after {
   border-left: 10px solid #263961;
   border-bottom: none;
   color: #ffffff;
-  padding: 30px 0 0 20px;
-  height: 80px;
+  padding: 20px 0 20px 15px;
   -webkit-transition: all .3s ease-in-out;
           transition: all .3s ease-in-out;
   width: 100%;
   display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
+  cursor: pointer;
   font-size: 2.2em;
   margin-top: 15px;
 }
@@ -1408,7 +1450,7 @@ header form.formOptions fieldset.galleryOption .orderPicsBy h4:after {
 .content .quizPic {
   width: 100%;
   padding: 0 25px;
-  margin-top: 15px;
+  margin: 15px 0;
 }
 .content .quizPic img {
   width: 100%;
@@ -1500,7 +1542,7 @@ header form.formOptions fieldset.galleryOption .orderPicsBy h4:after {
     display: block;
   }
   .content .row .quizz li .socialfacebook #share_button {
-    width: 300px;
+    width: 600px;
   }
   .content .row .quizz li .socialfacebook .previewFb {
     width: 100%;

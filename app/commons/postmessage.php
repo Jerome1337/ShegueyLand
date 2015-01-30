@@ -3,7 +3,7 @@
 	// ini_set("display_errors", 1);
 	include('../adm/bddconnect.php');
 		$data = array();
-		if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['subject']) && !empty($_POST['message']))
+		if (!empty($_POST['name']) && !empty($_POST['email']) && !empty($_POST['message']))
 		{
 			// var_dump($_POST['name']);
 			// var_dump($_POST['email']);
@@ -24,7 +24,6 @@
 				"message": {
 				"html": "' . $content . '",
 				"text": "' . $content_text . '",
-				"subject": "' . $subject . '",
 				"from_email": "' . $from . '",
 				"from_name": "' . $from . '",
 				"to": [
@@ -53,11 +52,10 @@
 
 			
 
-			$req = $bdd->prepare('INSERT INTO contactform (name, email, subject, message) VALUES( :name,  :email,  :subject,  :message)');
+			$req = $bdd->prepare('INSERT INTO contactform (name, email, message) VALUES( :name,  :email, :message)');
 			$req->execute(array(
 					'name' => $_POST['name'],
 					'email' => $_POST['email'],
-					'subject' => $_POST['subject'],
 					'message' => $_POST['message']
 				));
 			$data['success'] = true;

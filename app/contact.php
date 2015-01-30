@@ -13,7 +13,7 @@
         </header>
         <div class="content">
             <div class="form red">
-                <h3 clsas="title3">Le site Sheguey.Land n'est en aucun cas associé à Gradur, son équipe ou Universal Music France. Pour en savoir plus sur l'équipe ShegueyLand et ses motivations, n'hésitez pas à nous contacter.</h3>
+                <h3 class="title3">Le site Sheguey.Land n'est en aucun cas associé à Gradur, son équipe ou Universal Music France. Pour en savoir plus sur l'équipe ShegueyLand et ses motivations, n'hésitez pas à nous contacter.</h3>
                 <div class="rangSheguey">
                     <h2></h2>
                 </div>

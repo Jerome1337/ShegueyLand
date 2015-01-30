@@ -9,7 +9,7 @@ $(document).ready(function() {
     });
 });
 
-function loadGallery(type_data, orderBy) {
+function loadGallery(type_data, orderBy, contentLengthToLoad) {
     var lastImageLoaded = $(".likePic").last().attr("data-id");
     if(typeof lastImageLoaded === 'undefined') {
         lastImageLoaded = '9999';
@@ -18,7 +18,7 @@ function loadGallery(type_data, orderBy) {
     $.ajax({
         type: "POST",
         url: "commons/function.php",
-        data: { getMoreSheguey: lastImageLoaded, typeData: type_data, orderBy: orderBy }
+        data: { getMoreSheguey: lastImageLoaded, typeData: type_data, orderBy: orderBy, contentLength: contentLengthToLoad }
     })
     .done(function( imagesLoaded ) {
         $( imagesLoaded ).appendTo(".js-shegueyWall");
@@ -32,24 +32,35 @@ function deleteGallery(){
 }
 
 function setParamsGallery(){
+
+    //Order asked
     var orderBy = $('.orderBy:checked', '.formOptions').val();
     orderBy = (typeof orderBy === 'undefined') ? 'recent' : orderBy;
-    console.log('orderBy : ' + orderBy);
+    if(orderBy === 'recent'){
+        var contentLengthToLoad = '8';
+         $('.getMoreSheg').show();
+    } else {
+        var contentLengthToLoad = '32';
+        $('.getMoreSheg').hide();
+    }
+
+    var contentLengthToLoad = (orderBy === 'recent') ? '8' : '32'; // Si l'affichage par vote, affiche 32pics.
+    // console.log('orderBy : ' + orderBy);
     
+    // Type of content
     var mediaContent = [];
     $('.mediaContent:checked', '.formOptions').each(function(i){
       mediaContent[i] = $(this).val();
     });
-    
     var mediaRequest = mediaContent.toString();
     if(mediaRequest != "images" && mediaRequest !="videos") {
         mediaRequest = "both";
         $('.mediaContent').prop('checked', true); // Coche les 2 case si non defini
     }
 
-    console.log('mediaRequest = ' + mediaRequest);
+    // console.log('mediaRequest = ' + mediaRequest);
     // console.log("orderBy : " + orderBy);
-    loadGallery(mediaRequest, orderBy);
+    loadGallery(mediaRequest, orderBy, contentLengthToLoad);
 }
 
 function likeMedia(id_media){
@@ -102,8 +113,6 @@ $(document).ready(function() {
         tag.setAttribute("preload", "auto")
         tag.setAttribute("src", "sound/" + soundId + ".wav")
         tag.play();
-        // console.log("playyyyy");
-        // console.log(soundId);
     });
 });
 
@@ -130,7 +139,7 @@ $(document).ready(function() {
 // ADD PUNCH ACTION
 $(document).ready(function() {
     var textMax = 150;
-    $('#punchAdded p').html(textMax + ' caractères restant.');
+    $('#formPunch p').html(textMax + ' caractères restant.');
     $('#formPunchline[maxlenght]').keyup(function(){
         var limit = parseInt($(this).attr('maxlenght'));
         var text = $(this).val();
@@ -141,7 +150,7 @@ $(document).ready(function() {
         }
         var textChar = $('#formPunchline').val().length;
         var textRemaining = textMax - textChar;
-        $('#punchAdded p').html(textRemaining + ' caractères restant');
+        $('#formPunch p').html(textRemaining + ' caractères restant');
     });
     $('#formPunch').submit(function(event) {
         var dataPunch = {
@@ -164,6 +173,8 @@ $(document).ready(function() {
                 $('#punchAdded h2').append('Remplis tous les champs !').hide().slideDown();
             }else{
                 $('#punchAdded h2').append('Ta punchline vient d\'être envoyée !').hide().slideDown();
+                $('.addPunch').slideUp();
+                $('')
             }
         });
         event.preventDefault();
@@ -192,7 +203,7 @@ window.addEventListener('load', function(e) {
 $(document).ready(function() {
     var score = 0;
     $('.buttonPass').click(function() {
-        $(this).parent().removeClass('active').next().addClass('active');
+        $(this).parent().parent().removeClass('active').next().addClass('active');
     });
     $('.good').click(function() {
         score++;
@@ -289,6 +300,7 @@ $(document).ready(function() {
 
     // CONTACT FORM ACTION
     $(document).ready(function() {
+        $('.rangSheguey').hide();
         $('#formContact').submit(function(event) {
             // var formName    = $('#formName').val();
             // var formEmail   = $("#formEmail").val();
@@ -313,11 +325,12 @@ $(document).ready(function() {
                 console.log(formData);
                 console.log(data);
 
-                if( ! data.success){
-                    alert('Error');
-                }else{
-                    alert('Success');
-                }
+
+            if( !data.success){
+                $('.rangSheguey').slideDown().children().append('Remplis tous les champs !');
+            }else{
+                $('.rangSheguey').slideDown().children().append('Ton message vient d\'être envoyé !');
+            }
             });
             event.preventDefault();
         });

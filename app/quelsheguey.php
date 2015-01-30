@@ -64,7 +64,7 @@
                     </li>
                     <!-- Question 5 -->
                     <li>
-                        <h4 class="title3">Quand est sortis la mixtape ShegueyVara sur <a target="_blank" href="www.hauteculture.com">Haute Culture</a> ?</h4>
+                        <h4 class="title3">Quand est sortis la mixtape ShegueyVara sur <a target="_blank" href="http://www.hauteculture.com">Haute Culture</a> ?</h4>
                         <div>
                             <h5 class="buttonPass final">Le 9 octobre 2014</h5>
                             <h5 class="buttonPass final">Le 18 octobre 2014</h5>
@@ -80,7 +80,7 @@
                             <p></p>
                         </div>
                         <div class="socialfacebook">
-                            <p id="share_button">Partage sur Facebook</p>
+                            <p id="share_button">Partage TON GRADE sur Facebook</p>
                             <div class="previewFb">
                                 <div></div>
                                 <h3>Tu obtiens le grade de <span></span></h3>

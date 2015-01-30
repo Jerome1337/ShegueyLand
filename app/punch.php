@@ -18,13 +18,14 @@
 					<form action="#" method="post" id="formPunch">
 						<fieldset>
 	                    	<legend>Formulaire de punchline de Sheguey</legend>
-							<textarea type="text" name="punch" id="formPunchline" row="8" col="30" maxlenght="150" placeholder="Écris ta punchline (150 caractères maximum)"></textarea>
-							<input type="text" placeholder="Pseudo" name="mc" id="formMc">
-							<p></p>
-							<button type="submit" class="button" id="submitPunch">Ajouter</button>
+	                    	<p></p>
+	                    	<div>
+								<textarea type="text" name="punch" id="formPunchline" row="8" col="30" maxlenght="150" placeholder="Écris ta punchline (150 caractères maximum)"></textarea>
+								<input type="text" placeholder="Pseudo" name="mc" id="formMc">
+								<button type="submit" class="button" id="submitPunch">Ajouter</button>
+							</div>
 						</fieldset>
 					</form>
-					
 				</div>
 			</section>
 			<div id="punchAdded">
@@ -39,6 +40,7 @@
 				$punch = $punchline['punch'];
 				$time = $punchline['time'];
 				?>
+				<div class="newPunch punch"></div>
 				<div class="punch">
 					<div>
 						<p class="punchline"><?php echo $punch; ?></p>

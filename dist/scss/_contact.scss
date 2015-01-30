@@ -8,34 +8,50 @@
 		flex-direction: column;
 		width: 95%;
 		margin: auto;
-		input{
-			margin-top: 1.5em;
-			height: 40px;
-			background-color: $lightgrey;
-			border: none;
-			font-family: 'Radley', serif;
-			font-size: 1.6em;
-			padding: 10px;
-			width: 100%;
-		}
-		textarea {
-			margin-top: 1.5em;
-			height: 200px;
-			background-color: $lightgrey;
-			border: none;
-			resize: none;
-			font-family: 'Radley', serif;
-			font-size: 1.6em;
-			padding: 10px;
-		}
-		button {
-			font-family: 'Radley', serif;
-			width: 25%;
-			height: 40px;
-			background-color: $red;
-			margin: 0.9em 0;
-			color: $white;
+			input{
+				margin-top: 1.5em;
+				height: 40px;
+				background-color: $lightgrey;
+				border: none;
+				font-family: 'Radley', serif;
+				font-size: 1.6em;
+				padding: 10px;
+				width: 100%;
+			}
+			textarea {
+				margin-top: 1.5em;
+				height: 200px;
+				background-color: $lightgrey;
+				border: none;
+				resize: none;
+				font-family: 'Radley', serif;
+				font-size: 1.6em;
+				padding: 10px;
+				width: 100%;
+			}
+			button {
+				font-family: 'Radley', serif;
+				width: 25%;
+				height: 40px;
+				background-color: $red;
+				margin: 0.9em 0;
+				color: $white;
+				text-align: center;
+			}
+	}
+	.rangSheguey {
+		background-color: $red;
+		width: 95%;
+		margin: auto;
+		display: table;
+		h2{
+			display: table-cell;
+			padding: 10px 0;
 			text-align: center;
+			width: 100%;
+			color: $white;
+			font-family: 'Radley', serif;
+			font-weight: lighter;
 		}
 	}
 }
@@ -44,6 +60,33 @@
 
 	.form {
 		width: 600px;
+		margin: auto;
+		#formContact {
+			max-width: 70%;
+			div{
+				width: 100%;
+				display: flex;
+				justify-content: space-between;
+				input{
+					width: 48%;
+					flex-direction: row;
+				}
+			}
+			
+			button {
+				transition: all .5s ease-in-out;
+				&:hover{
+					background: darken($red, 10%);
+				}
+			}
+		}
+		.rangSheguey {
+			width: 70%;
+		}
+	}
+}@media #{$tab1200} {
+	.form {
+		width: 1200px;
 		margin: auto;
 		#formContact {
 			div{
@@ -59,39 +102,6 @@
 			button {
 				transition: all .5s ease-in-out;
 				&:hover{background: darken($red, 10%);}
-			}
-		}
-	}
-
-}@media #{$tab1200} {
-	.form {
-		width: 1200px;
-		margin: auto;
-		&.red {
-			background-color: $red;
-		}
-		#formContact {
-			width: 85%;
-			input{
-				margin-top: 1.5em;
-				height: 40px;
-				width: 50%;
-			}
-			textarea {
-				margin-top: 1.5em;
-				height: 200px;
-				width: 50%;
-			}
-			button {
-				width: 50%;
-				height: 40px;
-				background-color: $black;
-				margin: 0.9em 0;
-				color: $white;
-				text-align: center;
-				text-transform: uppercase;
-				transition: all .5s ease-in-out;
-				&:hover{background: darken($black, 10%);}
 			}
 		}
 	}
