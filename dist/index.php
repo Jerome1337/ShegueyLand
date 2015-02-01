@@ -3,6 +3,7 @@
     <head>
         <?php
         $onglet_actif = "index";
+        $activeMenuIndex = "activeMenu";
         include('commons/head.php'); ?>
         <title>SHEGUEYLAND | Home</title>
     </head>

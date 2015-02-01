@@ -37,7 +37,8 @@
 					font-size: 2em;
 				}
 				p{
-					margin: 0 0 15px 0;
+					margin: 0 0 5px 0;
+					padding-right: 25px; 
 					color: lighten($grey, 40);
 					text-align: right;
 					width: 100%;
@@ -52,14 +53,23 @@
 					font-family: 'Radley', serif;
 				}
 			}
-			#punchAdded {
-				h2 {
-				}
-				p {
-				}
-			}
 		}
 	}
+	#punchAdded {
+				background-color: $red;
+				width: 83.6%;
+				margin: auto;
+				display: table;
+				h2{
+					display: table-cell;
+					padding: 10px 0;
+					text-align: center;
+					width: 100%;
+					color: $white;
+					font-family: 'Radley', serif;
+					font-weight: lighter;
+				}
+			}
 #contentPunchline{
 	.punch{
 		width: 85%;
@@ -112,9 +122,6 @@
 			width: 600px;
 			margin-bottom: 20px;
 			form {
-				input[name="mc"] {
-					margin-top: 15px;
-				}
 				#submitPunch {
 					margin-bottom: 15px;
 				}
@@ -123,27 +130,34 @@
 }@media #{$tab1200} {
 	.addPunch {
 		width: 1200px;
+		height: 100px;
 		.contentform {
 			form{
-				textarea{
-					width: 50%;
-					height: 60px;
+				div{
+					display: flex;
+					flex-flow: wrap row;
+					textarea{
+						width: 70%;
+						height: 60px;
 
+					}
+					input[name="mc"] {
+						margin-top: 0;
+						border-left: 1px solid lighten($grey, 50);
+						border-top: none;
+						width: 20%;
+						height: 60px;
+						display: inline;
+					}
+					#submitPunch{
+						width: 10%;
+						height: 60px;
+						border: none;
+					}			
 				}
-				input[name="mc"] {
-					margin-top: 0;
-					border-left: 1px solid lighten($grey, 50);
-					border-top: none;
-					width: 30%;
-					display: inline;
-				}
-				#submitPunch{
-					width: 20%;
-					height: 60px;
-				}	
-			}
-			#punchAdded {
-				width: 90%;
+				p{
+						padding-right: 305px;
+					}
 			}
 		}
 

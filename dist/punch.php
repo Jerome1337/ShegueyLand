@@ -3,6 +3,7 @@
 	<head>
 		<?php
 		$onglet_actif = "noise";
+		$activeMenuPunch = "activeMenu";
 		include('commons/head.php'); ?>
 		<title>SHEGUEYLAND - Punchlines</title>
 	</head>
@@ -18,19 +19,21 @@
 					<form action="#" method="post" id="formPunch">
 						<fieldset>
 	                    	<legend>Formulaire de punchline de Sheguey</legend>
-							<textarea type="text" name="punch" id="formPunchline" row="8" col="30" maxlenght="150" placeholder="Écris ta punchline (150 caractères maximum)"></textarea>
-							<input type="text" placeholder="Pseudo" name="mc" id="formMc">
-							<p></p>
-							<button type="submit" class="button" id="submitPunch">Ajouter</button>
+	                    	<p></p>
+	                    	<div>
+								<textarea type="text" name="punch" id="formPunchline" row="8" col="30" maxlenght="150" placeholder="Écris ta punchline (150 caractères maximum)"></textarea>
+								<input type="text" placeholder="Pseudo" name="mc" id="formMc">
+								<button type="submit" class="button" id="submitPunch">Ajouter</button>
+							</div>
 						</fieldset>
 					</form>
-					
 				</div>
 			</section>
 			<div id="punchAdded">
 				<h2></h2>	
 			</div>
 			<div class="row" id="contentPunchline">
+				<div class="newPunch punch"></div>
 				<?php
 					$reponse = $bdd->query('SELECT * FROM punchline WHERE id order by time DESC LIMIT 30');
 					while ($punchline = $reponse->fetch())

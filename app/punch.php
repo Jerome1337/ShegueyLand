@@ -3,6 +3,7 @@
 	<head>
 		<?php
 		$onglet_actif = "noise";
+		$activeMenuPunch = "class=\"activeMenu\"";
 		include('commons/head.php'); ?>
 		<title>SHEGUEYLAND - Punchlines</title>
 	</head>
@@ -32,6 +33,7 @@
 				<h2></h2>	
 			</div>
 			<div class="row" id="contentPunchline">
+				<div class="newPunch punch"></div>
 				<?php
 					$reponse = $bdd->query('SELECT * FROM punchline WHERE id order by time DESC LIMIT 30');
 					while ($punchline = $reponse->fetch())
@@ -40,7 +42,6 @@
 				$punch = $punchline['punch'];
 				$time = $punchline['time'];
 				?>
-				<div class="newPunch punch"></div>
 				<div class="punch">
 					<div>
 						<p class="punchline"><?php echo $punch; ?></p>

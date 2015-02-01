@@ -1,23 +1,22 @@
 <meta charset="utf-8">
-<meta name="description" content="####">
+<meta name="description" content="ShegueyLand est le premier site dédié la communauté Sheguey de Gradur.">
 <meta name="keyword" content="Gradur, gradyog, sheguey, shegueysquad, roubaix, nord, GRADUR, DURGRA, durgra, shegueyland, sl, gradidur">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="Sheguey Land">
 <meta property="og:site_name" content="Sheguey Land">
 <meta property="og:url" content="http://sheguey.land/<?php echo $onglet_actif ?>">
-<meta property="og:description" content="Toi aussi viens faire le test pour découvrir quel Sheguey tu es !">
+<meta property="og:description" content="ShegueyLand est le premier site dédié la communauté Sheguey de Gradur.">
 <meta property="fb:app_id" content="790279547711669">
-<meta property="og:type" content="shegueyland:quiz">
-<meta property="og:image" content="http://sheguey.land/fbshare.jpg">
+<meta property="og:type" content="website">
+<meta property="og:image" content="http://www.sheguey.land/img/fbshare/fbshare.jpg">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
-<link rel="icon" type="image/png" href="#">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="Description">
 <meta name="twitter:site" content="@ShegueyLand">
 <meta name="twitter:title" content="ShegueyLand Community">
 <meta name="twitter:description" content="Venez découvrir ShegueyLand">
 <meta name="twitter:creator" content="ShegueyLand">
-<meta name="twitter:image:src" content="https://sheguey.land/img/favicons/android-chrome-192x192.png">
+<meta name="twitter:image:src" content="http://www.sheguey.land/img/favicons/android-chrome-192x192.png">
 <meta name="twitter:domain" content="sheguey.land">
 <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
@@ -39,7 +38,6 @@
 <link href='http://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Radley:400italic' rel='stylesheet' type='text/css'>
 <link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>">
-<link rel="stylesheet" href="css/normalize.css">
 <link rel="stylesheet" href="fonts/styles.css">
 <link rel="stylesheet" href="css/style.css">
 <link rel="stylesheet" href="js/owl/owl.carousel.css">

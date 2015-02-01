@@ -3,6 +3,7 @@
     <head>
         <?php
         $onglet_actif = "noise";
+        $activeMenuClick = "class=\"activeMenu\"";
         include('commons/head.php'); ?>
         <title>SHEGUEYLAND - Click & Sheg'</title>
     </head>

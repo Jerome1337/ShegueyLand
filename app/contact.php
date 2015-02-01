@@ -3,6 +3,7 @@
     <head>
         <?php
         $onglet_actif = "contacts";
+        $activeMenuContact = "class=\"activeMenu\"";
         include('commons/head.php'); ?>
         <title>SHEGUEYLAND - Contact</title>
     </head>

@@ -3,6 +3,7 @@
     <head prefix="og: http://ogp.me/ns#">
         <?php
         $onglet_actif = "quelsheguey";
+        $activeMenuTest = "class=\"activeMenu\"";
         include('commons/head.php'); ?>
         <title>SHEGUEYLAND</title>
     </head>
@@ -80,7 +81,7 @@
                             <p></p>
                         </div>
                         <div class="socialfacebook">
-                            <p id="share_button">Partage TON GRADE sur Facebook</p>
+                            <p id="share_button">Partage ton grade sur Facebook</p>
                             <div class="previewFb">
                                 <div></div>
                                 <h3>Tu obtiens le grade de <span></span></h3>

@@ -119,6 +119,9 @@ header.menu_left{
 			li {
 				padding-right: 30px;
 				transition: background 0.3s;
+				&.activeMenu {
+					background: darken($red, 10%);
+				}
 				& + li{
 					border-top: solid 1px darken($red,10%);
 				}
@@ -131,6 +134,7 @@ header.menu_left{
 					// letter-spacing: 1px;
 					font-size: 1.8em;
 				}
+				
 				&:hover {
 					background: darken($red, 10%);
 				}

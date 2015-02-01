@@ -11,13 +11,13 @@ $(document).ready(function() {
 
 function loadGallery(type_data, orderBy, contentLengthToLoad) {
     var lastImageLoaded = $(".likePic").last().attr("data-id");
-    if(typeof lastImageLoaded === 'undefined') {
+    if(typeof lastImageLoaded == 'undefined') {
         lastImageLoaded = '9999';
     }
     // console.log("LOADING MORE SHEG " + lastImageLoaded);
     $.ajax({
         type: "POST",
-        url: "commons/function.php",
+        url: "commons/function",
         data: { getMoreSheguey: lastImageLoaded, typeData: type_data, orderBy: orderBy, contentLength: contentLengthToLoad }
     })
     .done(function( imagesLoaded ) {
@@ -66,7 +66,7 @@ function setParamsGallery(){
 function likeMedia(id_media){
     $.ajax({
         type: "POST",
-        url: "commons/function.php",
+        url: "commons/function",
         data: { vote_media_ID: id_media }
     })
     .done(function( vote_saved ) {
@@ -139,6 +139,7 @@ $(document).ready(function() {
 // ADD PUNCH ACTION
 $(document).ready(function() {
     var textMax = 150;
+    $('#punchAdded').hide();
     $('#formPunch p').html(textMax + ' caractères restant.');
     $('#formPunchline[maxlenght]').keyup(function(){
         var limit = parseInt($(this).attr('maxlenght'));
@@ -157,9 +158,11 @@ $(document).ready(function() {
             'mc' : $('#formMc').val(),
             'punch' : $("#formPunchline").val()
         };
+        var newMc = $('#formMc').val();
+        var addedPunch = $("#formPunchline").val();
         // console.log(formData);
         $.ajax({
-            url: "commons/postpunch.php",
+            url: "commons/postpunch",
             type: "POST",
             data: dataPunch,
             dataType: 'json',
@@ -170,11 +173,11 @@ $(document).ready(function() {
             console.log(data);
 
             if( ! data.success){
-                $('#punchAdded h2').append('Remplis tous les champs !').hide().slideDown();
+                $('#punchAdded').slideDown().children().append('Remplis tous les champs !');
             }else{
-                $('#punchAdded h2').append('Ta punchline vient d\'être envoyée !').hide().slideDown();
-                $('.addPunch').slideUp();
-                $('')
+                $('#punchAdded').slideDown().children().append('Ta punchline vient d\'être envoyée !');
+                $('.newPunch').append('<div><p class="punchline">'+addedPunch+'</p><h2 class="mc">'+newMc+'</h2></div>');
+                $('.addPunch').slideUp('slow');
             }
         });
         event.preventDefault();
@@ -310,12 +313,11 @@ $(document).ready(function() {
             var formData = {
                 'name' : $('#formName').val(),
                 'email' : $("#formEmail").val(),
-                'subject' : $("#formSubject").val(),
                 'message' : $("#formMessage").val()
             };
             // console.log(formData);
             $.ajax({
-                url: "commons/postmessage.php",
+                url: "commons/postmessage",
                 type: "POST",
                 data: formData,
                 dataType: 'json',
@@ -330,6 +332,7 @@ $(document).ready(function() {
                 $('.rangSheguey').slideDown().children().append('Remplis tous les champs !');
             }else{
                 $('.rangSheguey').slideDown().children().append('Ton message vient d\'être envoyé !');
+                $('#formContact').slideUp('slow');
             }
             });
             event.preventDefault();

@@ -3,6 +3,7 @@
     <head>
         <?php
         $onglet_actif = "gallerie";
+        $activeMenuGallerie = "class=\"activeMenu\"";
         include('commons/head.php');
         include('commons/function.php'); ?>
         <title>SHEGUEYLAND | Le Mur des Sheguey</title>

@@ -1,8 +1,10 @@
 $white:     #ffffff;
 .content{
-	
+	.row{
+		width: 100%;
+		margin: auto;
+	}
 }
-.row{margin: auto;}
 .rect{
 	display: flex;
 	flex-wrap: wrap;
