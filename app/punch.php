@@ -21,7 +21,7 @@
 	                    	<legend>Formulaire de punchline de Sheguey</legend>
 	                    	<p></p>
 	                    	<div>
-								<textarea type="text" name="punch" id="formPunchline" row="8" col="30" maxlenght="150" placeholder="Écris ta punchline (150 caractères maximum)"></textarea>
+								<textarea name="punch" id="formPunchline" maxlength="150" placeholder="Écris ta punchline (150 caractères maximum)"></textarea>
 								<input type="text" placeholder="Pseudo" name="mc" id="formMc">
 								<button type="submit" class="button" id="submitPunch">Ajouter</button>
 							</div>

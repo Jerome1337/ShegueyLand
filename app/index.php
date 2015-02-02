@@ -67,7 +67,7 @@
                         $randomTweet[] = "%20@Luissfernando17";
                     ?>
                     <p>Envois un Tweet<br/> @Gradur</p>
-                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&text=%23ShegueyLand<?php echo $randomTweet[rand(0,count($randomTweet)-1)]?>&related=Shegueyland,gradidur,theHauteCulture" class="twitter"><div class="button">Tweet maintenant !</div></a>
+                    <a data-url="https://twitter.com/intent/tweet?screen_name=gradidur&amp;text=%23ShegueyLand<?php echo $randomTweet[rand(0,count($randomTweet)-1)]?>&amp;related=Shegueyland,gradidur,theHauteCulture" class="twitter"><div class="button">Tweet maintenant !</div></a>
                 </div>
                 <div class="rect empty no-mobile no-tablet"></div>
                 <div class="rect lightgrey owl-carousel owl-theme no-mobile no-tablet shegueySlide">
@@ -90,7 +90,7 @@
                 <div class="rect black ShegueyBuyAlbum">
                     <p></p>
                     <!-- <img src="img/cover.jpg" alt="Gradur, l'album"> -->
-                    <a target="_blank" href="http://www.amazon.fr/gp/product/B00RDC5Y5O/ref=as_li_tl?ie=UTF8&camp=1642&creative=19458&creativeASIN=B00RDC5Y5O&linkCode=as2&tag=francemixtape-21&linkId=BLAT3PC4OXRC5SZP"><div class="button">Achete l'album</div></a>
+                    <a target="_blank" href="http://www.amazon.fr/gp/product/B00RDC5Y5O/ref=as_li_tl?ie=UTF8&amp;camp=1642&amp;creative=19458&amp;creativeASIN=B00RDC5Y5O&amp;linkCode=as2&amp;tag=francemixtape-21&amp;linkId=BLAT3PC4OXRC5SZP"><div class="button">Achete l'album</div></a>
                 </div>
                 <div class="rect red ShegueyCalendar">
                     <p>Viens ajouter ta<br/>punchline</p>

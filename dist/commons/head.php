@@ -1,6 +1,6 @@
 <meta charset="utf-8">
 <meta name="description" content="ShegueyLand est le premier site dédié la communauté Sheguey de Gradur.">
-<meta name="keyword" content="Gradur, gradyog, sheguey, shegueysquad, roubaix, nord, GRADUR, DURGRA, durgra, shegueyland, sl, gradidur">
+<meta name="keywords" content="Gradur, gradyog, sheguey, shegueysquad, roubaix, nord, GRADUR, DURGRA, durgra, shegueyland, sl, gradidur">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="Sheguey Land">
 <meta property="og:site_name" content="Sheguey Land">

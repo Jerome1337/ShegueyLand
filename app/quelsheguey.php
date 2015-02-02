@@ -15,7 +15,7 @@
         <!-- QUIZZ -->
         <div class="content">
             <section class="row">
-                <div class="quizz">
+                <ul class="quizz">
                     <!-- Launch Form -->
                     <li class="active">
                         <h3 class="title3">Decouvre quel Sheguey tu es !</h3>
@@ -89,7 +89,7 @@
                             </div>
                         </div>
                     </li>
-                </div>
+                </ul>
                 <div class="rect quizPic">
                     <?php 
                         $reponse = $bdd->query('SELECT * FROM instagram WHERE type = \'image\' order by RAND() LIMIT 1');
