@@ -7,12 +7,11 @@
 		{
 			// var_dump($_POST['name']);
 			// var_dump($_POST['email']);
-			// var_dump($_POST['subject']);
 			// var_dump($_POST['message']);
 
 			$to = 'contact@sheguey.land';
 			$content = ''.$_POST['message'].'';
-			$subject = 'Nouveau message de '.$_POST['name'].' - Sheguey Land';
+			$subject = 'Nouvelle demande de contact - Sheguey Land';
 			$from = ''.$_POST['email'].'';
 
 			$uri = 'https://mandrillapp.com/api/1.0/messages/send.json';

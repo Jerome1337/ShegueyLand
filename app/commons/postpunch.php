@@ -5,10 +5,15 @@
 	$data = array();
 	if (!empty($_POST['mc']) && !empty($_POST['punch']))
 			{
+
+
+
+				$mc = securite_bdd($_POST['mc']);
+				$punch = securite_bdd($_POST['punch']);
 				$req = $bdd->prepare('INSERT INTO punchline (name, punch, time) VALUES( :mc, :punch, NOW())');
 				$req->execute(array(
-						'mc' => $_POST['mc'],
-						'punch' => $_POST['punch']
+						'mc' => $mc,
+						'punch' => $punch
 					));
 				$data['success'] = true;	
 			}else{
