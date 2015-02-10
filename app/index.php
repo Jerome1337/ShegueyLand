@@ -5,7 +5,7 @@
         $onglet_actif = "index";
         $activeMenuIndex = "class=\"activeMenu\"";
         include('commons/head.php'); ?>
-        <title>SHEGUEYLAND | Home</title>
+        <title>SHEGUEYLAND</title>
     </head>
     <body>
         <?php include('commons/header.php'); ?>

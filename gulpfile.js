@@ -37,6 +37,7 @@ gulp.task('script', function() {
         .pipe($.rename('script.min.js'))
         .pipe(gulp.dest( appTemp + '/js/' ))
         .pipe(gulp.dest( appBuild + '/js/' ))
+        .pipe(gulp.dest( appSrc + '/js/' ))
         .pipe($.size({
             title: 'scripts'
         }))

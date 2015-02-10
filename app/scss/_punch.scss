@@ -38,7 +38,6 @@
 				}
 				p{
 					margin: 0 0 5px 0;
-					padding-right: 25px; 
 					color: lighten($grey, 40);
 					text-align: right;
 					width: 100%;
@@ -115,8 +114,25 @@
 				text-transform: capitalize;
 			}
 		}
+		.tweetPunch{
+				margin: 0;
+				.socialIcon{
+					display: none;
+					font-size: 2.5em;
+					margin-left: 7px;
+					color: lighten($lightgrey, 2);
+					&:hover{
+						color: $lightgrey;	
+					}
+				}
+			}
+		&:hover{
+			.socialIcon{
+					display: block;
+				}
+			}
+		}
 	}
-}
 @media #{$tab600} {
 		.addPunch {
 			width: 600px;
@@ -161,9 +177,5 @@
 			}
 		}
 
-	}
-	.row {
-		.punch {
-		}
 	}
 }

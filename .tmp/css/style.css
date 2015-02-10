@@ -807,7 +807,6 @@ header form.formOptions {
       font-size: 2em; }
     .addPunch .contentform form p {
       margin: 0 0 5px 0;
-      padding-right: 25px;
       color: #a8a8a8;
       text-align: right;
       width: 100%; }
@@ -873,6 +872,17 @@ header form.formOptions {
       margin: -22px 75px 0 0;
       color: #838383;
       text-transform: capitalize; }
+  #contentPunchline .punch .tweetPunch {
+    margin: 0; }
+    #contentPunchline .punch .tweetPunch .socialIcon {
+      display: none;
+      font-size: 2.5em;
+      margin-left: 7px;
+      color: #eeeeee; }
+      #contentPunchline .punch .tweetPunch .socialIcon:hover {
+        color: #e9e9e9; }
+  #contentPunchline .punch:hover .socialIcon {
+    display: block; }
 
 @media only screen and (min-width : 600px) {
   .addPunch {
@@ -905,17 +915,17 @@ header form.formOptions {
     .addPunch .contentform form p {
       padding-right: 305px; } }
 
-.content .row {
+.content .quel {
   width: 90%;
   margin: auto; }
-  .content .row .quizz {
+  .content .quel .quizz {
     padding-left: 0; }
-    .content .row .quizz li {
+    .content .quel .quizz li {
       display: none;
       width: 100%; }
-      .content .row .quizz li.active {
+      .content .quel .quizz li.active {
         display: block; }
-      .content .row .quizz li h4.title3 {
+      .content .quel .quizz li h4.title3 {
         margin: 10px 15px;
         padding: 0 15px;
         font-size: 2em;
@@ -923,13 +933,13 @@ header form.formOptions {
         text-transform: none;
         color: #191e23;
         border-left: solid 8px #df0030; }
-        .content .row .quizz li h4.title3 strong {
+        .content .quel .quizz li h4.title3 strong {
           color: #df0030;
           font-weight: normal; }
-        .content .row .quizz li h4.title3 + h4.title3 {
+        .content .quel .quizz li h4.title3 + h4.title3 {
           margin-top: 0px;
           margin-bottom: 25px; }
-      .content .row .quizz li h5 {
+      .content .quel .quizz li h5 {
         background-color: #e9e9e9;
         border-bottom: 10px solid #df0030;
         width: 100%;
@@ -942,38 +952,38 @@ header form.formOptions {
         font-family: 'Francois One', sans-serif;
         color: #ffffff;
         text-transform: uppercase; }
-        .content .row .quizz li h5 {
+        .content .quel .quizz li h5 {
           color: #df0030; }
-        .content .row .quizz li h5:hover {
+        .content .quel .quizz li h5:hover {
           background-color: #c3c3c3;
           border-color: #930020; }
-      .content .row .quizz li a {
+      .content .quel .quizz li a {
         color: #df0030; }
-      .content .row .quizz li .resultSheguey h2 {
+      .content .quel .quizz li .resultSheguey h2 {
         margin: 15px 0 0 0;
         font-size: 4em;
         height: 45px;
         font-family: 'Francois One', sans-serif;
         color: #ffffff;
         text-transform: uppercase; }
-        .content .row .quizz li .resultSheguey h2 {
+        .content .quel .quizz li .resultSheguey h2 {
           color: #191e23; }
-      .content .row .quizz li .resultSheguey h3 {
+      .content .quel .quizz li .resultSheguey h3 {
         margin: 0 0 5px 0;
         font-size: 2.5em;
         font-family: 'Francois One', sans-serif;
         color: #ffffff;
         text-transform: uppercase; }
-        .content .row .quizz li .resultSheguey h3 {
+        .content .quel .quizz li .resultSheguey h3 {
           color: #191e23; }
-      .content .row .quizz li .resultSheguey p {
+      .content .quel .quizz li .resultSheguey p {
         background-color: #ffffff;
         color: #191e23;
         font-size: 2em;
         border: none;
         padding: 0;
         margin: 20px 0; }
-      .content .row .quizz li .socialfacebook #share_button {
+      .content .quel .quizz li .socialfacebook #share_button {
         background-color: #3b5998;
         border-left: 10px solid #263961;
         border-bottom: none;
@@ -985,21 +995,21 @@ header form.formOptions {
         cursor: pointer;
         font-size: 2.2em;
         margin-top: 15px; }
-        .content .row .quizz li .socialfacebook #share_button:hover {
+        .content .quel .quizz li .socialfacebook #share_button:hover {
           background-color: #344f86;
           border-color: #1e2e4f; }
-      .content .row .quizz li .socialfacebook .previewFb {
+      .content .quel .quizz li .socialfacebook .previewFb {
         width: 100%;
         border: 1px solid #e9e9e9; }
-        .content .row .quizz li .socialfacebook .previewFb div {
+        .content .quel .quizz li .socialfacebook .previewFb div {
           width: 100%; }
-          .content .row .quizz li .socialfacebook .previewFb div img {
+          .content .quel .quizz li .socialfacebook .previewFb div img {
             max-width: 100%;
             height: auto; }
-        .content .row .quizz li .socialfacebook .previewFb h3 {
+        .content .quel .quizz li .socialfacebook .previewFb h3 {
           font-size: 1.8em;
           margin: 20px 20px 10px 20px; }
-        .content .row .quizz li .socialfacebook .previewFb p {
+        .content .quel .quizz li .socialfacebook .previewFb p {
           font-size: 1.3em;
           background-color: #ffffff;
           border: none;
@@ -1010,7 +1020,7 @@ header form.formOptions {
           height: inherit; }
 .content .quizPic {
   width: 100%;
-  padding: 0 25px;
+  padding: 0;
   margin: 15px 0; }
   .content .quizPic img {
     width: 100%;
@@ -1028,8 +1038,9 @@ header form.formOptions {
           display: flex;
           flex-flow: wrap row; }
           .content .row .quizz li div h5 {
-            width: 280px;
-            margin-right: 20px; }
+            width: 290px; }
+            .content .row .quizz li div h5:nth-child(2), .content .row .quizz li div h5:nth-child(4) {
+              margin-left: 20px; }
             .content .row .quizz li div h5.start {
               width: 100%; }
         .content .row .quizz li .resultSheguey {
@@ -1045,13 +1056,12 @@ header form.formOptions {
               width: 100%; }
               .content .row .quizz li .socialfacebook .previewFb div img {
                 width: 100%;
-                height: auto; }
+                height: 100%; }
     .content .row .quizPic {
-      width: 500px;
       height: 500px;
       padding: 0;
       margin: auto; }
-      .content .row .quizPic li div {
+      .content .row .quizPic div {
         width: 100%;
         height: 100%; } }
 
@@ -1067,10 +1077,13 @@ header form.formOptions {
         .content .row .quizz li div h5 {
           width: 280px;
           margin-right: 20px; }
+          .content .row .quizz li div h5:nth-child(2), .content .row .quizz li div h5:nth-child(4) {
+            margin-left: 0; }
       .content .row .quizz li .socialfacebook {
-        display: block; }
+        display: block;
+        width: 95%; }
         .content .row .quizz li .socialfacebook #share_button {
-          width: 600px; }
+          width: 100%; }
         .content .row .quizz li .socialfacebook .previewFb {
           width: 100%;
           border: 1px solid #e9e9e9; }
@@ -1078,11 +1091,11 @@ header form.formOptions {
             width: 100%; }
             .content .row .quizz li .socialfacebook .previewFb div img {
               width: 100%;
-              height: auto; }
+              height: 100%; }
   .content .quizPic {
     width: 600px;
     height: 600px;
     padding-right: 0; }
-    .content .quizPic li div {
+    .content .quizPic div {
       width: 100%;
       height: 100%; } }

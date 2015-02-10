@@ -140,8 +140,8 @@ $(document).ready(function() {
 $(document).ready(function() {
     var textMax = 150;
     $('#punchAdded').hide();
-    $('#formPunch p').html(textMax + ' caractères restant.');
-    $('#formPunchline[maxlenght]').keyup(function(){
+    $('#formPunch p').html(textMax + ' / 150 caractères.');
+    $('#formPunchline[maxlength]').keyup(function(){
         var limit = parseInt($(this).attr('maxlenght'));
         var text = $(this).val();
         var chars = text.length;
@@ -151,7 +151,7 @@ $(document).ready(function() {
         }
         var textChar = $('#formPunchline').val().length;
         var textRemaining = textMax - textChar;
-        $('#formPunch p').html(textRemaining + ' caractères restant');
+        $('#formPunch p').html(textRemaining + ' / 150 caractères.');
     });
     $('#formPunch').submit(function(event) {
         var dataPunch = {
@@ -219,10 +219,10 @@ $(document).ready(function() {
     function setScore() {
         switch (score) {
             case 0:
+            case 1:
                 changeMeta('shegueycarton');
                 resultSheguey('Sheguey en carton', 'Tu ne t’y connais vraiment pas, mais on t’aime quand même. Tu va devoir travailler dûr pour devenir un vrai Sheguey, tu peux commencer dès mainteanant par <a href="http://www.amazon.fr/gp/product/B00RDC5Y5O/ref=as_li_tl?ie=UTF8&camp=1642&creative=19458&creativeASIN=B00RDC5Y5O&linkCode=as2&tag=francemixtape-21&linkId=BLAT3PC4OXRC5SZP" target="_blank">acheter l’album</a> ou télécharger la mixtape sur <a href="www.hauteculture.com" target="_blank">HauteCulture.com</a>.', '<img src="img/fbshare/shegueycarton.jpg" alt="Facebook share en carton">');
                 break;
-            case 1:
             case 2:
             case 3:
                 changeMeta('shegueysoldat');

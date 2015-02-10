@@ -21,7 +21,7 @@
 	                    	<legend>Formulaire de punchline de Sheguey</legend>
 	                    	<p></p>
 	                    	<div>
-								<textarea name="punch" id="formPunchline" maxlength="150" placeholder="Écris ta punchline (150 caractères maximum)"></textarea>
+								<textarea name="punch" id="formPunchline" maxlength="150" placeholder="Écris ta punchline"></textarea>
 								<input type="text" placeholder="Pseudo" name="mc" id="formMc">
 								<button type="submit" class="button" id="submitPunch">Ajouter</button>
 							</div>
@@ -40,13 +40,19 @@
 				{
 				$mc = $punchline['name'];
 				$punch = $punchline['punch'];
-				$time = $punchline['time'];
+				$numwords = 15;
+				$sentence = preg_replace('/["&*$%>]/i', '', $punch);
+				$words = explode(" ", $sentence);
+				$newsetence = implode(" ", array_slice($words, 0, $numwords))."...";
 				?>
 				<div class="punch">
 					<div>
 						<p class="punchline"><?php echo $punch; ?></p>
 						<h2 class="mc"><?php echo $mc; ?></h2>
 					</div>
+					<div class="tweetPunch">
+                    	<a data-url="https://twitter.com/intent/tweet?text=%22<?php echo $newsetence ?>%22%20%23<?php echo $mc ?>%20%23ShegueyLand&amp;related=Shegueyland,gradidur,theHauteCulture" class="twitter"><div class="twitterIcon socialIcon"></div></a>
+                	</div>
 				</div>
 					<?php
 					}

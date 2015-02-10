@@ -5,7 +5,7 @@
         $onglet_actif = "quelsheguey";
         $activeMenuTest = "class=\"activeMenu\"";
         include('commons/head.php'); ?>
-        <title>SHEGUEYLAND</title>
+        <title>SHEGUEYLAND | Quel Sheguey es-tu ?</title>
     </head>
     <body>
         <?php include('commons/header.php'); ?>
@@ -14,7 +14,7 @@
         </header>
         <!-- QUIZZ -->
         <div class="content">
-            <section class="row">
+            <section class="row quel">
                 <ul class="quizz">
                     <!-- Launch Form -->
                     <li class="active">
@@ -65,7 +65,7 @@
                     </li>
                     <!-- Question 5 -->
                     <li>
-                        <h4 class="title3">Quand est sortis la mixtape ShegueyVara sur <a target="_blank" href="http://www.hauteculture.com">Haute Culture</a> ?</h4>
+                        <h4 class="title3">Quand est sorti la mixtape ShegueyVara sur <a target="_blank" href="http://www.hauteculture.com">HauteCulture</a>?</h4>
                         <div>
                             <h5 class="buttonPass final">Le 9 octobre 2014</h5>
                             <h5 class="buttonPass final">Le 18 octobre 2014</h5>
