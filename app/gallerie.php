@@ -10,7 +10,7 @@
     </head>
     <body>
         <?php include('commons/header.php'); 
-        $ip_client = securite_bdd($_SERVER["REMOTE_ADDR"]);
+        $ip_client = $_SERVER["REMOTE_ADDR"];
         ?>
         
         
@@ -53,7 +53,7 @@
             $(document).ready(function() {
 
             ip_client = '<?php echo"$ip_client"; ?>';
-            console.log("HEEEY : " + ip_client);
+            // console.log("HEEEY : " + ip_client);
 
 
                 loadGallery("both", "recent", "8"); // Chargement de la gallerie au 1er chargement

@@ -139,11 +139,11 @@
 
 
 			if(isset($_POST['getMoreSheguey'])){
-				$getMoreSheguey = securite_bdd($_POST['getMoreSheguey']);
-				$type = securite_bdd($_POST['typeData']);
-				$orderBy = securite_bdd($_POST['orderBy']);
+				$getMoreSheguey = $_POST['getMoreSheguey'];
+				$type = $_POST['typeData'];
+				$orderBy = $_POST['orderBy'];
 				$orderBy = $orderBy == 'recent' ? 'id DESC' : 'vote DESC';
-				$contentLength = securite_bdd($_POST['contentLength']);
+				$contentLength = $_POST['contentLength'];
 				getMoreSheguey($getMoreSheguey, $type, $orderBy, $contentLength );
 			}
 
@@ -209,7 +209,7 @@
 
 if(isset($_POST['vote_media_ID'])){
 	$vote_media_ID = 	securite_bdd($_POST['vote_media_ID']);
-	$ip_client = 		securite_bdd($_POST['ip_client']);
+	$ip_client = 		$_SERVER["REMOTE_ADDR"];
 
 	saveVoteMedia($ip_client, $vote_media_ID);
 	// $nb_modifs = $bdd->exec('UPDATE instagram SET vote = vote+1 WHERE id = '.$vote_media_ID.'');
@@ -227,7 +227,7 @@ function saveVoteMedia($ip_client, $vote_media_ID){
 	$donnees = $req->fetch();
 	$ip_exist = $donnees['ip_exist'];
 	if ($ip_exist == "0"){ // Si l ip nexiste pas
-		echo"IP EXISTE PAS";
+		// echo"IP EXISTE PAS";
 		$req = $bdd->prepare('INSERT INTO vote(id_media, ip) VALUES(:id_media, :ip)');
 		$req->execute(array(
 			'id_media' => $vote_media_ID,
