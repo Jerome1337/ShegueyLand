@@ -9,7 +9,9 @@
         <title>SHEGUEYLAND | Le Mur des Sheguey</title>
     </head>
     <body>
-        <?php include('commons/header.php'); ?>
+        <?php include('commons/header.php'); 
+        $ip_client = securite_bdd($_SERVER["REMOTE_ADDR"]);
+        ?>
         
         
         <header class="header galleryOptions">
@@ -49,6 +51,11 @@
         <?php include('commons/script_bottom.php'); ?>
         <script>
             $(document).ready(function() {
+
+            ip_client = '<?php echo"$ip_client"; ?>';
+            console.log("HEEEY : " + ip_client);
+
+
                 loadGallery("both", "recent", "8"); // Chargement de la gallerie au 1er chargement
                 $('.mediaContent').prop('checked', true); // Coche les 2 case si non defini
             });
