@@ -139,11 +139,11 @@
 
 
 			if(isset($_POST['getMoreSheguey'])){
-				$getMoreSheguey = $_POST['getMoreSheguey'];
-				$type = $_POST['typeData'];
-				$orderBy = $_POST['orderBy'];
+				$getMoreSheguey = securite_bdd($_POST['getMoreSheguey']);
+				$type = securite_bdd($_POST['typeData']);
+				$orderBy = securite_bdd($_POST['orderBy']);
 				$orderBy = $orderBy == 'recent' ? 'id DESC' : 'vote DESC';
-				$contentLength = $_POST['contentLength'];
+				$contentLength = securite_bdd($_POST['contentLength']);
 				getMoreSheguey($getMoreSheguey, $type, $orderBy, $contentLength );
 			}
 
@@ -209,7 +209,7 @@
 
 if(isset($_POST['vote_media_ID'])){
 	$vote_media_ID = 	securite_bdd($_POST['vote_media_ID']);
-	$ip_client = 		securite_bdd($_SERVER["REMOTE_ADDR"]);
+	$ip_client = 		securite_bdd($_POST['ip_client']);
 
 	saveVoteMedia($ip_client, $vote_media_ID);
 	// $nb_modifs = $bdd->exec('UPDATE instagram SET vote = vote+1 WHERE id = '.$vote_media_ID.'');

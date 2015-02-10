@@ -23,7 +23,7 @@ function loadGallery(type_data, orderBy, contentLengthToLoad) {
     .done(function( imagesLoaded ) {
         $( imagesLoaded ).appendTo(".js-shegueyWall");
         lastImageLoaded = $(imagesLoaded).find(".likePic").last().attr("data-id");
-        console.log("NEW : LOADING MORE SHEG " + lastImageLoaded);
+        // console.log("NEW : LOADING MORE SHEG " + lastImageLoaded);
     });
 }
 
@@ -64,14 +64,15 @@ function setParamsGallery(){
 }
 
 function likeMedia(id_media){
+    // console.log("monIPEST: " + ip_client);
     $.ajax({
         type: "POST",
         url: "commons/function",
-        data: { vote_media_ID: id_media }
+        data: { vote_media_ID: id_media, ip_client: ip_client }
     })
     .done(function( vote_saved ) {
         $( vote_saved ).appendTo(".likePic");
-        console.log("SAVE " + vote_saved);
+        // console.log("SAVE " + vote_saved);
     });
 }
 
@@ -90,7 +91,7 @@ $(document).ready(function() {
         $('.field.select').toggleClass('active');
     });
     $('.select label').click(function(){
-        console.log('labelClick');
+        // console.log('labelClick');
         $('.field.select').removeClass('active');
     });
 
@@ -100,7 +101,7 @@ $(document).on('click', '.likePic', function() {
         var vote_id = $(this).attr("data-id");
         $(this).addClass('liked');
         likeMedia(vote_id);
-        console.log('vote_id: ' + vote_id);
+        // console.log('vote_id: ' + vote_id);
 });
 
 
@@ -169,8 +170,8 @@ $(document).ready(function() {
             encode: true
         })
         .done(function(data){
-            console.log(dataPunch);
-            console.log(data);
+            // console.log(dataPunch);
+            // console.log(data);
 
             if( ! data.success){
                 $('#punchAdded').slideDown().children().append('Remplis tous les champs !');
@@ -210,7 +211,7 @@ $(document).ready(function() {
     });
     $('.good').click(function() {
         score++;
-        console.log('score: ' + score);
+        // console.log('score: ' + score);
     });
     $('.final').click(function() {
         setScore();
@@ -324,8 +325,8 @@ $(document).ready(function() {
                 encode: true
             })
             .done(function(data){
-                console.log(formData);
-                console.log(data);
+                // console.log(formData);
+                // console.log(data);
 
 
             if( !data.success){
@@ -354,7 +355,7 @@ $(document).ready(function() {
             });
             $('#loginbutton,#feedbutton').removeAttr('disabled');
             FB.getLoginStatus(function() {
-                console.log('Status updated!');
+                // console.log('Status updated!');
             });
         });
     });    

@@ -3,3 +3,6 @@
 /app/adm/*
 /app/cache/*
 /dist/*
+dist/
+.sass-cache/*
+/.sass-cache/*
