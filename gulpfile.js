@@ -150,7 +150,7 @@ gulp.task('serve', ['styles', 'script'], function() {
         // Note: this uses an unsigned certificate which on first access
         //       will present a certificate warning in the browser.
         // https: true,
-        proxy: "http://ShegueyLand:80"
+        proxy: "http://local.projets.com/Sheguey/app"
         //server: [ appTemp, appSrc]
     });
     gulp.watch( appSrc + '/**/*.php', reload);

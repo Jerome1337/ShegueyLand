@@ -35,6 +35,8 @@
 			<div class="row" id="contentPunchline">
 				<div class="newPunch punch"></div>
 				<?php
+				$ip_client = $_SERVER["REMOTE_ADDR"];
+				
 					$reponse = $bdd->query('SELECT * FROM punchline WHERE id order by time DESC LIMIT 30');
 					while ($punchline = $reponse->fetch())
 				{
@@ -48,7 +50,7 @@
 				<div class="punch">
 					<div>
 						<p class="punchline"><?php echo $punch; ?></p>
-						<h2 class="mc"><?php echo $mc; ?></h2>
+						<h2 class="mc">Posté par <?php echo $mc; ?></h2>
 					</div>
 					<div class="tweetPunch">
                     	<a data-url="https://twitter.com/intent/tweet?text=%22<?php echo $newsetence ?>%22%20%23<?php echo $mc ?>%20%23ShegueyLand&amp;related=Shegueyland,gradidur,theHauteCulture" class="twitter"><div class="twitterIcon socialIcon"></div></a>
@@ -61,5 +63,13 @@
 		</div>
 		<?php include('commons/footer.php'); ?>
 		<?php include('commons/script_bottom.php'); ?>
+		<script>
+			$(document).ready(function() {
+
+			ip_client = '<?php echo"$ip_client"; ?>';
+			// console.log("HEEEY : " + ip_client);
+
+			});
+		</script>
 	</body>
 </html>

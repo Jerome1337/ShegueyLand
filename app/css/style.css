@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *::selection {
   background: #df0030;
   color: #ffffff; }
@@ -182,7 +183,7 @@ footer {
     footer nav ul li a {
       font-size: 1.8em;
       color: #9d9d9d;
-      transition: color 0.5s ease-in-out; }
+      transition: color .5s ease-in-out; }
       footer nav ul li a:hover {
         color: #ffffff; }
     footer nav ul li + li {
@@ -472,7 +473,7 @@ footer {
           width: 48%;
           flex-direction: row; }
       .form #formContact button {
-        transition: all 0.5s ease-in-out; }
+        transition: all .5s ease-in-out; }
         .form #formContact button:hover {
           background: #ac0025; }
     .form .rangSheguey {
@@ -490,7 +491,7 @@ footer {
         width: 48%;
         flex-direction: row; }
     .form #formContact button {
-      transition: all 0.5s ease-in-out; }
+      transition: all .5s ease-in-out; }
       .form #formContact button:hover {
         background: #ac0025; } }
 
@@ -748,7 +749,7 @@ header form.formOptions {
           width: 48%;
           flex-direction: row; }
       .form #formContact button {
-        transition: all 0.5s ease-in-out; }
+        transition: all .5s ease-in-out; }
         .form #formContact button:hover {
           background: #ac0025; }
     .form .rangSheguey {
@@ -766,7 +767,7 @@ header form.formOptions {
         width: 48%;
         flex-direction: row; }
     .form #formContact button {
-      transition: all 0.5s ease-in-out; }
+      transition: all .5s ease-in-out; }
       .form #formContact button:hover {
         background: #ac0025; } }
 
@@ -875,14 +876,15 @@ header form.formOptions {
   #contentPunchline .punch .tweetPunch {
     margin: 0; }
     #contentPunchline .punch .tweetPunch .socialIcon {
-      display: none;
+      opacity: 0;
       font-size: 2.5em;
       margin-left: 7px;
-      color: #eeeeee; }
+      color: #cecece;
+      transition: opacity .3s, color .3s ease-in-out; }
       #contentPunchline .punch .tweetPunch .socialIcon:hover {
-        color: #e9e9e9; }
+        color: #a8a8a8; }
   #contentPunchline .punch:hover .socialIcon {
-    display: block; }
+    opacity: 1; }
 
 @media only screen and (min-width : 600px) {
   .addPunch {
@@ -946,7 +948,7 @@ header form.formOptions {
         padding: 10px;
         font-size: 2.2em;
         cursor: pointer;
-        transition: all 0.3s ease-in-out;
+        transition: all .3s ease-in-out;
         display: flex;
         margin: 15px 0 0 0;
         font-family: 'Francois One', sans-serif;
@@ -989,14 +991,14 @@ header form.formOptions {
         border-bottom: none;
         color: #ffffff;
         padding: 20px 0 20px 15px;
-        transition: all 0.3s ease-in-out;
+        transition: all .3s ease-in-out;
         width: 100%;
         display: flex;
         cursor: pointer;
         font-size: 2.2em;
         margin-top: 15px; }
         .content .quel .quizz li .socialfacebook #share_button:hover {
-          background-color: #344f86;
+          background-color: #344e86;
           border-color: #1e2e4f; }
       .content .quel .quizz li .socialfacebook .previewFb {
         width: 100%;

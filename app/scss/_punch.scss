@@ -117,18 +117,19 @@
 		.tweetPunch{
 				margin: 0;
 				.socialIcon{
-					display: none;
+					opacity: 0;
 					font-size: 2.5em;
 					margin-left: 7px;
-					color: lighten($lightgrey, 2);
+					color: lighten($grey, 55%);	
+					transition : opacity .3s , color .3s ease-in-out;
 					&:hover{
-						color: $lightgrey;	
+						color: lighten($grey, 40%);	
 					}
 				}
 			}
 		&:hover{
 			.socialIcon{
-					display: block;
+					opacity: 1;
 				}
 			}
 		}

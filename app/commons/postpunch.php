@@ -10,10 +10,12 @@
 
 				$mc = securite_bdd($_POST['mc']);
 				$punch = securite_bdd($_POST['punch']);
-				$req = $bdd->prepare('INSERT INTO punchline (name, punch, time) VALUES( :mc, :punch, NOW())');
+				$ip_client = securite_bdd($_POST['ip_client']);
+				$req = $bdd->prepare('INSERT INTO punchline (name, punch, time) VALUES( :mc, :punch, NOW(),:ip_client)');
 				$req->execute(array(
 						'mc' => $mc,
-						'punch' => $punch
+						'punch' => $punch,
+						'ip_client' => $ip_client
 					));
 				$data['success'] = true;	
 			}else{
