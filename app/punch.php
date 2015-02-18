@@ -2,7 +2,7 @@
 <html lang="fr-FR" manifest="cache/localSoundStorage.appcache">
 	<head>
 		<?php
-		$onglet_actif = "noise";
+		$onglet_actif = "punch";
 		$activeMenuPunch = "class=\"activeMenu\"";
 		include('commons/head.php'); ?>
 		<title>SHEGUEYLAND - Punchlines</title>

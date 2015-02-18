@@ -2,7 +2,7 @@
 <html lang="fr-FR" manifest="cache/localSoundStorage.appcache">
     <head>
         <?php
-        $onglet_actif = "noise";
+        $onglet_actif = "clickNsheg";
         $activeMenuClick = "class=\"activeMenu\"";
         include('commons/head.php'); ?>
         <title>SHEGUEYLAND - Click & Sheg'</title>

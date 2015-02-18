@@ -339,9 +339,6 @@ function checkLastDatePunchline($ip_client){
 
 
 
-
-
-
 // BDD PROTECT
 function securite_bdd($string)
 {

@@ -177,7 +177,7 @@ $(document).ready(function() {
             // console.log("haha");
 
             if( data.success){
-                $('#punchAdded').slideDown().children().append('Ta punchline vient d\'être envoyée !');
+                $('#punchAdded').empty().slideDown().children().append('Ta punchline vient d\'être envoyée !');
                 $('.newPunch').append('<div><p class="punchline">'+addedPunch+'</p><h2 class="mc">'+newMc+'</h2></div>');
                 $('.addPunch').slideUp('slow');
             }else{
