@@ -155,30 +155,34 @@ $(document).ready(function() {
         $('#formPunch p').html(textRemaining + ' / 150 caractères.');
     });
     $('#formPunch').submit(function(event) {
-        var dataPunch = {
-            'mc' : $('#formMc').val(),
-            'punch' : $("#formPunchline").val()
-        };
+        console.log('ip_client: ' + ip_client);
         var newMc = $('#formMc').val();
         var addedPunch = $("#formPunchline").val();
-        // console.log(formData);
+        var dataPunch = {
+            'mc' : newMc,
+            'punch' : addedPunch,
+            'ip_client': ip_client
+        };
+        console.log(dataPunch);
         $.ajax({
-            url: "commons/postpunch",
             type: "POST",
-            data: dataPunch,
+            url: "commons/function.php",
             dataType: 'json',
-            encode: true
+            encode: true,
+            data: dataPunch
         })
         .done(function(data){
             // console.log(dataPunch);
             // console.log(data);
+            // console.log("haha");
 
-            if( ! data.success){
-                $('#punchAdded').slideDown().children().append('Remplis tous les champs !');
-            }else{
+            if( data.success){
                 $('#punchAdded').slideDown().children().append('Ta punchline vient d\'être envoyée !');
                 $('.newPunch').append('<div><p class="punchline">'+addedPunch+'</p><h2 class="mc">'+newMc+'</h2></div>');
                 $('.addPunch').slideUp('slow');
+            }else{
+                $('#punchAdded').slideDown().children().append('Remplis tous les champs !');
+                // console.log(data);
             }
         });
         event.preventDefault();

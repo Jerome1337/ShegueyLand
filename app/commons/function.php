@@ -267,6 +267,81 @@ function saveVoteMedia($ip_client, $vote_media_ID){
 	// $save_ip = $bdd->exec('UPDATE vote SET vote = vote+1 WHERE id = '.$vote_media_ID.'');
 }
 
+
+
+
+if(isset($_POST['mc']) && isset($_POST['punch'])){
+	$mc = securite_bdd($_POST['mc']);
+	$punch = securite_bdd($_POST['punch']);
+	$ip_client = securite_bdd($_POST['ip_client']);
+
+	addPunchline($mc, $punch, $ip_client);
+}
+
+function addPunchline($mc, $punch, $ip_client){
+	include('../adm/bddconnect.php');
+	$data = array();
+	if (!empty($_POST['mc']) && !empty($_POST['punch']))
+			{
+				$checkLastDatePunchline = checkLastDatePunchline($ip_client);
+				
+				if($checkLastDatePunchline == true){
+					$req = $bdd->prepare('INSERT INTO punchline (name, punch, time, ip_client) VALUES( :mc, :punch,:time, :ip_client)');
+					$req->execute(array(
+							'mc' => $mc,
+							'punch' => $punch,
+							'time' => time(),
+							'ip_client' => $ip_client
+						));
+					$data['success'] = true;	
+				}
+			}else{
+				$data['success'] = false;
+			}
+			echo json_encode($data);
+}
+
+function checkLastDatePunchline($ip_client){
+	include('../adm/bddconnect.php');
+	$req = $bdd->prepare('SELECT count(id) AS ip_exist FROM punchline WHERE ip_client = :ip_client');
+	$req->execute(array('ip_client' => $ip_client));
+	$donnees = $req->fetch();
+	$ip_exist = $donnees['ip_exist'];
+	$actual_date = time();
+	
+	// Si l'ip existe on check le time du last post
+	if($ip_exist >= 1){
+		
+		$req = $bdd->prepare('SELECT * FROM punchline WHERE ip_client = :ip_client ORDER BY id DESC LIMIT 0 , 1 ');
+		$req->execute(array('ip_client' => $ip_client));
+			while ($donnees = $req->fetch())
+			{
+				$id = $donnees['id'];
+				$postedTime = $donnees['time'];
+				$interval = ( $actual_date - $postedTime );
+				// echo ("actual : $actual_date\n");
+				// echo ("postedTime : $postedTime\n");
+				// echo ("INTERV : $interval\n");
+
+				if($interval < "60"){
+				 echo "moins 60!!!"; return false; 
+				} else {
+					return true;
+				}
+			}
+	}
+
+	//ip n'existe pas encore
+	return true;
+	
+}
+
+
+
+
+
+
+
 // BDD PROTECT
 function securite_bdd($string)
 {

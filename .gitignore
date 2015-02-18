@@ -2,7 +2,10 @@
 /node_modules/*
 /app/adm/*
 /app/cache/*
+/app/sound/
 /dist/*
 dist/
 .sass-cache/*
 /.sass-cache/*
+/.tmp/*
+gulpfile.js
