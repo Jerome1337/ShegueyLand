@@ -271,9 +271,9 @@ function saveVoteMedia($ip_client, $vote_media_ID){
 
 
 if(isset($_POST['mc']) && isset($_POST['punch'])){
-	$mc = securite_bdd($_POST['mc']);
-	$punch = securite_bdd($_POST['punch']);
-	$ip_client = securite_bdd($_POST['ip_client']);
+	$mc = $_POST['mc'];
+	$punch = $_POST['punch'];
+	$ip_client = $_POST['ip_client'];
 
 	addPunchline($mc, $punch, $ip_client);
 }
@@ -281,7 +281,7 @@ if(isset($_POST['mc']) && isset($_POST['punch'])){
 function addPunchline($mc, $punch, $ip_client){
 	include('../adm/bddconnect.php');
 	$data = array();
-	if (!empty($_POST['mc']) && !empty($_POST['punch']))
+	if (!empty($mc) && !empty($punch))
 			{
 				$checkLastDatePunchline = checkLastDatePunchline($ip_client);
 				
