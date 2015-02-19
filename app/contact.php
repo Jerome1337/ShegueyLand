@@ -2,7 +2,7 @@
 <html class="no-js" lang="fr-FR">
     <head>
         <?php
-        $onglet_actif = "contacts";
+        $onglet_actif = "contact";
         $activeMenuContact = "class=\"activeMenu\"";
         include('commons/head.php'); ?>
         <title>SHEGUEYLAND - Contact</title>

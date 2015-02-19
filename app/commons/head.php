@@ -40,7 +40,7 @@
 <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
 <meta name="theme-color" content="#dd0830">
 <link href='https://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
-<link href='https://fonts.googleapis.com/css?family=Radley:400italic' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
 <link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>">
 <link rel="stylesheet" href="fonts/styles.css">
 <link rel="stylesheet" href="css/style.css">
