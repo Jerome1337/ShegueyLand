@@ -166,17 +166,17 @@ $(document).ready(function() {
         console.log(dataPunch);
         $.ajax({
             type: "POST",
-            url: "commons/function.php",
+            url: "commons/function",
             dataType: 'json',
             encode: true,
             data: dataPunch
         })
         .done(function(data){
             // console.log(dataPunch);
-            // console.log(data);
+            console.log(data);
             // console.log("haha");
 
-            if( data.success){
+            if(data.success){
                 $('#punchAdded').slideDown().children().append('Ta punchline vient d\'être envoyée !');
                 $('.newPunch').append('<div><p class="punchline">'+addedPunch+'</p><h2 class="mc">'+newMc+'</h2></div>');
                 $('.addPunch').slideUp('slow');
@@ -264,131 +264,131 @@ $(document).ready(function() {
         };
 });
 
-    // END QUIZZ
+// END QUIZZ
 
-    // CONTACTS
+// CONTACTS
 
-    // LOCAL STORAGE FORM
-    jQuery(function($) {
-        $.fn.formBackUp = function() {
-            if (!localStorage) {
-                return false;
-            }
-            var forms = this;
-            var datas = {};
-            var ls = false;
-            datas.href = window.location.href;
+// LOCAL STORAGE FORM
+jQuery(function($) {
+    $.fn.formBackUp = function() {
+        if (!localStorage) {
+            return false;
+        }
+        var forms = this;
+        var datas = {};
+        var ls = false;
+        datas.href = window.location.href;
 
-            //Récupération des informations
-            if (localStorage['formBackUp']) {
-                ls = JSON.parse(localStorage['formBackUp']);
-                if (ls.href == datas.href) {
-                    for (var id in ls) {
-                        if (id != 'href') {
-                            $('#' + id).val(ls[id]);
-                            datas[id] = ls[id];
-                        }
+        //Récupération des informations
+        if (localStorage['formBackUp']) {
+            ls = JSON.parse(localStorage['formBackUp']);
+            if (ls.href == datas.href) {
+                for (var id in ls) {
+                    if (id != 'href') {
+                        $('#' + id).val(ls[id]);
+                        datas[id] = ls[id];
                     }
                 }
             }
-
-            forms.find('input,textarea').keyup(function(e) {
-                datas[$(this).attr('id')] = $(this).val();
-                localStorage.setItem('formBackUp', JSON.stringify(datas));
-            });
-            forms.submit(function(e) {
-                localStorage.removeItem('formBackUp');
-            });
         }
 
-        $('form').formBackUp();
+        forms.find('input,textarea').keyup(function(e) {
+            datas[$(this).attr('id')] = $(this).val();
+            localStorage.setItem('formBackUp', JSON.stringify(datas));
+        });
+        forms.submit(function(e) {
+            localStorage.removeItem('formBackUp');
+        });
+    }
 
-    });
-    // END LOCAL STORAGE
+    $('form').formBackUp();
 
-    // CONTACT FORM ACTION
-    $(document).ready(function() {
-        $('.rangSheguey').hide();
-        $('#formContact').submit(function(event) {
-            // var formName    = $('#formName').val();
-            // var formEmail   = $("#formEmail").val();
-            // var formSubject = $("#formSubject").val();
-            // var formMessage = $("#formMessage").val();
+});
+// END LOCAL STORAGE
 
-            var formData = {
-                'name' : $('#formName').val(),
-                'email' : $("#formEmail").val(),
-                'message' : $("#formMessage").val()
-            };
+// CONTACT FORM ACTION
+$(document).ready(function() {
+    $('.rangSheguey').hide();
+    $('#formContact').submit(function(event) {
+        // var formName    = $('#formName').val();
+        // var formEmail   = $("#formEmail").val();
+        // var formSubject = $("#formSubject").val();
+        // var formMessage = $("#formMessage").val();
+
+        var formData = {
+            'name' : $('#formName').val(),
+            'email' : $("#formEmail").val(),
+            'message' : $("#formMessage").val()
+        };
+        // console.log(formData);
+        $.ajax({
+            url: "commons/postmessage",
+            type: "POST",
+            data: formData,
+            dataType: 'json',
+            encode: true
+        })
+        .done(function(data){
             // console.log(formData);
-            $.ajax({
-                url: "commons/postmessage",
-                type: "POST",
-                data: formData,
-                dataType: 'json',
-                encode: true
-            })
-            .done(function(data){
-                // console.log(formData);
-                // console.log(data);
+            // console.log(data);
 
 
-            if( !data.success){
-                $('.rangSheguey').slideDown().children().append('Remplis tous les champs !');
-            }else{
-                $('.rangSheguey').slideDown().children().append('Ton message vient d\'être envoyé !');
-                $('#formContact').slideUp('slow');
-            }
-            });
-            event.preventDefault();
+        if( !data.success){
+            $('.rangSheguey').slideDown().children().append('Remplis tous les champs !');
+        }else{
+            $('.rangSheguey').slideDown().children().append('Ton message vient d\'être envoyé !');
+            $('#formContact').slideUp('slow');
+        }
+        });
+        event.preventDefault();
+    });
+});
+// END CONTACT FORM ACTION
+
+// END CONTACTS
+
+// FB SHARE
+
+$(document).ready(function() {
+    $.ajaxSetup({
+        cache: true
+    });
+    $.getScript('//connect.facebook.net/fr_FR/all.js', function() {
+        FB.init({
+            appId: '790279547711669',
+        });
+        $('#loginbutton,#feedbutton').removeAttr('disabled');
+        FB.getLoginStatus(function() {
+            // console.log('Status updated!');
         });
     });
-    // END CONTACT FORM ACTION
+});    
 
-    // END CONTACTS
+// END FB SHARE
 
-    // FB SHARE
+// TWITTER
+$(".twitter").click(function() {
+    var url = $(this).attr("data-url");
+    window.open(url, "tweet", "height=300,width=550,resizable=1");
+});
 
-    $(document).ready(function() {
-        $.ajaxSetup({
-            cache: true
-        });
-        $.getScript('//connect.facebook.net/fr_FR/all.js', function() {
-            FB.init({
-                appId: '790279547711669',
-            });
-            $('#loginbutton,#feedbutton').removeAttr('disabled');
-            FB.getLoginStatus(function() {
-                // console.log('Status updated!');
-            });
-        });
-    });    
+// END TWITTER
 
-    // END FB SHARE
+// ANALYTICS
 
-    // TWITTER
-    $(".twitter").click(function() {
-        var url = $(this).attr("data-url");
-        window.open(url, "tweet", "height=300,width=550,resizable=1");
-    });
+(function(i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r;
+    i[r] = i[r] || function() {
+        (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date();
+    a = s.createElement(o),
+    m = s.getElementsByTagName(o)[0];
+    a.async = 1;
+    a.src = g;
+    m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    // END TWITTER
-
-    // ANALYTICS
-
-    (function(i, s, o, g, r, a, m) {
-        i['GoogleAnalyticsObject'] = r;
-        i[r] = i[r] || function() {
-            (i[r].q = i[r].q || []).push(arguments)
-        }, i[r].l = 1 * new Date();
-        a = s.createElement(o),
-        m = s.getElementsByTagName(o)[0];
-        a.async = 1;
-        a.src = g;
-        m.parentNode.insertBefore(a, m)
-    })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-
-    ga('create', 'UA-57812247-1', 'auto');
-    ga('send', 'pageview');
+ga('create', 'UA-57812247-1', 'auto');
+ga('send', 'pageview');
 
 // END ANALYTICS

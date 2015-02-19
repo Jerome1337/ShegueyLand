@@ -1,3 +1,7 @@
+<?php
+	// error_reporting(E_ALL);
+	// ini_set("display_errors", 1);
+?>
 <meta charset="utf-8">
 <meta name="description" content="ShegueyLand est le premier site dédié la communauté Sheguey de Gradur.">
 <meta name="keywords" content="Gradur, gradyog, sheguey, shegueysquad, roubaix, nord, GRADUR, DURGRA, durgra, shegueyland, sl, gradidur">
