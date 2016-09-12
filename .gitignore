@@ -1,6 +1,6 @@
 *.DS_Store
 /node_modules/*
-/app/adm/*
+/app/adm/bddconnect.php
 /app/cache/*
 /app/sound/
 /dist/*
