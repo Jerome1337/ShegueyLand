@@ -1,18 +1,14 @@
-<?php
-	// error_reporting(E_ALL);
-	// ini_set("display_errors", 1);
-?>
 <meta charset="utf-8">
 <meta name="description" content="ShegueyLand est le premier site dédié la communauté Sheguey de Gradur.">
 <meta name="keywords" content="Gradur, gradyog, sheguey, shegueysquad, roubaix, nord, GRADUR, DURGRA, durgra, shegueyland, sl, gradidur">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:title" content="Sheguey Land">
 <meta property="og:site_name" content="Sheguey Land">
-<meta property="og:url" content="http://sheguey.land/<?php echo $onglet_actif ?>">
+<meta property="og:url" content="https://sheguey.jeromepogeant.com/<?php echo $onglet_actif ?>">
 <meta property="og:description" content="ShegueyLand est le premier site dédié la communauté Sheguey de Gradur.">
 <meta property="fb:app_id" content="790279547711669">
 <meta property="og:type" content="website">
-<meta property="og:image" content="http://www.sheguey.land/img/fbshare/fbshare.jpg">
+<meta property="og:image" content="https://sheguey.jeromepogeant.com/img/fbshare/fbshare.jpg">
 <meta property="og:image:width" content="1280">
 <meta property="og:image:height" content="720">
 <meta name="twitter:card" content="Description">
@@ -20,7 +16,7 @@
 <meta name="twitter:title" content="ShegueyLand Community">
 <meta name="twitter:description" content="Venez découvrir ShegueyLand">
 <meta name="twitter:creator" content="ShegueyLand">
-<meta name="twitter:image:src" content="http://www.sheguey.land/img/favicons/android-chrome-192x192.png">
+<meta name="twitter:image:src" content="https://sheguey.jeromepogeant.com/img/favicons/android-chrome-192x192.png">
 <meta name="twitter:domain" content="sheguey.land">
 <link rel="apple-touch-icon" sizes="57x57" href="img/favicons/apple-touch-icon-57x57.png">
 <link rel="apple-touch-icon" sizes="60x60" href="img/favicons/apple-touch-icon-60x60.png">
@@ -40,7 +36,7 @@
 <meta name="msapplication-TileImage" content="img/favicons/mstile-144x144.png">
 <meta name="theme-color" content="#dd0830">
 <link href='https://fonts.googleapis.com/css?family=Francois+One' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Droid+Serif:400italic' rel='stylesheet' type='text/css'>
 <link rel="canonical" href="http://sheguey.land/<?php echo $onglet_actif ?>">
 <link rel="stylesheet" href="fonts/styles.css">
 <link rel="stylesheet" href="css/style.css">
